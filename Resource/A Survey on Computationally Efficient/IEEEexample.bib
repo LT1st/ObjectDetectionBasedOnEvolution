@@ -1,0 +1,2972 @@
+
+IEEEexample.bib 
+V1.12 (2007/01/11)
+Copyright (c) 2002-2007 by Michael Shell
+See: http://www.michaelshell.org/
+for current contact information.
+
+This is an example BibTeX database for the official IEEEtran.bst
+BibTeX style file.
+
+Some entries call strings that are defined in the IEEEabrv.bib file.
+Therefore, IEEEabrv.bib should be loaded prior to this file. 
+Usage: 
+
+\bibliographystyle{./IEEEtran}
+\bibliography{./IEEEabrv,./IEEEexample}
+
+
+Support sites:
+http://www.michaelshell.org/tex/ieeetran/
+http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+and/or
+http://www.ieee.org/
+
+*************************************************************************
+Legal Notice:
+This code is offered as-is without any warranty either expressed or
+implied; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE! 
+User assumes all risk.
+In no event shall IEEE or any contributor to this code be liable for
+any damages or losses, including, but not limited to, incidental,
+consequential, or any other damages, resulting from the use or misuse
+of any information contained here.
+
+All comments are the opinions of their respective authors and are not
+necessarily endorsed by the IEEE.
+
+This work is distributed under the LaTeX Project Public License (LPPL)
+( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+distributed and modified. A copy of the LPPL, version 1.3, is included
+in the base LaTeX documentation of all distributions of LaTeX released
+2003/12/01 or later.
+Retain all contribution notices and credits.
+** Modified files should be clearly indicated as such, including  **
+** renaming them and changing author support contact information. **
+
+File list of work: IEEEabrv.bib, IEEEfull.bib, IEEEexample.bib,
+                   IEEEtran.bst, IEEEtranS.bst, IEEEtranSA.bst,
+                   IEEEtranN.bst, IEEEtranSN.bst, IEEEtran_bst_HOWTO.pdf
+*************************************************************************
+
+
+Note that, because the example references were taken from actual IEEE
+publications, these examples do not always contain the full amount
+of information that may be desirable (for use with other BibTeX styles).
+In particular, full names (not abbreviated with initials) should be
+entered whenever possible as some (non-IEEE) bibliography styles use
+full names. IEEEtran.bst will automatically abbreviate when it encounters
+full names.
+
+
+%-------------------------以下是添加的-----------------------------
+@article{shahriari2015taking,
+  title={Taking the human out of the loop: A review of Bayesian optimization},
+  author={Shahriari, Bobak and Swersky, Kevin and Wang, Ziyu and Adams, Ryan P and De Freitas, Nando},
+  journal={Proceedings of the IEEE},
+  volume={104},
+  number={1},
+  pages={148--175},
+  year={2015},
+  publisher={IEEE}
+}
+
+@article{snoek2012practical,
+  title={Practical bayesian optimization of machine learning algorithms},
+  author={Snoek, Jasper and Larochelle, Hugo and Adams, Ryan P},
+  journal={Advances in Neural Information Processing Systems},
+  volume={25},
+  year={2012}
+}
+
+@article{kushner1964new,
+  title={A new method of locating the maximum point of an arbitrary multipeak curve in the presence of noise},
+  author={Kushner, Harold J},
+  year={1964}
+}
+
+@article{mockus1978application,
+  title={The application of Bayesian methods for seeking the extremum},
+  author={Mockus, Jonas and Tiesis, Vytautas and Zilinskas, Antanas},
+  journal={Towards global optimization},
+  volume={2},
+  number={117-129},
+  pages={2},
+  year={1978}
+}
+
+@inproceedings{srinivas2010gaussian,
+  title={Gaussian process optimization in the bandit setting: No regret and experimental design},
+  author={Srinivas, Niranjan and Krause, Andreas and Kakade, Sham M and Seeger, Matthias},
+  booktitle={Proceedings of the International Conference on Machine Learning},
+  year={2010}
+}
+
+@article{hennig2012entropy,
+  title={Entropy Search for Information-Efficient Global Optimization.},
+  author={Hennig, Philipp and Schuler, Christian J},
+  journal={Journal of Machine Learning Research},
+  volume={13},
+  number={6},
+  year={2012}
+}
+
+@inproceedings{zhou2020econas,
+  title={Econas: Finding proxies for economical neural architecture search},
+  author={Zhou, Dongzhan and Zhou, Xinchi and Zhang, Wenwei and Loy, Chen Change and Yi, Shuai and Zhang, Xuesen and Ouyang, Wanli},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11396--11404},
+  year={2020}
+}
+
+@inproceedings{li2017hyperband,
+  title={Hyperband: Bandit-based configuration evaluation for hyperparameter optimization},
+  author={Li, Lisha and Jamieson, Kevin G and DeSalvo, Giulia and Rostamizadeh, Afshin and Talwalkar, Ameet},
+  booktitle={ICLR (Poster)},
+  year={2017}
+}
+
+@inproceedings{zhong2018practical,
+  title={Practical block-wise neural network architecture generation},
+  author={Zhong, Zhao and Yan, Junjie and Wu, Wei and Shao, Jing and Liu, Cheng-Lin},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={2423--2432},
+  year={2018}
+}
+
+@inproceedings{real2019aging,
+  title={Aging evolution for image classifier architecture search},
+  author={Real, Esteban and Aggarwal, Alok and Huang, Yanping and Le, Quoc V},
+  booktitle={AAAI conference on artificial intelligence},
+  volume={2},
+  year={2019}
+}
+
+@inproceedings{brock2018smash,
+  title={SMASH: One-Shot Model Architecture Search through HyperNetworks},
+  author={Brock, Andrew and Lim, Theo and Ritchie, JM and Weston, Nick},
+  booktitle={International Conference on Learning Representations},
+  year={2018}
+}
+
+@inproceedings{zhang2018graph,
+  title={Graph HyperNetworks for Neural Architecture Search},
+  author={Zhang, Chris and Ren, Mengye and Urtasun, Raquel},
+  booktitle={International Conference on Learning Representations},
+  year={2018}
+}
+
+@article{sun2019evolving,
+  title={Evolving deep convolutional neural networks for image classification},
+  author={Sun, Yanan and Xue, Bing and Zhang, Mengjie and Yen, Gary G},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={24},
+  number={2},
+  pages={394--407},
+  year={2019},
+  publisher={IEEE}
+}
+
+@article{zhang2020one,
+  author={Zhang, Miao and Li, Huiqi and Pan, Shirui and Chang, Xiaojun and Zhou, Chuan and Ge, Zongyuan and Su, Steven},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={One-Shot Neural Architecture Search: Maximising Diversity to Overcome Catastrophic Forgetting}, 
+  year={2021},
+  volume={43},
+  number={9},
+  pages={2921-2935},
+  doi={10.1109/TPAMI.2020.3035351}
+}
+
+@article{zhu2021real,
+  title={Real-time federated evolutionary neural architecture search},
+  author={Zhu, Hangyu and Jin, Yaochu},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={26},
+  number={2},
+  pages={364--378},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{fang2020fna++,
+  title={FNA++: Fast network adaptation via parameter remapping and architecture search},
+  author={Fang, Jiemin and Sun, Yuzhu and Zhang, Qian and Peng, Kangjian and Li, Yuan and Liu, Wenyu and Wang, Xinggang},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume={43},
+  number={9},
+  pages={2990--3004},
+  year={2020},
+  publisher={IEEE}
+}
+
+@inproceedings{cai2019once,
+  title={Once-for-All: Train One Network and Specialize it for Efficient Deployment},
+  author={Cai, Han and Gan, Chuang and Wang, Tianzhe and Zhang, Zhekai and Han, Song},
+  booktitle={International Conference on Learning Representations},
+  year={2020}
+}
+
+@article{zhang2022evolutionary,
+  title={Evolutionary Search for Complete Neural Network Architectures with Partial Weight Sharing},
+  author={Zhang, Haoyu and Jin, Yaochu and Hao, Kuangrong},
+  journal={IEEE Transactions on Evolutionary Computation},
+  year={2022},
+  publisher={IEEE}
+}
+
+@inproceedings{liu2018darts,
+  title={DARTS: Differentiable Architecture Search},
+  author={Liu, Hanxiao and Simonyan, Karen and Yang, Yiming},
+  booktitle={International Conference on Learning Representations},
+  year={2018}
+}
+
+@ARTICLE{9354953,
+  author={Xu, Yuhui and Xie, Lingxi and Dai, Wenrui and Zhang, Xiaopeng and Chen, Xin and Qi, Guo-Jun and Xiong, Hongkai and Tian, Qi},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={Partially-Connected Neural Architecture Search for Reduced Computational Redundancy}, 
+  year={2021},
+  volume={43},
+  number={9},
+  pages={2953-2970},
+  doi={10.1109/TPAMI.2021.3059510}}
+
+@ARTICLE{9525822,
+  author={Wang, Huiqun and Yang, Ruijie and Huang, Di and Wang, Yunhong},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={iDARTS: Improving DARTS by Node Normalization and Decorrelation Discretization}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-13},
+  doi={10.1109/TNNLS.2021.3105698}}
+
+@inproceedings{he2016deep,
+  title={Deep residual learning for image recognition},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={770--778},
+  year={2016}
+}
+
+@inproceedings{huang2017densely,
+  title={Densely connected convolutional networks},
+  author={Huang, Gao and Liu, Zhuang and Van Der Maaten, Laurens and Weinberger, Kilian Q},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={4700--4708},
+  year={2017}
+}
+
+@article{krizhevsky2012imagenet,
+  title={Imagenet classification with deep convolutional neural networks},
+  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  journal={Advances in Neural Information Processing Systems},
+  volume={25},
+  pages={1097--1105},
+  year={2012}
+}
+
+@article{simonyan2014very,
+  title={Very deep convolutional networks for large-scale image recognition},
+  author={Simonyan, Karen and Zisserman, Andrew},
+  journal={arXiv preprint arXiv:1409.1556},
+  year={2014}
+}
+
+@inproceedings{szegedy2015going,
+  title={Going deeper with convolutions},
+  author={Szegedy, Christian and Liu, Wei and Jia, Yangqing and Sermanet, Pierre and Reed, Scott and Anguelov, Dragomir and Erhan, Dumitru and Vanhoucke, Vincent and Rabinovich, Andrew},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={1--9},
+  year={2015}
+}
+
+@inproceedings{girshick2015fast,
+  title={Fast r-cnn},
+  author={Girshick, Ross},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={1440--1448},
+  year={2015}
+}
+
+@inproceedings{liu2016ssd,
+  title={Ssd: Single shot multibox detector},
+  author={Liu, Wei and Anguelov, Dragomir and Erhan, Dumitru and Szegedy, Christian and Reed, Scott and Fu, Cheng-Yang and Berg, Alexander C},
+  booktitle={European conference on computer vision},
+  pages={21--37},
+  year={2016},
+  organization={Springer}
+}
+
+@inproceedings{redmon2016you,
+  title={You only look once: Unified, real-time object detection},
+  author={Redmon, Joseph and Divvala, Santosh and Girshick, Ross and Farhadi, Ali},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={779--788},
+  year={2016}
+}
+
+@article{ren2015faster,
+  title={Faster r-cnn: Towards real-time object detection with region proposal networks},
+  author={Ren, Shaoqing and He, Kaiming and Girshick, Ross and Sun, Jian},
+  journal={Advances in neural information processing systems},
+  volume={28},
+  pages={91--99},
+  year={2015}
+}
+
+@inproceedings{xie2015holistically,
+  title={Holistically-nested edge detection},
+  author={Xie, Saining and Tu, Zhuowen},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={1395--1403},
+  year={2015}
+}
+
+@article{chen2017deeplab,
+  title={Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs},
+  author={Chen, Liang-Chieh and Papandreou, George and Kokkinos, Iasonas and Murphy, Kevin and Yuille, Alan L},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={40},
+  number={4},
+  pages={834--848},
+  year={2017},
+  publisher={IEEE}
+}
+
+@inproceedings{he2017mask,
+  title={Mask r-cnn},
+  author={He, Kaiming and Gkioxari, Georgia and Doll{\'a}r, Piotr and Girshick, Ross},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={2961--2969},
+  year={2017}
+}
+
+@inproceedings{long2015fully,
+  title={Fully convolutional networks for semantic segmentation},
+  author={Long, Jonathan and Shelhamer, Evan and Darrell, Trevor},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={3431--3440},
+  year={2015}
+}
+
+@article{toshev2014human,
+  title={Human pose estimation via deep neural networks’},
+  author={Toshev, A and Szegedy, C‘Deeppose},
+  journal={CVPR.(Columbus, Ohio, 2014)},
+  pages={1653--1660},
+  year={2014}
+}
+
+@article{baker2016designing,
+  title={Designing neural network architectures using reinforcement learning},
+  author={Baker, Bowen and Gupta, Otkrist and Naik, Nikhil and Raskar, Ramesh},
+  journal={arXiv preprint arXiv:1611.02167},
+  year={2016}
+}
+
+@article{ioffe2015batch,
+  title={Batch normalization: Accelerating deep network training by reducing internal covariate shift},
+  author={Ioffe, Sergey and Szegedy, Christian},
+  journal={arXiv preprint arXiv:1502.03167},
+  year={2015}
+}
+
+@inproceedings{szegedy2016rethinking,
+  title={Rethinking the inception architecture for computer vision},
+  author={Szegedy, Christian and Vanhoucke, Vincent and Ioffe, Sergey and Shlens, Jon and Wojna, Zbigniew},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={2818--2826},
+  year={2016}
+}
+
+@inproceedings{he2016identity,
+  title={Identity mappings in deep residual networks},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle={European conference on computer vision},
+  pages={630--645},
+  year={2016},
+  organization={Springer}
+}
+
+@inproceedings{suganuma2017genetic,
+  title={A genetic programming approach to designing convolutional neural network architectures},
+  author={Suganuma, Masanori and Shirakawa, Shinichi and Nagao, Tomoharu},
+  booktitle={Proceedings of the genetic and evolutionary computation conference},
+  pages={497--504},
+  year={2017}
+}
+
+@inproceedings{kim2017nemo,
+  title={Nemo: Neuro-evolution with multiobjective optimization of deep neural network for speed and accuracy},
+  author={Kim, Ye-Hoon and Reddy, Bhargava and Yun, Sojung and Seo, Chanwon},
+  booktitle={ICML 2017 AutoML workshop},
+  year={2017}
+}
+
+@inproceedings{lu2019nsga,
+  title={Nsga-net: neural architecture search using multi-objective genetic algorithm},
+  author={Lu, Zhichao and Whalen, Ian and Boddeti, Vishnu and Dhebar, Yashesh and Deb, Kalyanmoy and Goodman, Erik and Banzhaf, Wolfgang},
+  booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},
+  pages={419--427},
+  year={2019}
+}
+
+@ARTICLE{lu2020neural,
+  author={Lu, Zhichao and Sreekumar, Gautam and Goodman, Erik and Banzhaf, Wolfgang and Deb, Kalyanmoy and Boddeti, Vishnu Naresh},
+  journal={IEEE Trans. Pattern Anal. Mach. Intell.}, 
+  title={Neural Architecture Transfer}, 
+  year={2021},
+  volume={43},
+  number={9},
+  pages={2971-2989},
+  doi={10.1109/TPAMI.2021.3052758}}
+
+@inproceedings{chen2019progressive,
+  title={Progressive differentiable architecture search: Bridging the depth gap between search and evaluation},
+  author={Chen, Xin and Xie, Lingxi and Wu, Jun and Tian, Qi},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  pages={1294--1303},
+  year={2019}
+}
+
+@inproceedings{dong2019searching,
+  title={Searching for a robust neural architecture in four gpu hours},
+  author={Dong, Xuanyi and Yang, Yi},
+  booktitle={Proceedings of the IEEE Conference on computer vision and pattern recognition},
+  pages={1761--1770},
+  year={2019}
+}
+
+@inproceedings{tan2019mnasnet,
+  title={Mnasnet: Platform-aware neural architecture search for mobile},
+  author={Tan, Mingxing and Chen, Bo and Pang, Ruoming and Vasudevan, Vijay and Sandler, Mark and Howard, Andrew and Le, Quoc V},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2820--2828},
+  year={2019}
+}
+
+@inproceedings{zoph2018learning,
+  title={Learning transferable architectures for scalable image recognition},
+  author={Zoph, Barret and Vasudevan, Vijay and Shlens, Jonathon and Le, Quoc V},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={8697--8710},
+  year={2018}
+}
+
+@inproceedings{real2017large,
+  title={Large-scale evolution of image classifiers},
+  author={Real, Esteban and Moore, Sherry and Selle, Andrew and Saxena, Saurabh and Suematsu, Yutaka Leon and Tan, Jie and Le, Quoc V and Kurakin, Alexey},
+  booktitle={International Conference on Machine Learning},
+  pages={2902--2911},
+  year={2017},
+  organization={PMLR}
+}
+
+@article{krizhevsky2009learning,
+  title={Learning Multiple Layers of Features from Tiny Images},
+  author={Krizhevsky, A},
+  journal={Master's thesis, University of Tront},
+  year={2009}
+}
+
+@inproceedings{deng2009imagenet,
+  title={Imagenet: A large-scale hierarchical image database},
+  author={Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and Li, Kai and Fei-Fei, Li},
+  booktitle={2009 IEEE conference on computer vision and pattern recognition},
+  pages={248--255},
+  year={2009},
+  organization={Ieee}
+}
+
+@article{zhong2020blockqnn,
+  title={Blockqnn: Efficient block-wise neural network architecture generation},
+  author={Zhong, Zhao and Yang, Zichen and Deng, Boyang and Yan, Junjie and Wu, Wei and Shao, Jing and Liu, Cheng-Lin},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={43},
+  number={7},
+  pages={2314--2328},
+  year={2020},
+  publisher={IEEE}
+}
+
+@article{watkins1989learning,
+  title={Learning from delayed rewards},
+  author={Watkins, Christopher John Cornish Hellaby},
+  year={1989},
+  journal={King's College, Cambridge United Kingdom}
+}
+
+@article{schmitt2001theory,
+  title={Theory of genetic algorithms},
+  author={Schmitt, Lothar M},
+  journal={Theoretical Computer Science},
+  volume={259},
+  number={1-2},
+  pages={1--61},
+  year={2001},
+  publisher={Elsevier}
+}
+
+@article{miller1995genetic,
+  title={Genetic algorithms, tournament selection, and the effects of noise},
+  author={Miller, Brad L and Goldberg, David E and others},
+  journal={Complex systems},
+  volume={9},
+  number={3},
+  pages={193--212},
+  year={1995},
+  publisher={[Champaign, IL, USA: Complex Systems Publications, Inc., c1987-}
+}
+
+@inproceedings{schaffer1992combinations,
+  title={Combinations of genetic algorithms and neural networks: A survey of the state of the art},
+  author={Schaffer, J David and Whitley, Darrell and Eshelman, Larry J},
+  booktitle={[Proceedings] COGANN-92: International Workshop on Combinations of Genetic Algorithms and Neural Networks},
+  pages={1--37},
+  year={1992},
+  organization={IEEE}
+}
+
+@article{yao1999evolving,
+  title={Evolving artificial neural networks},
+  author={Yao, Xin},
+  journal={Proceedings of the IEEE},
+  volume={87},
+  number={9},
+  pages={1423--1447},
+  year={1999},
+  publisher={IEEE}
+}
+
+@article{stanley2002evolving,
+  title={Evolving neural networks through augmenting topologies},
+  author={Stanley, Kenneth O and Miikkulainen, Risto},
+  journal={Evolutionary computation},
+  volume={10},
+  number={2},
+  pages={99--127},
+  year={2002},
+  publisher={MIT Press}
+}
+
+@article{inden2012evolving,
+  title={Evolving neural fields for problems with large input and output spaces},
+  author={Inden, Benjamin and Jin, Yaochu and Haschke, Robert and Ritter, Helge},
+  journal={Neural Networks},
+  volume={28},
+  pages={24--39},
+  year={2012},
+  publisher={Elsevier}
+}
+
+@incollection{bengio2012practical,
+  title={Practical recommendations for gradient-based training of deep architectures},
+  author={Bengio, Yoshua},
+  booktitle={Neural networks: Tricks of the trade},
+  pages={437--478},
+  year={2012},
+  publisher={Springer}
+}
+
+@inproceedings{xie2017genetic,
+  title={Genetic cnn},
+  author={Xie, Lingxi and Yuille, Alan},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={1379--1388},
+  year={2017}
+}
+
+@incollection{miikkulainen2019evolving,
+  title={Evolving deep neural networks},
+  author={Miikkulainen, Risto and Liang, Jason and Meyerson, Elliot and Rawal, Aditya and Fink, Daniel and Francon, Olivier and Raju, Bala and Shahrzad, Hormoz and Navruzyan, Arshak and Duffy, Nigel and others},
+  booktitle={Artificial intelligence in the age of neural networks and brain computing},
+  pages={293--312},
+  year={2019},
+  publisher={Elsevier}
+}
+
+@inproceedings{liang2018evolutionary,
+  title={Evolutionary architecture search for deep multitask networks},
+  author={Liang, Jason and Meyerson, Elliot and Miikkulainen, Risto},
+  booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},
+  pages={466--473},
+  year={2018}
+}
+
+@article{saxena2016convolutional,
+  title={Convolutional neural fabrics},
+  author={Saxena, Shreyas and Verbeek, Jakob},
+  journal={Advances in neural information processing systems},
+  volume={29},
+  year={2016}
+}
+
+@book{mitchell1998introduction,
+  title={An introduction to genetic algorithms},
+  author={Mitchell, Melanie},
+  year={1998},
+  publisher={MIT press}
+}
+
+@ARTICLE{9075201,
+  author={Sun, Yanan and Xue, Bing and Zhang, Mengjie and Yen, Gary G. and Lv, Jiancheng},
+  journal={IEEE Transactions on Cybernetics}, 
+  title={Automatically Designing CNN Architectures Using the Genetic Algorithm for Image Classification}, 
+  year={2020},
+  volume={50},
+  number={9},
+  pages={3840-3854},
+  doi={10.1109/TCYB.2020.2983860}}
+
+@ARTICLE{8742788,
+  author={Sun, Yanan and Xue, Bing and Zhang, Mengjie and Yen, Gary G.},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Completely Automated CNN Architecture Design Based on Blocks}, 
+  year={2020},
+  volume={31},
+  number={4},
+  pages={1242-1254},
+  doi={10.1109/TNNLS.2019.2919608}}
+  
+@ARTICLE{9439793,
+  author={O’Neill, Damien and Xue, Bing and Zhang, Mengjie},
+  journal={IEEE Transactions on Evolutionary Computation}, 
+  title={Evolutionary Neural Architecture Search for High-Dimensional Skip-Connection Structures on DenseNet Style Networks}, 
+  year={2021},
+  volume={25},
+  number={6},
+  pages={1118-1132},
+  doi={10.1109/TEVC.2021.3083315}}
+
+@article{zhang2021adaptive,
+  title={AS-NAS: Adaptive scalable neural architecture search with reinforced evolutionary algorithm for deep learning},
+  author={Zhang, Tong and Lei, Chunyu and Zhang, Zongyan and Meng, Xian-Bing and Chen, CL Philip},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={25},
+  number={5},
+  pages={830--841},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{liu2020block,
+  title={Block proposal neural architecture search},
+  author={Liu, Jiaheng and Zhou, Shunfeng and Wu, Yichao and Chen, Ken and Ouyang, Wanli and Xu, Dong},
+  journal={IEEE Transactions on Image Processing},
+  volume={30},
+  pages={15--25},
+  year={2020},
+  publisher={IEEE}
+}
+
+@article{sun2018evolving,
+  title={Evolving unsupervised deep neural networks for learning meaningful representations},
+  author={Sun, Yanan and Yen, Gary G and Yi, Zhang},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={23},
+  number={1},
+  pages={89--103},
+  year={2018},
+  publisher={IEEE}
+}
+
+@article{deb2002fast,
+  title={A fast and elitist multiobjective genetic algorithm: NSGA-II},
+  author={Deb, Kalyanmoy and Pratap, Amrit and Agarwal, Sameer and Meyarivan, TAMT},
+  journal={IEEE transactions on evolutionary computation},
+  volume={6},
+  number={2},
+  pages={182--197},
+  year={2002},
+  publisher={IEEE}
+}
+
+% not cited!
+@article{lu2020multi,
+  title={Multiobjective evolutionary design of deep convolutional neural networks for image classification},
+  author={Lu, Zhichao and Whalen, Ian and Dhebar, Yashesh and Deb, Kalyanmoy and Goodman, Erik D and Banzhaf, Wolfgang and Boddeti, Vishnu Naresh},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={25},
+  number={2},
+  pages={277--291},
+  year={2020},
+}
+
+@article{lu2021neural,
+  title={Neural architecture transfer},
+  author={Lu, Zhichao and Sreekumar, Gautam and Goodman, Erik and Banzhaf, Wolfgang and Deb, Kalyanmoy and Boddeti, Vishnu Naresh},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume={43},
+  number={9},
+  pages={2971--2989},
+  year={2021},
+  publisher={IEEE}
+}
+
+@inproceedings{guo2020single,
+  title={Single path one-shot neural architecture search with uniform sampling},
+  author={Guo, Zichao and Zhang, Xiangyu and Mu, Haoyuan and Heng, Wen and Liu, Zechun and Wei, Yichen and Sun, Jian},
+  booktitle={European Conference on Computer Vision},
+  pages={544--560},
+  year={2020},
+  organization={Springer}
+}
+
+@article{elsken2018efficient,
+  title={Efficient multi-objective neural architecture search via lamarckian evolution},
+  author={Elsken, Thomas and Metzen, Jan Hendrik and Hutter, Frank},
+  journal={arXiv preprint arXiv:1804.09081},
+  year={2018}
+}
+
+@article{wen2021two,
+  title={Two-Stage Evolutionary Neural Architecture Search for Transfer Learning},
+  author={Wen, Yu-Wei and Peng, Sheng-Hsuan and Ting, Chuan-Kang},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={25},
+  number={5},
+  pages={928--940},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{zhu2019multi,
+  title={Multi-objective evolutionary federated learning},
+  author={Zhu, Hangyu and Jin, Yaochu},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  volume={31},
+  number={4},
+  pages={1310--1322},
+  year={2019},
+  publisher={IEEE}
+}
+
+@article{zhu2021federatednas,
+  title={From federated learning to federated neural architecture search: a survey},
+  author={Zhu, Hangyu and Zhang, Haoyu and Jin, Yaochu},
+  journal={Complex \& Intelligent Systems},
+  volume={7},
+  number={2},
+  pages={639--657},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{zela2018towards,
+  title={Towards automated deep learning: Efficient joint neural architecture and hyperparameter search},
+  author={Zela, Arber and Klein, Aaron and Falkner, Stefan and Hutter, Frank},
+  journal={arXiv preprint arXiv:1807.06906},
+  year={2018}
+}
+
+@inproceedings{klein2017fast,
+  title={Fast bayesian optimization of machine learning hyperparameters on large datasets},
+  author={Klein, Aaron and Falkner, Stefan and Bartels, Simon and Hennig, Philipp and Hutter, Frank},
+  booktitle={Artificial intelligence and statistics},
+  pages={528--536},
+  year={2017},
+  organization={PMLR}
+}
+
+@article{xu2021partially,
+  title={Partially-connected neural architecture search for reduced computational redundancy},
+  author={Xu, Yuhui and Xie, Lingxi and Dai, Wenrui and Zhang, Xiaopeng and Chen, Xin and Qi, Guo-Jun and Xiong, Hongkai and Tian, Qi},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume={43},
+  number={9},
+  pages={2953--2970},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{chrabaszcz2017downsampled,
+  title={A downsampled variant of imagenet as an alternative to the cifar datasets},
+  author={Chrabaszcz, Patryk and Loshchilov, Ilya and Hutter, Frank},
+  journal={arXiv preprint arXiv:1707.08819},
+  year={2017}
+}
+
+@inproceedings{lin2014microsoft,
+  title={Microsoft coco: Common objects in context},
+  author={Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Doll{\'a}r, Piotr and Zitnick, C Lawrence},
+  booktitle={European conference on computer vision},
+  pages={740--755},
+  year={2014},
+  organization={Springer}
+}
+
+@inproceedings{pham2018efficient,
+  title={Efficient neural architecture search via parameters sharing},
+  author={Pham, Hieu and Guan, Melody and Zoph, Barret and Le, Quoc and Dean, Jeff},
+  booktitle={International conference on machine learning},
+  pages={4095--4104},
+  year={2018},
+  organization={PMLR}
+}
+
+@article{luo2018neural,
+  title={Neural architecture optimization},
+  author={Luo, Renqian and Tian, Fei and Qin, Tao and Chen, Enhong and Liu, Tie-Yan},
+  journal={Advances in neural information processing systems},
+  volume={31},
+  year={2018}
+}
+
+@inproceedings{bender2018understanding,
+  title={Understanding and simplifying one-shot architecture search},
+  author={Bender, Gabriel and Kindermans, Pieter-Jan and Zoph, Barret and Vasudevan, Vijay and Le, Quoc},
+  booktitle={International Conference on Machine Learning},
+  pages={550--559},
+  year={2018},
+  organization={PMLR}
+}
+
+@article{zhang2020efficient,
+  title={Efficient evolutionary search of attention convolutional networks via sampled training and node inheritance},
+  author={Zhang, Haoyu and Jin, Yaochu and Cheng, Ran and Hao, Kuangrong},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={25},
+  number={2},
+  pages={371--385},
+  year={2020},
+  publisher={IEEE}
+}
+
+@inproceedings{xu2019pc,
+  title={PC-DARTS: Partial Channel Connections for Memory-Efficient Architecture Search},
+  author={Xu, Yuhui and Xie, Lingxi and Zhang, Xiaopeng and Chen, Xin and Qi, Guo-Jun and Tian, Qi and Xiong, Hongkai},
+  booktitle={International Conference on Learning Representations},
+  year={2019}
+}
+
+@inproceedings{xie2018snas,
+  title={SNAS: stochastic neural architecture search},
+  author={Xie, Sirui and Zheng, Hehui and Liu, Chunxiao and Lin, Liang},
+  booktitle={International Conference on Learning Representations},
+  year={2018}
+}
+
+@inproceedings{cai2018proxylessnas,
+  title={ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware},
+  author={Cai, Han and Zhu, Ligeng and Han, Song},
+  booktitle={International Conference on Learning Representations},
+  year={2019}
+}
+
+@inproceedings{benyahia2019overcoming,
+  title={Overcoming multi-model forgetting},
+  author={Benyahia, Yassine and Yu, Kaicheng and Smires, Kamil Bennani and Jaggi, Martin and Davison, Anthony C and Salzmann, Mathieu and Musat, Claudiu},
+  booktitle={International Conference on Machine Learning},
+  pages={594--603},
+  year={2019},
+  organization={PMLR}
+}
+
+@inproceedings{chu2021fairnas,
+  title={Fairnas: Rethinking evaluation fairness of weight sharing neural architecture search},
+  author={Chu, Xiangxiang and Zhang, Bo and Xu, Ruijun},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={12239--12248},
+  year={2021}
+}
+
+@ARTICLE{9488309,
+  author={Tan, Hao and Cheng, Ran and Huang, Shihua and He, Cheng and Qiu, Changxiao and Yang, Fan and Luo, Ping},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={RelativeNAS: Relative Neural Architecture Search via Slow-Fast Learning}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-15},
+  doi={10.1109/TNNLS.2021.3096658}}
+
+@inproceedings{ghiasi2019fpn,
+  title={Nas-fpn: Learning scalable feature pyramid architecture for object detection},
+  author={Ghiasi, Golnaz and Lin, Tsung-Yi and Le, Quoc V},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={7036--7045},
+  year={2019}
+}
+
+@inproceedings{wang2020fcos,
+  title={NAS-FCOS: Fast neural architecture search for object detection},
+  author={Wang, Ning and Gao, Yang and Chen, Hao and Wang, Peng and Tian, Zhi and Shen, Chunhua and Zhang, Yanning},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11943--11951},
+  year={2020}
+}
+
+@inproceedings{du2020spinenet,
+  title={SpineNet: Learning scale-permuted backbone for recognition and localization},
+  author={Du, Xianzhi and Lin, Tsung-Yi and Jin, Pengchong and Ghiasi, Golnaz and Tan, Mingxing and Cui, Yin and Le, Quoc V and Song, Xiaodan},
+  booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+  pages={11592--11601},
+  year={2020}
+}
+
+@inproceedings{yao2020sm,
+  title={SM-NAS: structural-to-modular neural architecture search for object detection},
+  author={Yao, Lewei and Xu, Hang and Zhang, Wei and Liang, Xiaodan and Li, Zhenguo},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={34},
+  number={07},
+  pages={12661--12668},
+  year={2020}
+}
+
+@inproceedings{liang2021opanas,
+  title={OPANAS: One-Shot Path Aggregation Network Architecture Search for Object Detection},
+  author={Liang, Tingting and Wang, Yongtao and Tang, Zhi and Hu, Guosheng and Ling, Haibin},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={10195--10203},
+  year={2021}
+}
+
+@inproceedings{jiang2020sp,
+  title={SP-NAS: Serial-to-parallel backbone search for object detection},
+  author={Jiang, Chenhan and Xu, Hang and Zhang, Wei and Liang, Xiaodan and Li, Zhenguo},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11863--11872},
+  year={2020}
+}
+
+@inproceedings{yao2021joint,
+  title={Joint-DetNAS: Upgrade Your Detector with NAS, Pruning and Dynamic Distillation},
+  author={Yao, Lewei and Pi, Renjie and Xu, Hang and Zhang, Wei and Li, Zhenguo and Zhang, Tong},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={10175--10184},
+  year={2021}
+}
+
+@article{hinton2015distilling,
+  title={Distilling the Knowledge in a Neural Network},
+  author={Hinton, Geoffrey and Vinyals, Oriol and Dean, Jeff},
+  journal={stat},
+  volume={1050},
+  pages={9},
+  year={2015}
+}
+
+@inproceedings{guo2020hit,
+  title={Hit-detector: Hierarchical trinity architecture search for object detection},
+  author={Guo, Jianyuan and Han, Kai and Wang, Yunhe and Zhang, Chao and Yang, Zhaohui and Wu, Han and Chen, Xinghao and Xu, Chang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11405--11414},
+  year={2020}
+}
+
+@inproceedings{xiong2021mobiledets,
+  title={Mobiledets: Searching for object detection architectures for mobile accelerators},
+  author={Xiong, Yunyang and Liu, Hanxiao and Gupta, Suyog and Akin, Berkin and Bender, Gabriel and Wang, Yongzhe and Kindermans, Pieter-Jan and Tan, Mingxing and Singh, Vikas and Chen, Bo},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={3825--3834},
+  year={2021}
+}
+
+@article{chen2019detnas,
+  title={Detnas: Backbone search for object detection},
+  author={Chen, Yukang and Yang, Tong and Zhang, Xiangyu and Meng, Gaofeng and Xiao, Xinyu and Sun, Jian},
+  journal={Advances in Neural Information Processing Systems},
+  volume={32},
+  pages={6642--6652},
+  year={2019}
+}
+
+@ARTICLE{9293177,
+  author={Fang, Jiemin and Sun, Yuzhu and Zhang, Qian and Peng, Kangjian and Li, Yuan and Liu, Wenyu and Wang, Xinggang},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={FNA++: Fast Network Adaptation via Parameter Remapping and Architecture Search}, 
+  year={2021},
+  volume={43},
+  number={9},
+  pages={2990-3004},
+  doi={10.1109/TPAMI.2020.3044416}}
+
+@article{chen2015net2net,
+  title={Net2net: Accelerating learning via knowledge transfer},
+  author={Chen, Tianqi and Goodfellow, Ian and Shlens, Jonathon},
+  journal={arXiv preprint arXiv:1511.05641},
+  year={2015}
+}
+
+@article{cai2017reinforcement,
+  title={Reinforcement learning for architecture search by network transformation},
+  author={Cai, Han and Chen, Tianyao and Zhang, Weinan and Yu, Yong and Wang, Jun},
+  journal={arXiv preprint arXiv:1707.04873},
+  volume={4},
+  year={2017}
+}
+
+@inproceedings{cai2018efficient,
+  title={Efficient architecture search by network transformation},
+  author={Cai, Han and Chen, Tianyao and Zhang, Weinan and Yu, Yong and Wang, Jun},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={32},
+  number={1},
+  year={2018}
+}
+
+@article{zhou2021bayesian,
+  title={Bayesian differentiable architecture search for efficient domain matching fault diagnosis},
+  author={Zhou, Zheng and Li, Tianfu and Zhang, Zilong and Zhao, Zhibin and Sun, Chuang and Yan, Ruqiang and Chen, Xuefeng},
+  journal={IEEE Transactions on Instrumentation and Measurement},
+  volume={70},
+  pages={1--11},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{ding2021bnas,
+  author={Ding, Zixiang and Chen, Yaran and Li, Nannan and Zhao, Dongbin and Sun, Zhiquan and Chen, C. L. Philip},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={BNAS: Efficient Neural Architecture Search Using Broad Scalable Architecture}, 
+  year={2022},
+  volume={33},
+  number={9},
+  pages={5004-5018}
+}
+
+@article{o2021evolutionary,
+  title={Evolutionary neural architecture search for high-dimensional skip-connection structures on densenet style networks},
+  author={O’Neill, Damien and Xue, Bing and Zhang, Mengjie},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={25},
+  number={6},
+  pages={1118--1132},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{zhou2021exploiting,
+  title={Exploiting operation importance for differentiable neural architecture search},
+  author={Zhou, Yuan and Xie, Xukai and Kung, Sun-Yuan},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{zoph2016neural,
+  title={Neural architecture search with reinforcement learning},
+  author={Zoph, Barret and Le, Quoc V},
+  journal={arXiv preprint arXiv:1611.01578},
+  year={2016}
+}
+
+
+
+@inproceedings{yang2020cars,
+  title={Cars: Continuous evolution for efficient neural architecture search},
+  author={Yang, Zhaohui and Wang, Yunhe and Chen, Xinghao and Shi, Boxin and Xu, Chao and Xu, Chunjing and Tian, Qi and Xu, Chang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={1829--1838},
+  year={2020}
+}
+
+@inproceedings{sun2018semi,
+  title={Semi-supervised learning assisted particle swarm optimization of computationally expensive problems},
+  author={Sun, Chaoli and Jin, Yaochu and Tan, Ying},
+  booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},
+  pages={45--52},
+  year={2018}
+}
+
+@article{wang2021transfer,
+  title={Transfer Learning Based Co-surrogate Assisted Evolutionary Bi-objective Optimization for Objectives with Non-uniform Evaluation Times},
+  author={Wang, Xilu and Jin, Yaochu and Schmitt, Sebastian and Olhofer, Markus},
+  journal={Evolutionary computation},
+  pages={1--27},
+  year={2021}
+}
+
+@article{wang2016data,
+  title={Data-driven surrogate-assisted multiobjective evolutionary optimization of a trauma system},
+  author={Wang, Handing and Jin, Yaochu and Jansen, Jan O},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={20},
+  number={6},
+  pages={939--952},
+  year={2016},
+  publisher={IEEE}
+}
+
+@article{jin2011surrogate,
+  title={Surrogate-assisted evolutionary computation: Recent advances and future challenges},
+  author={Jin, Yaochu},
+  journal={Swarm and Evolutionary Computation},
+  volume={1},
+  number={2},
+  pages={61--70},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@article{jin2005comprehensive,
+  title={A comprehensive survey of fitness approximation in evolutionary computation},
+  author={Jin, Yaochu},
+  journal={Soft computing},
+  volume={9},
+  number={1},
+  pages={3--12},
+  year={2005},
+  publisher={Springer}
+}
+
+@article{jin2018data,
+  title={Data-driven evolutionary optimization: An overview and case studies},
+  author={Jin, Yaochu and Wang, Handing and Chugh, Tinkle and Guo, Dan and Miettinen, Kaisa},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={23},
+  number={3},
+  pages={442--458},
+  year={2018},
+  publisher={IEEE}
+}
+
+
+@article{tao2019application,
+  title={Application of deep learning based multi-fidelity surrogate model to robust aerodynamic design optimization},
+  author={Tao, Jun and Sun, Gang},
+  journal={Aerospace Science and Technology},
+  volume={92},
+  pages={722--737},
+  year={2019},
+  publisher={Elsevier}
+}
+
+@inproceedings{jin2019auto,
+  title={Auto-keras: An efficient neural architecture search system},
+  author={Jin, Haifeng and Song, Qingquan and Hu, Xia},
+  booktitle={Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery \& data mining},
+  pages={1946--1956},
+  year={2019}
+}
+
+@inproceedings{kandasamy2018neural,
+  title={Neural architecture search with bayesian optimisation and optimal transport},
+  author={Kandasamy, Kirthevasan and Neiswanger, Willie and Schneider, Jeff and Poczos, Barnabas and Xing, Eric P},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={31},
+  year={2018}
+}
+
+@inproceedings{white2021bananas,
+  title={BANANAS: Bayesian Optimization with Neural Architectures for Neural Architecture Search},
+  author={White, Colin and Neiswanger, Willie and Savani, Yash},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={35},
+  number={12},
+  pages={10293--10301},
+  year={2021}
+}
+
+@article{shi2020bridging,
+  title={Bridging the gap between sample-based and one-shot neural architecture search with bonas},
+  author={Shi, Han and Pi, Renjie and Xu, Hang and Li, Zhenguo and Kwok, James and Zhang, Tong},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  pages={1808--1819},
+  year={2020}
+}
+
+@article{kipf2016semi,
+  title={Semi-supervised classification with graph convolutional networks},
+  author={Kipf, Thomas N and Welling, Max},
+  journal={arXiv preprint arXiv:1609.02907},
+  year={2016}
+}
+
+@inproceedings{zhou2019bayesnas,
+  title={Bayesnas: A bayesian approach for neural architecture search},
+  author={Zhou, Hongpeng and Yang, Minghao and Wang, Jun and Pan, Wei},
+  booktitle={International conference on machine learning},
+  pages={7603--7613},
+  year={2019},
+  organization={PMLR}
+}
+
+@inproceedings{ma2019deep,
+  title={Deep neural architecture search with deep graph bayesian optimization},
+  author={Ma, Lizheng and Cui, Jiaxu and Yang, Bo},
+  booktitle={2019 IEEE/WIC/ACM International Conference on Web Intelligence (WI)},
+  pages={500--507},
+  year={2019},
+  organization={IEEE}
+}
+
+@article{ru2020neural,
+  title={Neural architecture generator optimization},
+  author={Ru, Robin and Esperanca, Pedro and Carlucci, Fabio Maria},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  pages={12057--12069},
+  year={2020}
+}
+
+@inproceedings{li2020gp,
+  title={Gp-nas: Gaussian process based neural architecture search},
+  author={Li, Zhihang and Xi, Teng and Deng, Jiankang and Zhang, Gang and Wen, Shengzhao and He, Ran},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11933--11942},
+  year={2020}
+}
+
+@article{trofimov2020multi,
+  title={Multi-fidelity neural architecture search with knowledge distillation},
+  author={Trofimov, Ilya and Klyuchnikov, Nikita and Salnikov, Mikhail and Filippov, Alexander and Burnaev, Evgeny},
+  journal={arXiv preprint arXiv:2006.08341},
+  year={2020}
+}
+
+@article{ru2020interpretable,
+  title={Interpretable neural architecture search via bayesian optimisation with weisfeiler-lehman kernels},
+  author={Ru, Binxin and Wan, Xingchen and Dong, Xiaowen and Osborne, Michael},
+  journal={arXiv preprint arXiv:2006.07556},
+  year={2020}
+}
+
+@article{wei2020npenas,
+  title={Npenas: Neural predictor guided evolution for neural architecture search},
+  author={Wei, Chen and Niu, Chuang and Tang, Yiping and Wang, Yue and Hu, Haihong and Liang, Jimin},
+  journal={arXiv preprint arXiv:2003.12857},
+  year={2020}
+}
+
+@article{liu2021survey,
+  author={Liu, Yuqiao and Sun, Yanan and Xue, Bing and Zhang, Mengjie and Yen, Gary G. and Tan, Kay Chen},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={A Survey on Evolutionary Neural Architecture Search}, 
+  year={2021}
+}
+
+@article{white2020study,
+  title={A study on encodings for neural architecture search},
+  author={White, Colin and Neiswanger, Willie and Nolen, Sam and Savani, Yash},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  pages={20309--20319},
+  year={2020}
+}
+
+@inproceedings{real2019regularized,
+  title={Regularized evolution for image classifier architecture search},
+  author={Real, Esteban and Aggarwal, Alok and Huang, Yanping and Le, Quoc V},
+  booktitle={Proceedings of the aaai conference on artificial intelligence},
+  volume={33},
+  number={01},
+  pages={4780--4789},
+  year={2019}
+}
+
+@article{liu2017hierarchical,
+  title={Hierarchical representations for efficient architecture search},
+  author={Liu, Hanxiao and Simonyan, Karen and Vinyals, Oriol and Fernando, Chrisantha and Kavukcuoglu, Koray},
+  journal={arXiv preprint arXiv:1711.00436},
+  year={2017}
+}
+
+@incollection{zhu2021toward,
+  title={Toward Real-Time Federated Evolutionary Neural Architecture Search},
+  author={Zhu, Hangyu and Jin, Yaochu},
+  booktitle={Automated Design of Machine Learning and Search Algorithms},
+  pages={133--147},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{sun2019surrogate,
+  title={Surrogate-assisted evolutionary deep learning using an end-to-end random forest-based performance predictor},
+  author={Sun, Yanan and Wang, Handing and Xue, Bing and Jin, Yaochu and Yen, Gary G and Zhang, Mengjie},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={24},
+  number={2},
+  pages={350--364},
+  year={2019},
+  publisher={IEEE}
+}
+
+@article{rawal2018nodes,
+  title={From nodes to networks: Evolving recurrent neural networks},
+  author={Rawal, Aditya and Miikkulainen, Risto},
+  journal={arXiv preprint arXiv:1803.04439},
+  year={2018}
+}
+
+@inproceedings{klein2016learning,
+  title={Learning curve prediction with Bayesian neural networks},
+  author={Klein, Aaron and Falkner, Stefan and Springenberg, Jost Tobias and Hutter, Frank},
+  booktitle={International Conference on Learning Representations},
+  year={2016}
+}
+
+@article{deng2017peephole,
+  title={Peephole: Predicting network performance before training},
+  author={Deng, Boyang and Yan, Junjie and Lin, Dahua},
+  journal={arXiv preprint arXiv:1712.03351},
+  year={2017}
+}
+
+@inproceedings{domhan2015speeding,
+  title={Speeding up automatic hyperparameter optimization of deep neural networks by extrapolation of learning curves},
+  author={Domhan, Tobias and Springenberg, Jost Tobias and Hutter, Frank},
+  booktitle={Twenty-fourth international joint conference on artificial intelligence},
+  year={2015}
+}
+
+@article{sun2019completely,
+  title={Completely automated CNN architecture design based on blocks},
+  author={Sun, Yanan and Xue, Bing and Zhang, Mengjie and Yen, Gary G},
+  journal={IEEE transactions on neural networks and learning systems},
+  volume={31},
+  number={4},
+  pages={1242--1254},
+  year={2019},
+  publisher={IEEE}
+}
+
+@inproceedings{ho1995random,
+  title={Random decision forests},
+  author={Ho, Tin Kam},
+  booktitle={Proceedings of 3rd international conference on document analysis and recognition},
+  volume={1},
+  pages={278--282},
+  year={1995},
+  organization={IEEE}
+}
+
+@article{baker2017accelerating,
+  title={Accelerating neural architecture search using performance prediction},
+  author={Baker, Bowen and Gupta, Otkrist and Raskar, Ramesh and Naik, Nikhil},
+  journal={arXiv preprint arXiv:1705.10823},
+  year={2017}
+}
+
+@book{sun2021data,
+  title={Data-Driven Evolutionary Optimization: Integrating Evolutionary Computation, Machine Learning and Data Science},
+  author={Sun, Chaoli and Wang, Handing and Jin, Yaochu},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{wei2022npenas,
+  title={Npenas: Neural predictor guided evolution for neural architecture search},
+  author={Wei, Chen and Niu, Chuang and Tang, Yiping and Wang, Yue and Hu, Haihong and Liang, Jimin},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2022},
+  publisher={IEEE}
+}
+
+@article{xu2018powerful,
+  title={How powerful are graph neural networks?},
+  author={Xu, Keyulu and Hu, Weihua and Leskovec, Jure and Jegelka, Stefanie},
+  journal={arXiv preprint arXiv:1810.00826},
+  year={2018}
+}
+
+@inproceedings{ying2019bench,
+  title={Nas-bench-101: Towards reproducible neural architecture search},
+  author={Ying, Chris and Klein, Aaron and Christiansen, Eric and Real, Esteban and Murphy, Kevin and Hutter, Frank},
+  booktitle={International Conference on Machine Learning},
+  pages={7105--7114},
+  year={2019},
+  organization={PMLR}
+}
+
+@article{dong2020bench,
+  title={Nas-bench-201: Extending the scope of reproducible neural architecture search},
+  author={Dong, Xuanyi and Yang, Yi},
+  journal={arXiv preprint arXiv:2001.00326},
+  year={2020}
+}
+
+@article{sun2021novel,
+  title={A novel training protocol for performance predictors of evolutionary neural architecture search algorithms},
+  author={Sun, Yanan and Sun, Xian and Fang, Yuhan and Yen, Gary G and Liu, Yuqiao},
+  journal={IEEE Transactions on Evolutionary Computation},
+  volume={25},
+  number={3},
+  pages={524--536},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{white2021powerful,
+  title={How Powerful are Performance Predictors in Neural Architecture Search?},
+  author={White, Colin and Zela, Arber and Ru, Robin and Liu, Yang and Hutter, Frank},
+  journal={Advances in Neural Information Processing Systems},
+  volume={34},
+  year={2021}
+}
+
+@inproceedings{wen2020neural,
+  title={Neural predictor for neural architecture search},
+  author={Wen, Wei and Liu, Hanxiao and Chen, Yiran and Li, Hai and Bender, Gabriel and Kindermans, Pieter-Jan},
+  booktitle={European Conference on Computer Vision},
+  pages={660--676},
+  year={2020},
+  organization={Springer}
+}
+
+@article{casale2019probabilistic,
+  title={Probabilistic neural architecture search},
+  author={Casale, Francesco Paolo and Gordon, Jonathan and Fusi, Nicolo},
+  journal={arXiv preprint arXiv:1902.05116},
+  year={2019}
+}
+
+@inproceedings{lukasik2020neural,
+  title={Neural architecture performance prediction using graph neural networks},
+  author={Lukasik, Jovita and Friede, David and Stuckenschmidt, Heiner and Keuper, Margret},
+  booktitle={DAGM German Conference on Pattern Recognition},
+  pages={188--201},
+  year={2020},
+  organization={Springer}
+}
+
+@article{wu2020comprehensive,
+  title={A comprehensive survey on graph neural networks},
+  author={Wu, Zonghan and Pan, Shirui and Chen, Fengwen and Long, Guodong and Zhang, Chengqi and Philip, S Yu},
+  journal={IEEE transactions on neural networks and learning systems},
+  volume={32},
+  number={1},
+  pages={4--24},
+  year={2020},
+  publisher={IEEE}
+}
+
+@inproceedings{tang2020semi,
+  title={A semi-supervised assessor of neural architectures},
+  author={Tang, Yehui and Wang, Yunhe and Xu, Yixing and Chen, Hanting and Shi, Boxin and Xu, Chao and Xu, Chunjing and Tian, Qi and Xu, Chang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages={1810--1819},
+  year={2020}
+}
+
+@article{mauch2020efficient,
+  title={Efficient sampling for predictor-based neural architecture search},
+  author={Mauch, Lukas and Tiedemann, Stephen and Garcia, Javier Alonso and Cong, Bac Nguyen and Yoshiyama, Kazuki and Cardinaux, Fabien and Kemp, Thomas},
+  journal={arXiv preprint arXiv:2011.12043},
+  year={2020}
+}
+
+@inproceedings{xu2021renas,
+  title={Renas: Relativistic evaluation of neural architecture search},
+  author={Xu, Yixing and Wang, Yunhe and Han, Kai and Tang, Yehui and Jui, Shangling and Xu, Chunjing and Xu, Chang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={4411--4420},
+  year={2021}
+}
+
+@inproceedings{mcmahan2017communication,
+  title={Communication-efficient learning of deep networks from decentralized data},
+  author={McMahan, Brendan and Moore, Eider and Ramage, Daniel and Hampson, Seth and y Arcas, Blaise Aguera},
+  booktitle={Artificial intelligence and statistics},
+  pages={1273--1282},
+  year={2017},
+  organization={PMLR}
+}
+
+@article{zhu2021from,
+  title={From federated learning to federated neural architecture search: a survey},
+  author={Zhu, Hangyu and Zhang, Haoyu and Jin, Yaochu},
+  journal={Complex \& Intelligent Systems},
+  volume={7},
+  number={2},
+  pages={639--657},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{zhu2021federated,
+  title={Federated learning on non-IID data: A survey},
+  author={Zhu, Hangyu and Xu, Jinjin and Liu, Shiqing and Jin, Yaochu},
+  journal={Neurocomputing},
+  volume={465},
+  pages={371--390},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@article{singh2020differentially,
+  title={Differentially-private federated neural architecture search},
+  author={Singh, Ishika and Zhou, Haoyi and Yang, Kunlin and Ding, Meng and Lin, Bill and Xie, Pengtao},
+  journal={arXiv preprint arXiv:2006.10559},
+  year={2020}
+}
+
+@article{liang2021self,
+  title={Self-supervised cross-silo federated neural architecture search},
+  author={Liang, Xinle and Liu, Yang and Luo, Jiahuan and He, Yuanqin and Chen, Tianjian and Yang, Qiang},
+  journal={arXiv preprint arXiv:2101.11896},
+  year={2021}
+}
+
+@article{yang2019federated,
+  title={Federated machine learning: Concept and applications},
+  author={Yang, Qiang and Liu, Yang and Chen, Tianjian and Tong, Yongxin},
+  journal={ACM Transactions on Intelligent Systems and Technology (TIST)},
+  volume={10},
+  number={2},
+  pages={1--19},
+  year={2019},
+  publisher={ACM New York, NY, USA}
+}
+
+@article{xu2020federated,
+  title={Federated neural architecture search},
+  author={Xu, Mengwei and Zhao, Yuxin and Bian, Kaigui and Huang, Gang and Mei, Qiaozhu and Liu, Xuanzhe},
+  journal={arXiv preprint arXiv:2002.06352},
+  year={2020}
+}
+
+@article{he2020towards,
+  title={Towards Non-IID and invisible data with fednas: federated deep learning via neural architecture search},
+  author={He, Chaoyang and Annavaram, Murali and Avestimehr, Salman},
+  journal={arXiv preprint arXiv:2004.08546},
+  year={2020}
+}
+
+@article{zhao2018federated,
+  title={Federated learning with non-iid data},
+  author={Zhao, Yue and Li, Meng and Lai, Liangzhen and Suda, Naveen and Civin, Damon and Chandra, Vikas},
+  journal={arXiv preprint arXiv:1806.00582},
+  year={2018}
+}
+
+@article{dwork2014algorithmic,
+  title={The algorithmic foundations of differential privacy.},
+  author={Dwork, Cynthia and Roth, Aaron and others},
+  journal={Found. Trends Theor. Comput. Sci.},
+  volume={9},
+  number={3-4},
+  pages={211--407},
+  year={2014}
+}
+
+@article{zhu2019deep,
+  title={Deep leakage from gradients},
+  author={Zhu, Ligeng and Liu, Zhijian and Han, Song},
+  journal={Advances in Neural Information Processing Systems},
+  volume={32},
+  year={2019}
+}
+
+@article{tian2021evolutionary,
+  title={Evolutionary large-scale multi-objective optimization: A survey},
+  author={Tian, Ye and Si, Langchun and Zhang, Xingyi and Cheng, Ran and He, Cheng and Tan, Kay Chen and Jin, Yaochu},
+  journal={ACM Computing Surveys (CSUR)},
+  volume={54},
+  number={8},
+  pages={1--34},
+  year={2021},
+  publisher={ACM New York, NY}
+}
+
+@inproceedings{lu2020nsganetv2,
+  title={Nsganetv2: Evolutionary multi-objective surrogate-assisted neural architecture search},
+  author={Lu, Zhichao and Deb, Kalyanmoy and Goodman, Erik and Banzhaf, Wolfgang and Boddeti, Vishnu Naresh},
+  booktitle={European Conference on Computer Vision},
+  pages={35--51},
+  year={2020},
+  organization={Springer}
+}
+
+@article{jin2008pareto,
+  title={Pareto-based multiobjective machine learning: An overview and case studies},
+  author={Jin, Yaochu and Sendhoff, Bernhard},
+  journal={IEEE Transactions on Systems, Man, and Cybernetics, Part C (Applications and Reviews)},
+  volume={38},
+  number={3},
+  pages={397--415},
+  year={2008},
+  publisher={IEEE}
+}
+
+@inproceedings{dong2018dpp,
+  title={Dpp-net: Device-aware progressive search for pareto-optimal neural architectures},
+  author={Dong, Jin-Dong and Cheng, An-Chieh and Juan, Da-Cheng and Wei, Wei and Sun, Min},
+  booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+  pages={517--531},
+  year={2018}
+}
+
+@inproceedings{hu2021multi,
+  title={Multi-objective Neural Architecture Search with Almost No Training},
+  author={Hu, Shengran and Cheng, Ran and He, Cheng and Lu, Zhichao},
+  booktitle={International Conference on Evolutionary Multi-Criterion Optimization},
+  pages={492--503},
+  year={2021},
+  organization={Springer}
+}
+
+@article{bonawitz2016practical,
+  title={Practical secure aggregation for federated learning on user-held data},
+  author={Bonawitz, Keith and Ivanov, Vladimir and Kreuter, Ben and Marcedone, Antonio and McMahan, H Brendan and Patel, Sarvar and Ramage, Daniel and Segal, Aaron and Seth, Karn},
+  journal={arXiv preprint arXiv:1611.04482},
+  year={2016}
+}
+
+@article{acar2018survey,
+  title={A survey on homomorphic encryption schemes: Theory and implementation},
+  author={Acar, Abbas and Aksu, Hidayet and Uluagac, A Selcuk and Conti, Mauro},
+  journal={ACM Computing Surveys (Csur)},
+  volume={51},
+  number={4},
+  pages={1--35},
+  year={2018},
+  publisher={ACM New York, NY, USA}
+}
+
+@inproceedings{ning2020generic,
+  title={A generic graph-based neural architecture encoding scheme for predictor-based nas},
+  author={Ning, Xuefei and Zheng, Yin and Zhao, Tianchen and Wang, Yu and Yang, Huazhong},
+  booktitle={European Conference on Computer Vision},
+  pages={189--204},
+  year={2020},
+  organization={Springer}
+}
+
+@inproceedings{sun2022gibbon,
+  title={Gibbon: efficient co-exploration of NN model and processing-in-memory architecture},
+  author={Sun, Hanbo and Wang, Chenyu and Zhu, Zhenhua and Ning, Xuefei and Dai, Guohao and Yang, Huazhong and Wang, Yu},
+  booktitle={2022 Design, Automation \& Test in Europe Conference \& Exhibition (DATE)},
+  pages={867--872},
+  year={2022},
+  organization={IEEE}
+}
+
+@article{ning2021evaluating,
+  title={Evaluating efficient performance estimators of neural architectures},
+  author={Ning, Xuefei and Tang, Changcheng and Li, Wenshuo and Zhou, Zixuan and Liang, Shuang and Yang, Huazhong and Wang, Yu},
+  journal={Advances in Neural Information Processing Systems},
+  volume={34},
+  pages={12265--12277},
+  year={2021}
+}
+
+@article{zhou2022close,
+  title={CLOSE: Curriculum Learning On the Sharing Extent Towards Better One-shot NAS},
+  author={Zhou, Zixuan and Ning, Xuefei and Cai, Yi and Han, Jiashu and Deng, Yiping and Dong, Yuhan and Yang, Huazhong and Wang, Yu},
+  journal={arXiv preprint arXiv:2207.07868},
+  year={2022}
+}
+
+@inproceedings{moser2022less,
+  title={Less is More: Proxy Datasets in NAS approaches},
+  author={Moser, Brian and Raue, Federico and Hees, J{\"o}rn and Dengel, Andreas},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={1953--1961},
+  year={2022}
+}
+
+@inproceedings{greenwood2022surrogate,
+  title={Surrogate-assisted neuroevolution},
+  author={Greenwood, Bryson and McDonnell, Tyler},
+  booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},
+  pages={1048--1056},
+  year={2022}
+}
+
+@article{lu2022surrogate,
+  title={Surrogate-assisted Multi-objective Neural Architecture Search for Real-time Semantic Segmentation},
+  author={Lu, Zhichao and Cheng, Ran and Huang, Shihua and Zhang, Haoming and Qiu, Changxiao and Yang, Fan},
+  journal={arXiv preprint arXiv:2208.06820},
+  year={2022}
+}
+
+@article{peng2022pre,
+  title={PRE-NAS: Predictor-assisted Evolutionary Neural Architecture Search},
+  author={Peng, Yameng and Song, Andy and Ciesielski, Vic and Fayek, Haytham M and Chang, Xiaojun},
+  journal={arXiv preprint arXiv:2204.12726},
+  year={2022}
+}
+
+@article{cho2022b2ea,
+  title={B2EA: An Evolutionary Algorithm Assisted by Two Bayesian Optimization Modules for Neural Architecture Search},
+  author={Cho, Hyunghun and Shin, Jungwook and Rhee, Wonjong},
+  journal={arXiv preprint arXiv:2202.03005},
+  year={2022}
+}
+
+@inproceedings{benmeziane2022pareto,
+  title={Pareto Rank Surrogate Model for Hardware-aware Neural Architecture Search},
+  author={Benmeziane, Hadjer and Niar, Smail and Ouarnoughi, Hamza and El Maghraoui, Kaoutar},
+  booktitle={2022 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)},
+  pages={267--276},
+  year={2022},
+  organization={IEEE}
+}
+
+@article{liu2022bi,
+  title={Bi-fidelity Evolutionary Multiobjective Search for Adversarially Robust Deep Neural Architectures},
+  author={Liu, Jia and Cheng, Ran and Jin, Yaochu},
+  journal={arXiv preprint arXiv:2207.05321},
+  year={2022}
+}
+
+@article{liu2022federated,
+  title={Federated neural architecture search for medical data security},
+  author={Liu, Xin and Zhao, Jianwei and Li, Jie and Cao, Bin and Lv, Zhihan},
+  journal={IEEE Transactions on Industrial Informatics},
+  volume={18},
+  number={8},
+  pages={5628--5636},
+  year={2022},
+  publisher={IEEE}
+}
+
+@article{yang2022accelerating,
+  title={Accelerating Evolutionary Neural Architecture Search via Multi-Fidelity Evaluation},
+  author={Yang, Shangshang and Tian, Ye and Xiang, Xiaoshu and Peng, Shichen and Zhang, Xingyi},
+  journal={IEEE Transactions on Cognitive and Developmental Systems},
+  year={2022},
+  publisher={IEEE}
+}
+
+@inproceedings{ying2022multi,
+  title={Multi-objective Evolutionary Architecture Search of U-Net with Diamond Atrous Convolution},
+  author={Ying, Weiqin and Yang, Kaihao and Wu, Yu and Li, Junhui and Zhou, Zhekun and Huang, Banban},
+  booktitle={International Symposium on Intelligence Computation and Applications},
+  pages={31--40},
+  year={2022},
+  organization={Springer}
+}
+
+@article{kyriakides2022evolving,
+  title={Evolving graph convolutional networks for neural architecture search},
+  author={Kyriakides, George and Margaritis, Konstantinos},
+  journal={Neural Computing and Applications},
+  volume={34},
+  number={2},
+  pages={899--909},
+  year={2022},
+  publisher={Springer}
+}
+
+@inproceedings{huang2022arch,
+  title={Arch-Graph: Acyclic Architecture Relation Predictor for Task-Transferable Neural Architecture Search},
+  author={Huang, Minbin and Huang, Zhijian and Li, Changlin and Chen, Xin and Xu, Hang and Li, Zhenguo and Liang, Xiaodan},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11881--11891},
+  year={2022}
+}
+
+%-------------------------以上是添加的-----------------------------
+ 
+ 
+ 
+ 
+references for the IEEEtran.bst documentation
+IEEEtran homepage
+@electronic{IEEEhowto:IEEEtranpage,
+  author        = "Michael Shell",
+  title         = "{IEEE}tran Homepage",
+  url           = "http://www.michaelshell.org/tex/ieeetran/",
+  year          = "2007"
+}
+
+
+the distribution site for IEEEtran.bst
+@electronic{IEEEexample:shellCTANpage,
+  author        = "Michael Shell",
+  title         = "{IEEE}tran Webpage on {CTAN}",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/",
+  year          = "2007"
+}
+
+
+the IEEE website
+sort key is needed for sorting styles
+@electronic{IEEEexample:IEEEwebsite,
+  title         = "The {IEEE} Website",
+  url           = "http://www.ieee.org/",
+  year          = "2007",
+  key           = "IEEE"
+}
+
+
+The BibTeX user's guide.
+The filename could have been put in the URL instead. But, there might
+be other interesting things for the user in the same directory - and
+the filename might change before the directory that contains it.
+@electronic{IEEEexample:bibtexuser,
+  author        = "Oren Patashnik",
+  title         = "{{\BibTeX}}ing",
+  howpublished  = "{btxdoc.pdf}",
+  url           = "http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/",
+  month         = feb,
+  year          = "1988"
+}
+
+
+The BibTeX style designer's guide.
+@electronic{IEEEexample:bibtexdesign,
+  author        = "Oren Patashnik",
+  title         = "Designing {{\BibTeX}} Styles",
+  howpublished  = "{btxhak.pdf}",
+  url           = "http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/",
+  month         = feb,
+  year          = "1988"
+}
+
+
+A comprehensive BibTeX tutorial.
+@electronic{IEEEexample:tamethebeast,
+  author        = "Nicolas Markey",
+  title         = "Tame the BeaST  ---  The B to X of {{\BibTeX}}",
+  url           = "http://tug.ctan.org/tex-archive/info/bibtex/tamethebeast/",
+  month         = oct,
+  year          = "2005"
+}
+
+
+The BibTeX Tips and FAQ guide.
+@electronic{IEEEexample:bibtexFAQ,
+  author        = "David Hoadley and Michael Shell",
+  title         = "{{\BibTeX}} Tips and {FAQ}",
+  howpublished  = "{btxFAQ.pdf}",
+  url           = "http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/",
+  month         = jan,
+  year          = "2007"
+}
+
+
+The TeX FAQ
+@electronic{IEEEexample:texfaq,
+  author        = "Robin Fairbairns",
+  title         = "The {{\TeX}} {FAQ}",
+  url           = "http://www.tex.ac.uk/cgi-bin/texfaq2html/",
+  month         = jan,
+  year          = "2007"
+}
+
+
+A BibTeX Guide via Examples.
+@electronic{IEEEexample:bibtexguide,
+  author        = "Ki-Joo Kim",
+  title         = "A {{\BibTeX}} Guide via Examples",
+  howpublished  = "{bibtex\_guide.pdf}",
+  url           = "http://www.geocities.com/kijoo2000/",
+  month         = apr,
+  year          = "2004"
+}
+
+
+TeX User Group Bibliography Archive
+@electronic{IEEEexample:beebe_archive,
+  author        = "Nelson H. F. Beebe",
+  title         = "{{\TeX}} User Group Bibliography Archive",
+  url           = "http://www.math.utah.edu:8080/pub/tex/bib/index-table.html",
+  month         = aug,
+  year          = "2006"
+}
+
+The natbib.sty package.
+@electronic{ctan:natbib,
+  author        = "Patrick W. Daly",
+  title         = "The natbib.sty package",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/natbib/",
+  month         = sep,
+  year          = "2006"
+}
+
+The url.sty package.
+@electronic{IEEEexample:urlsty,
+  author        = "Donald Arseneau",
+  title         = "The url.sty Package",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/misc/",
+  month         = jun,
+  year          = "2005",
+}
+
+
+The hyperref.sty package.
+@electronic{IEEEexample:hyperrefsty,
+  author        = "Sebastian Rahtz and Heiko Oberdiek",
+  title         = "The hyperref.sty Package",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/",
+  month         = nov,
+  year          = "2006",
+}
+
+
+The breakurl.sty package.
+@electronic{IEEEexample:breakurl,
+  author        = "Vilar Camara Neto",
+  title         = "The breakurl.sty Package",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/breakurl/",
+  month         = aug,
+  year          = "2006",
+}
+
+
+The Babel package.
+@electronic{IEEEexample:babel,
+  author        = "Johannes Braams",
+  title         = "The Babel Package",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/required/babel/",
+  month         = nov,
+  year          = "2005",
+}
+
+
+The multibib package.
+@electronic{IEEEexample:multibibsty,
+  author        = "Thorsten Hansen",
+  title         = "The multibib.sty package",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/multibib/",
+  month         = jan,
+  year          = "2004"
+}
+
+
+The biblatex package.
+@electronic{IEEEexample:biblatex,
+  author        = "Philipp Lehman",
+  title         = "The biblatex package",
+  url           = "http://www.ctan.org/tex-archive/macros/latex/exptl/biblatex/",
+  month         = jan,
+  year          = "2007"
+}
+
+
+
+The three most common and typical types of references used in
+IEEE publications:
+
+an article in a journal
+Note the use of the IEEE_J_EDL string, defined in the IEEEabrv.bib file,
+for the journal name. IEEEtran.bst defines the BibTeX standard three
+letter month codes per IEEE style.
+From the June 2002 issue of "IEEE Transactions on Electron Devices",
+page 996, reference #16.
+@article{IEEEexample:article_typical,
+  author        = "S. Zhang and C. Zhu and J. K. O. Sin and P. K. T. Mok",
+  title         = "A Novel Ultrathin Elevated Channel Low-temperature 
+                   Poly-{Si} {TFT}",
+  journal       = IEEE_J_EDL,
+  volume        = "20",
+  month         = nov,
+  year          = "1999",
+  pages         = "569-571"
+}
+
+
+journal article using et al.
+The (five) authors are actually: F. Delorme, S. Slempkes, G. Alibert, 
+B. Rose, J. Brandon
+The month (July) was not given here.
+From the September 1998 issue of "IEEE Journal on Selected Areas in
+Communications", page 1257, reference #28.
+@article{IEEEexample:articleetal,
+  author        = "F. Delorme and others",
+  title         = "Butt-jointed {DBR} Laser With 15 {nm} Tunability Grown
+                   in Three {MOVPE} Steps",
+  journal       = "Electron. Lett.",
+  volume        = "31",
+  number        = "15",
+  year          = "1995",
+  pages         = "1244-1245"
+}
+
+
+a paper in a conference proceedings
+"conference" can be used as an alias for "inproceedings"
+From the June 2002 issue of "Journal of Microelectromechanical Systems",
+page 205, reference #16.
+@inproceedings{IEEEexample:conf_typical,
+  author        = "R. K. Gupta and S. D. Senturia",
+  title         = "Pull-in Time Dynamics as a Measure of Absolute Pressure",
+  booktitle     = "Proc. {IEEE} International Workshop on
+                   Microelectromechanical Systems ({MEMS}'97)",
+  address       = "Nagoya, Japan",
+  month         = jan,
+  year          = "1997",
+  pages         = "290-294"
+}
+
+
+a book
+From the May 2002 issue of "IEEE Transactions on Magnetics",
+page 1466, reference #4.
+@book{IEEEexample:book_typical,
+  author        = "B. D. Cullity",
+  title         = "Introduction to Magnetic Materials",
+  publisher     = "Addison-Wesley",
+  address       = "Reading, MA",
+  year          = "1972"
+}
+
+
+
+
+Other examples
+
+journal article with large page numbers, IEEE will divide numbers 5 digits
+or longer into groups of three with small spaces between them. Page ranges
+can be separated via either "-" or "--", IEEEtran.bst will automatically
+convert the separator dash(es) to "--".
+Authors and/or IEEE do not always provide/use the journal number, but it
+was used in this case. IEEEtran.bst can be configured to ignore journal
+numbers if desired.
+From the August 2000 issue of "IEEE Photonics Technology Letters",
+page 1039, reference #11.
+@article{IEEEexample:articlelargepages,
+  author        = "A. Castaldini and A. Cavallini and B. Fraboni
+                   and P. Fernandez and J. Piqueras",
+  title         = "Midgap Traps Related to Compensation Processes in
+                   {CdTe} Alloys",
+  journal       = "Phys. Rev. B.",
+  volume        = "56",
+  number        = "23",
+  year          = "1997",
+  pages         = "14897-14900"
+}
+
+
+journal article with dual months 
+use the BibTeX "#" concatenation operator
+From the March 2002 issue of "IEEE Transactions on Mechatronics",
+page 21, reference #8.
+@article{IEEEexample:articledualmonths,
+  author        = "Y. Okada and K. Dejima and T. Ohishi",
+  title         = "Analysis and Comparison of {PM} Synchronous Motor and
+                   Induction Motor Type Magnetic Bearings",
+  journal       = IEEE_J_IA,
+  volume        = "31",
+  month         = sep # "/" # oct,
+  year          = "1995",
+  pages         = "1047-1053"
+}
+
+
+journal article to be published as a misc entry type
+date information like month and year is optional 
+However, the article form like that below may be a better approach.
+From the May 2002 issue of "IEEE Journal of Selected Areas in 
+Communication", page 725, reference #3.
+@misc{IEEEexample:TBPmisc,
+  author        = "M. Coates and A. Hero and R. Nowak and B. Yu",
+  title         = "Internet Tomography",
+  howpublished  = IEEE_M_SP,
+  month         = may,
+  year          = "2002",
+  note          = "to be published"
+}
+
+
+journal article to be published as an article entry type
+year is required, so if absent, use the year field to hold
+the "submitted for publication" in order to avoid a warning for
+the missing year field.
+From the June 2002 issue of "IEEE Transactions on Information Theory",
+page 1461, reference #21.
+@article{IEEEexample:TBParticle,
+  author        = "N. Kahale and R. Urbanke",
+  title         = "On the Minimum Distance of Parallel and Serially
+                   Concatenated Codes",
+  journal       = IEEE_J_IT,
+  year          = "submitted for publication"
+}
+
+
+
+
+
+book with editor and no author
+From the June 2002 issue of "IEEE Transactions on Information Theory",
+page 1725, reference #1.
+@book{IEEEexample:bookwitheditor,
+  editor        = "J. C. Candy and G. C. Temes",
+  title         = "Oversampling Delta-Sigma Data Converters Theory,
+                   Design and Simulation",
+  publisher     = "{IEEE} Press.",
+  address       = "New York",
+  year          = "1992"
+}
+
+
+book with edition, author and editor
+Note that the standard BibTeX styles do not support book entries with both
+author and editor fields, but IEEEtran.bst does.
+The standard BibTeX way of specifying the edition is to use capitalized
+ordinal words such as "First", "Second", etc. Most .bst files can convert
+up to about "Fifth" into the format needed. IEEEtran.bst can convert up
+to "Tenth" to the "Arabic ordinal" form IEEE uses (e.g., "10th"). For
+editions over the tenth, it is best to use the "Arabic ordinal" form for
+IEEE related work (e.g., "101st")
+Note how "Jr." has to be entered.
+From the May 2002 issue of "Journal of Lightwave Technology", page 856,
+reference #17.
+@book{IEEEexample:book,
+  author        = "S. M. Metev and V. P. Veiko",
+  editor        = "Osgood, Jr., R. M.",
+  title         = "Laser Assisted Microtechnology",
+  edition       = "Second",
+  publisher     = "Springer-Verlag",
+  address       = "Berlin, Germany",
+  year          = "1998"
+}
+
+
+book with series and volume
+From the January 2000 issue of "IEEE Transactions on Communications",
+page 11, reference #31.
+@book{IEEEexample:bookwithseriesvolume,
+  editor        = "J. Breckling",
+  title         = "The Analysis of Directional Time Series: Applications to
+                   Wind Speed and Direction",
+  series        = "Lecture Notes in Statistics",
+  publisher     = "Springer",
+  address       = "Berlin, Germany",
+  year          = "1989",
+  volume        = "61"
+}
+
+
+inbook with chapter number. The pages field could also have been given.
+The chapter number could be changed to something else such as a section
+number via the type field: type = "sec.".
+From the May 2002 issue of "IEEE Transactions on Circuits and Systems---I: 
+Fundamental Applications and Theory", page 638, reference #22.
+@inbook{IEEEexample:inbook,
+  author        = "H. E. Rose",
+  title         = "A Course in Number Theory",
+  publisher     = "Oxford Univ. Press",
+  address       = "New York, NY",
+  year          = "1988",
+  chapter       = "3"
+}
+
+
+inbook with pages and note. The language field is not set to Russian
+because the title is presented here in its translated, English, form.
+From the May 2002 issue of "IEEE Transactions on Magnetics", page 1533,
+reference #5.
+@inbook{IEEEexample:inbookpagesnote,
+  author        = "B. K. Bul",
+  title         = "Theory Principles and Design of Magnetic Circuits",
+  publisher     = "Energia Press",
+  address       = "Moscow",
+  year          = "1964",
+  pages         = "464",
+  note          = "(in Russian)"
+}
+
+
+
+
+
+incollection with author and editor
+From the May 2002 issue of "Journal of Lightwave Technology",
+page 807, reference #7.
+@incollection{IEEEexample:incollection,
+  author        = "W. V. Sorin",
+  editor        = "D. Derickson",
+  title         = "Optical Reflectometry for Component Characterization",
+  booktitle     = "Fiber Optic Test and Measurement",
+  publisher     = "Prentice-Hall",
+  address       = "Englewood Cliffs, NJ",
+  year          = "1998"
+}
+
+
+incollection with series
+From the April 2000 issue of "IEEE Transactions on Communication",
+page 609, reference #3.
+@incollection{IEEEexample:incollectionwithseries,
+  author        = "J. B. Anderson and K. Tepe",
+  title         = "Properties of the Tailbiting {BCJR} Decoder",
+  booktitle     = "Codes, Systems and Graphical Models",
+  series        = "{IMA} Volumes in Mathematics and Its Applications",
+  publisher     = "Springer-Verlag",
+  address       = "New York",
+  year          = "2000"
+  
+}
+
+
+incollection with author, editor, chapter and pages
+From the January 2000 issue of "IEEE Transactions on Communications",
+page 16, reference #9.
+@incollection{IEEEexample:incollection_chpp,
+  author        = "P. Hedelin and P. Knagenhjelm and M. Skoglund",
+  editor        = "W. B. Kleijn and K. K. Paliwal",
+  title         = "Theory for Transmission of Vector Quantization Data",
+  booktitle     = "Speech Coding and Synthesis",
+  publisher     = "Elsevier Science",
+  address       = "Amsterdam, The Netherlands",
+  year          = "1995",
+  chapter       = "10",
+  pages         = "347-396"
+}
+
+
+incollection with a large number of authors, some authors/journals will
+use et al. for so many names. IEEEtran.bst can be configured to do this
+if desired, or "R. M. A. Dawson and others" can be used instead.
+Note that IEEE may not include the publisher for incollection entries -
+IEEEtran.bst will not issue a warning if the publisher is missing for
+incollections - but other .bst files often will.
+From the June 2002 issue of "IEEE Transactions on Electron Devices",
+page 996, reference #12.
+@incollection{IEEEexample:incollectionmanyauthors,
+  author        = "R. M. A. Dawson and Z. Shen and D. A. Furst and
+                   S. Connor and J. Hsu and M. G. Kane and R. G. Stewart and
+                   A. Ipri and C. N. King and P. J. Green and R. T. Flegal
+                   and S. Pearson and W. A. Barrow and E. Dickey and K. Ping
+                   and C. W. Tang and S. Van. Slyke and
+                   F. Chen and J. Shi and J. C. Sturm and M. H. Lu",
+  title         = "Design of an Improved Pixel for a Polysilicon 
+                   Active-Matrix Organic {LED} Display",
+  booktitle     = "{SID} Tech. Dig.",
+  volume        = "29",
+  year          = "1998",
+  pages         = "11-14"
+}
+
+
+
+
+
+A Motorola data book as a manual
+It is somewhat unusual to include the data book part number.
+in the title. It might be more correct to put this information
+in the howpublished field instead.
+From the December 2000 issue of "IEEE Transactions on Communications",
+page 1986, reference #10.
+@manual{IEEEexample:motmanual,
+  title         = "{FLEXChip} Signal Processor ({MC68175/D})",
+  organization  = "Motorola",
+  year          = "1996"
+}
+
+
+same reference, but using IEEEtran's howpublished extension
+@manual{IEEEexample:motmanualhowpub,
+  title         = "{FLEXChip} Signal Processor",
+  howpublished  = "{MC68175/D}",
+  organization  = "Motorola",
+  year          = "1996"
+}
+
+
+
+
+conference paper with an address and days. Some journals capitalize the
+letters in "Globecom", this one did not.
+From the May 2002 issue of "IEEE Transactions on Communications",
+page 697, reference #12.
+@inproceedings{IEEEexample:confwithadddays,
+  author        = "M. S. Yee and L. Hanzo",
+  title         = "Radial Basis Function Decision Feedback Equaliser
+                   Assisted Burst-by-burst Adaptive Modulation",
+  booktitle     = "Proc. {IEEE} Globecom '99",
+  address       = "Rio de Janeiro, Brazil",
+  month         = dec # " 5--9,",
+  year          = "1999",
+  pages         = "2183-2187"
+}
+
+
+conference paper with volume number. A conference proceedings with a vol
+number is a little uncommon, note that the vol number is placed
+before the address in the formatted bibliography entry
+From the April 2002 issue of "IEEE/ACM Transactions on Networking",
+page 181, reference #26.
+@inproceedings{IEEEexample:confwithvolume,
+  author        = "M. Yajnik and S. B. Moon and J. Kurose and D. Towsley",
+  title         = "Measurement and Modeling of the Temporal Dependence in
+                   Packet Loss",
+  booktitle     = "Proc. {IEEE} {INFOCOM}'99",
+  volume        = "1",
+  address       = "New York, NY",
+  month         = mar,
+  year          = "1999",
+  pages         = "345-352"
+}
+
+
+conference paper with a paper number, the type field can be used to
+override the word "paper", e.g., type = "postdeadline paper". A type
+can be given even without a paper  field.
+Also, IEEEtran.bst can be configured to ignore paper numbers and types.
+From the May 2002 issue of "Journal of Lightwave Technology",
+page 807, reference #4.
+@inproceedings{IEEEexample:confwithpaper,
+  author        = "M. Wegmuller and J. P. von der Weid and P. Oberson
+                   and N. Gisin",
+  title         = "High Resolution Fiber Distributed Measurements With
+                   Coherent {OFDR}",
+  booktitle     = "Proc. {ECOC}'00",
+  year          = "2000",
+  paper         = "11.3.4",
+  pages         = "109"
+}
+
+
+conference paper with a postdeadline type paper, the paper field is
+optional.
+From the August 2000 issue of "IEEE Photonics Technology Letters",
+page 1087, reference #12.
+@inproceedings{IEEEexample:confwithpapertype,
+  author        = "B. Mikkelsen and G. Raybon and R.-J. Essiambre and
+                   K. Dreyer and Y. Su. and L. E. Nelson and J. E. Johnson
+                   and G. Shtengel and A. Bond and D. G. Moodie and
+                   A. D. Ellis",
+  title         = "160 {Gbit/s} Single-channel Transmission Over 300 km 
+                   Nonzero-dispersion Fiber With Semiconductor Based
+                   Transmitter and Demultiplexer",
+  booktitle     = "Proc. {ECOC}'99",
+  year          = "1999",
+  paper         = "2-3",
+  type          = "postdeadline paper",
+  pages         = "28-29"
+}
+
+
+presented at a conference
+intype overrides the default "in" and causes the booktitle not to be
+emphasized (rendered in italics).
+From the February 2002 issue of "IEEE/ACM Transactions on Networking",
+page 163, reference #6.
+@inproceedings{IEEEexample:presentedatconf,
+  author        = "S. G. Finn and M. M{\'e}dard and R. A. Barry",
+  title         = "A Novel Approach to Automatic Protection Switching
+                   Using Trees",
+  intype        = "presented at the",
+  booktitle     = "Proc. Int. Conf. Commun.",
+  year          = "1997"
+}
+
+
+
+
+
+master's thesis, often the University name will be abbreviated and the
+state or country will be included in the address. The type field can
+used to override the default type "Master's thesis"
+From the June 2002 issue of "IEEE Transactions on Microelectromechanical
+Systems", page 186, reference #11.
+@mastersthesis{IEEEexample:masters,
+  author        = "Nin C. Loh",
+  title         = "High-Resolution Micromachined Interferometric
+                   Accelerometer",
+  school        = "Massachusetts Institute of Technology",
+  address       = "Cambridge",
+  year          = "1992"
+}
+
+
+master's thesis with a type field
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 391, reference #12.
+@mastersthesis{IEEEexample:masterstype,
+  author        = "A. Karnik",
+  title         = "Performance of {TCP} Congestion Control with Rate
+                   Feedback: {TCP/ABR} and Rate Adaptive {TCP/IP}",
+  school        = "Indian Institute of Science",
+  type          = "M. Eng. thesis",
+  address       = "Bangalore, India",
+  month         = jan,
+  year          = "1999"
+}
+
+
+
+
+
+Ph.D. dissertation with a URL field, the university is abbreviated
+From the October 2001 issue of "IEEE/ACM Transactions on Networking",
+page 590, reference #11.
+@phdthesis{IEEEexample:phdurl,
+  author        = "Q. Li",
+  title         = "Delay Characterization and Performance Control of
+                   Wide-area Networks",
+  school        = "Univ. of Delaware",
+  address       = "Newark",
+  month         = may,
+  year          = "2000",
+  url           = "http://www.ece.udel.edu/~qli"
+}
+
+
+
+
+
+technical report
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 490, reference #15.
+@techreport{IEEEexample:techrep,
+  author        = "R. Jain and K. K. Ramakrishnan and D. M. Chiu",
+  title         = "Congestion Avoidance in Computer Networks with a 
+                   Connectionless Network Layer",
+  institution   = "Digital Equipment Corporation",
+  address       = "MA",
+  number        = "DEC-TR-506",
+  month         = aug,
+  year          = "1987"
+}
+
+
+technical report with type
+for those times when "Tech. Rep." needs to be modified
+From the February 2001 issue of "IEEE/ACM Transactions on Networking",
+page 46, reference #8.
+@techreport{IEEEexample:techreptype,
+  author        = "J. Padhye and V. Firoiu and D. Towsley",
+  title         = "A Stochastic Model of {TCP} {R}eno Congestion Avoidance
+                   and Control",
+  institution   = "Univ. of Massachusetts",
+  address       = "Amherst, MA",
+  type          = "CMPSCI Tech. Rep.",
+  number        = "99-02",
+  year          = "1999"
+}
+
+
+technical report with type
+for those times when "Tech. Rep." needs to be modified
+This reference did not have an address.
+From the January 2000 issue of "IEEE Transactions on Communications",
+page 117, reference #6.
+@techreport{IEEEexample:techreptypeii,
+  author        = "D. Middleton and A. D. Spaulding",
+  title         = "A Tutorial Review of Elements of Weak Signal Detection
+                   in Non-{G}aussian {EMI} Environments",
+  institution   = "National Telecommunications and Information
+                   Administration ({NTIA}), U.S. Dept. of Commerce",
+  type          = "NTIA Report",
+  number        = "86-194",
+  month         = may,
+  year          = "1986"
+}
+
+
+
+
+
+an unpublished work
+for unpublished types, the note field is required. IEEE usually
+just uses the word "unpublished" for the note.
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 391, reference #16.
+@unpublished{IEEEexample:unpublished,
+  author        = "T. J. Ott and N. Aggarwal",
+  title         = "{TCP} over {ATM}: {ABR} or {UBR}",
+  note          = "Unpublished"
+}
+
+
+
+
+
+electronic with a howpublished information field 
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 391, reference #7.
+@electronic{IEEEexample:electronhowinfo,
+  author        = "V. Jacobson",
+  title         = "Modified {TCP} Congestion Avoidance Algorithm",
+  howpublished  = "end2end-interest mailing list",
+  url           = "ftp://ftp.isi.edu/end2end/end2end-interest-1990.mail",
+  month         = apr,
+  year          = "1990"
+}
+
+
+electronic with a howpublished information field 
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 418, reference #31.
+@electronic{IEEEexample:electronhowinfo2,
+  author        = "V. Valloppillil and K. W. Ross",
+  title         = "Cache Array Routing Protocol v1.1",
+  howpublished  = "Internet draft",
+  url           = "http://ds1.internic.net/internet-drafts/draft-vinod-carp-v1-03.txt",
+  year          = "1998"
+}
+
+
+electronic with an organization and address
+From the February 2002 issue of "IEEE/ACM Transactions on Networking",
+page 114, reference #15.
+@electronic{IEEEexample:electronorgadd,
+  author        = "D. H. Lorenz and A. Orda",
+  title         = "Optimal Partition of {QoS} Requirements on Unicast
+                   Paths and Multicast Trees",
+  organization  = "Dept. Elect. Eng., Technion",
+  address       = "Haifa, Israel",
+  url           = "ftp://ftp.technion.ac.il/pub/supported/ee/Network/lor.mopq98.ps",
+  month         = jul,
+  year          = "1998"
+}
+
+
+
+
+
+U.S. patent
+Use the type field to override the patent type. e.g.,
+type = "Patent Application"
+The address is that of the assignee. Note that IEEE does not
+display the assignee, the address, and only displays one date.
+(if year is not present, the filed dates are used.) However, this
+information should be entered as other BibTeX styles may use it.
+alternatively, nationality could be entered as "U.S." 
+From the April 2000 issue of "IEEE Transactions on Communications",
+page 542, reference #6.
+@patent{IEEEexample:uspat,
+  author        = "Ronald E. Sorace and Victor S. Reinhardt and
+                   Steven A. Vaughn",
+  assignee      = "Hughes Aircraft Company",
+  address       = "Los Angeles, CA",
+  title         = "High-Speed Digital-to-{RF} Converter",
+  nationality   = "United States",
+  number        = "5668842",
+  dayfiled      = "28",
+  monthfiled    = feb,
+  yearfiled     = "1995",
+  day           = "16",
+  month         = sep,
+  year          = "1997"
+}
+
+
+Japanese Patent
+From the April 2000 issue of "IEEE Transactions on Communications",
+page 556, reference #6.
+@patent{IEEEexample:jppat,
+  author        = "U. Hideki",
+  title         = "Quadrature Modulation Circuit",
+  nationality   = "Japanese",
+  number        = "152932/92",
+  day           = "20",
+  month         = may,
+  year          = "1992"
+}
+
+
+French Patent request, the language field must be entered in lower case
+as this is the option name Babel uses. The nationality field needs to be
+capitalized. Because this is a patent request, the date filed fields are
+used while the date fields are left empty/missing. In other countries,
+the words "Patent Application", etc. are used instead.
+From the April 2000 issue of "IEEE Transactions on Communications",
+page 556, reference #9.
+@patent{IEEEexample:frenchpatreq,
+  author        = "F. Kowalik and M. Isard",
+  title         = "Estimateur d'un D{\'e}faut de Fonctionnement 
+                   d'un Modulateur en Quadrature et {\'E}tage de Modulation
+                   l'Utilisant",
+  language      = "french",
+  nationality   = "French",
+  type          = "Patent Request",
+  number        = "9500261",
+  dayfiled      = "11",
+  monthfiled    = jan,
+  yearfiled     = "1995"
+}
+
+
+
+
+
+a periodical
+From the April 2001 issue of "IEEE/ACM Transactions on Networking",
+page 160, reference #1.
+sort key is needed for sorting styles
+@periodical{IEEEexample:periodical,
+  title         = IEEE_M_PCOM # ", Special Issue on Wireless {ATM}",
+  volume        = "3",
+  month         = aug,
+  year          = "1996",
+  key           = "IEEE"
+}
+
+
+
+
+
+standard, IEEE does not use the address for standards, but it is good
+to provide one for BibTeX styles that use it.
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 451, reference #2.
+@standard{IEEEexample:standard,
+  title         = "Wireless {LAN} Medium Access Control {(MAC)} and 
+                   Physical Layer {(PHY)} Specification",
+  organization  = "IEEE",
+  address       = "Piscataway, NJ",
+  number        = "802.11",
+  year          = "1997"
+}
+
+
+standard with type and revision, the type overrides the word standard
+(or std.). Here a standard number is not available and a revision number
+is used.
+From the August 2000 issue of "IEEE Photonics Technology Letters",
+page 1048, reference #13.
+@standard{IEEEexample:standardproposed,
+  title         = "Fiber Channel Physical Interface ({FC-PI})",
+  institution   = "NCITS",
+  address       = "Washington, DC",
+  type          = "Working Draft Proposed Standard",
+  revision      = "5.2",
+  year          = "1999"
+}
+
+
+standard draft as a misc with author
+From the May 2002 issue of "IEEE Journal of Selected Areas in
+Communication", page 725, reference #16.
+@misc{IEEEexample:draftasmisc,
+  author        = "I. Widjaja and A. Elwalid",
+  title         = "{MATE}: {MPLS} Adaptive Traffic Engineering",
+  howpublished  = "IETF Draft",
+  year          = "1999"
+}
+
+
+
+
+
+misc for a techreport like reference
+techreport is not perfectly suitable because this entry lacks
+an institution field
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 490, reference #22.
+@misc{IEEEexample:miscforum,
+  author        = "L. Roberts",
+  title         = "Enhanced Proportional Rate Control Algorithm {PRCA}",
+  howpublished  = "{ATM} Forum Contribution 94-0735R1",
+  month         = aug,
+  year          = "1994"
+}
+
+
+misc for a white paper
+From the August 2001 issue of "IEEE/ACM Transactions on Networking",
+page 478, reference #4 - Note that the reference there (improperly?)
+used the author field for "Cisco".
+@misc{IEEEexample:whitepaper,
+  title         = "Advanced {QoS} Services for the Intelligent Internet",
+  howpublished  = "White Paper",
+  organization  = "Cisco",
+  month         = may,
+  year          = "1997"
+}
+
+
+misc for a data sheet
+From the November 2000 issue of "IEEE Photonics Technology Letters",
+page 1551, reference #6.
+@misc{IEEEexample:datasheet,
+  title         = "{PDCA12-70} Data Sheet",
+  organization  = "Opto Speed SA",
+  address       = "Mezzovico, Switzerland"
+}
+
+
+
+
+
+Other unusual references
+
+a private communication as a misc entry type
+sometimes the designation "personal communication" is used instead
+From the June 2002 issue of "IEEE Transactions on Information Theory",
+page 1725, reference #16.
+@misc{IEEEexample:private,
+  author        = "S. Konyagin",
+  howpublished  = "private communication",
+  year          = "1998"
+}
+
+
+an internet request for comments (RFC) as a misc entry type
+It would also be nice to add a URL to these types of things.
+RFCs can also be handled as electronic references.
+From the April 2002 issue of "IEEE/ACM Transactions on Networking",
+page 181, reference #14.
+@misc{IEEEexample:miscrfc,
+  author        = "K. K. Ramakrishnan and S. Floyd",
+  title         = "A Proposal to Add Explicit Congestion
+                   Notification ({ECN}) to {IP}",
+  howpublished  = "RFC 2481",
+  month         = jan,
+  year          = "1999"
+}
+
+
+a software package as a manual
+From the June 2002 issue of "IEEE/ASME Journal of Microelectromechanical
+Systems", page 205, reference #20.
+Sometimes they put the version/release information in the title.
+@manual{IEEEexample:softmanual,
+  title         = "SaberDesigner Reference Manual",
+  organization  = "Analogy, Inc.",
+  address       = "Beaverton, OR",
+  year          = "1998",
+  note          = "Release 4.3"
+}
+
+
+a software package as an electronic reference
+From the February 2003 issue of  "IEEE/ACM Transactions on Networking",
+page 46, reference #24. If there is no author or organization, a sorting
+key is required for sorting styles. It might be a good idea to include
+month and year fields as well.
+@electronic{IEEEexample:softonline,
+  title         = "Ucb/lbnl/vint Network Simulator---ns (Version 2)",
+  url           = "http://www-mash.cs.berkeley.edu/ns/",
+  key           = "ns"
+}
+
+
+misc for a German regulation
+In German, the first letters of nouns are capitalized, so we do so here.
+From the June 2002 issue of "IEEE Journal in Selected Areas in
+Communication", page 892, reference #9.
+@misc{IEEEexample:miscgermanreg,
+  title         = "{M}essung von {S}t{\"o}rfeldern an {A}nlagen 
+                   und {L}eitungen der {T}elekommunikation im
+                   {F}requenzbereich 9 {kHz} bis 3 {GHz}",
+  language      = "german",
+  howpublished  = "{M}e{\ss}vorschrift {R}eg {TP} {MV} 05",
+  organization  = "Regulierungsbeh{\"o}rde f{\"u}r {T}elekommunikation und
+                   {P}ost ({R}eg {TP})"
+}
+
+
+
+Ways to handle things like CCSDS's Blue Books
+journal article with a URL. However, this is not a very good approach
+because the Blue Books are not really journals and the author field has
+to be abused.
+From the June 2002 issue of "IEEE Transactions on Information Theory",
+page 1461, reference #7.
+@article{IEEEexample:bluebookarticle,
+  author        = "{Consulative Committee for Space Data Systems (CCSDS)}",
+  title         = "Telemetry Channel Coding",
+  journal       = "Blue Book",
+  number        = "4",
+  year          = "1999",
+  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
+}
+
+
+CCSDS's Blue Book handled as a book
+However, it is not a good idea to have to use the author field for
+an organization (done here because the book entry type requires an
+author field).
+@book{IEEEexample:bluebookbook,
+  author        = "{Consulative Committee for Space Data Systems (CCSDS)}",
+  title         = "Telemetry Channel Coding",
+  series        = "Blue Book",
+  number        = "4",
+  publisher     = "{CCSDS}",
+  address       = "Newport Beach, {CA}",
+  year          = "1999",
+  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
+}
+
+
+CCSDS's Blue Book handled as a manual
+This is a much better approach, but uses the howpublished field.
+@manual{IEEEexample:bluebookmanual,
+  title         = "Telemetry Channel Coding",
+  howpublished  = "ser. Blue Book, No. 4",
+  organization  = "Consulative Committee for Space Data Systems (CCSDS)",
+  address       = "Newport Beach, CA",
+  year          = "1999",
+  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
+}
+
+
+
+CCSDS's Blue Book handled as a standard
+Probably the best approach for this particular case because the work
+is standard related. Note that IEEE does not display the address for
+standards.
+@standard{IEEEexample:bluebookstandard,
+  title         = "Telemetry Channel Coding",
+  howpublished  = "ser. Blue Book, No. 4",
+  organization  = "Consulative Committee for Space Data Systems (CCSDS)",
+  address       = "Newport Beach, CA",
+  type          = "Recommendation for Space Data System Standard",
+  number        = "101.0-B-4",
+  month         = May,
+  year          = "1999",
+  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
+}
+
+
+
+
+
+
+
+
+An example of a IEEEtran control entry which can change some IEEEtran.bst
+settings. An entry like this must be cited via \bstctlcite{} command
+before the first real \cite{}. The same entry key cannot be called twice
+(just like multiple \cite{} of the same entry key place only one entry
+in the bibliography.)
+The available control fields are:
+
+CTLuse_article_number
+"no" turns off the display of the number for articles.
+"yes" enables
+
+CTLuse_paper
+"no" turns off the display of the paper and type fields in inproceedings.
+"yes" enables
+
+CTLuse_forced_etal 
+"no" turns off the forced use of "et al."
+"yes" enables
+
+CTLmax_names_forced_etal
+The maximum number of names that can be present beyond which an "et al."
+usage is forced. Be sure that CTLnames_show_etal (below)
+is not greater than this value!
+
+CTLnames_show_etal
+The number of names that will be shown with a forced "et al.".
+Must be less than or equal to CTLmax_names_forced_etal
+
+CTLuse_alt_spacing 
+"no" turns off the alternate interword spacing for entries with URLs.
+"yes" enables
+
+CTLalt_stretch_factor
+If alternate interword spacing for entries with URLs is enabled, this is
+the interword spacing stretch factor that will be used. For example, the
+default "4" here means that the interword spacing in entries with URLs can
+stretch to four times normal. Does not have to be an integer.
+
+CTLdash_repeated_names
+"no" turns off the "dashification" of repeated (i.e., identical to those
+of the previous entry) names. IEEE normally does this.
+"yes" enables
+
+CTLname_format_string
+The name format control string as explained in the BibTeX style hacking
+guide.
+IEEE style "{f.~}{vv~}{ll}{, jj}" is the default,
+
+CTLname_latex_cmd
+A LaTeX command that each name will be fed to (e.g., "\textsc").
+Leave empty if no special font is desired for the names.
+The default is empty.
+
+CTLname_url_prefix
+The prefix text used before URLs.
+The default is "[Online]. Available:" A space will be inserted after this
+text. If this space is not wanted, just use \relax at the end of the
+prefix text.
+
+
+Those fields that are not to be changed can be left out.
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLuse_article_number     = "yes",
+  CTLuse_paper              = "yes",
+  CTLuse_forced_etal        = "no",
+  CTLmax_names_forced_etal  = "10",
+  CTLnames_show_etal        = "1",
+  CTLuse_alt_spacing        = "yes",
+  CTLalt_stretch_factor     = "4",
+  CTLdash_repeated_names    = "yes",
+  CTLname_format_string     = "{f.~}{vv~}{ll}{, jj}",
+  CTLname_latex_cmd         = "",
+  CTLname_url_prefix        = "[Online]. Available:"
+}
+
+@ARTICLE{9392299,
+  author={Ding, Zixiang and Chen, Yaran and Li, Nannan and Zhao, Dongbin and Sun, Zhiquan and Chen, C. L. Philip},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={BNAS: Efficient Neural Architecture Search Using Broad Scalable Architecture}, 
+  year={2022},
+  volume={33},
+  number={9},
+  pages={5004-5018},
+  doi={10.1109/TNNLS.2021.3067028}}
+  
+@ARTICLE{9432795,
+  author={Zhou, Yuan and Xie, Xukai and Kung, Sun-Yuan},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Exploiting Operation Importance for Differentiable Neural Architecture Search}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-14},
+  doi={10.1109/TNNLS.2021.3072950}}
+
+@ARTICLE{9447766,
+  author={Chen, Yaran and Gao, Ruiyuan and Liu, Fenggang and Zhao, Dongbin},
+  journal={IEEE Transactions on Cybernetics}, 
+  title={ModuleNet: Knowledge-Inherited Neural Architecture Search}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-11},
+  doi={10.1109/TCYB.2021.3078573}}
+  
+@ARTICLE{9247292,
+  author={Zhang, Miao and Li, Huiqi and Pan, Shirui and Chang, Xiaojun and Zhou, Chuan and Ge, Zongyuan and Su, Steven},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={One-Shot Neural Architecture Search: Maximising Diversity to Overcome Catastrophic Forgetting}, 
+  year={2021},
+  volume={43},
+  number={9},
+  pages={2921-2935},
+  doi={10.1109/TPAMI.2020.3035351}}
+
+@inproceedings{liu2018hierarchical,
+  title={Hierarchical Representations for Efficient Architecture Search},
+  author={Liu, Hanxiao and Simonyan, Karen and Vinyals, Oriol and Fernando, Chrisantha and Kavukcuoglu, Koray},
+  booktitle={International Conference on Learning Representations},
+  year={2018}
+}
+
+
+@inproceedings{liu2018progressive,
+  title={Progressive neural architecture search},
+  author={Liu, Chenxi and Zoph, Barret and Neumann, Maxim and Shlens, Jonathon and Hua, Wei and Li, Li-Jia and Fei-Fei, Li and Yuille, Alan and Huang, Jonathan and Murphy, Kevin},
+  booktitle={Proceedings of the European conference on computer vision (ECCV)},
+  pages={19--34},
+  year={2018}
+}
+
+
+@inproceedings{chen2022mfenas,
+  title={MFENAS: multifactorial evolution for neural architecture search},
+  author={Chen, Li and Xu, Hua},
+  booktitle={Proceedings of the Genetic and Evolutionary Computation Conference Companion},
+  pages={631--634},
+  year={2022}
+}
+
+@inproceedings{dong2020searching,
+  title={Searching for a Robust Neural Architecture in Four GPU Hours},
+  author={Dong, X and Yang, Y},
+  booktitle={2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2020},
+  organization={IEEE}
+}
+
+@article{guo2021towards,
+  title={Towards accurate and compact architectures via neural architecture transformer},
+  author={Guo, Yong and Zheng, Yin and Tan, Mingkui and Chen, Qi and Li, Zhipeng and Chen, Jian and Zhao, Peilin and Huang, Junzhou},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{elsken2017simple,
+  title={Simple and efficient architecture search for convolutional neural networks},
+  author={Elsken, Thomas and Metzen, Jan-Hendrik and Hutter, Frank},
+  journal={arXiv preprint arXiv:1711.04528},
+  year={2017}
+}

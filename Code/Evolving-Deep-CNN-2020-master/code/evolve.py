@@ -10,6 +10,39 @@ import copy
 
 class Evolve_CNN:
     def __init__(self, m_prob, m_eta, x_prob, x_eta, population_size, train_data, train_label, validate_data, validate_label, number_of_channel, epochs, batch_size, train_data_length, validate_data_length, eta):
+        """_summary_ Establishing an implement of evoCNN
+
+        :param m_prob: _description_
+        :type m_prob: _type_
+        :param m_eta: _description_
+        :type m_eta: _type_
+        :param x_prob: _description_
+        :type x_prob: _type_
+        :param x_eta: _description_
+        :type x_eta: _type_
+        :param population_size: _description_
+        :type population_size: _type_
+        :param train_data: _description_
+        :type train_data: _type_
+        :param train_label: _description_
+        :type train_label: _type_
+        :param validate_data: _description_
+        :type validate_data: _type_
+        :param validate_label: _description_
+        :type validate_label: _type_
+        :param number_of_channel: _description_
+        :type number_of_channel: _type_
+        :param epochs: _description_
+        :type epochs: _type_
+        :param batch_size: _description_
+        :type batch_size: _type_
+        :param train_data_length: _description_
+        :type train_data_length: _type_
+        :param validate_data_length: _description_
+        :type validate_data_length: _type_
+        :param eta: _description_
+        :type eta: _type_
+        """
         self.m_prob = m_prob
         self.m_eta = m_eta
         self.x_prob = x_prob
