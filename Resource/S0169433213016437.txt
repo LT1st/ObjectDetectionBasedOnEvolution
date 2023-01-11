@@ -1,0 +1,11 @@
+Kechen Song, Yunhui Yan,
+A noise robust method based on completed local binary patterns for hot-rolled steel strip surface defects,
+Applied Surface Science,
+Volume 285, Part B,
+2013,
+Pages 858-864,
+ISSN 0169-4332,
+https://doi.org/10.1016/j.apsusc.2013.09.002.
+(https://www.sciencedirect.com/science/article/pii/S0169433213016437)
+Abstract: Automatic recognition method for hot-rolled steel strip surface defects is important to the steel surface inspection system. In order to improve the recognition rate, a new, simple, yet robust feature descriptor against noise named the adjacent evaluation completed local binary patterns (AECLBPs) is proposed for defect recognition. In the proposed approach, an adjacent evaluation window which is around the neighbor is constructed to modify the threshold scheme of the completed local binary pattern (CLBP). Experimental results demonstrate that the proposed approach presents the performance of defect recognition under the influence of the feature variations of the intra-class changes, the illumination and grayscale changes. Even in the toughest situation with additive Gaussian noise, the AECLBP can still achieve the moderate recognition accuracy. In addition, the strategy of using adjacent evaluation window can also be used in other methods of local binary pattern (LBP) variants.
+Keywords: Surface defect; Automatic recognition; Adjacent evaluation; Local binary pattern
