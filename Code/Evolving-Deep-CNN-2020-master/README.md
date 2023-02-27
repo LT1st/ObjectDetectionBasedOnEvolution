@@ -7,3 +7,7 @@ All codes are implemented from the architecture and weight initialization optimi
 These codes have been tested in the GPU with NVIDIA 1080, and written by Tensorflow1.3.
 
 Feel free to contact me when encouter the propoblems in reproducing the results. <sunkevin1214@gmail.com>
+
+
+# Steven 2023
+## Dataset
