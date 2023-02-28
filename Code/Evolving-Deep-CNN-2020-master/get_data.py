@@ -3,62 +3,46 @@ import scipy.io as io
 import numpy as np
 import sklearn.preprocessing as pre
 import os
-from ..dataset.fashion_mnist.utils import mnist_reader
-
-
-fashionPath =  '/home/lutao/Dataset/Fashion-minist/data/fashion'
-trainImagesPath = '/home/lutao/Dataset/Fashion-minist/data/fashion/train-images-idx3-ubyte.gz'
-trainLabelPath  = '/home/lutao/Dataset/Fashion-minist/data/fashion/train-labels-idx3-ubyte.gz'
-
-# X_train, y_train = mnist_reader.load_mnist(fashionPath, kind='train')
-# X_test, y_test = mnist_reader.load_mnist(fashionPath, kind='t10k')
-
 
 def get_general_image(path, name, num):
     data = io.loadmat(path)
     data = data[name].astype(np.float32)
     data = np.reshape(data, [num, 28, 28, 1], order='F')
     return data
-    
 def get_general_label(path, name):
     label = io.loadmat(path)
     label = label[name]
     label = np.squeeze(label.astype(np.int32))
     return label
 
-
-# testImagesPath
-# testLabelPath
-
 def get_mnist_train_data():
-    train_data, train_label = mnist_reader.load_mnist(fashionPath, kind='train')
-    # train_images_path = trainImagesPath
-    # train_label_path = trainLabelPath
+    train_images_path = '/am/lido/home/yanan/training_data/rectangles_images/train_images.mat'
+    train_label_path = '/am/lido/home/yanan/training_data/rectangles_images/train_label.mat'
 
-    # train_data = get_general_image(train_images_path, 'train_images', 10000)
-    # train_label = get_general_label(train_label_path, 'train_label')
+    train_data = get_general_image(train_images_path, 'train_images', 10000)
+    train_label = get_general_label(train_label_path, 'train_label')
 
 
     return train_data, train_label
 
 
 def get_mnist_test_data():
-    # test_images_path = '/am/lido/home/yanan/training_data/rectangles_images/test_images.mat'
-    # test_label_path = '/am/lido/home/yanan/training_data/rectangles_images/test_label.mat'
-    test_data, test_label = mnist_reader.load_mnist(fashionPath, kind='t10k')
+    test_images_path = '/am/lido/home/yanan/training_data/rectangles_images/test_images.mat'
+    test_label_path = '/am/lido/home/yanan/training_data/rectangles_images/test_label.mat'
 
-    # test_data = get_general_image(test_images_path, 'test_images', 50000)
-    # test_label = get_general_label(test_label_path, 'test_label')
+
+    test_data = get_general_image(test_images_path, 'test_images', 50000)
+    test_label = get_general_label(test_label_path, 'test_label')
 
     return test_data, test_label
 
 
 def get_mnist_validate_data():
-    # validate_images_path = '/am/lido/home/yanan/training_data/rectangles_images/validate_images.mat'
-    # validate_label_path = '/am/lido/home/yanan/training_data/rectangles_images/validate_label.mat'
-    validate_data, validate_label = mnist_reader.load_mnist(fashionPath, kind='t10k')
-    # validate_data = get_general_image(validate_images_path, 'validate_images', 2000)
-    # validate_label = get_general_label(validate_label_path, 'validate_label')
+    validate_images_path = '/am/lido/home/yanan/training_data/rectangles_images/validate_images.mat'
+    validate_label_path = '/am/lido/home/yanan/training_data/rectangles_images/validate_label.mat'
+
+    validate_data = get_general_image(validate_images_path, 'validate_images', 2000)
+    validate_label = get_general_label(validate_label_path, 'validate_label')
 
     return  validate_data, validate_label
 
