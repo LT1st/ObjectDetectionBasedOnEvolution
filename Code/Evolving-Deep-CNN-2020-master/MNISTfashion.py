@@ -11,8 +11,11 @@ total_epochs = 100
 
 def model():
     is_training = tf.placeholder(tf.bool, [])
+
+    # ²»È«£¿
     train_images, train_label = data.get_train_data(batch_size)
     test_images, test_label = data.get_test_data(batch_size)
+
     x = tf.cond(is_training, lambda:train_images, lambda:test_images)
     y_ = tf.cond(is_training, lambda:train_label, lambda:test_label)
     y_ = tf.cast(y_, tf.int64)
@@ -66,6 +69,8 @@ def train():
         total_steps = int(total_epochs*steps_in_each_epoch)
         coord = tf.train.Coordinator()
         threads = tf.train.start_queue_runners(sess, coord)
+
+
         try:
             for i in range(total_steps):
                 if coord.should_stop():

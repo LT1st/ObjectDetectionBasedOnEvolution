@@ -9,6 +9,7 @@ def get_general_image(path, name, num):
     data = data[name].astype(np.float32)
     data = np.reshape(data, [num, 28, 28, 1], order='F')
     return data
+    
 def get_general_label(path, name):
     label = io.loadmat(path)
     label = label[name]

@@ -60,7 +60,7 @@ if __name__ == '__main__':
         tf.gfile.MkDir('./save_data')
 
     #train_data, validation_data, test_data = get_mnist_data()
-    batch_size = 100
+    batch_size = 10
     # Clear the default graphics stack and reset the global default graphics
     tf.reset_default_graph()
     number_of_channel = 1
