@@ -229,9 +229,9 @@ class GPUTools(object):
         这里找到静息状态的GPU线程占用情况，然后在后面确定哪些GPU被占用了
 
         """
-        g1="1   N/A  N/A       889      G   /usr/lib/Xorg                       4MiB"
-        g2="0   N/A  N/A       903      G   /usr/bin/sddm-greeter              15MiB"
-        g3="0   N/A  N/A       889      G   /usr/lib/Xorg                      11MiB"
+        g1="1   N/A  N/A       888      G   /usr/lib/Xorg                       4MiB"
+        g2="0   N/A  N/A       90      G   /usr/bin/sddm-greeter              15MiB"
+        g3="0   N/A  N/A       888      G   /usr/lib/Xorg                      11MiB"
         gpu_info_list = []
         gpu_info_list1=[]
         gpu_use_list=[]
@@ -290,13 +290,15 @@ class GPUTools(object):
     def _get_gpu_0_plain_info(cls):
         """
         这里找到静息状态的GPU线程占用情况，然后在后面确定哪些GPU被占用了
-
+        bug 得定死了用哪个GPU
         """
         GPU_state_1 = 0
         GPU_state_0 = 0
         g1="1   N/A  N/A       889      G   /usr/lib/Xorg                       4MiB"
         g2="0   N/A  N/A       903      G   /usr/bin/sddm-greeter              15MiB"
         g3="0   N/A  N/A       889      G   /usr/lib/Xorg                      11MiB"
+
+        writeList = ['/usr/lib/Xorg']
         gpu_info_list = []
         gpu_info_list1=[]
         gpu_use_list=[]
@@ -314,33 +316,36 @@ class GPUTools(object):
                gpu_info_list1.append(lines[line_no][1:-1].strip())
                gpu_info_list.append(lines[line_no][1:-1].strip())
         for i in gpu_info_list1:
-            # print(i)
-            if i==g1:
-                # print(1)
-                gpu_info_list.remove(i)
-            if i==g2:
-                # print(2)
-                gpu_info_list.remove(i)
-            if i==g3:
-                # print(3)
-                gpu_info_list.remove(i)
-        print("Currently occupied(Use 'who' to find who is using it): ", gpu_info_list)
+            for writeMember in writeList:
+                if writeMember in i:
+                    gpu_info_list.remove(i)
+
+            # if i==g1:
+            #
+            #     gpu_info_list.remove(i)
+            # if i==g2:
+            #
+            #     gpu_info_list.remove(i)
+            # if i==g3:
+            #
+            #     gpu_info_list.remove(i)
+        # print("Currently occupied(Use 'who' to find who is using it): ", gpu_info_list)
         #parse the information
         # 此代码只适用于单卡GPU
         for k in gpu_info_list:
             if k[0] == '1':     # 1被占用
-                Log.info('GPU_QUERY-GPU#1 is occupied')
+                # Log.info('GPU_QUERY-GPU#1 is occupied')
                 GPU_state_1 += 1
             elif k[0] == '0':     # 0被占用
-                Log.info('GPU_QUERY-GPU#0 is occupied')
+                # Log.info('GPU_QUERY-GPU#0 is occupied')
                 GPU_state_0 += 1
             else:
                 pass
 
         if GPU_state_1 == 0:
             return 1
-        elif GPU_state_0 == 0:
-            return 0
+        # elif GPU_state_0 == 0:
+        #     return 0
         else:
             return 10000
         # if len(gpu_info_list) == 1:
@@ -394,10 +399,10 @@ class GPUTools(object):
             return None
         elif plain_info == 10000:
             # print('plain_info=10000')
-            Log.info('All GPUs are occupied')
+            # Log.info('All GPUs are occupied')
             return None
         else:
-            print("return plain_info")
+            # print("return plain_info")
             return plain_info
 class Utils(object):
     _lock = multiprocessing.Lock()

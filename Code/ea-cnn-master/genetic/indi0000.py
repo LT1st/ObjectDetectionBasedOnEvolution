@@ -142,8 +142,8 @@ class TrainModel(object):
     def __init__(self):
         # 目录所引到"cifar-10-batches-py"
         trainloader, validate_loader = data_loader.get_train_valid_loader('../data/',
-                batch_size=128, augment=True, valid_size=0.1, shuffle=True, random_seed=2312390,
-                show_sample=False, num_workers=1, pin_memory=True)
+                batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390,
+                show_sample=False, num_workers=2, pin_memory=True)
 
         # testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
         # /tmp/pycharm_project_663/genetic
@@ -169,7 +169,7 @@ class TrainModel(object):
             file_mode = 'w'
         else:
             file_mode = 'a+'
-        f = open('./log/%s.txt'%(self.file_id), file_mode)
+        f = open('./%s.txt'%(self.file_id), file_mode)
         f.write('[%s]-%s\n'%(dt, _str))
         f.flush()
         f.close()
@@ -186,6 +186,7 @@ class TrainModel(object):
         total = 0
         correct = 0
         for _, data in enumerate(self.trainloader, 0):
+            print(0, end="")
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
             # print("进了cuda")
@@ -198,6 +199,7 @@ class TrainModel(object):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels.data).sum()
+        # 4.11 卡死在这里
         print('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
         # self.log_record('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
 
@@ -217,8 +219,8 @@ class TrainModel(object):
             correct += (predicted == labels.data).sum()
         if correct/total > self.best_acc:
             self.best_acc = correct/total
-            #print('*'*100, self.best_acc)
-        self.log_record('Validate-Loss:%.3f, Acc:%.3f'%(test_loss/total, correct/total))
+            print('*'*100, self.best_acc)
+        # self.log_record('Validate-Loss:%.3f, Acc:%.3f'%(test_loss/total, correct/total))
 
 
     def process(self):

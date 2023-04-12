@@ -12,6 +12,8 @@ from datetime import datetime
 import multiprocessing
 from utils import StatusUpdateTool
 
+ifDebug = True
+
 class ResNetBottleneck(nn.Module):
     expansion = 1
 
@@ -116,7 +118,7 @@ class EvoCNNModel(nn.Module):
 
 class TrainModel(object):
     def __init__(self):
-        trainloader, validate_loader = data_loader.get_train_valid_loader('./data', batch_size=64, augment=True, valid_size=0.1, shuffle=True, random_seed=2312390, show_sample=False, num_workers=1, pin_memory=True)
+        trainloader, validate_loader = data_loader.get_train_valid_loader('./data', batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390, show_sample=False, num_workers=4, pin_memory=True)
         #testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
         net = EvoCNNModel()
         cudnn.benchmark = True
@@ -146,6 +148,8 @@ class TrainModel(object):
         f.close()
 
     def train(self, epoch):
+        if ifDebug:
+            print(epoch, end = "--")
         self.net.train()
         if epoch ==0: lr = 0.01
         if epoch > 0: lr = 0.1;
@@ -167,6 +171,8 @@ class TrainModel(object):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels.data).sum()
+        if ifDebug:
+            print("going to record", end = "++")
         self.log_record('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
 
     def test(self, epoch):
@@ -199,6 +205,8 @@ class TrainModel(object):
 
 class RunModel(object):
     def do_workk(self, gpu_id, file_id):
+        if ifDebug:
+            print("do_workk", end = "**")
         os.environ['CUDA_VISIBLE_DEVICES'] = gpu_id
         best_acc = 0.0
         m = TrainModel()
