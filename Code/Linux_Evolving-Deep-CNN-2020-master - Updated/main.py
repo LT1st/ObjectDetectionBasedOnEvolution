@@ -1,0 +1,96 @@
+from evolve import Evolve_CNN
+from utils import *
+import tensorflow as tf
+import get_data as data
+
+def begin_evolve(m_prob, m_eta, x_prob, x_eta, pop_size, train_data, train_label, validate_data, validation_label,
+                 number_of_channel, epochs, batch_size, train_data_length, validate_data_length, total_generation_number, eta):
+    """
+    parameters:
+        total_generation_number
+            upper bond of the inter times.
+
+    func:
+        whole process:
+        New an implementation of Evolve_CNN. Conduct the initialization of the populatioin. Conduct the mutatation and selection part.
+
+    output:
+        None
+
+    """
+    # 初始化不加载数据？
+    cnn = Evolve_CNN(m_prob, m_eta, x_prob, x_eta, pop_size, train_data, train_label, validate_data, validation_label,
+                     number_of_channel, epochs, batch_size, train_data_length, validate_data_length, eta)
+    cnn.initialize_popualtion()
+
+    # 这里评估报错，推测是图初始化问题
+    cnn.evaluate_fitness(0)     # 参数为什么写死了？？？？？？？？？
+
+    # cur_gen_no : the current inter time flag of generation number
+    for cur_gen_no in range(total_generation_number):
+        print('The {}/{} generation'.format(cur_gen_no+1, total_generation_number))
+        cnn.recombinate(cur_gen_no+1)
+        cnn.environmental_selection(cur_gen_no+1)
+
+def restart_evolve(m_prob, m_eta, x_prob, x_eta, pop_size, train_data, train_label, validate_data, validation_label, number_of_channel, epochs, batch_size, train_data_length, validate_data_length, total_gene_number, eta):
+    """
+    parameters:
+        total_gene_number
+            upper bond of the inter times????? differ from its begin processes????
+
+    func:
+        whole process to train a saved checkpoint:
+        New an implementation of Evolve_CNN. Conduct the initialization of the populatioin. Conduct the mutatation and selection part.
+
+    output:
+        None
+        
+    """
+    gen_no, pops, _= load_population()
+    cnn = Evolve_CNN(m_prob, m_eta, x_prob, x_eta, pop_size, train_data, train_label, validate_data, validation_label, number_of_channel, epochs, batch_size, train_data_length, validate_data_length, eta)
+    cnn.pops = pops
+    if gen_no < 0: # go to evaluate
+        print('first to evaluate...')
+        cnn.evaluate_fitness(1)
+    else:
+        for cure_gen_no in range(gen_no+1, total_gene_number+1):
+            print('Continue to evolve from the {}/{} generation...'.format(cure_gen_no, total_gene_number))
+            cnn.recombinate(cure_gen_no)
+            cnn.environmental_selection(cure_gen_no)
+
+
+
+if __name__ == '__main__':
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    tf.logging.set_verbosity(tf.logging.ERROR)
+    if not tf.gfile.Exists('./save_data'):
+        tf.gfile.MkDir('./save_data')
+
+    #train_data, validation_data, test_data = get_mnist_data()
+    batch_size = 1000
+    # Clear the default graphics stack and reset the global default graphics
+    tf.reset_default_graph()
+    number_of_channel = 1
+    """
+    Q: what about other dataset mentioned in the paper?
+    """
+    train_data_length = 6000
+    validate_data_length = 2000
+    total_generation_number = 50   # total generation number
+    pop_size = 50
+    epochs = 10                    # the itertime of a CNN
+    eta = 1/20                     # 
+    #CUDA1
+    train_images, train_label = data.get_train_data(batch_size)
+    test_images, test_label = data.get_test_data(batch_size)
+    is_training = tf.placeholder(tf.bool, [])
+    # x = tf.cond(is_training, lambda: train_images, lambda: test_images)
+    # y_ = tf.cond(is_training, lambda: train_label, lambda: test_label)
+    # y_ = tf.cast(y_, tf.int64)
+    # train_data, train_label, validate_data, validation_label
+    begin_evolve(0.9, 0.05, 0.2, 0.05, pop_size, train_images, train_label, test_images, test_label, number_of_channel, epochs, batch_size, train_data_length, validate_data_length, total_generation_number, eta)
+    # restart_evolve(0.9, 0.05, 0.2, 0.05, pop_size, None, None, None, None, number_of_channel, epochs, batch_size, train_data_length, validate_data_length, total_generation_number, eta)
+
+
+
+
