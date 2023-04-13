@@ -2922,3 +2922,35 @@ https://stackoverflow.com/questions/75077752/pycharm-error-process-finished-with
 服务器跑sh脚本
 
 注意超出显存不会报错
+
+
+## 切换数据集
+epoch出问题
+```
+epoch: 5
+epoch: 0
+Exception occurs, file:indi0000, pid:18435...list index out of range
+finally
+
+Process finished with exit code 0
+
+```
+类别应该编码才对
+```
+Traceback (most recent call last):
+  File "/opt/anaconda/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3457, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-3-bc58608df5a3>", line 1, in <module>
+    for _, data in enumerate(self.trainloader, 0):
+  File "/opt/anaconda/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/opt/anaconda/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/opt/anaconda/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/opt/anaconda/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/lutao/Code/ea-cnn-master/NEU_CLS.py", line 118, in __getitem__
+    return image, torch.tensor(int(label))
+ValueError: invalid literal for int() with base 10: 'Scratches'
+```

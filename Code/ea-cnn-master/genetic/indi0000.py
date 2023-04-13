@@ -14,6 +14,8 @@ from datetime import datetime
 import multiprocessing
 from utils import StatusUpdateTool
 
+from NEU_CLS import get_neucls_dataloader
+
 # 临时添加的
 from utils import Utils,GPUTools
 import importlib
@@ -141,9 +143,11 @@ class EvoCNNModel(nn.Module):
 class TrainModel(object):
     def __init__(self):
         # 目录所引到"cifar-10-batches-py"
-        trainloader, validate_loader = data_loader.get_train_valid_loader('../data/',
-                batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390,
-                show_sample=False, num_workers=2, pin_memory=True)
+        # trainloader, validate_loader = data_loader.get_train_valid_loader('../data/',
+        #         batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390,
+        #         show_sample=False, num_workers=2, pin_memory=True)
+        trainloader = get_neucls_dataloader(relative_path='../data', cls="train")
+        validate_loader = get_neucls_dataloader(relative_path='../data', cls="Validation")
 
         # testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
         # /tmp/pycharm_project_663/genetic
@@ -226,7 +230,7 @@ class TrainModel(object):
     def process(self):
         # os.path.append("../")
         total_epoch = StatusUpdateTool.get_epoch_size()
-        print('epoch:',total_epoch)
+        print('Total epoch:', total_epoch)
         for p in range(total_epoch):
             self.train(p)
             self.test(total_epoch)
