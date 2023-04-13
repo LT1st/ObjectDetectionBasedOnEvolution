@@ -17,6 +17,14 @@ import logging
 import argparse
 import numpy as np
 
+sys.path.insert(0, sys.path[0]+"/../")
+sys.path.append("..")
+sys.path.append(".")
+"""
+文件夹作为package需要满足如下两个条件：
+文件夹中必须存在有__init__.py文件，可以为空。
+不能作为顶层模块来执行该文件夹中的py文件。
+"""
 from misc import utils
 
 # model imports
@@ -79,7 +87,7 @@ def main():
     # Data
     _, valid_transform = utils._data_transforms_cifar10(args)
 
-    valid_data = torchvision.datasets.CIFAR10(root=args.data, train=False, download=True, transform=valid_transform)
+    valid_data = torchvision.datasets.CIFAR10(root=args.data, train=False, download=False, transform=valid_transform)
     valid_queue = torch.utils.data.DataLoader(
         valid_data, batch_size=args.batch_size, shuffle=False, pin_memory=True, num_workers=2)
 
