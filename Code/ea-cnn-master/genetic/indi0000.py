@@ -14,7 +14,10 @@ from datetime import datetime
 import multiprocessing
 from utils import StatusUpdateTool
 
-from NEU_CLS import get_neucls_dataloader
+# 有错误
+# from NEU_CLS import get_neucls_dataloader
+# 新的
+from NEU_CLS_dataloader import get_neucls_dataloader
 
 # 临时添加的
 from utils import Utils,GPUTools
@@ -146,9 +149,11 @@ class TrainModel(object):
         # trainloader, validate_loader = data_loader.get_train_valid_loader('../data/',
         #         batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390,
         #         show_sample=False, num_workers=2, pin_memory=True)
-        trainloader = get_neucls_dataloader(relative_path='../data', cls="train")
-        validate_loader = get_neucls_dataloader(relative_path='../data', cls="Validation")
-
+        # trainloader = get_neucls_dataloader(relative_path='../data', cls="train")
+        # validate_loader = get_neucls_dataloader(relative_path='../data', cls="Validation")
+        loader = get_neucls_dataloader(data_dir = '../data/NEU-CLS/', num_epochs = 16, batch_size = 8, input_size = 32)
+        trainloader = loader['train']
+        validate_loader = loader['val']
         # testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
         # /tmp/pycharm_project_663/genetic
         net = EvoCNNModel()
@@ -190,6 +195,7 @@ class TrainModel(object):
         total = 0
         correct = 0
         for _, data in enumerate(self.trainloader, 0):
+            # 这里会报一个错
             print(0, end="")
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())

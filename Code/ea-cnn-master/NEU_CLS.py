@@ -7,7 +7,7 @@ from torch.utils.data import Dataset
 from torchvision import transforms
 # 使用 DataLoader 进行批量读取数据
 from torch.utils.data import DataLoader
-
+from torchvision import transforms, datasets, models
 
 ifDebug = True
 
@@ -37,16 +37,29 @@ def get_data(relative_path="./data", cls = "train"):
         print("Testing Inclusion data:", len(os.listdir(test_dir + '/' + 'Inclusion')))
         print("Validation Inclusion data:", len(os.listdir(val_dir + '/' + 'Inclusion')))
 
+    # 定义数据变换
+    train_transform = transforms.Compose([
+        transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ])
+    val_transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        # transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ])
+
     if cls == "train":
-        return NEUDataset(train_dir)
+        dl = NEUDataset(data_dir=train_dir, transform=train_transform)
     elif cls == "Validation":
-        return NEUDataset(val_dir)
+        dl = NEUDataset(data_dir=val_dir, transform=val_transform)
     elif cls == "test":
-        return NEUDataset(test_dir)
+        dl = NEUDataset(data_dir=test_dir,transform=val_transform)
     else:
         print("!!!!!!   Wrong cls   !!!!!!")
-        return NEUDataset(train_dir)
+        dl = NEUDataset(train_dir)
 
+    return dl
 
 def get_neucls_dataloader(relative_path="../data", cls="train", bs=32, augment=True,
                           random_seed=42, valid_size=0.2, shuffle=False, show_sample=False,
@@ -91,6 +104,10 @@ def get_neucls_dataloader(relative_path="../data", cls="train", bs=32, augment=T
     return DataLoader(thisDataset, batch_size=bs, shuffle=shuffle, pin_memory=pin_memory)
 
 
+def convert_label_2_numbers(label_string):
+        nameDict = {'Crazing': 0, 'Inclusion': 1, 'Patches': 2, 'Pitted': 3, 'Rolled': 4, 'Scratches': 5}
+        return int(nameDict[label_string])
+
 class NEUDataset(Dataset):
     """
     CustomDataset 类继承了 PyTorch 的 Dataset 类，它是一个抽象类，用于表示数据集。
@@ -100,7 +117,7 @@ class NEUDataset(Dataset):
             注意，这里的标签需要转换为 PyTorch 中的 Tensor 对象。
 
     """
-    def __init__(self, data_dir, transform=None):
+    def __init__(self, data_dir, transform):
         self.data_dir = data_dir
         self.transform = transform
         self.labels = os.listdir(self.data_dir)
@@ -109,40 +126,46 @@ class NEUDataset(Dataset):
         return sum([len(files) for r, d, files in os.walk(self.data_dir)])
 
     def __getitem__(self, index):
-        label = self.labels[index // len(os.listdir(self.data_dir))]
+
+        # 这里报错了
+        # label = self.labels[index // len(os.listdir(self.data_dir))]
+        label = self.labels[index]
         label_dir = os.path.join(self.data_dir, label)
         image_path = os.path.join(label_dir, os.listdir(label_dir)[index % len(os.listdir(label_dir))])
         image = Image.open(image_path).convert('RGB')
         if self.transform:
             image = self.transform(image)
-        return image, torch.tensor(int(label))
+        # 注意这里要进tensor 得是数字形式
+        return image, torch.tensor(convert_label_2_numbers(label))
 
 
-class CustomDataset(Dataset):
-    def __init__(self, data_dir, transform=None):
-        self.data_dir = data_dir
-        self.transform = transform
-        self.classes = sorted(os.listdir(self.data_dir))
-        self.class_to_idx = {cls_name: i for i, cls_name in enumerate(self.classes)}
-        self.samples = []
-        for target_class in self.classes:
-            class_dir = os.path.join(self.data_dir, target_class)
-            if not os.path.isdir(class_dir):
-                continue
-            for img_name in os.listdir(class_dir):
-                img_path = os.path.join(class_dir, img_name)
-                if os.path.isfile(img_path):
-                    self.samples.append((img_path, self.class_to_idx[target_class]))
 
-    def __len__(self):
-        return len(self.samples)
 
-    def __getitem__(self, index):
-        img_path, label = self.samples[index]
-        img = Image.open(img_path )#.convert('RGB')
-        if self.transform:
-            img = self.transform(img)
-        return img, torch.tensor(label)
+# class CustomDataset(Dataset):
+#     def __init__(self, data_dir, transform=None):
+#         self.data_dir = data_dir
+#         self.transform = transform
+#         self.classes = sorted(os.listdir(self.data_dir))
+#         self.class_to_idx = {cls_name: i for i, cls_name in enumerate(self.classes)}
+#         self.samples = []
+#         for target_class in self.classes:
+#             class_dir = os.path.join(self.data_dir, target_class)
+#             if not os.path.isdir(class_dir):
+#                 continue
+#             for img_name in os.listdir(class_dir):
+#                 img_path = os.path.join(class_dir, img_name)
+#                 if os.path.isfile(img_path):
+#                     self.samples.append((img_path, self.class_to_idx[target_class]))
+#
+#     def __len__(self):
+#         return len(self.samples)
+#
+#     def __getitem__(self, index):
+#         img_path, label = self.samples[index]
+#         img = Image.open(img_path )#.convert('RGB')
+#         if self.transform:
+#             img = self.transform(img)
+#         return img, torch.tensor(label)
 
 
 if __name__ == '__main__':
@@ -150,6 +173,24 @@ if __name__ == '__main__':
     path2data = './data'
     path2data = os.path.abspath(path2data)
     assert os.path.exists(path2data)
+
+    input_size = 32
+    data_transforms = {
+        'train': transforms.Compose([
+            transforms.RandomResizedCrop(size=input_size, scale=(0.7, 1.0)),
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomVerticalFlip(),
+            transforms.RandomRotation(degrees=10),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ]),
+        'val': transforms.Compose([
+            transforms.Resize(input_size),
+            transforms.CenterCrop(input_size),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ]),
+    }
 
     projectPath = os.path.dirname(os.path.dirname(__file__))
     datasetName = 'NEU Metal Surface Defects Data'
@@ -169,8 +210,18 @@ if __name__ == '__main__':
         print("Testing Inclusion data:", len(os.listdir(test_dir + '/' + 'Inclusion')))
         print("Validation Inclusion data:", len(os.listdir(val_dir + '/' + 'Inclusion')))
 
-    neuclsDataset = NEUDataset(train_dir)
-    print(neuclsDataset.labels)
+    # 定义数据变换
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ])
+
+    image_datasets = datasets.ImageFolder(train_dir, data_transforms['train'])
+    neuclsDataset = image_datasets
+    # neuclsDataset = NEUDataset(train_dir, transform)
+
+    # print(neuclsDataset.labels)
 
 
 
@@ -178,12 +229,7 @@ if __name__ == '__main__':
     # 调用
     # from torchvision import transforms
 
-    # 定义数据变换
-    transform = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-    ])
+
 
 
     # 使用 DataLoader 进行批量读取数据
