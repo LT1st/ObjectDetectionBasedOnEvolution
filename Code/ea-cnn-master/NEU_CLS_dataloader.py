@@ -69,7 +69,7 @@ def get_neucls_dataloader(data_dir = "./data/NEU-CLS/", num_epochs = 25, batch_s
     # Create training and validation dataloaders
     # 问题应该是这里返回的不是 batchsize*channel*w*h
     dataloaders_dict = {
-        x: DataLoader(image_datasets[x], batch_size=batch_size, shuffle=True, num_workers=4) for x in
+        x: DataLoader(image_datasets[x], batch_size=batch_size, shuffle=False, num_workers=4) for x in
         ['train', 'val']}
         # x: torch.utils.data.DataLoader(image_datasets[x], batch_size=batch_size, shuffle=True, num_workers=4) for x in
         # ['train', 'val']}
