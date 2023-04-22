@@ -37,8 +37,8 @@ class Individual(object):
         self.id = indi_no # for record the id of current individual
         self.number_id = 0 # for record the latest number of basic unit
         self.max_len = params['max_len']
-        self.image_channel = params['image_channel']
-        self.output_channles = params['output_channel']
+        self.image_channel = params['image_channel']     #  64, 128, 256
+        self.output_channles = params['output_channel']  # 3
 
         self.min_resnet = params['min_resnet'] # minimal number of resnet units
         self.max_resnet = params['max_resnet'] # maximal number of resnet units

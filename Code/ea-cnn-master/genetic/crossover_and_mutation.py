@@ -19,6 +19,7 @@ import numpy as np
 import copy
 from utils import StatusUpdateTool, Utils
 
+
 class CrossoverAndMutation(object):
     def __init__(self, prob_crossover, prob_mutation, _log, individuals, _params=None):
         self.prob_crossover = prob_crossover

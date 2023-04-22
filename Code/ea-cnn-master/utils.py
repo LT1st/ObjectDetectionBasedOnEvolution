@@ -259,7 +259,7 @@ class GPUTools(object):
             if i==g3:
                 # print(3)
                 gpu_info_list.remove(i)
-        print("Currently occupied(Use 'who' to find who is using it): ", gpu_info_list)
+        print("Currently occupied(Use 'who' to find who is using it): ", gpu_info_list1)
         #parse the information
         # 此代码只适用于两卡GPU
         if len(gpu_info_list) == 1:
@@ -422,11 +422,12 @@ class Utils(object):
         return _map
 
     @classmethod
-    def save_fitness_to_cache(cls, individuals):
+    def save_fitness_to_cache(cls, individuals: object) -> object:
         _map = cls.load_cache_data()
         for indi in individuals:
             _key,_str = indi.uuid()
             _acc = indi.acc
+            # BUG: indi.acc 是 -1
             if _key not in _map:
                 Log.info('Add record into cache, id:%s, acc:%.5f'%(_key, _acc))
                 f = open('./populations/cache.txt', 'a+')

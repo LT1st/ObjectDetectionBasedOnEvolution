@@ -39,7 +39,9 @@ def get_data(relative_path="./data", cls = "train"):
     val_dir = os.path.join(path2dataset, 'valid')
     test_dir = os.path.join(path2dataset, 'test')
 
-def get_neucls_dataloader(data_dir = "./data/NEU-CLS/", num_epochs = 25, batch_size = 16, input_size = 32):
+
+def get_neucls_dataloader(data_dir = "./data/NEU-CLS/", num_epochs = 25, batch_size = 16,
+                          input_size = 32, num_workers=1, shuffle=True):
 
     # Data augmentation and normalization for training
     # Just normalization for validation
@@ -69,7 +71,7 @@ def get_neucls_dataloader(data_dir = "./data/NEU-CLS/", num_epochs = 25, batch_s
     # Create training and validation dataloaders
     # 问题应该是这里返回的不是 batchsize*channel*w*h
     dataloaders_dict = {
-        x: DataLoader(image_datasets[x], batch_size=batch_size, shuffle=False, num_workers=4) for x in
+        x: DataLoader(image_datasets[x], batch_size=batch_size, shuffle=shuffle, num_workers=num_workers) for x in
         ['train', 'val']}
         # x: torch.utils.data.DataLoader(image_datasets[x], batch_size=batch_size, shuffle=True, num_workers=4) for x in
         # ['train', 'val']}

@@ -1,0 +1,220 @@
+/opt/anaconda/bin/python /home/lutao/Code/ea-cnn-master/genetic/raw_resnet18_test.py
+Initializing Datasets and Dataloaders...
+/opt/anaconda/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/opt/anaconda/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Total epoch: 100
+epoch: 0
+00000000000000000000000000000000Train-Epoch:  1,  Loss: 0.496, Acc:0.823
+**************************************************************************************************** tensor(0.8769, device='cuda:0')
+epoch: 1
+00000000000000000000000000000000Train-Epoch:  2,  Loss: 7.134, Acc:0.291
+epoch: 2
+00000000000000000000000000000000Train-Epoch:  3,  Loss: 3.159, Acc:0.255
+epoch: 3
+00000000000000000000000000000000Train-Epoch:  4,  Loss: 2.220, Acc:0.304
+epoch: 4
+00000000000000000000000000000000Train-Epoch:  5,  Loss: 3.074, Acc:0.314
+epoch: 5
+00000000000000000000000000000000Train-Epoch:  6,  Loss: 1.814, Acc:0.397
+epoch: 6
+00000000000000000000000000000000Train-Epoch:  7,  Loss: 1.560, Acc:0.455
+epoch: 7
+00000000000000000000000000000000Train-Epoch:  8,  Loss: 1.492, Acc:0.457
+epoch: 8
+00000000000000000000000000000000Train-Epoch:  9,  Loss: 1.348, Acc:0.494
+epoch: 9
+00000000000000000000000000000000Train-Epoch: 10,  Loss: 1.106, Acc:0.579
+epoch: 10
+00000000000000000000000000000000Train-Epoch: 11,  Loss: 1.260, Acc:0.588
+epoch: 11
+00000000000000000000000000000000Train-Epoch: 12,  Loss: 0.881, Acc:0.688
+epoch: 12
+00000000000000000000000000000000Train-Epoch: 13,  Loss: 0.844, Acc:0.698
+epoch: 13
+00000000000000000000000000000000Train-Epoch: 14,  Loss: 0.765, Acc:0.706
+epoch: 14
+00000000000000000000000000000000Train-Epoch: 15,  Loss: 0.724, Acc:0.762
+epoch: 15
+00000000000000000000000000000000Train-Epoch: 16,  Loss: 0.622, Acc:0.750
+epoch: 16
+00000000000000000000000000000000Train-Epoch: 17,  Loss: 0.536, Acc:0.812
+epoch: 17
+00000000000000000000000000000000Train-Epoch: 18,  Loss: 0.620, Acc:0.809
+epoch: 18
+00000000000000000000000000000000Train-Epoch: 19,  Loss: 0.587, Acc:0.784
+epoch: 19
+00000000000000000000000000000000Train-Epoch: 20,  Loss: 0.467, Acc:0.837
+epoch: 20
+00000000000000000000000000000000Train-Epoch: 21,  Loss: 0.538, Acc:0.811
+epoch: 21
+00000000000000000000000000000000Train-Epoch: 22,  Loss: 0.466, Acc:0.834
+epoch: 22
+00000000000000000000000000000000Train-Epoch: 23,  Loss: 0.390, Acc:0.866
+epoch: 23
+00000000000000000000000000000000Train-Epoch: 24,  Loss: 0.375, Acc:0.873
+epoch: 24
+00000000000000000000000000000000Train-Epoch: 25,  Loss: 0.347, Acc:0.881
+**************************************************************************************************** tensor(0.8846, device='cuda:0')
+epoch: 25
+00000000000000000000000000000000Train-Epoch: 26,  Loss: 0.295, Acc:0.894
+**************************************************************************************************** tensor(0.8981, device='cuda:0')
+epoch: 26
+00000000000000000000000000000000Train-Epoch: 27,  Loss: 0.391, Acc:0.877
+epoch: 27
+00000000000000000000000000000000Train-Epoch: 28,  Loss: 0.327, Acc:0.894
+epoch: 28
+00000000000000000000000000000000Train-Epoch: 29,  Loss: 0.329, Acc:0.886
+epoch: 29
+00000000000000000000000000000000Train-Epoch: 30,  Loss: 0.288, Acc:0.898
+**************************************************************************************************** tensor(0.9250, device='cuda:0')
+epoch: 30
+00000000000000000000000000000000Train-Epoch: 31,  Loss: 0.301, Acc:0.884
+epoch: 31
+00000000000000000000000000000000Train-Epoch: 32,  Loss: 0.321, Acc:0.884
+epoch: 32
+00000000000000000000000000000000Train-Epoch: 33,  Loss: 0.270, Acc:0.909
+epoch: 33
+00000000000000000000000000000000Train-Epoch: 34,  Loss: 0.241, Acc:0.911
+epoch: 34
+00000000000000000000000000000000Train-Epoch: 35,  Loss: 0.238, Acc:0.916
+epoch: 35
+00000000000000000000000000000000Train-Epoch: 36,  Loss: 0.284, Acc:0.899
+epoch: 36
+00000000000000000000000000000000Train-Epoch: 37,  Loss: 0.278, Acc:0.909
+epoch: 37
+00000000000000000000000000000000Train-Epoch: 38,  Loss: 0.273, Acc:0.915
+epoch: 38
+00000000000000000000000000000000Train-Epoch: 39,  Loss: 0.200, Acc:0.924
+epoch: 39
+00000000000000000000000000000000Train-Epoch: 40,  Loss: 0.202, Acc:0.933
+epoch: 40
+00000000000000000000000000000000Train-Epoch: 41,  Loss: 0.253, Acc:0.904
+epoch: 41
+00000000000000000000000000000000Train-Epoch: 42,  Loss: 0.199, Acc:0.929
+**************************************************************************************************** tensor(0.9500, device='cuda:0')
+epoch: 42
+00000000000000000000000000000000Train-Epoch: 43,  Loss: 0.198, Acc:0.930
+epoch: 43
+00000000000000000000000000000000Train-Epoch: 44,  Loss: 0.179, Acc:0.939
+epoch: 44
+00000000000000000000000000000000Train-Epoch: 45,  Loss: 0.230, Acc:0.925
+epoch: 45
+00000000000000000000000000000000Train-Epoch: 46,  Loss: 0.192, Acc:0.934
+epoch: 46
+00000000000000000000000000000000Train-Epoch: 47,  Loss: 0.250, Acc:0.916
+epoch: 47
+00000000000000000000000000000000Train-Epoch: 48,  Loss: 0.288, Acc:0.907
+epoch: 48
+00000000000000000000000000000000Train-Epoch: 49,  Loss: 0.233, Acc:0.911
+epoch: 49
+00000000000000000000000000000000Train-Epoch: 50,  Loss: 0.223, Acc:0.922
+epoch: 50
+00000000000000000000000000000000Train-Epoch: 51,  Loss: 0.196, Acc:0.933
+epoch: 51
+00000000000000000000000000000000Train-Epoch: 52,  Loss: 0.174, Acc:0.940
+**************************************************************************************************** tensor(0.9519, device='cuda:0')
+epoch: 52
+00000000000000000000000000000000Train-Epoch: 53,  Loss: 0.190, Acc:0.932
+**************************************************************************************************** tensor(0.9558, device='cuda:0')
+epoch: 53
+00000000000000000000000000000000Train-Epoch: 54,  Loss: 0.190, Acc:0.934
+**************************************************************************************************** tensor(0.9615, device='cuda:0')
+epoch: 54
+00000000000000000000000000000000Train-Epoch: 55,  Loss: 0.213, Acc:0.925
+epoch: 55
+00000000000000000000000000000000Train-Epoch: 56,  Loss: 0.271, Acc:0.915
+epoch: 56
+00000000000000000000000000000000Train-Epoch: 57,  Loss: 0.171, Acc:0.935
+epoch: 57
+00000000000000000000000000000000Train-Epoch: 58,  Loss: 0.206, Acc:0.923
+epoch: 58
+00000000000000000000000000000000Train-Epoch: 59,  Loss: 0.126, Acc:0.962
+epoch: 59
+00000000000000000000000000000000Train-Epoch: 60,  Loss: 0.229, Acc:0.928
+epoch: 60
+00000000000000000000000000000000Train-Epoch: 61,  Loss: 0.213, Acc:0.923
+epoch: 61
+00000000000000000000000000000000Train-Epoch: 62,  Loss: 0.224, Acc:0.926
+epoch: 62
+00000000000000000000000000000000Train-Epoch: 63,  Loss: 0.191, Acc:0.933
+epoch: 63
+00000000000000000000000000000000Train-Epoch: 64,  Loss: 0.123, Acc:0.961
+epoch: 64
+00000000000000000000000000000000Train-Epoch: 65,  Loss: 0.143, Acc:0.950
+epoch: 65
+00000000000000000000000000000000Train-Epoch: 66,  Loss: 0.165, Acc:0.945
+epoch: 66
+00000000000000000000000000000000Train-Epoch: 67,  Loss: 0.151, Acc:0.948
+**************************************************************************************************** tensor(0.9731, device='cuda:0')
+epoch: 67
+00000000000000000000000000000000Train-Epoch: 68,  Loss: 0.224, Acc:0.928
+epoch: 68
+00000000000000000000000000000000Train-Epoch: 69,  Loss: 0.154, Acc:0.948
+epoch: 69
+00000000000000000000000000000000Train-Epoch: 70,  Loss: 0.126, Acc:0.955
+epoch: 70
+00000000000000000000000000000000Train-Epoch: 71,  Loss: 0.178, Acc:0.934
+epoch: 71
+00000000000000000000000000000000Train-Epoch: 72,  Loss: 0.149, Acc:0.952
+epoch: 72
+00000000000000000000000000000000Train-Epoch: 73,  Loss: 0.088, Acc:0.970
+epoch: 73
+00000000000000000000000000000000Train-Epoch: 74,  Loss: 0.125, Acc:0.955
+epoch: 74
+00000000000000000000000000000000Train-Epoch: 75,  Loss: 0.147, Acc:0.946
+epoch: 75
+00000000000000000000000000000000Train-Epoch: 76,  Loss: 0.166, Acc:0.946
+epoch: 76
+00000000000000000000000000000000Train-Epoch: 77,  Loss: 0.137, Acc:0.950
+epoch: 77
+00000000000000000000000000000000Train-Epoch: 78,  Loss: 0.128, Acc:0.957
+epoch: 78
+00000000000000000000000000000000Train-Epoch: 79,  Loss: 0.119, Acc:0.956
+epoch: 79
+00000000000000000000000000000000Train-Epoch: 80,  Loss: 0.131, Acc:0.948
+epoch: 80
+00000000000000000000000000000000Train-Epoch: 81,  Loss: 0.105, Acc:0.963
+epoch: 81
+00000000000000000000000000000000Train-Epoch: 82,  Loss: 0.119, Acc:0.955
+epoch: 82
+00000000000000000000000000000000Train-Epoch: 83,  Loss: 0.127, Acc:0.958
+epoch: 83
+00000000000000000000000000000000Train-Epoch: 84,  Loss: 0.105, Acc:0.963
+epoch: 84
+00000000000000000000000000000000Train-Epoch: 85,  Loss: 0.119, Acc:0.960
+epoch: 85
+00000000000000000000000000000000Train-Epoch: 86,  Loss: 0.161, Acc:0.941
+epoch: 86
+00000000000000000000000000000000Train-Epoch: 87,  Loss: 0.122, Acc:0.956
+epoch: 87
+00000000000000000000000000000000Train-Epoch: 88,  Loss: 0.112, Acc:0.967
+epoch: 88
+00000000000000000000000000000000Train-Epoch: 89,  Loss: 0.140, Acc:0.952
+epoch: 89
+00000000000000000000000000000000Train-Epoch: 90,  Loss: 0.084, Acc:0.972
+epoch: 90
+00000000000000000000000000000000Train-Epoch: 91,  Loss: 0.127, Acc:0.955
+epoch: 91
+00000000000000000000000000000000Train-Epoch: 92,  Loss: 0.094, Acc:0.965
+epoch: 92
+00000000000000000000000000000000Train-Epoch: 93,  Loss: 0.204, Acc:0.940
+epoch: 93
+00000000000000000000000000000000Train-Epoch: 94,  Loss: 0.152, Acc:0.942
+epoch: 94
+00000000000000000000000000000000Train-Epoch: 95,  Loss: 0.156, Acc:0.948
+epoch: 95
+00000000000000000000000000000000Train-Epoch: 96,  Loss: 0.114, Acc:0.956
+epoch: 96
+00000000000000000000000000000000Train-Epoch: 97,  Loss: 0.124, Acc:0.948
+epoch: 97
+00000000000000000000000000000000Train-Epoch: 98,  Loss: 0.108, Acc:0.959
+epoch: 98
+00000000000000000000000000000000Train-Epoch: 99,  Loss: 0.113, Acc:0.960
+epoch: 99
+00000000000000000000000000000000Train-Epoch:100,  Loss: 0.101, Acc:0.967
+done  best_acc = m.process()
+finally
+
+Process finished with exit code 0
