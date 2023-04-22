@@ -573,7 +573,8 @@ class Utils(object):
 
     @classmethod
     def read_template(cls):
-        _path = './template/cifar10.py'
+        # _path = './template/cifar10.py'
+        _path = './template/neucls.py'
         part1 = []
         part2 = []
         part3 = []

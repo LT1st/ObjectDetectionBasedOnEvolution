@@ -7,7 +7,8 @@ import torch.nn.functional as F
 import torch.backends.cudnn as cudnn
 import torch.optim as optim
 import data_loader
-from data.dataloader.NEU_CLS import get_neucls_dataloader
+# from data.dataloader.NEU_CLS import get_neucls_dataloader
+from NEU_CLS_dataloader import get_neucls_dataloader
 import os
 from datetime import datetime
 import multiprocessing
@@ -119,9 +120,11 @@ class EvoCNNModel(nn.Module):
 
 class TrainModel(object):
     def __init__(self):
-        # get_neucls_dataloader()
-        trainloader, validate_loader = data_loader.get_train_valid_loader('./data', batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390, show_sample=False, num_workers=4, pin_memory=True)
+        #trainloader, validate_loader = data_loader.get_train_valid_loader('./data', batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390, show_sample=False, num_workers=4, pin_memory=True)
         #testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
+        loader = get_neucls_dataloader(data_dir = './data/NEU-CLS/', num_epochs = 16, batch_size = 8, input_size = 32)
+        trainloader = loader['train']
+        validate_loader = loader['val']
         net = EvoCNNModel()
         cudnn.benchmark = True
         net = net.cuda()
