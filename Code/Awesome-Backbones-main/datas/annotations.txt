@@ -1,0 +1,6 @@
+sc 0
+rs 1
+ps 2
+pa 3
+in 4
+cr 5

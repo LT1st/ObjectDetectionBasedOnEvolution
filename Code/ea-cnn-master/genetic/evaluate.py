@@ -4,6 +4,7 @@ from multiprocessing import Process
 import time, os, sys
 from asyncio.tasks import sleep
 
+
 class FitnessEvaluate(object):
 
     def __init__(self, individuals, log):
@@ -29,9 +30,11 @@ class FitnessEvaluate(object):
         mutiGPU = False     # 多卡卡死
 
         self.log.info('Try to query fitness from cache from ./populations/cache.txt')
+        # 已有网络结构
         _map = Utils.load_cache_data()
-        _count = 0
+        _count = 0 # 有多少数据已经有了
         for indi in self.individuals:
+            # 个体编号  个体网络结构
             _key, _str = indi.uuid()
             if _key in _map:
                 _count += 1
@@ -49,6 +52,7 @@ class FitnessEvaluate(object):
         for indi in self.individuals:
             if indi.acc < 0:
                 if not mutiGPU:
+                    has_evaluated_offspring = True
                     """ 
                     # 测试单卡单次
                     has_evaluated_offspring = True
@@ -88,6 +92,7 @@ class FitnessEvaluate(object):
                         p = Process(target=cls_obj.do_workk, args=(str(gpu_id), file_name,))
                         # p = Process(target=cls_obj.do_workk, args=('%d'%(gpu_id), file_name,))
                         p.start()
+                        # has_evaluated_offspring = True
 
                 # 多卡训练
                 else:
@@ -143,7 +148,7 @@ class FitnessEvaluate(object):
         if has_evaluated_offspring:
             all_finished = False
             while all_finished is not True:
-                time.sleep(300)
+                time.sleep(30)
                 all_finished = GPUTools.all_gpu_available()
         """
         the reason that using "has_evaluated_offspring" is that:
@@ -155,7 +160,7 @@ class FitnessEvaluate(object):
         """
         if has_evaluated_offspring:
             file_name = './populations/after_%s.txt'%(self.individuals[0].id[4:6])
-            assert os.path.exists(file_name) == True
+            assert os.path.exists(file_name)
             f = open(file_name, 'r')
             fitness_map = {}
             for line in f:
@@ -165,6 +170,7 @@ class FitnessEvaluate(object):
             f.close()
             for indi in self.individuals:
                 if indi.acc == -1:
+                    # 如果是 -1 说明出问题了
                     if indi.id not in fitness_map:
                         self.log.warn('The individuals have been evaluated, but the records are not correct, the fitness of %s does not exist in %s, wait 120 seconds'%(indi.id, file_name))
                         sleep(120) #

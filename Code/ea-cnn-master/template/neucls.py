@@ -122,7 +122,7 @@ class TrainModel(object):
     def __init__(self):
         #trainloader, validate_loader = data_loader.get_train_valid_loader('./data', batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390, show_sample=False, num_workers=4, pin_memory=True)
         #testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
-        loader = get_neucls_dataloader(data_dir = './data/NEU-CLS/', num_epochs = 16, batch_size = 8, input_size = 32)
+        loader = get_neucls_dataloader(data_dir = './data/NEU-CLS/', num_epochs = 16, batch_size = 40, input_size = 200, num_workers=1, shuffle=True)
         trainloader = loader['train']
         validate_loader = loader['val']
         net = EvoCNNModel()
@@ -158,8 +158,8 @@ class TrainModel(object):
         self.net.train()
         if epoch ==0: lr = 0.01
         if epoch > 0: lr = 0.1;
-        if epoch > 148: lr = 0.01
-        if epoch > 248: lr = 0.001
+        if epoch > 25: lr = 0.01
+        if epoch > 40: lr = 0.001
         optimizer = optim.SGD(self.net.parameters(), lr=lr, momentum = 0.9, weight_decay=5e-4)
         running_loss = 0.0
         total = 0
@@ -178,6 +178,7 @@ class TrainModel(object):
             correct += (predicted == labels.data).sum()
         if ifDebug:
             print("going to record", end = "++")
+            print('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
         self.log_record('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
 
     def test(self, epoch):

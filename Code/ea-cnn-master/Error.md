@@ -2928,3 +2928,31 @@ ValueError: invalid literal for int() with base 10: 'Scratches'
 ```
 0Exception occurs, file:indi0000, pid:1387...list index out of range
 ```
+
+BUG: indi.acc 是 -1
+utils.py 430 行
+
+BUG : ACC越来越低
+可能是dataloader写错了
+或者是没有shuffle
+```
+
+```
+
+BUG ： 意外退出可能是Loss NAN
+```
+0--going to record++Train-Epoch:  1,  Loss: 20.763, Acc:0.902
+1--going to record++Train-Epoch:  2,  Loss: nan, Acc:0.296
+2--going to record++Train-Epoch:  3,  Loss: nan, Acc:0.152
+3--going to record++Train-Epoch:  4,  Loss: nan, Acc:0.152
+4--going to record++Train-Epoch:  5,  Loss: nan, Acc:0.152
+5--going to record++Train-Epoch:  6,  Loss: nan, Acc:0.152
+6--going to record++Train-Epoch:  7,  Loss: nan, Acc:0.152
+7--going to record++Train-Epoch:  8,  Loss: nan, Acc:0.152
+8--going to record++Train-Epoch:  9,  Loss: nan, Acc:0.152
+9--going to record++Train-Epoch: 10,  Loss: nan, Acc:0.152
+```
+
+Swin系列 -1 退出
+- 爆显存
+- Loss太大了  if epoch < 25: lr = 0.001

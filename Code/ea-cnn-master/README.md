@@ -31,13 +31,20 @@ rGPUTime
 ## spliteRawNEUCLS.py
 分割数据集
 
+### indi0000.py
+用于测试单次代码运行
+
 # todo
 ## 修改到可以使用
 - [x] 数据加载器
 - [x] 训练文件neucls.py
 - [ ] 有错误from NEU_CLS import get_neucls_dataloader
 
-
+# 可视化
+## visdom
+```
+python3 -m visdom.server
+```
 
 # 内容解读
 ## Completely Automated CNN Architecture Design Based on Block
@@ -55,9 +62,15 @@ GA算法主要需要考虑的有以下几个方面：
 
 ## 文章中用到的策略
 ### 一、种群初始化
+population.py
 主要是基于采用的个体编码策略，本篇文章中采用变长编码，因为设计的CNN的depth可变。这里的编码策略基于三种不同类型的units以及它们在网络中对应的position。RBU,DBU,PU分别是ResNet Unit,DenseNet Unit,Pooling Unit,其中一个RBU，DBU可以包括多个RBs,DBs,而PU中仅包含有一个pooling layer。其中的RB，DB中的convolution layers的数目是用户确定的。
 RBU的parameter：position，input，output，type，amount。其中的amount指的是the number of convolutional layers of the unit。
 DBU同上，但多出一个k
+```
+class Individual(object):
+def initialize(self):
+```
+acc： -1 表示清零了
 PU：position，type of the unit，the pooling type
 种群的初始化两重循环：遍历P0中的每个个体；为每个个体生成编码信息，并用一个数组进行存放。
 初始化的种群P0包含N个长度不一的数组，即对应N个个体，或者说是N个候选的CNN结构。
