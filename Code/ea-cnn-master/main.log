@@ -316,3 +316,47 @@
 2023-04-22 22:53:59,239 INFO    : Begin to train indi0010
 2023-04-22 23:05:29,657 INFO    : Begin to train indi0011
 2023-04-22 23:33:22,320 INFO    : Begin to train indi0012
+2023-04-23 10:22:16,672 INFO    : *************************
+2023-04-23 10:22:16,674 INFO    : Initialize population...
+2023-04-23 10:22:16,679 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 10:22:16,679 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 10:22:16,760 INFO    : Finish the generation of python files
+2023-04-23 10:22:16,760 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-04-23 10:22:16,762 INFO    : Total hit 0 individuals for fitness
+2023-04-23 10:22:26,893 INFO    : Begin to train indi0000
+2023-04-23 10:55:12,547 INFO    : *************************
+2023-04-23 10:55:12,548 INFO    : Initialize population...
+2023-04-23 10:55:12,551 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 10:55:12,551 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 10:55:12,577 INFO    : Finish the generation of python files
+2023-04-23 10:55:12,577 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-04-23 10:55:12,577 INFO    : Total hit 0 individuals for fitness
+2023-04-23 10:55:22,715 INFO    : Begin to train indi0000
+2023-04-23 10:57:47,657 INFO    : Begin to train indi0001
+2023-04-23 11:48:52,522 INFO    : *************************
+2023-04-23 11:48:52,523 INFO    : Initialize population...
+2023-04-23 11:48:52,526 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 11:48:52,526 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 11:48:52,553 INFO    : Finish the generation of python files
+2023-04-23 11:48:52,553 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-04-23 11:48:52,553 INFO    : Total hit 0 individuals for fitness
+2023-04-23 11:49:02,681 INFO    : Begin to train indi0000
+2023-04-23 11:51:52,673 INFO    : *************************
+2023-04-23 11:51:52,673 INFO    : Initialize population...
+2023-04-23 11:51:52,677 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 11:51:52,677 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 11:51:52,703 INFO    : Finish the generation of python files
+2023-04-23 11:51:52,703 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-04-23 11:51:52,703 INFO    : Total hit 0 individuals for fitness
+2023-04-23 11:52:02,844 INFO    : Begin to train indi0000
+2023-04-23 11:53:20,960 INFO    : Begin to train indi0001
+2023-04-23 11:53:35,763 INFO    : *************************
+2023-04-23 11:53:35,764 INFO    : Initialize population...
+2023-04-23 11:53:35,767 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 11:53:35,767 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 11:53:35,793 INFO    : Finish the generation of python files
+2023-04-23 11:53:35,793 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-04-23 11:53:35,794 INFO    : Total hit 0 individuals for fitness
+2023-04-23 11:53:45,936 INFO    : Begin to train indi0000
+2023-04-23 12:04:27,688 INFO    : Begin to train indi0001
+2023-04-23 12:06:25,257 INFO    : Begin to train indi0002

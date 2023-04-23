@@ -1,5 +1,5 @@
 """
-2023-04-22  20:50:11
+2023-04-23  11:53:35
 """
 from __future__ import print_function
 import torch
@@ -17,6 +17,8 @@ import multiprocessing
 from utils import StatusUpdateTool
 
 ifDebug = True
+ifLog = True
+ifPrintMemory = True
 
 class ResNetBottleneck(nn.Module):
     # expansion 是一个用于扩展通道数的参数，用于控制每个 ResNet 模块中的卷积层输出通道数相对于输入通道数的倍数。
@@ -154,25 +156,24 @@ class EvoCNNModel(nn.Module):
         super(EvoCNNModel, self).__init__()
 
         #resnet and densenet unit
-        self.op0 = DenseNetUnit(k=12, amount=10, in_channel=3, out_channel=123, max_input_channel=128)
-        self.op2 = DenseNetUnit(k=20, amount=4, in_channel=123, out_channel=144, max_input_channel=64)
-        self.op3 = DenseNetUnit(k=12, amount=8, in_channel=144, out_channel=224, max_input_channel=128)
-        self.op7 = ResNetUnit(amount=5, in_channel=224, out_channel=128)
+        self.op0 = ResNetUnit(amount=10, in_channel=3, out_channel=256)
+        self.op4 = DenseNetUnit(k=12, amount=9, in_channel=256, out_channel=236, max_input_channel=128)
+        self.op5 = DenseNetUnit(k=12, amount=10, in_channel=236, out_channel=248, max_input_channel=128)
+        self.op7 = DenseNetUnit(k=20, amount=5, in_channel=248, out_channel=164, max_input_channel=64)
 
         #linear unit
-        self.linear = nn.Linear(18432, 6)
+        self.linear = nn.Linear(23616, 6)
 
 
     def forward(self, x):
-        out_0 = self.op0(x)
-        out_1 = F.max_pool2d(out_0, 2)
-        out_2 = self.op2(out_1)
-        out_3 = self.op3(out_2)
-        out_4 = F.max_pool2d(out_3, 2)
-        out_5 = F.max_pool2d(out_4, 2)
-        out_6 = F.avg_pool2d(out_5, 2)
-        out_7 = self.op7(out_6)
-        out = out_7
+        out = self.op0(x)
+        out= F.max_pool2d(out, 2)
+        out = F.avg_pool2d(out, 2)
+        out = F.avg_pool2d(out, 2)
+        out= self.op4(out)
+        out= self.op5(out)
+        out= F.max_pool2d(out, 2)
+        out= self.op7(out)
 
         out = out.view(out.size(0), -1)
         out = self.linear(out)
@@ -212,36 +213,44 @@ class TrainModel(object):
         #self.log_record('+'*50, first_time=False)
 
     def log_record(self, _str, first_time=None):
-        dt = datetime.now()
-        dt.strftime( '%Y-%m-%d %H:%M:%S' )
-        if first_time:
-            file_mode = 'w'
+        if ifLog:
+            dt = datetime.now()
+            dt.strftime( '%Y-%m-%d %H:%M:%S' )
+            if first_time:
+                file_mode = 'w'
+            else:
+                file_mode = 'a+'
+            f = open('./log/%s.txt'%(self.file_id), file_mode)
+            f.write('[%s]-%s\n'%(dt, _str))
+            f.flush()
+            f.close()
         else:
-            file_mode = 'a+'
-        f = open('./log/%s.txt'%(self.file_id), file_mode)
-        f.write('[%s]-%s\n'%(dt, _str))
-        f.flush()
-        f.close()
+            print(_str)
 
     def train(self, epoch):
         if ifDebug:
             print(epoch, end = "--")
         self.net.train()
-        if epoch <= 3: lr = 0.01
-        if epoch > 0: lr = 0.1;
-        if epoch > 25: lr = 0.01
-        if epoch > 40: lr = 0.001
+        lr = 0.0001
+        # if epoch <= 3: lr = 0.01
+        # if epoch > 10: lr = 0.1;
+        # if epoch > 25: lr = 0.01
+        # if epoch > 40: lr = 0.001
         optimizer = optim.SGD(self.net.parameters(), lr=lr, momentum = 0.9, weight_decay=5e-4)
         running_loss = 0.0
         total = 0
         correct = 0
-        for _, data in enumerate(self.trainloader, 0):
+        for mini_batch_cnt, data in enumerate(self.trainloader, 0):
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
             optimizer.zero_grad()
             outputs = self.net(inputs)
+            if mini_batch_cnt == 1 and ifPrintMemory:
+                print("train outputs:{}".format(torch.cuda.memory_allocated(0)/1024/1024))
             loss = self.criterion(outputs, labels)
             loss.backward()
+            if mini_batch_cnt == 1 and ifPrintMemory:
+                print("train backward:{}".format(torch.cuda.memory_allocated(0)/1024/1024))
             optimizer.step()
             running_loss += loss.item()*labels.size(0)
             _, predicted = torch.max(outputs.data, 1)
@@ -250,6 +259,7 @@ class TrainModel(object):
         if ifDebug:
             print("going to record", end = "++")
             print('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
+        torch.cuda.empty_cache()
         self.log_record('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
 
     def test(self, epoch):
@@ -257,18 +267,22 @@ class TrainModel(object):
         test_loss = 0.0
         total = 0
         correct = 0
-        for _, data in enumerate(self.validate_loader, 0):
+        for mini_batch_cnt, data in enumerate(self.validate_loader, 0):
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
             outputs = self.net(inputs)
+            if mini_batch_cnt==2 and ifPrintMemory:
+                print("validate outputs:{}".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
             loss = self.criterion(outputs, labels)
             test_loss += loss.item()*labels.size(0)
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
+            if mini_batch_cnt==2 and ifPrintMemory:
+                print("validate total:{}".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
             correct += (predicted == labels.data).sum()
         if correct/total > self.best_acc:
             self.best_acc = correct/total
-            #print('*'*100, self.best_acc)
+            print('*'*100, self.best_acc)
         self.log_record('Validate-Loss:%.3f, Acc:%.3f'%(test_loss/total, correct/total))
 
 

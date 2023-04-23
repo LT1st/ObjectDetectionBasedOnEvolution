@@ -1,5 +1,5 @@
 """
-2023-04-22  20:50:11
+2023-04-23  10:55:12
 """
 from __future__ import print_function
 import torch
@@ -17,30 +17,31 @@ import multiprocessing
 from utils import StatusUpdateTool
 
 ifDebug = True
+if_log = False
 
 class ResNetBottleneck(nn.Module):
-    # expansion ÊÇÒ»¸öÓÃÓÚÀ©Õ¹Í¨µÀÊıµÄ²ÎÊı£¬ÓÃÓÚ¿ØÖÆÃ¿¸ö ResNet Ä£¿éÖĞµÄ¾í»ı²ãÊä³öÍ¨µÀÊıÏà¶ÔÓÚÊäÈëÍ¨µÀÊıµÄ±¶Êı¡£
-    # µ± expansion = 1 Ê±£¬±íÊ¾¾í»ı²ãÊä³öµÄÍ¨µÀÊıÓëÊäÈëÍ¨µÀÊıÏàÍ¬£¬²»·¢ÉúÍ¨µÀÊıµÄ±ä»¯
-    # ResNet µÄ Bottleneck Ä£¿éÖĞ£¬expansion µÄÖµÍ¨³£ÉèÖÃÎª 4£¬¼´Êä³öÍ¨µÀÊıÊÇÊäÈëÍ¨µÀÊıµÄ 4 ±¶¡£
-    # ÕâÑù×öµÄÄ¿µÄÊÇÎªÁËÔÚÍøÂç¼ÓÉîÊ±±£³Ö½ÏĞ¡µÄÄ£ĞÍ²ÎÊıÁ¿ºÍ¼ÆËã¸´ÔÓ¶È£¬Í¬Ê±ÌáÉıÍøÂçµÄ±í´ïÄÜÁ¦£¬´Ó¶ø»ñµÃ¸üºÃµÄĞÔÄÜ¡£
+    # expansion æ˜¯ä¸€ä¸ªç”¨äºæ‰©å±•é€šé“æ•°çš„å‚æ•°ï¼Œç”¨äºæ§åˆ¶æ¯ä¸ª ResNet æ¨¡å—ä¸­çš„å·ç§¯å±‚è¾“å‡ºé€šé“æ•°ç›¸å¯¹äºè¾“å…¥é€šé“æ•°çš„å€æ•°ã€‚
+    # å½“ expansion = 1 æ—¶ï¼Œè¡¨ç¤ºå·ç§¯å±‚è¾“å‡ºçš„é€šé“æ•°ä¸è¾“å…¥é€šé“æ•°ç›¸åŒï¼Œä¸å‘ç”Ÿé€šé“æ•°çš„å˜åŒ–
+    # ResNet çš„ Bottleneck æ¨¡å—ä¸­ï¼Œexpansion çš„å€¼é€šå¸¸è®¾ç½®ä¸º 4ï¼Œå³è¾“å‡ºé€šé“æ•°æ˜¯è¾“å…¥é€šé“æ•°çš„ 4 å€ã€‚
+    # è¿™æ ·åšçš„ç›®çš„æ˜¯ä¸ºäº†åœ¨ç½‘ç»œåŠ æ·±æ—¶ä¿æŒè¾ƒå°çš„æ¨¡å‹å‚æ•°é‡å’Œè®¡ç®—å¤æ‚åº¦ï¼ŒåŒæ—¶æå‡ç½‘ç»œçš„è¡¨è¾¾èƒ½åŠ›ï¼Œä»è€Œè·å¾—æ›´å¥½çš„æ€§èƒ½ã€‚
     expansion = 1
 
     def __init__(self, in_planes, planes, stride=1):
         super(ResNetBottleneck, self).__init__()
-        # ¶¨ÒåµÚÒ»¸ö¾í»ı²ã£¬Ê¹ÓÃ 1x1 µÄ¾í»ıºË£¬ÓÃÓÚ½µµÍÊäÈëÆ½ÃæµÄÎ¬¶È
+        # å®šä¹‰ç¬¬ä¸€ä¸ªå·ç§¯å±‚ï¼Œä½¿ç”¨ 1x1 çš„å·ç§¯æ ¸ï¼Œç”¨äºé™ä½è¾“å…¥å¹³é¢çš„ç»´åº¦
         self.conv1 = nn.Conv2d(in_planes, planes, kernel_size=1, bias=False)
-        # ¶¨Òå conv1 ºóµÄÅú¹éÒ»»¯²ã£¬ÓÃÓÚ¹æ·¶»¯¾í»ı²ãµÄÊä³ö
+        # å®šä¹‰ conv1 åçš„æ‰¹å½’ä¸€åŒ–å±‚ï¼Œç”¨äºè§„èŒƒåŒ–å·ç§¯å±‚çš„è¾“å‡º
         self.bn1 = nn.BatchNorm2d(planes)
-        # ÓÃÓÚÌáÈ¡ÌØÕ÷²¢µ÷ÕûÊäÈë³ß´ç
+        # ç”¨äºæå–ç‰¹å¾å¹¶è°ƒæ•´è¾“å…¥å°ºå¯¸
         self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=stride, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(planes)
-        # ¶¨ÒåµÚÈı¸ö¾í»ı²ã£¬Ê¹ÓÃ 1x1 µÄ¾í»ıºË£¬ÓÃÓÚ»Ö¸´Êä³öÆ½ÃæµÄÎ¬¶È
+        # å®šä¹‰ç¬¬ä¸‰ä¸ªå·ç§¯å±‚ï¼Œä½¿ç”¨ 1x1 çš„å·ç§¯æ ¸ï¼Œç”¨äºæ¢å¤è¾“å‡ºå¹³é¢çš„ç»´åº¦
         self.conv3 = nn.Conv2d(planes, self.expansion*planes, kernel_size=1, bias=False)
         self.bn3 = nn.BatchNorm2d(self.expansion*planes)
 
-        # Èç¹û stride ²»µÈÓÚ 1£¬»òÕßÊäÈëµÄÆ½ÃæÊı²»µÈÓÚÀ©Õ¹±¶Êı³ËÒÔÊä³öÆ½ÃæÊı£¬
-        # Ôò½« shortcut ¶¨ÒåÎªÒ»¸ö°üº¬Ò»¸ö 1x1 µÄ¾í»ı²ãºÍÅú¹éÒ»»¯²ãµÄĞòÁĞÄ£¿é£¬
-        # ÓÃÓÚµ÷ÕûÊäÈë³ß´ç»òÎ¬¶È£¬ÒÔ±ãÓë¾í»ı²ãµÄÊä³öÏà¼Ó
+        # å¦‚æœ stride ä¸ç­‰äº 1ï¼Œæˆ–è€…è¾“å…¥çš„å¹³é¢æ•°ä¸ç­‰äºæ‰©å±•å€æ•°ä¹˜ä»¥è¾“å‡ºå¹³é¢æ•°ï¼Œ
+        # åˆ™å°† shortcut å®šä¹‰ä¸ºä¸€ä¸ªåŒ…å«ä¸€ä¸ª 1x1 çš„å·ç§¯å±‚å’Œæ‰¹å½’ä¸€åŒ–å±‚çš„åºåˆ—æ¨¡å—ï¼Œ
+        # ç”¨äºè°ƒæ•´è¾“å…¥å°ºå¯¸æˆ–ç»´åº¦ï¼Œä»¥ä¾¿ä¸å·ç§¯å±‚çš„è¾“å‡ºç›¸åŠ 
         self.shortcut = nn.Sequential()
         if stride != 1 or in_planes != self.expansion*planes:
             self.shortcut = nn.Sequential(
@@ -57,35 +58,35 @@ class ResNetBottleneck(nn.Module):
         return out
 
 class ResNetUnit(nn.Module):
-    # ±ê×¼µÄ ResNet ÍøÂç½á¹¹¶¨Òå´úÂëÍ¨³£°üº¬¶à¸ö ResNet Ä£¿é£¬²¢ÇÒÍ¨³£ÔÚÃ¿¸öÄ£¿éÖĞ»áÊ¹ÓÃ²»Í¬µÄÍ¨µÀÊıºÍ²½·ù¡£
-    # ÔÚ³õÊ¼»¯Ê±µ÷ÓÃ _make_layer ·½·¨£¬´´½¨°üº¬¶à¸ö ResNetBottleneck ²ãµÄ²ãĞòÁĞ£¨nn.Sequential£©£¬²¢½«Æä±£´æÔÚ self.layer ÖĞ¡£
-    # _make_layer ·½·¨¸ù¾İÊäÈëµÄ block ÀàĞÍ¡¢Êä³öÍ¨µÀÊı planes¡¢ResNetBottleneck ²ãµÄÊıÁ¿ num_blocks ºÍ²½³¤ stride£¬
-    # Éú³ÉÒ»¸ö°üº¬¶à¸ö ResNetBottleneck ²ãµÄ²ãĞòÁĞ£¨nn.Sequential£©¡£
+    # æ ‡å‡†çš„ ResNet ç½‘ç»œç»“æ„å®šä¹‰ä»£ç é€šå¸¸åŒ…å«å¤šä¸ª ResNet æ¨¡å—ï¼Œå¹¶ä¸”é€šå¸¸åœ¨æ¯ä¸ªæ¨¡å—ä¸­ä¼šä½¿ç”¨ä¸åŒçš„é€šé“æ•°å’Œæ­¥å¹…ã€‚
+    # åœ¨åˆå§‹åŒ–æ—¶è°ƒç”¨ _make_layer æ–¹æ³•ï¼Œåˆ›å»ºåŒ…å«å¤šä¸ª ResNetBottleneck å±‚çš„å±‚åºåˆ—ï¼ˆnn.Sequentialï¼‰ï¼Œå¹¶å°†å…¶ä¿å­˜åœ¨ self.layer ä¸­ã€‚
+    # _make_layer æ–¹æ³•æ ¹æ®è¾“å…¥çš„ block ç±»å‹ã€è¾“å‡ºé€šé“æ•° planesã€ResNetBottleneck å±‚çš„æ•°é‡ num_blocks å’Œæ­¥é•¿ strideï¼Œ
+    # ç”Ÿæˆä¸€ä¸ªåŒ…å«å¤šä¸ª ResNetBottleneck å±‚çš„å±‚åºåˆ—ï¼ˆnn.Sequentialï¼‰ã€‚
 
     def __init__(self, amount, in_channel, out_channel):
         super(ResNetUnit, self).__init__()
         self.in_planes = in_channel
-        self.layer = self._make_layer(ResNetBottleneck, out_channel, amount, stride=1)      # ´´½¨ResNetBottleneck²ã
+        self.layer = self._make_layer(ResNetBottleneck, out_channel, amount, stride=1)      # åˆ›å»ºResNetBottleneckå±‚
 
     def _make_layer(self, block, planes, num_blocks, stride):
-        strides = [stride] + [1]*(num_blocks-1)     # ¶¨ÒåÃ¿¸öResNetBottleneck²ãµÄ²½³¤£¬µÚÒ»¸ö²½³¤Îªstride£¬ÆäÓàÎª1
+        strides = [stride] + [1]*(num_blocks-1)     # å®šä¹‰æ¯ä¸ªResNetBottleneckå±‚çš„æ­¥é•¿ï¼Œç¬¬ä¸€ä¸ªæ­¥é•¿ä¸ºstrideï¼Œå…¶ä½™ä¸º1
         layers = []
         for stride in strides:
-            layers.append(block(self.in_planes, planes, stride))  # Ìí¼ÓResNetBottleneck²ãµ½layersÁĞ±í
-            self.in_planes = planes * block.expansion  # ¸üĞÂÊäÈëÍ¨µÀÊı£¬³ËÒÔResNetBottleneckµÄÀ©Õ¹Òò×Ó
-        # *layers ½« layers ÁĞ±íÖĞµÄ¶à¸öÔªËØÕ¹¿ª£¬²¢×÷Îª²ÎÊı´«µİ¸ø nn.Sequential() º¯ÊıµÄ¹¹Ôìº¯Êı
-        return nn.Sequential(*layers)  # ·µ»Ø°üº¬ËùÓĞResNetBottleneck²ãµÄSequential²ã
+            layers.append(block(self.in_planes, planes, stride))  # æ·»åŠ ResNetBottleneckå±‚åˆ°layersåˆ—è¡¨
+            self.in_planes = planes * block.expansion  # æ›´æ–°è¾“å…¥é€šé“æ•°ï¼Œä¹˜ä»¥ResNetBottleneckçš„æ‰©å±•å› å­
+        # *layers å°† layers åˆ—è¡¨ä¸­çš„å¤šä¸ªå…ƒç´ å±•å¼€ï¼Œå¹¶ä½œä¸ºå‚æ•°ä¼ é€’ç»™ nn.Sequential() å‡½æ•°çš„æ„é€ å‡½æ•°
+        return nn.Sequential(*layers)  # è¿”å›åŒ…å«æ‰€æœ‰ResNetBottleneckå±‚çš„Sequentialå±‚
 
     def forward(self, x):
-        out = self.layer(x)  # Ç°Ïò´«²¥£¬½«ÊäÈëx´«µİ¸øResNetBottleneck²ã
-        return out  # ·µ»ØÊä³ö
+        out = self.layer(x)  # å‰å‘ä¼ æ’­ï¼Œå°†è¾“å…¥xä¼ é€’ç»™ResNetBottleneckå±‚
+        return out  # è¿”å›è¾“å‡º
 
 class DenseNetBottleneck(nn.Module):
     def __init__(self, nChannels, growthRate):
-        # nChannels       nChannels ÊÇ DenseNetBottleneck Ä£¿éÖĞÊäÈëÌØÕ÷µÄÍ¨µÀÊı¡£ÔÚ¸ÃÄ£¿éÖĞ£¬nChannels ÊÇÊäÈëÌØÕ÷ x µÄÍ¨µÀÊı£¬
-        # ¼´ x µÄ shape[1]£¬±íÊ¾ÊäÈëÌØÕ÷Í¼µÄÍ¨µÀÊı¡£ÔÚÄ£¿éÄÚ²¿£¬nChannels ¾­¹ı¾í»ı²Ù×÷ºó»á·¢Éú±ä»¯£¬±»ËõĞ¡µ½ interChannels£¬
-        # È»ºóÓÖÍ¨¹ıµÚ¶ş¸ö¾í»ı²ãÀ©Õ¹»Ø growthRate¡£
-        # growthRate      Êä³öÌØÕ÷Í¼Í¨µÀÊıµÄÔö¼ÓÁ¿£¬Í¨³£ÉèÖÃÎªÒ»¸ö½ÏĞ¡µÄÖµ£¬Èç 12 »ò 24£¬ÓÃÓÚ¿ØÖÆÍøÂçµÄÄ£ĞÍ´óĞ¡ºÍ¼ÆËã¸´ÔÓ¶È¡£
+        # nChannels       nChannels æ˜¯ DenseNetBottleneck æ¨¡å—ä¸­è¾“å…¥ç‰¹å¾çš„é€šé“æ•°ã€‚åœ¨è¯¥æ¨¡å—ä¸­ï¼ŒnChannels æ˜¯è¾“å…¥ç‰¹å¾ x çš„é€šé“æ•°ï¼Œ
+        # å³ x çš„ shape[1]ï¼Œè¡¨ç¤ºè¾“å…¥ç‰¹å¾å›¾çš„é€šé“æ•°ã€‚åœ¨æ¨¡å—å†…éƒ¨ï¼ŒnChannels ç»è¿‡å·ç§¯æ“ä½œåä¼šå‘ç”Ÿå˜åŒ–ï¼Œè¢«ç¼©å°åˆ° interChannelsï¼Œ
+        # ç„¶ååˆé€šè¿‡ç¬¬äºŒä¸ªå·ç§¯å±‚æ‰©å±•å› growthRateã€‚
+        # growthRate      è¾“å‡ºç‰¹å¾å›¾é€šé“æ•°çš„å¢åŠ é‡ï¼Œé€šå¸¸è®¾ç½®ä¸ºä¸€ä¸ªè¾ƒå°çš„å€¼ï¼Œå¦‚ 12 æˆ– 24ï¼Œç”¨äºæ§åˆ¶ç½‘ç»œçš„æ¨¡å‹å¤§å°å’Œè®¡ç®—å¤æ‚åº¦ã€‚
         super(DenseNetBottleneck, self).__init__()
         interChannels = 4*growthRate
         self.bn1 = nn.BatchNorm2d(nChannels)
@@ -103,9 +104,9 @@ class DenseNetBottleneck(nn.Module):
 
 class DenseNetUnit(nn.Module):
     def __init__(self, k, amount, in_channel, out_channel, max_input_channel):
-        #     max_input_channel max_input_channel ÊÇÖ¸ÔÚ DenseNetUnit ÖĞ£¬ÊäÈëÍ¨µÀÊıµÄ×î´óÏŞÖÆ¡£Èç¹ûÊäÈëÍ¨µÀÊı in_channel ´óÓÚ
-        # max_input_channel£¬Ôò»á¶ÔÊäÈë½øĞĞ 1x1 ¾í»ı²Ù×÷£¬½«ÊäÈëÍ¨µÀÊı¼õÉÙµ½ max_input_channel¡£ÕâÑù¿ÉÒÔÏŞÖÆÊäÈëÍ¨µÀÊıµÄ×î´óÖµ£¬
-        # ´Ó¶ø¿ØÖÆÄ£ĞÍµÄ¸´ÔÓ¶ÈºÍ¼ÆËã×ÊÔ´µÄÏûºÄ¡£ÔÚ´úÂëÖĞ£¬max_input_channel ÓÃÓÚÅĞ¶ÏÊÇ·ñĞèÒª½øĞĞ 1x1 ¾í»ıµÄÌõ¼şÅĞ¶Ï¡£
+        #     max_input_channel max_input_channel æ˜¯æŒ‡åœ¨ DenseNetUnit ä¸­ï¼Œè¾“å…¥é€šé“æ•°çš„æœ€å¤§é™åˆ¶ã€‚å¦‚æœè¾“å…¥é€šé“æ•° in_channel å¤§äº
+        # max_input_channelï¼Œåˆ™ä¼šå¯¹è¾“å…¥è¿›è¡Œ 1x1 å·ç§¯æ“ä½œï¼Œå°†è¾“å…¥é€šé“æ•°å‡å°‘åˆ° max_input_channelã€‚è¿™æ ·å¯ä»¥é™åˆ¶è¾“å…¥é€šé“æ•°çš„æœ€å¤§å€¼ï¼Œ
+        # ä»è€Œæ§åˆ¶æ¨¡å‹çš„å¤æ‚åº¦å’Œè®¡ç®—èµ„æºçš„æ¶ˆè€—ã€‚åœ¨ä»£ç ä¸­ï¼Œmax_input_channel ç”¨äºåˆ¤æ–­æ˜¯å¦éœ€è¦è¿›è¡Œ 1x1 å·ç§¯çš„æ¡ä»¶åˆ¤æ–­ã€‚
 
         super(DenseNetUnit, self).__init__()
         self.out_channel = out_channel
@@ -121,16 +122,16 @@ class DenseNetUnit(nn.Module):
         #
         # Parameters
         # ----------
-        # nChannels       nChannels ±íÊ¾ÊäÈëÌØÕ÷Í¼µÄÍ¨µÀÊı
-        #                 ÔÚÃ¿¸ö³íÃÜ¿éÖĞ£¬nChannels µÄÖµ»áËæ×ÅÃ¿¸ö²ãÖĞµÄÌØÕ÷Í¼Í¨µÀÊıµÄÔö¼Ó¶øÀÛ»ı£¬´Ó¶øµÃµ½×îÖÕµÄÊä³öÍ¨µÀÊı¡£
-        #                 ÕâÖÖÀÛ»ıµÄ·½Ê½Ê¹µÃ DenseNet ÖĞµÄÃ¿¸ö²ã¶¼¿ÉÒÔÖ±½Ó·ÃÎÊÖ®Ç°²ãµÄÌØÕ÷
-        # growthRate      growthRate ±íÊ¾Ã¿¸ö³íÃÜ¿é£¨Dense Block£©ÖĞµÄÊä³öÍ¨µÀÊı£¨¼´Ã¿¸ö³íÃÜÁ¬½ÓµÄÍ¨µÀÊı£©¡£
-        #                 Ã¿¸ö³íÃÜ¿éÖĞµÄÃ¿¸ö²ã¶¼½«²úÉú growthRate ¸öÌØÕ÷Í¼×÷ÎªÊä³ö£¬²¢×÷ÎªÏÂÒ»²ãµÄÊäÈë¡£
-        #                 ÕâÖÖÉè¼Æ¿ÉÒÔ°ïÖúÍøÂç¸ü¼Ó³ä·ÖµØÀûÓÃÖ®Ç°²ãµÄÌØÕ÷£¬´Ó¶øÔöÇ¿ÌØÕ÷´«µİºÍÌİ¶ÈÁ÷¶¯£¬Ìá¸ßÍøÂçĞÔÄÜ¡£
-        #                 growthRate ÊÇ DenseNet ÖĞµÄÒ»¸ö³¬²ÎÊı£¬¿ÉÒÔ¸ù¾İ¾ßÌåÈÎÎñºÍĞèÇó½øĞĞµ÷Õû¡£
-        # nDenseBlocks    Ã¿¸ö DenseNet µ¥Ôª£¨DenseNet Unit£©ÖĞ°üº¬µÄ³íÃÜ¿é£¨Dense Block£©µÄÊıÁ¿¡£
-        #                 ³¬²ÎÊı£¬¿ØÖÆÁËÍøÂçµÄÉî¶ÈºÍ¸´ÔÓ¶È¡£½Ï´óµÄ nDenseBlocks Öµ¿ÉÒÔÔö¼ÓÍøÂçµÄÉî¶È£¬´Ó¶øÌá¹©¸üÇ¿´óµÄÌØÕ÷ÌáÈ¡ÄÜÁ¦£¬
-        #                 µ«Ò²»áÔö¼ÓÍøÂçµÄ¼ÆËã¸´ÔÓ¶ÈºÍ²ÎÊıÁ¿¡£
+        # nChannels       nChannels è¡¨ç¤ºè¾“å…¥ç‰¹å¾å›¾çš„é€šé“æ•°
+        #                 åœ¨æ¯ä¸ªç¨ å¯†å—ä¸­ï¼ŒnChannels çš„å€¼ä¼šéšç€æ¯ä¸ªå±‚ä¸­çš„ç‰¹å¾å›¾é€šé“æ•°çš„å¢åŠ è€Œç´¯ç§¯ï¼Œä»è€Œå¾—åˆ°æœ€ç»ˆçš„è¾“å‡ºé€šé“æ•°ã€‚
+        #                 è¿™ç§ç´¯ç§¯çš„æ–¹å¼ä½¿å¾— DenseNet ä¸­çš„æ¯ä¸ªå±‚éƒ½å¯ä»¥ç›´æ¥è®¿é—®ä¹‹å‰å±‚çš„ç‰¹å¾
+        # growthRate      growthRate è¡¨ç¤ºæ¯ä¸ªç¨ å¯†å—ï¼ˆDense Blockï¼‰ä¸­çš„è¾“å‡ºé€šé“æ•°ï¼ˆå³æ¯ä¸ªç¨ å¯†è¿æ¥çš„é€šé“æ•°ï¼‰ã€‚
+        #                 æ¯ä¸ªç¨ å¯†å—ä¸­çš„æ¯ä¸ªå±‚éƒ½å°†äº§ç”Ÿ growthRate ä¸ªç‰¹å¾å›¾ä½œä¸ºè¾“å‡ºï¼Œå¹¶ä½œä¸ºä¸‹ä¸€å±‚çš„è¾“å…¥ã€‚
+        #                 è¿™ç§è®¾è®¡å¯ä»¥å¸®åŠ©ç½‘ç»œæ›´åŠ å……åˆ†åœ°åˆ©ç”¨ä¹‹å‰å±‚çš„ç‰¹å¾ï¼Œä»è€Œå¢å¼ºç‰¹å¾ä¼ é€’å’Œæ¢¯åº¦æµåŠ¨ï¼Œæé«˜ç½‘ç»œæ€§èƒ½ã€‚
+        #                 growthRate æ˜¯ DenseNet ä¸­çš„ä¸€ä¸ªè¶…å‚æ•°ï¼Œå¯ä»¥æ ¹æ®å…·ä½“ä»»åŠ¡å’Œéœ€æ±‚è¿›è¡Œè°ƒæ•´ã€‚
+        # nDenseBlocks    æ¯ä¸ª DenseNet å•å…ƒï¼ˆDenseNet Unitï¼‰ä¸­åŒ…å«çš„ç¨ å¯†å—ï¼ˆDense Blockï¼‰çš„æ•°é‡ã€‚
+        #                 è¶…å‚æ•°ï¼Œæ§åˆ¶äº†ç½‘ç»œçš„æ·±åº¦å’Œå¤æ‚åº¦ã€‚è¾ƒå¤§çš„ nDenseBlocks å€¼å¯ä»¥å¢åŠ ç½‘ç»œçš„æ·±åº¦ï¼Œä»è€Œæä¾›æ›´å¼ºå¤§çš„ç‰¹å¾æå–èƒ½åŠ›ï¼Œ
+        #                 ä½†ä¹Ÿä¼šå¢åŠ ç½‘ç»œçš„è®¡ç®—å¤æ‚åº¦å’Œå‚æ•°é‡ã€‚
         # -------
         #
         layers = []
@@ -141,8 +142,8 @@ class DenseNetUnit(nn.Module):
 
     def forward(self, x):
         out = x
-        # Èç¹ûĞèÒª½øĞĞ1x1¾í»ı£¬ÔòÏÈÓ¦ÓÃBNºÍReLU£¬ÔÙ½øĞĞ¾í»ı
-        if hasattr(self, 'need_conv'):      # ÅĞ¶Ï¶ÔÏó self ÊÇ·ñ¾ßÓĞÃûÎª 'need_conv' µÄÊôĞÔ
+        # å¦‚æœéœ€è¦è¿›è¡Œ1x1å·ç§¯ï¼Œåˆ™å…ˆåº”ç”¨BNå’ŒReLUï¼Œå†è¿›è¡Œå·ç§¯
+        if hasattr(self, 'need_conv'):      # åˆ¤æ–­å¯¹è±¡ self æ˜¯å¦å…·æœ‰åä¸º 'need_conv' çš„å±æ€§
             out = self.conv(F.relu(self.bn(out)))
         out = self.layer(out)
         assert(out.size()[1] == self.out_channel)
@@ -154,31 +155,30 @@ class EvoCNNModel(nn.Module):
         super(EvoCNNModel, self).__init__()
 
         #resnet and densenet unit
-        self.op0 = DenseNetUnit(k=40, amount=3, in_channel=3, out_channel=123, max_input_channel=32)
-        self.op1 = DenseNetUnit(k=12, amount=4, in_channel=123, out_channel=171, max_input_channel=128)
-        self.op2 = ResNetUnit(amount=7, in_channel=171, out_channel=256)
-        self.op3 = ResNetUnit(amount=5, in_channel=256, out_channel=128)
-        self.op6 = ResNetUnit(amount=6, in_channel=128, out_channel=64)
-        self.op7 = ResNetUnit(amount=10, in_channel=64, out_channel=64)
-        self.op9 = DenseNetUnit(k=12, amount=4, in_channel=64, out_channel=112, max_input_channel=128)
+        self.op0 = DenseNetUnit(k=40, amount=4, in_channel=3, out_channel=163, max_input_channel=32)
+        self.op1 = ResNetUnit(amount=5, in_channel=163, out_channel=64)
+        self.op3 = ResNetUnit(amount=7, in_channel=64, out_channel=256)
+        self.op4 = DenseNetUnit(k=12, amount=6, in_channel=256, out_channel=200, max_input_channel=128)
+        self.op5 = DenseNetUnit(k=20, amount=9, in_channel=200, out_channel=244, max_input_channel=64)
+        self.op8 = ResNetUnit(amount=5, in_channel=244, out_channel=128)
+        self.op10 = DenseNetUnit(k=20, amount=9, in_channel=128, out_channel=244, max_input_channel=64)
 
         #linear unit
-        self.linear = nn.Linear(16128, 6)
+        self.linear = nn.Linear(35136, 6)
 
 
     def forward(self, x):
-        out_0 = self.op0(x)
-        out_1 = self.op1(out_0)
-        out_2 = self.op2(out_1)
-        out_3 = self.op3(out_2)
-        out_4 = F.max_pool2d(out_3, 2)
-        out_5 = F.max_pool2d(out_4, 2)
-        out_6 = self.op6(out_5)
-        out_7 = self.op7(out_6)
-        out_8 = F.max_pool2d(out_7, 2)
-        out_9 = self.op9(out_8)
-        out_10 = F.max_pool2d(out_9, 2)
-        out = out_10
+        out= self.op0(x)
+        out = self.op1(out)
+        out = F.avg_pool2d(out, 2)
+        out = self.op3(out)
+        out= self.op4(out)
+        out= self.op5(out)
+        out = F.avg_pool2d(out, 2)
+        out= F.max_pool2d(out, 2)
+        out = self.op8(out)
+        out= F.max_pool2d(out, 2)
+        out= self.op10(out)
 
         out = out.view(out.size(0), -1)
         out = self.linear(out)
@@ -187,10 +187,10 @@ class EvoCNNModel(nn.Module):
 
 class TrainModel(object):
     def __init__(self):
-        # ÓÃÓÚÑµÁ·ÆäËûÊı¾İ¼¯
+        # ç”¨äºè®­ç»ƒå…¶ä»–æ•°æ®é›†
         #trainloader, validate_loader = data_loader.get_train_valid_loader('./data', batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390, show_sample=False, num_workers=4, pin_memory=True)
         #testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
-        # ´Óglobel.ini»ñÈ¡²ÎÊı
+        # ä»globel.iniè·å–å‚æ•°
         input_size = StatusUpdateTool.get_input_size()
         num_class = StatusUpdateTool.get_num_class()
         input_channel = StatusUpdateTool.get_input_channel()
@@ -198,7 +198,7 @@ class TrainModel(object):
         this_batch_size = StatusUpdateTool.get_batch_size()
 
         # loader = get_neucls_dataloader(data_dir = './data/NEU-CLS/', num_epochs = 16, batch_size = 8, input_size = 200, num_workers=1, shuffle=True)
-        loader = get_neucls_dataloader(data_dir = './data/NEU-CLS/', num_epochs = this_epoch,
+        loader = get_neucls_dataloader(data_dir = '../data/NEU-CLS/', num_epochs = this_epoch,
                                        batch_size = this_batch_size, input_size = input_size)
         trainloader = loader['train']
         validate_loader = loader['val']
@@ -218,36 +218,44 @@ class TrainModel(object):
         #self.log_record('+'*50, first_time=False)
 
     def log_record(self, _str, first_time=None):
-        dt = datetime.now()
-        dt.strftime( '%Y-%m-%d %H:%M:%S' )
-        if first_time:
-            file_mode = 'w'
+        if if_log:
+            dt = datetime.now()
+            dt.strftime( '%Y-%m-%d %H:%M:%S' )
+            if first_time:
+                file_mode = 'w'
+            else:
+                file_mode = 'a+'
+            f = open('./log/%s.txt'%(self.file_id), file_mode)
+            f.write('[%s]-%s\n'%(dt, _str))
+            f.flush()
+            f.close()
         else:
-            file_mode = 'a+'
-        f = open('./log/%s.txt'%(self.file_id), file_mode)
-        f.write('[%s]-%s\n'%(dt, _str))
-        f.flush()
-        f.close()
+            print(_str)
 
     def train(self, epoch):
         if ifDebug:
             print(epoch, end = "--")
         self.net.train()
-        if epoch <= 3: lr = 0.01
-        if epoch > 0: lr = 0.1;
-        if epoch > 25: lr = 0.01
-        if epoch > 40: lr = 0.001
+        lr = 0.0001
+        # if epoch <= 3: lr = 0.01
+        if epoch > 10: lr = 0.1;
+        # if epoch > 25: lr = 0.01
+        # if epoch > 40: lr = 0.001
         optimizer = optim.SGD(self.net.parameters(), lr=lr, momentum = 0.9, weight_decay=5e-4)
         running_loss = 0.0
         total = 0
         correct = 0
-        for _, data in enumerate(self.trainloader, 0):
+        for num, data in enumerate(self.trainloader, 0):
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
             optimizer.zero_grad()
             outputs = self.net(inputs)
+            if num == 2:
+                print("train outputs:{}".format(torch.cuda.memory_allocated()/1024/1024))
             loss = self.criterion(outputs, labels)
             loss.backward()
+            if num == 2:
+                print("train backward:{}".format(torch.cuda.memory_allocated(0)/1024/1024))
             optimizer.step()
             running_loss += loss.item()*labels.size(0)
             _, predicted = torch.max(outputs.data, 1)
@@ -263,18 +271,22 @@ class TrainModel(object):
         test_loss = 0.0
         total = 0
         correct = 0
-        for _, data in enumerate(self.validate_loader, 0):
+        for mini_batch_cnt, data in enumerate(self.validate_loader, 0):
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
             outputs = self.net(inputs)
+            if mini_batch_cnt ==2:
+                print("validate outputs:{}".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
             loss = self.criterion(outputs, labels)
             test_loss += loss.item()*labels.size(0)
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
+            if mini_batch_cnt == 3 :
+                print("validate total:{}".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
             correct += (predicted == labels.data).sum()
         if correct/total > self.best_acc:
             self.best_acc = correct/total
-            #print('*'*100, self.best_acc)
+            print('*'*100, self.best_acc)
         self.log_record('Validate-Loss:%.3f, Acc:%.3f'%(test_loss/total, correct/total))
 
 
@@ -309,3 +321,10 @@ class RunModel(object):
             f.write('%s=%.5f\n'%(file_id, best_acc))
             f.flush()
             f.close()
+
+if __name__ == '__main__':
+    #gpu_id = GPUTools.detect_availabel_gpu_id()
+    gpu_id = str(1) # æŠ¥é”™ä¸€æ¬¡
+    file_name = 'dubug_for_low_acc'
+    r = RunModel()
+    r.do_workk(gpu_id=gpu_id, file_id=file_name)

@@ -641,6 +641,7 @@ class Utils(object):
 
         #generate the forward part
         forward_list = []
+        """# 有bug
         for i, u in enumerate(indi.units):
             if i == 0:
                 last_out_put = 'x'
@@ -660,6 +661,26 @@ class Utils(object):
                 forward_list.append(_str)
         forward_list.append('out = out_%d'%(len(indi.units)-1))
         #print('\n'.join(forward_list))
+        """
+        # out不新增定义
+        for i, u in enumerate(indi.units):
+            if i == 0:
+                last_out_put = 'x'
+            else:
+                last_out_put = 'out'
+            if u.type ==1:
+                _str = 'out = self.op%d(%s)'%(i, last_out_put)
+                forward_list.append(_str)
+            elif u.type == 3:
+                _str = 'out= self.op%d(%s)'%( i, last_out_put)
+                forward_list.append(_str)
+            else:
+                if u.max_or_avg < 0.5:
+                    _str = 'out= F.max_pool2d(out, 2)'
+                else:
+                    _str = 'out = F.avg_pool2d(out, 2)'
+                forward_list.append(_str)
+        # forward_list.append('out = out')
 
         # 读取已有模板
         part1, part2, part3 = cls.read_template()

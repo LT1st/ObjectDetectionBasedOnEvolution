@@ -285,3 +285,7 @@ finally
  
 # 修改后还是有bug
 torch.cuda.empty_cache()
+
+todo: 发现了没有解决的bug cache.txt不存在
+genetic/evaluate.py:32 
+self.log.info('Try to query fitness from cache from ./populations/cache.txt')

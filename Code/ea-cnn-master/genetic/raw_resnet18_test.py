@@ -151,7 +151,7 @@ class TrainModel(object):
         lr = 0.001
         if epoch ==0: lr = 0.01
         # if epoch > 0: lr = 0.1;
-        if epoch < 25: lr = 0.001
+        if epoch < 25: lr = 0.0001
         # if epoch > 40: lr = 0.001
         optimizer = optim.SGD(self.net.parameters(), lr=lr, momentum = 0.9, weight_decay=5e-4)
         running_loss = 0.0
@@ -174,6 +174,7 @@ class TrainModel(object):
             correct += (predicted == labels.data).sum()
         # 4.11 卡死在这里
         print('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
+        torch.cuda.empty_cache()
         # self.log_record('Train-Epoch:%3d,  Loss: %.3f, Acc:%.3f'% (epoch+1, running_loss/total, (correct/total)))
 
     def test(self, epoch):
@@ -181,13 +182,14 @@ class TrainModel(object):
         test_loss = 0.0
         total = 0
         correct = 0
-        for _, data in enumerate(self.validate_loader, 0):
+        for cnt, data in enumerate(self.validate_loader, 0):
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
             outputs = self.net(inputs)
             loss = self.criterion(outputs, labels)
             test_loss += loss.item()*labels.size(0)
             _, predicted = torch.max(outputs.data, 1)
+            # print("1:{}".format(torch.cuda.memory_allocated(0)), cnt)
             total += labels.size(0)
             correct += (predicted == labels.data).sum()
         if correct/total > self.best_acc:
