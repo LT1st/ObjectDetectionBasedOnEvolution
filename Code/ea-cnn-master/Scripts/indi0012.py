@@ -1,4 +1,6 @@
 """
+2023-04-22  20:50:11
+"""
 from __future__ import print_function
 import torch
 from torch.autograd import Variable
@@ -150,11 +152,29 @@ class DenseNetUnit(nn.Module):
 class EvoCNNModel(nn.Module):
     def __init__(self, in_size=200, num_class=6, input_channel=3):
         super(EvoCNNModel, self).__init__()
-        #generated_init
+
+        #resnet and densenet unit
+        self.op0 = DenseNetUnit(k=12, amount=5, in_channel=3, out_channel=63, max_input_channel=128)
+        self.op2 = DenseNetUnit(k=20, amount=9, in_channel=63, out_channel=243, max_input_channel=64)
+        self.op4 = DenseNetUnit(k=12, amount=4, in_channel=243, out_channel=176, max_input_channel=128)
+        self.op6 = ResNetUnit(amount=7, in_channel=176, out_channel=256)
+        self.op7 = DenseNetUnit(k=20, amount=7, in_channel=256, out_channel=204, max_input_channel=64)
+
+        #linear unit
+        self.linear = nn.Linear(29376, 6)
 
 
     def forward(self, x):
-        #generate_forward
+        out_0 = self.op0(x)
+        out_1 = F.max_pool2d(out_0, 2)
+        out_2 = self.op2(out_1)
+        out_3 = F.max_pool2d(out_2, 2)
+        out_4 = self.op4(out_3)
+        out_5 = F.max_pool2d(out_4, 2)
+        out_6 = self.op6(out_5)
+        out_7 = self.op7(out_6)
+        out_8 = F.max_pool2d(out_7, 2)
+        out = out_8
 
         out = out.view(out.size(0), -1)
         out = self.linear(out)
@@ -285,4 +305,3 @@ class RunModel(object):
             f.write('%s=%.5f\n'%(file_id, best_acc))
             f.flush()
             f.close()
-"""

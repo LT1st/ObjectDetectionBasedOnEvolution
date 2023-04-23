@@ -1,4 +1,6 @@
 """
+2023-04-22  20:50:11
+"""
 from __future__ import print_function
 import torch
 from torch.autograd import Variable
@@ -150,11 +152,33 @@ class DenseNetUnit(nn.Module):
 class EvoCNNModel(nn.Module):
     def __init__(self, in_size=200, num_class=6, input_channel=3):
         super(EvoCNNModel, self).__init__()
-        #generated_init
+
+        #resnet and densenet unit
+        self.op0 = ResNetUnit(amount=4, in_channel=3, out_channel=256)
+        self.op1 = ResNetUnit(amount=9, in_channel=256, out_channel=256)
+        self.op2 = DenseNetUnit(k=40, amount=3, in_channel=256, out_channel=152, max_input_channel=32)
+        self.op4 = DenseNetUnit(k=40, amount=3, in_channel=152, out_channel=152, max_input_channel=32)
+        self.op5 = ResNetUnit(amount=7, in_channel=152, out_channel=128)
+        self.op8 = DenseNetUnit(k=40, amount=4, in_channel=128, out_channel=192, max_input_channel=32)
+        self.op10 = DenseNetUnit(k=12, amount=5, in_channel=192, out_channel=188, max_input_channel=128)
+
+        #linear unit
+        self.linear = nn.Linear(27072, 6)
 
 
     def forward(self, x):
-        #generate_forward
+        out_0 = self.op0(x)
+        out_1 = self.op1(out_0)
+        out_2 = self.op2(out_1)
+        out_3 = F.max_pool2d(out_2, 2)
+        out_4 = self.op4(out_3)
+        out_5 = self.op5(out_4)
+        out_6 = F.avg_pool2d(out_5, 2)
+        out_7 = F.max_pool2d(out_6, 2)
+        out_8 = self.op8(out_7)
+        out_9 = F.avg_pool2d(out_8, 2)
+        out_10 = self.op10(out_9)
+        out = out_10
 
         out = out.view(out.size(0), -1)
         out = self.linear(out)
@@ -285,4 +309,3 @@ class RunModel(object):
             f.write('%s=%.5f\n'%(file_id, best_acc))
             f.flush()
             f.close()
-"""

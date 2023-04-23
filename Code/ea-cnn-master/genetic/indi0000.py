@@ -23,21 +23,56 @@ from NEU_CLS_dataloader import get_neucls_dataloader
 from utils import Utils,GPUTools
 import importlib
 from multiprocessing import Process
-import time, os, sys
+import time, os, sys, torchvision
+
+class SurfaceDefectResNet(torch.nn.Module):
+
+    def __init__(self):
+        super(SurfaceDefectResNet, self).__init__()
+        self.cnn_layers = torchvision.models.resnet34(pretrained=False)
+        num_ftrs = self.cnn_layers.fc.in_features
+        self.cnn_layers.fc = torch.nn.Linear(num_ftrs, 6)
+
+    def forward(self, x):
+        # stack convolution layers
+        out = self.cnn_layers(x)
+        return out
 
 class ResNetBottleneck(nn.Module):
+    """
+    expansion 是一个用于扩展通道数的参数，用于控制每个 ResNet 模块中的卷积层输出通道数相对于输入通道数的倍数。
+    当 expansion = 1 时，表示卷积层输出的通道数与输入通道数相同，不发生通道数的变化
+    ResNet 的 Bottleneck 模块中，expansion 的值通常设置为 4，即输出通道数是输入通道数的 4 倍。
+    这样做的目的是为了在网络加深时保持较小的模型参数量和计算复杂度，同时提升网络的表达能力，从而获得更好的性能。
+    """
     expansion = 1
 
     def __init__(self, in_planes, planes, stride=1):
+        """
+        标准的resnet初始化定义
+        Parameters
+        ----------
+        in_planes
+        planes
+        stride
+        """
         super(ResNetBottleneck, self).__init__()
+        # 定义第一个卷积层，使用 1x1 的卷积核，用于降低输入平面的维度
         self.conv1 = nn.Conv2d(in_planes, planes, kernel_size=1, bias=False)
+        # 定义 conv1 后的批归一化层，用于规范化卷积层的输出
         self.bn1 = nn.BatchNorm2d(planes)
+        # 用于提取特征并调整输入尺寸
         self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=stride, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(planes)
+        # 定义第三个卷积层，使用 1x1 的卷积核，用于恢复输出平面的维度
         self.conv3 = nn.Conv2d(planes, self.expansion*planes, kernel_size=1, bias=False)
         self.bn3 = nn.BatchNorm2d(self.expansion*planes)
 
         self.shortcut = nn.Sequential()
+
+        # 如果 stride 不等于 1，或者输入的平面数不等于扩展倍数乘以输出平面数，
+        # 则将 shortcut 定义为一个包含一个 1x1 的卷积层和批归一化层的序列模块，
+        # 用于调整输入尺寸或维度，以便与卷积层的输出相加
         if stride != 1 or in_planes != self.expansion*planes:
             self.shortcut = nn.Sequential(
                 nn.Conv2d(in_planes, self.expansion*planes, kernel_size=1, stride=stride, bias=False),
@@ -45,32 +80,52 @@ class ResNetBottleneck(nn.Module):
             )
 
     def forward(self, x):
+        # 提取两次信息
         out = F.relu(self.bn1(self.conv1(x)))
         out = F.relu(self.bn2(self.conv2(out)))
         out = self.bn3(self.conv3(out))
+        # 跳接
         out += self.shortcut(x)
         out = F.relu(out)
         return out
 
 class ResNetUnit(nn.Module):
+    """
+    标准的 ResNet 网络结构定义代码通常包含多个 ResNet 模块，并且通常在每个模块中会使用不同的通道数和步幅。
+    在初始化时调用 _make_layer 方法，创建包含多个 ResNetBottleneck 层的层序列（nn.Sequential），并将其保存在 self.layer 中。
+    _make_layer 方法根据输入的 block 类型、输出通道数 planes、ResNetBottleneck 层的数量 num_blocks 和步长 stride，
+    生成一个包含多个 ResNetBottleneck 层的层序列（nn.Sequential）。
+    """
     def __init__(self, amount, in_channel, out_channel):
         super(ResNetUnit, self).__init__()
-        self.in_planes = in_channel
-        self.layer = self._make_layer(ResNetBottleneck, out_channel, amount, stride=1)
+        self.in_planes = in_channel  # 输入通道数
+        self.layer = self._make_layer(ResNetBottleneck, out_channel, amount, stride=1)  # 创建ResNetBottleneck层
 
     def _make_layer(self, block, planes, num_blocks, stride):
-        strides = [stride] + [1]*(num_blocks-1)
+        strides = [stride] + [1]*(num_blocks-1)  # 定义每个ResNetBottleneck层的步长，第一个步长为stride，其余为1
         layers = []
         for stride in strides:
-            layers.append(block(self.in_planes, planes, stride))
-            self.in_planes = planes * block.expansion
-        return nn.Sequential(*layers)
+            layers.append(block(self.in_planes, planes, stride))  # 添加ResNetBottleneck层到layers列表
+            self.in_planes = planes * block.expansion  # 更新输入通道数，乘以ResNetBottleneck的扩展因子
+        # *layers 将 layers 列表中的多个元素展开，并作为参数传递给 nn.Sequential() 函数的构造函数
+        return nn.Sequential(*layers)  # 返回包含所有ResNetBottleneck层的Sequential层
+
     def forward(self, x):
-        out = self.layer(x)
-        return out
+        out = self.layer(x)  # 前向传播，将输入x传递给ResNetBottleneck层
+        return out  # 返回输出
+
 
 class DenseNetBottleneck(nn.Module):
     def __init__(self, nChannels, growthRate):
+        """
+
+        Parameters
+        ----------
+        nChannels       nChannels 是 DenseNetBottleneck 模块中输入特征的通道数。在该模块中，nChannels 是输入特征 x 的通道数，
+            即 x 的 shape[1]，表示输入特征图的通道数。在模块内部，nChannels 经过卷积操作后会发生变化，被缩小到 interChannels，
+            然后又通过第二个卷积层扩展回 growthRate。
+            growthRate      输出特征图通道数的增加量，通常设置为一个较小的值，如 12 或 24，用于控制网络的模型大小和计算复杂度。
+        """
         super(DenseNetBottleneck, self).__init__()
         interChannels = 4*growthRate
         self.bn1 = nn.BatchNorm2d(nChannels)
@@ -88,8 +143,21 @@ class DenseNetBottleneck(nn.Module):
 
 class DenseNetUnit(nn.Module):
     def __init__(self, k, amount, in_channel, out_channel, max_input_channel):
+        """
+
+        Parameters
+        ----------
+        k
+        amount
+        in_channel
+        out_channel
+        max_input_channel max_input_channel 是指在 DenseNetUnit 中，输入通道数的最大限制。如果输入通道数 in_channel 大于
+            max_input_channel，则会对输入进行 1x1 卷积操作，将输入通道数减少到 max_input_channel。这样可以限制输入通道数的最大值，
+            从而控制模型的复杂度和计算资源的消耗。在代码中，max_input_channel 用于判断是否需要进行 1x1 卷积的条件判断。
+        """
         super(DenseNetUnit, self).__init__()
         self.out_channel = out_channel
+        # 判断输入通道数是否大于最大输入通道数，如果是则需要进行1x1卷积
         if in_channel > max_input_channel:
             self.need_conv = True
             self.bn = nn.BatchNorm2d(in_channel)
@@ -99,6 +167,21 @@ class DenseNetUnit(nn.Module):
         self.layer = self._make_dense(in_channel, k, amount)
 
     def _make_dense(self, nChannels, growthRate, nDenseBlocks):
+        """
+        Parameters
+        ----------
+        nChannels       nChannels 表示输入特征图的通道数
+                        在每个稠密块中，nChannels 的值会随着每个层中的特征图通道数的增加而累积，从而得到最终的输出通道数。
+                        这种累积的方式使得 DenseNet 中的每个层都可以直接访问之前层的特征
+        growthRate      growthRate 表示每个稠密块（Dense Block）中的输出通道数（即每个稠密连接的通道数）。
+                        每个稠密块中的每个层都将产生 growthRate 个特征图作为输出，并作为下一层的输入。
+                        这种设计可以帮助网络更加充分地利用之前层的特征，从而增强特征传递和梯度流动，提高网络性能。
+                        growthRate 是 DenseNet 中的一个超参数，可以根据具体任务和需求进行调整。
+        nDenseBlocks    每个 DenseNet 单元（DenseNet Unit）中包含的稠密块（Dense Block）的数量。
+                        超参数，控制了网络的深度和复杂度。较大的 nDenseBlocks 值可以增加网络的深度，从而提供更强大的特征提取能力，
+                        但也会增加网络的计算复杂度和参数量。
+        -------
+        """
         layers = []
         for _ in range(int(nDenseBlocks)):
             layers.append(DenseNetBottleneck(nChannels, growthRate))
@@ -106,7 +189,8 @@ class DenseNetUnit(nn.Module):
         return nn.Sequential(*layers)
     def forward(self, x):
         out = x
-        if hasattr(self, 'need_conv'):
+        # 如果需要进行1x1卷积，则先应用BN和ReLU，再进行卷积
+        if hasattr(self, 'need_conv'):      # 判断对象 self 是否具有名为 'need_conv' 的属性
             out = self.conv(F.relu(self.bn(out)))
         out = self.layer(out)
         assert(out.size()[1] == self.out_channel)
@@ -114,7 +198,7 @@ class DenseNetUnit(nn.Module):
 
 
 class EvoCNNModel(nn.Module):
-    def __init__(self):
+    def __init__(self, in_size=200, num_class=6, input_channel=3):
         super(EvoCNNModel, self).__init__()
 
         #resnet and densenet unit
@@ -123,23 +207,24 @@ class EvoCNNModel(nn.Module):
         self.op6 = DenseNetUnit(k=20, amount=4, in_channel=232, out_channel=144, max_input_channel=64)
         self.op7 = ResNetUnit(amount=9, in_channel=144, out_channel=128)
 
-        #linear unit
-        self.linear = nn.Linear(512, 10)
-
+        #linear unit 72*256
+        inner_size = 128*int(in_size/16)**2
+        self.linear = nn.Linear(inner_size, 6)  # bug为什么没有降维？
 
     def forward(self, x):
-        out_0 = self.op0(x)
+        out_0 = self.op0(x)     # torch.Size([10, 256, 200, 200])
         out_1 = self.op1(out_0)
-        out_2 = F.avg_pool2d(out_1, 2)
+        out_2 = F.avg_pool2d(out_1, 2)  # 连着多组池化/16
         out_3 = F.max_pool2d(out_2, 2)
         out_4 = F.avg_pool2d(out_3, 2)
         out_5 = F.max_pool2d(out_4, 2)
         out_6 = self.op6(out_5)
         out_7 = self.op7(out_6)
-        out = out_7
-
-        out = out.view(out.size(0), -1)
-        out = self.linear(out)
+        out = out_7  # 10 128 12 12
+        # 144 * 128
+        # 32时候是 原来 4 * 128 由于200相比32提升了6倍
+        out = out.view(out.size(0), -1)  # 10*18432
+        out = self.linear(out) # mat1 and mat2 shapes cannot be multiplied (10x18432 and 512x6)
         return out
 
 
@@ -151,12 +236,20 @@ class TrainModel(object):
         #         show_sample=False, num_workers=2, pin_memory=True)
         # trainloader = get_neucls_dataloader(relative_path='../data', cls="train")
         # validate_loader = get_neucls_dataloader(relative_path='../data', cls="Validation")
-        loader = get_neucls_dataloader(data_dir = '../data/NEU-CLS/', num_epochs = 16, batch_size = 8, input_size = 32)
+
+        # 从globel.ini获取参数
+        input_size = StatusUpdateTool.get_input_size()
+        num_class = StatusUpdateTool.get_num_class()
+        input_channel = StatusUpdateTool.get_input_channel()
+        this_epoch = StatusUpdateTool.get_epoch_size()
+        this_batch_size = StatusUpdateTool.get_batch_size()
+        loader = get_neucls_dataloader(data_dir = '../data/NEU-CLS/', num_epochs = this_epoch,
+                                       batch_size = this_batch_size, input_size = input_size)
         trainloader = loader['train']
         validate_loader = loader['val']
-        # testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
-        # /tmp/pycharm_project_663/genetic
-        net = EvoCNNModel()
+
+        # net = EvoCNNModel(in_size=input_size, num_class=num_class, input_channel=input_channel)
+        net = SurfaceDefectResNet()
         cudnn.benchmark = True
         net = net.cuda()
         criterion = nn.CrossEntropyLoss()
@@ -186,17 +279,19 @@ class TrainModel(object):
     def train(self, epoch):
         self.net.train()
         print("epoch:", epoch)
-        if epoch ==0: lr = 0.01
-        if epoch > 0: lr = 0.1;
-        if epoch > 148: lr = 0.01
-        if epoch > 248: lr = 0.001
+        lr = 0.1
+        if epoch <= 3: lr = 0.01
+        # if epoch ==0: lr = 0.01
+        # if epoch > 0: lr = 0.15; # 0.5 不行
+        # if epoch > 15: lr = 0.1
+        # if epoch > 248: lr = 0.001
         optimizer = optim.SGD(self.net.parameters(), lr=lr, momentum = 0.9, weight_decay=5e-4)
         running_loss = 0.0
         total = 0
         correct = 0
         for _, data in enumerate(self.trainloader, 0):
             # 这里会报一个错
-            print(0, end="")
+            # print(0, end="")
             inputs, labels = data
             inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
             # print("进了cuda")

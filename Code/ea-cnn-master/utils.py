@@ -20,14 +20,14 @@ class StatusUpdateTool(object):
                 item_list = config.options(sec_name)
                 for item_name in item_list:
                     config.set(sec_name, item_name, " ")
-        config.write(open('global.ini', 'w'))
+        config.write(open('log/global.ini', 'w'))
 
     @classmethod
     def __write_ini_file(cls, section, key, value):
         config = configparser.ConfigParser()
         config.read('global.ini')
         config.set(section, key, value)
-        config.write(open('global.ini', 'w'))
+        config.write(open('log/global.ini', 'w'))
 
     @classmethod
     def __read_ini_file(cls, section, key):
@@ -63,6 +63,12 @@ class StatusUpdateTool(object):
         for i in rs.split(','):
             resnet_limit.append(int(i))
         return resnet_limit[0], resnet_limit[1]
+
+    @classmethod
+    def get_batch_size(cls):
+        rs = cls.__read_ini_file('network', 'batch_size')
+        return int(rs)
+
     @classmethod
     def get_pool_limit(cls):
         rs = cls.__read_ini_file('network', 'pool_limit')
@@ -70,6 +76,7 @@ class StatusUpdateTool(object):
         for i in rs.split(','):
             pool_limit.append(int(i))
         return pool_limit[0], pool_limit[1]
+
     @classmethod
     def get_densenet_limit(cls):
         rs = cls.__read_ini_file('network', 'densenet_limit')
@@ -125,14 +132,17 @@ class StatusUpdateTool(object):
         for i in rs.split(','):
             channels.append(int(i))
         return channels
+
     @classmethod
     def get_input_channel(cls):
         rs = cls.__read_ini_file('network', 'input_channel')
         return int(rs)
+
     @classmethod
     def get_num_class(cls):
         rs = cls.__read_ini_file('network', 'num_class')
         return int(rs)
+
     @classmethod
     def get_input_size(cls):
         rs = cls.__read_ini_file('network', 'input_size')
@@ -156,7 +166,6 @@ class StatusUpdateTool(object):
         rs = cls.__read_ini_file('settings', 'genetic_prob').split(',')
         p = [float(i) for i in rs]
         return p
-
 
     @classmethod
     def get_init_params(cls):
@@ -193,7 +202,6 @@ class StatusUpdateTool(object):
         assert len(rs) == 3
         mutation_prob_list = [float(i) for i in rs]
         return mutation_prob_list
-
 
 
 class Log(object):

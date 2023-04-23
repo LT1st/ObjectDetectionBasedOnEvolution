@@ -31,7 +31,7 @@ class SurfaceDefectResNet(torch.nn.Module):
 
     def __init__(self):
         super(SurfaceDefectResNet, self).__init__()
-        self.cnn_layers = torchvision.models.resnet34(pretrained=True)
+        self.cnn_layers = torchvision.models.resnet34(pretrained=False)
         num_ftrs = self.cnn_layers.fc.in_features
         self.cnn_layers.fc = torch.nn.Linear(num_ftrs, 6)
 

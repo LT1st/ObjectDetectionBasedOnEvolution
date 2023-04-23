@@ -20,6 +20,7 @@ class EvolveCNN(object):
 
     def fitness_evaluate(self):
         fitness = FitnessEvaluate(self.pops.individuals, Log)
+        # 生成自带的个体python文件
         fitness.generate_to_python_file()
         # 训练并评估已有模型
         fitness.evaluate()

@@ -1,0 +1,42 @@
+[2023-04-22 23:05:31.645360]-Used GPU#1, worker name:Process-12[20444]
+[2023-04-22 23:06:47.050623]-Train-Epoch:  1,  Loss: nan, Acc:0.154
+[2023-04-22 23:06:58.316863]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:08:10.385852]-Train-Epoch:  2,  Loss: nan, Acc:0.152
+[2023-04-22 23:08:21.458271]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:09:33.389108]-Train-Epoch:  3,  Loss: nan, Acc:0.152
+[2023-04-22 23:09:44.550707]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:10:56.465900]-Train-Epoch:  4,  Loss: nan, Acc:0.152
+[2023-04-22 23:11:07.582925]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:12:19.646590]-Train-Epoch:  5,  Loss: nan, Acc:0.152
+[2023-04-22 23:12:30.750541]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:13:42.723669]-Train-Epoch:  6,  Loss: nan, Acc:0.152
+[2023-04-22 23:13:53.855147]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:15:05.762785]-Train-Epoch:  7,  Loss: nan, Acc:0.152
+[2023-04-22 23:15:16.968077]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:16:29.004988]-Train-Epoch:  8,  Loss: nan, Acc:0.152
+[2023-04-22 23:16:40.280636]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:17:52.224326]-Train-Epoch:  9,  Loss: nan, Acc:0.152
+[2023-04-22 23:18:03.394483]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:19:15.297547]-Train-Epoch: 10,  Loss: nan, Acc:0.152
+[2023-04-22 23:19:26.404460]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:20:38.376336]-Train-Epoch: 11,  Loss: nan, Acc:0.152
+[2023-04-22 23:20:49.638189]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:22:01.692372]-Train-Epoch: 12,  Loss: nan, Acc:0.152
+[2023-04-22 23:22:12.962946]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:23:25.003675]-Train-Epoch: 13,  Loss: nan, Acc:0.152
+[2023-04-22 23:23:36.189228]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:24:48.191376]-Train-Epoch: 14,  Loss: nan, Acc:0.152
+[2023-04-22 23:24:59.372245]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:26:11.314791]-Train-Epoch: 15,  Loss: nan, Acc:0.152
+[2023-04-22 23:26:22.450738]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:27:34.407453]-Train-Epoch: 16,  Loss: nan, Acc:0.152
+[2023-04-22 23:27:45.648749]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:28:57.694260]-Train-Epoch: 17,  Loss: nan, Acc:0.152
+[2023-04-22 23:29:11.171868]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:30:23.224864]-Train-Epoch: 18,  Loss: nan, Acc:0.152
+[2023-04-22 23:30:34.444896]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:31:46.472988]-Train-Epoch: 19,  Loss: nan, Acc:0.152
+[2023-04-22 23:31:57.748225]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:33:09.771646]-Train-Epoch: 20,  Loss: nan, Acc:0.152
+[2023-04-22 23:33:20.885779]-Validate-Loss:nan, Acc:0.202
+[2023-04-22 23:33:20.892767]-Finished-Acc:0.202
