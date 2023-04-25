@@ -360,3 +360,215 @@
 2023-04-23 11:53:45,936 INFO    : Begin to train indi0000
 2023-04-23 12:04:27,688 INFO    : Begin to train indi0001
 2023-04-23 12:06:25,257 INFO    : Begin to train indi0002
+2023-04-23 12:19:54,135 INFO    : Begin to train indi0003
+2023-04-23 12:36:11,881 INFO    : Begin to train indi0004
+2023-04-23 13:02:02,671 INFO    : Begin to train indi0005
+2023-04-23 13:27:12,190 INFO    : Begin to train indi0006
+2023-04-23 13:32:44,917 INFO    : Begin to train indi0007
+2023-04-23 13:41:16,783 INFO    : Begin to train indi0008
+2023-04-23 13:51:51,504 INFO    : Begin to train indi0009
+2023-04-23 14:10:01,809 INFO    : Begin to train indi0010
+2023-04-23 14:10:11,925 INFO    : Begin to train indi0011
+2023-04-23 14:11:54,184 INFO    : Begin to train indi0012
+2023-04-23 14:32:43,168 INFO    : Begin to train indi0013
+2023-04-23 14:49:26,572 INFO    : Begin to train indi0014
+2023-04-23 14:56:11,061 INFO    : Begin to train indi0015
+2023-04-23 15:04:17,429 INFO    : Begin to train indi0016
+2023-04-23 15:23:49,865 INFO    : Begin to train indi0017
+2023-04-23 15:38:50,776 INFO    : Begin to train indi0018
+2023-04-23 15:40:27,953 INFO    : Begin to train indi0019
+2023-04-23 15:40:58,074 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:41:28,197 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:41:58,312 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:42:28,435 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:42:58,567 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:43:28,685 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:43:58,796 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:44:28,933 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:44:59,045 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:45:29,164 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:45:59,286 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:46:29,394 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:46:59,502 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:47:29,614 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:47:59,729 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:48:29,845 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:48:59,978 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:49:30,090 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:50:00,200 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:50:30,310 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:51:00,436 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:51:30,549 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:52:00,661 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:52:30,777 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:53:00,898 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:53:31,006 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:54:01,117 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:54:31,252 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:55:01,375 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:55:31,487 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:56:01,609 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:56:31,733 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:57:01,843 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:57:31,964 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:58:02,077 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:58:32,178 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:59:02,282 INFO    : GPU_QUERY-No available GPU
+2023-04-23 15:59:32,406 INFO    : GPU_QUERY-No available GPU
+2023-04-23 16:00:02,542 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:00:32,674 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:01:02,798 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:01:32,922 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:02:03,033 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:02:33,168 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:03:03,292 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:03:33,424 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:04:03,554 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:04:33,684 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:05:03,810 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:05:33,942 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:06:04,074 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:06:34,192 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:07:04,326 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:07:34,437 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:08:04,565 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:08:34,672 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:09:04,788 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:09:34,884 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:10:05,035 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:10:35,149 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:11:05,258 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:11:35,383 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:12:05,492 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:12:35,623 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:13:05,755 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:13:35,888 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:14:06,018 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:14:36,147 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:15:06,277 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:15:36,407 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:16:06,538 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:16:36,670 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:17:06,797 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:17:36,925 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:18:07,038 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:18:37,174 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:19:07,280 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:19:37,378 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:20:07,493 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:20:37,621 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:21:07,745 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:21:37,887 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:22:08,003 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:22:38,132 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:23:08,246 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:23:38,375 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:24:08,506 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:24:38,629 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:25:08,765 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:25:38,889 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:26:09,018 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:26:39,153 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:27:09,258 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:27:39,363 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:28:09,499 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:28:39,634 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:29:09,762 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:29:39,895 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:30:10,028 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:30:40,135 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:31:10,253 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:31:40,367 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:32:10,490 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:32:40,613 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:33:10,738 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:33:40,879 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:34:10,995 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:34:41,111 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:35:11,232 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:35:41,344 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:36:11,475 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:36:41,597 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:37:11,723 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:37:41,831 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:38:11,941 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:38:42,063 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:39:12,186 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:39:42,303 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:40:12,435 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:40:42,565 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:41:12,670 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:41:42,816 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:42:12,955 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:42:43,088 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:43:13,221 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:43:43,353 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:44:13,474 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:44:43,610 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:45:13,732 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:45:43,861 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:46:13,994 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:46:44,122 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:47:14,263 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:47:44,392 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:48:14,516 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:48:44,648 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:49:14,773 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:49:44,898 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:50:15,032 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:50:45,162 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:51:15,297 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:51:45,429 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:52:15,584 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:52:45,708 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:53:15,836 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:53:45,985 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:54:16,116 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:54:46,252 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:55:16,403 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:55:46,518 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:56:16,637 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:56:46,769 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:57:16,893 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:57:47,028 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:58:17,158 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:58:47,299 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:59:17,449 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 16:59:47,579 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:00:17,710 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:00:47,831 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:01:17,969 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:01:48,118 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:02:18,250 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:02:48,383 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:03:18,516 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:03:48,652 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:04:18,761 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:04:48,890 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:10:14,612 INFO    : *************************
+2023-04-23 17:10:14,613 INFO    : Initialize population...
+2023-04-23 17:10:14,614 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 17:10:14,614 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 17:11:13,316 INFO    : *************************
+2023-04-23 17:11:13,317 INFO    : Initialize population...
+2023-04-23 17:11:13,318 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 17:11:13,318 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 17:11:13,321 INFO    : Finish the generation of python files
+2023-04-23 17:11:13,321 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-04-23 17:11:13,321 INFO    : Total hit 0 individuals for fitness
+2023-04-23 17:11:21,191 INFO    : *************************
+2023-04-23 17:11:21,193 INFO    : Initialize population...
+2023-04-23 17:11:21,195 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-04-23 17:11:21,195 INFO    : Begin to generate python files in evaluate.py line:16
+2023-04-23 17:11:21,199 INFO    : Finish the generation of python files
+2023-04-23 17:11:21,199 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-04-23 17:11:21,200 INFO    : Total hit 0 individuals for fitness
+2023-04-23 17:11:31,327 INFO    : Begin to train indi0000
+2023-04-23 17:12:50,217 INFO    : Begin to train indi0001
+2023-04-23 17:13:20,364 INFO    : GPU_QUERY-No available GPU
+2023-04-23 17:13:50,495 INFO    : GPU_QUERY-No available GPU
+2023-04-23 17:14:20,629 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:14:50,760 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:15:20,886 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:15:51,018 INFO    : GPU_QUERY-GPU#1 is available
+2023-04-23 17:16:21,144 INFO    : GPU_QUERY-GPU#1 is available

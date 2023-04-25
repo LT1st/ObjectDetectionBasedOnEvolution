@@ -1,4 +1,42 @@
-[2023-04-22 21:51:33.087179]-Used GPU#1, worker name:Process-7[7244]
-[2023-04-22 21:54:00.272628]-Train-Epoch:  1,  Loss: nan, Acc:0.162
-[2023-04-22 21:54:03.350642]-Exception occur:CUDA out of memory. Tried to allocate 158.00 MiB (GPU 0; 24.00 GiB total capacity; 22.81 GiB already allocated; 0 bytes free; 23.14 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
-[2023-04-22 21:54:03.355635]-Finished-Acc:0.000
+[2023-04-23 13:27:14.189961]-Used GPU#1, worker name:Process-7[9884]
+[2023-04-23 13:27:31.017353]-Train-Epoch:  1,  Loss: 1.483, Acc:0.384
+[2023-04-23 13:27:35.240439]-Validate-Loss:1.510, Acc:0.531
+[2023-04-23 13:27:47.846892]-Train-Epoch:  2,  Loss: 1.141, Acc:0.579
+[2023-04-23 13:27:51.338167]-Validate-Loss:0.916, Acc:0.587
+[2023-04-23 13:28:03.794044]-Train-Epoch:  3,  Loss: 0.974, Acc:0.644
+[2023-04-23 13:28:07.297471]-Validate-Loss:1.588, Acc:0.640
+[2023-04-23 13:28:19.780489]-Train-Epoch:  4,  Loss: 0.852, Acc:0.679
+[2023-04-23 13:28:23.393503]-Validate-Loss:1.068, Acc:0.671
+[2023-04-23 13:28:36.016965]-Train-Epoch:  5,  Loss: 0.796, Acc:0.718
+[2023-04-23 13:28:39.534285]-Validate-Loss:0.601, Acc:0.783
+[2023-04-23 13:28:52.187475]-Train-Epoch:  6,  Loss: 0.673, Acc:0.761
+[2023-04-23 13:28:55.792391]-Validate-Loss:0.507, Acc:0.831
+[2023-04-23 13:29:08.291231]-Train-Epoch:  7,  Loss: 0.632, Acc:0.791
+[2023-04-23 13:29:11.735075]-Validate-Loss:0.592, Acc:0.773
+[2023-04-23 13:29:24.399316]-Train-Epoch:  8,  Loss: 0.529, Acc:0.817
+[2023-04-23 13:29:28.006684]-Validate-Loss:0.550, Acc:0.788
+[2023-04-23 13:29:40.510301]-Train-Epoch:  9,  Loss: 0.464, Acc:0.848
+[2023-04-23 13:29:43.954364]-Validate-Loss:0.457, Acc:0.831
+[2023-04-23 13:29:56.486135]-Train-Epoch: 10,  Loss: 0.490, Acc:0.835
+[2023-04-23 13:30:00.163509]-Validate-Loss:0.520, Acc:0.790
+[2023-04-23 13:30:12.812801]-Train-Epoch: 11,  Loss: 0.442, Acc:0.855
+[2023-04-23 13:30:16.316065]-Validate-Loss:0.583, Acc:0.796
+[2023-04-23 13:30:28.824041]-Train-Epoch: 12,  Loss: 0.399, Acc:0.854
+[2023-04-23 13:30:32.505818]-Validate-Loss:0.449, Acc:0.856
+[2023-04-23 13:30:45.060230]-Train-Epoch: 13,  Loss: 0.398, Acc:0.863
+[2023-04-23 13:30:48.731407]-Validate-Loss:0.656, Acc:0.800
+[2023-04-23 13:31:01.239833]-Train-Epoch: 14,  Loss: 0.387, Acc:0.877
+[2023-04-23 13:31:04.717079]-Validate-Loss:0.926, Acc:0.708
+[2023-04-23 13:31:17.379285]-Train-Epoch: 15,  Loss: 0.375, Acc:0.863
+[2023-04-23 13:31:20.979979]-Validate-Loss:0.393, Acc:0.860
+[2023-04-23 13:31:33.511811]-Train-Epoch: 16,  Loss: 0.347, Acc:0.881
+[2023-04-23 13:31:37.155003]-Validate-Loss:0.291, Acc:0.906
+[2023-04-23 13:31:49.676738]-Train-Epoch: 17,  Loss: 0.341, Acc:0.887
+[2023-04-23 13:31:53.305437]-Validate-Loss:0.318, Acc:0.892
+[2023-04-23 13:32:05.987776]-Train-Epoch: 18,  Loss: 0.270, Acc:0.905
+[2023-04-23 13:32:09.554419]-Validate-Loss:0.327, Acc:0.890
+[2023-04-23 13:32:22.082031]-Train-Epoch: 19,  Loss: 0.256, Acc:0.920
+[2023-04-23 13:32:25.592065]-Validate-Loss:0.243, Acc:0.915
+[2023-04-23 13:32:38.295995]-Train-Epoch: 20,  Loss: 0.250, Acc:0.913
+[2023-04-23 13:32:41.912528]-Validate-Loss:0.300, Acc:0.879
+[2023-04-23 13:32:41.919517]-Finished-Acc:0.915

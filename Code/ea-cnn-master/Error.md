@@ -289,3 +289,25 @@ torch.cuda.empty_cache()
 todo: 发现了没有解决的bug cache.txt不存在
 genetic/evaluate.py:32 
 self.log.info('Try to query fitness from cache from ./populations/cache.txt')
+
+
+4.23 
+genetic/evaluate.py:53
+if indi.acc < 0:
+ACC记录错误 一直是-1
+算法无法进入下一轮，一直等待
+
+
+Warnings: 
+class GPUTools(object):
+    @classmethod
+    def _get_available_gpu_plain_info(cls):
+
+这样的查询方式会新建一个线程，有可能导致卡死
+
+acc仅在load_population中会更新
+
+
+# 超显存问题
+由于线程分配不当
+不小心在gpu上开启了第二个

@@ -1,9 +1,10 @@
-from utils import Utils,GPUTools
+from utils import Utils, GPUTools, GPUStatus
 import importlib
 from multiprocessing import Process
 import time, os, sys
 from asyncio.tasks import sleep
 
+ifDebug = True
 
 class FitnessEvaluate(object):
 
@@ -27,8 +28,10 @@ class FitnessEvaluate(object):
         """
         load fitness from cache file
         """
-        mutiGPU = False     # 多卡卡死
-
+        mutiGPU = True     # 多卡卡死
+        # GPU_status
+        gpu_status = GPUStatus()
+        print(gpu_status.gpu_num)
         self.log.info('Try to query fitness from cache from ./populations/cache.txt')
         # 已有网络结构
         _map = Utils.load_cache_data()
@@ -50,7 +53,7 @@ class FitnessEvaluate(object):
 
         has_evaluated_offspring = False
         for indi in self.individuals:
-            if indi.acc < 0:
+            if indi.acc < 0:  # 如果acc小于0，说明没训练过
                 if not mutiGPU:
                     has_evaluated_offspring = True
                     """ 
@@ -64,7 +67,8 @@ class FitnessEvaluate(object):
                     cls_obj.do_work('1', file_name)
                     """
                     # GPU状态维护
-                    time.sleep(releaseGPUTime)
+                    # time.sleep(releaseGPUTime)
+
                     gpu_id = GPUTools.detect_if_gpu_0_availabel()
                     while gpu_id is None:
                         time.sleep(rGPUTime)
@@ -93,18 +97,25 @@ class FitnessEvaluate(object):
                         # p = Process(target=cls_obj.do_workk, args=('%d'%(gpu_id), file_name,))
                         p.start()
                         # has_evaluated_offspring = True
+                        # 不能直接读取，得等他训练完了，不然读取到的就是以前的
+                        # indi.acc = Utils.get_acc_by_id(file_name)
 
                 # 多卡训练
                 else:
+                    if ifDebug:
+                        print("muti_gpu")
                     has_evaluated_offspring = True
 
                     time.sleep(releaseGPUTime)
                     # GPU状态维护
-                    gpu_id = GPUTools.detect_availabel_gpu_id()
+                    gpu_id =gpu_status.get_an_available_gpu()
+                    # gpu_id = GPUTools.detect_availabel_gpu_id()
                     while gpu_id is None:
                         time.sleep(rGPUTime)
-                        gpu_id = GPUTools.detect_availabel_gpu_id()
+                        # gpu_id = GPUTools.detect_availabel_gpu_id()
+                        gpu_id = gpu_status.get_an_available_gpu()
                     if gpu_id is not None:
+                        print("is using gpu id",gpu_id)
                         file_name = indi.id
                         self.log.info('Begin to train %s'%(file_name))
                         module_name = 'Scripts.%s'%(file_name)
@@ -126,6 +137,7 @@ class FitnessEvaluate(object):
                         p = Process(target=cls_obj.do_workk, args=(str(gpu_id), file_name,))
                         # p = Process(target=cls_obj.do_workk, args=('%d'%(gpu_id), file_name,))
                         p.start()
+                        # indi.acc = Utils.get_acc_by_id(file_name)
             # 准确率达标
             else:
                 file_name = indi.id
@@ -147,9 +159,10 @@ class FitnessEvaluate(object):
         """
         if has_evaluated_offspring:
             all_finished = False
-            while all_finished is not True:
+            while not all_finished:
                 time.sleep(30)
-                all_finished = GPUTools.all_gpu_available()
+                all_finished = gpu_status.all_gpu_available()
+                # all_finished = GPUTools.all_gpu_available()
         """
         the reason that using "has_evaluated_offspring" is that:
         If all individuals are evaluated, there is no needed to wait for 300 seconds indicated in line#47
@@ -160,7 +173,7 @@ class FitnessEvaluate(object):
         """
         if has_evaluated_offspring:
             file_name = './populations/after_%s.txt'%(self.individuals[0].id[4:6])
-            assert os.path.exists(file_name)
+            # assert os.path.exists(file_name) # 瞎写
             f = open(file_name, 'r')
             fitness_map = {}
             for line in f:
@@ -168,6 +181,7 @@ class FitnessEvaluate(object):
                     line = line.strip().split('=')
                     fitness_map[line[0]] = float(line[1])
             f.close()
+
             for indi in self.individuals:
                 if indi.acc == -1:
                     # 如果是 -1 说明出问题了
@@ -178,6 +192,7 @@ class FitnessEvaluate(object):
         else:
             self.log.info('None offspring has been evaluated')
 
+        # 保存chache.txt文件
         Utils.save_fitness_to_cache(self.individuals)
 
 

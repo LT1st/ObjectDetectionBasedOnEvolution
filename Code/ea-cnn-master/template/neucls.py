@@ -14,33 +14,33 @@ from datetime import datetime
 import multiprocessing
 from utils import StatusUpdateTool
 
-ifDebug = True          # æ˜¯å¦æ‰“å°debugä¿¡æ¯
-ifLog = True            # æ˜¯å¦æŠŠä¿¡æ¯è®°å½•åˆ°logæ–‡ä»¶ä¸­  å½“å•æ¬¡è¿è¡Œæˆ–debugæ—¶éœ€è¦æ³¨æ„
+ifDebug = True          # ÊÇ·ñ´òÓ¡debugĞÅÏ¢
+ifLog = True            # ÊÇ·ñ°ÑĞÅÏ¢¼ÇÂ¼µ½logÎÄ¼şÖĞ  µ±µ¥´ÎÔËĞĞ»òdebugÊ±ĞèÒª×¢Òâ
 ifPrintMemory = True    #
 
 class ResNetBottleneck(nn.Module):
-    # expansion æ˜¯ä¸€ä¸ªç”¨äºæ‰©å±•é€šé“æ•°çš„å‚æ•°ï¼Œç”¨äºæ§åˆ¶æ¯ä¸ª ResNet æ¨¡å—ä¸­çš„å·ç§¯å±‚è¾“å‡ºé€šé“æ•°ç›¸å¯¹äºè¾“å…¥é€šé“æ•°çš„å€æ•°ã€‚
-    # å½“ expansion = 1 æ—¶ï¼Œè¡¨ç¤ºå·ç§¯å±‚è¾“å‡ºçš„é€šé“æ•°ä¸è¾“å…¥é€šé“æ•°ç›¸åŒï¼Œä¸å‘ç”Ÿé€šé“æ•°çš„å˜åŒ–
-    # ResNet çš„ Bottleneck æ¨¡å—ä¸­ï¼Œexpansion çš„å€¼é€šå¸¸è®¾ç½®ä¸º 4ï¼Œå³è¾“å‡ºé€šé“æ•°æ˜¯è¾“å…¥é€šé“æ•°çš„ 4 å€ã€‚
-    # è¿™æ ·åšçš„ç›®çš„æ˜¯ä¸ºäº†åœ¨ç½‘ç»œåŠ æ·±æ—¶ä¿æŒè¾ƒå°çš„æ¨¡å‹å‚æ•°é‡å’Œè®¡ç®—å¤æ‚åº¦ï¼ŒåŒæ—¶æå‡ç½‘ç»œçš„è¡¨è¾¾èƒ½åŠ›ï¼Œä»è€Œè·å¾—æ›´å¥½çš„æ€§èƒ½ã€‚
+    # expansion ÊÇÒ»¸öÓÃÓÚÀ©Õ¹Í¨µÀÊıµÄ²ÎÊı£¬ÓÃÓÚ¿ØÖÆÃ¿¸ö ResNet Ä£¿éÖĞµÄ¾í»ı²ãÊä³öÍ¨µÀÊıÏà¶ÔÓÚÊäÈëÍ¨µÀÊıµÄ±¶Êı¡£
+    # µ± expansion = 1 Ê±£¬±íÊ¾¾í»ı²ãÊä³öµÄÍ¨µÀÊıÓëÊäÈëÍ¨µÀÊıÏàÍ¬£¬²»·¢ÉúÍ¨µÀÊıµÄ±ä»¯
+    # ResNet µÄ Bottleneck Ä£¿éÖĞ£¬expansion µÄÖµÍ¨³£ÉèÖÃÎª 4£¬¼´Êä³öÍ¨µÀÊıÊÇÊäÈëÍ¨µÀÊıµÄ 4 ±¶¡£
+    # ÕâÑù×öµÄÄ¿µÄÊÇÎªÁËÔÚÍøÂç¼ÓÉîÊ±±£³Ö½ÏĞ¡µÄÄ£ĞÍ²ÎÊıÁ¿ºÍ¼ÆËã¸´ÔÓ¶È£¬Í¬Ê±ÌáÉıÍøÂçµÄ±í´ïÄÜÁ¦£¬´Ó¶ø»ñµÃ¸üºÃµÄĞÔÄÜ¡£
     expansion = 1
 
     def __init__(self, in_planes, planes, stride=1):
         super(ResNetBottleneck, self).__init__()
-        # å®šä¹‰ç¬¬ä¸€ä¸ªå·ç§¯å±‚ï¼Œä½¿ç”¨ 1x1 çš„å·ç§¯æ ¸ï¼Œç”¨äºé™ä½è¾“å…¥å¹³é¢çš„ç»´åº¦
+        # ¶¨ÒåµÚÒ»¸ö¾í»ı²ã£¬Ê¹ÓÃ 1x1 µÄ¾í»ıºË£¬ÓÃÓÚ½µµÍÊäÈëÆ½ÃæµÄÎ¬¶È
         self.conv1 = nn.Conv2d(in_planes, planes, kernel_size=1, bias=False)
-        # å®šä¹‰ conv1 åçš„æ‰¹å½’ä¸€åŒ–å±‚ï¼Œç”¨äºè§„èŒƒåŒ–å·ç§¯å±‚çš„è¾“å‡º
+        # ¶¨Òå conv1 ºóµÄÅú¹éÒ»»¯²ã£¬ÓÃÓÚ¹æ·¶»¯¾í»ı²ãµÄÊä³ö
         self.bn1 = nn.BatchNorm2d(planes)
-        # ç”¨äºæå–ç‰¹å¾å¹¶è°ƒæ•´è¾“å…¥å°ºå¯¸
+        # ÓÃÓÚÌáÈ¡ÌØÕ÷²¢µ÷ÕûÊäÈë³ß´ç
         self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=stride, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(planes)
-        # å®šä¹‰ç¬¬ä¸‰ä¸ªå·ç§¯å±‚ï¼Œä½¿ç”¨ 1x1 çš„å·ç§¯æ ¸ï¼Œç”¨äºæ¢å¤è¾“å‡ºå¹³é¢çš„ç»´åº¦
+        # ¶¨ÒåµÚÈı¸ö¾í»ı²ã£¬Ê¹ÓÃ 1x1 µÄ¾í»ıºË£¬ÓÃÓÚ»Ö¸´Êä³öÆ½ÃæµÄÎ¬¶È
         self.conv3 = nn.Conv2d(planes, self.expansion*planes, kernel_size=1, bias=False)
         self.bn3 = nn.BatchNorm2d(self.expansion*planes)
 
-        # å¦‚æœ stride ä¸ç­‰äº 1ï¼Œæˆ–è€…è¾“å…¥çš„å¹³é¢æ•°ä¸ç­‰äºæ‰©å±•å€æ•°ä¹˜ä»¥è¾“å‡ºå¹³é¢æ•°ï¼Œ
-        # åˆ™å°† shortcut å®šä¹‰ä¸ºä¸€ä¸ªåŒ…å«ä¸€ä¸ª 1x1 çš„å·ç§¯å±‚å’Œæ‰¹å½’ä¸€åŒ–å±‚çš„åºåˆ—æ¨¡å—ï¼Œ
-        # ç”¨äºè°ƒæ•´è¾“å…¥å°ºå¯¸æˆ–ç»´åº¦ï¼Œä»¥ä¾¿ä¸å·ç§¯å±‚çš„è¾“å‡ºç›¸åŠ 
+        # Èç¹û stride ²»µÈÓÚ 1£¬»òÕßÊäÈëµÄÆ½ÃæÊı²»µÈÓÚÀ©Õ¹±¶Êı³ËÒÔÊä³öÆ½ÃæÊı£¬
+        # Ôò½« shortcut ¶¨ÒåÎªÒ»¸ö°üº¬Ò»¸ö 1x1 µÄ¾í»ı²ãºÍÅú¹éÒ»»¯²ãµÄĞòÁĞÄ£¿é£¬
+        # ÓÃÓÚµ÷ÕûÊäÈë³ß´ç»òÎ¬¶È£¬ÒÔ±ãÓë¾í»ı²ãµÄÊä³öÏà¼Ó
         self.shortcut = nn.Sequential()
         if stride != 1 or in_planes != self.expansion*planes:
             self.shortcut = nn.Sequential(
@@ -57,35 +57,35 @@ class ResNetBottleneck(nn.Module):
         return out
 
 class ResNetUnit(nn.Module):
-    # æ ‡å‡†çš„ ResNet ç½‘ç»œç»“æ„å®šä¹‰ä»£ç é€šå¸¸åŒ…å«å¤šä¸ª ResNet æ¨¡å—ï¼Œå¹¶ä¸”é€šå¸¸åœ¨æ¯ä¸ªæ¨¡å—ä¸­ä¼šä½¿ç”¨ä¸åŒçš„é€šé“æ•°å’Œæ­¥å¹…ã€‚
-    # åœ¨åˆå§‹åŒ–æ—¶è°ƒç”¨ _make_layer æ–¹æ³•ï¼Œåˆ›å»ºåŒ…å«å¤šä¸ª ResNetBottleneck å±‚çš„å±‚åºåˆ—ï¼ˆnn.Sequentialï¼‰ï¼Œå¹¶å°†å…¶ä¿å­˜åœ¨ self.layer ä¸­ã€‚
-    # _make_layer æ–¹æ³•æ ¹æ®è¾“å…¥çš„ block ç±»å‹ã€è¾“å‡ºé€šé“æ•° planesã€ResNetBottleneck å±‚çš„æ•°é‡ num_blocks å’Œæ­¥é•¿ strideï¼Œ
-    # ç”Ÿæˆä¸€ä¸ªåŒ…å«å¤šä¸ª ResNetBottleneck å±‚çš„å±‚åºåˆ—ï¼ˆnn.Sequentialï¼‰ã€‚
+    # ±ê×¼µÄ ResNet ÍøÂç½á¹¹¶¨Òå´úÂëÍ¨³£°üº¬¶à¸ö ResNet Ä£¿é£¬²¢ÇÒÍ¨³£ÔÚÃ¿¸öÄ£¿éÖĞ»áÊ¹ÓÃ²»Í¬µÄÍ¨µÀÊıºÍ²½·ù¡£
+    # ÔÚ³õÊ¼»¯Ê±µ÷ÓÃ _make_layer ·½·¨£¬´´½¨°üº¬¶à¸ö ResNetBottleneck ²ãµÄ²ãĞòÁĞ£¨nn.Sequential£©£¬²¢½«Æä±£´æÔÚ self.layer ÖĞ¡£
+    # _make_layer ·½·¨¸ù¾İÊäÈëµÄ block ÀàĞÍ¡¢Êä³öÍ¨µÀÊı planes¡¢ResNetBottleneck ²ãµÄÊıÁ¿ num_blocks ºÍ²½³¤ stride£¬
+    # Éú³ÉÒ»¸ö°üº¬¶à¸ö ResNetBottleneck ²ãµÄ²ãĞòÁĞ£¨nn.Sequential£©¡£
 
     def __init__(self, amount, in_channel, out_channel):
         super(ResNetUnit, self).__init__()
         self.in_planes = in_channel
-        self.layer = self._make_layer(ResNetBottleneck, out_channel, amount, stride=1)      # åˆ›å»ºResNetBottleneckå±‚
+        self.layer = self._make_layer(ResNetBottleneck, out_channel, amount, stride=1)      # ´´½¨ResNetBottleneck²ã
 
     def _make_layer(self, block, planes, num_blocks, stride):
-        strides = [stride] + [1]*(num_blocks-1)     # å®šä¹‰æ¯ä¸ªResNetBottleneckå±‚çš„æ­¥é•¿ï¼Œç¬¬ä¸€ä¸ªæ­¥é•¿ä¸ºstrideï¼Œå…¶ä½™ä¸º1
+        strides = [stride] + [1]*(num_blocks-1)     # ¶¨ÒåÃ¿¸öResNetBottleneck²ãµÄ²½³¤£¬µÚÒ»¸ö²½³¤Îªstride£¬ÆäÓàÎª1
         layers = []
         for stride in strides:
-            layers.append(block(self.in_planes, planes, stride))  # æ·»åŠ ResNetBottleneckå±‚åˆ°layersåˆ—è¡¨
-            self.in_planes = planes * block.expansion  # æ›´æ–°è¾“å…¥é€šé“æ•°ï¼Œä¹˜ä»¥ResNetBottleneckçš„æ‰©å±•å› å­
-        # *layers å°† layers åˆ—è¡¨ä¸­çš„å¤šä¸ªå…ƒç´ å±•å¼€ï¼Œå¹¶ä½œä¸ºå‚æ•°ä¼ é€’ç»™ nn.Sequential() å‡½æ•°çš„æ„é€ å‡½æ•°
-        return nn.Sequential(*layers)  # è¿”å›åŒ…å«æ‰€æœ‰ResNetBottleneckå±‚çš„Sequentialå±‚
+            layers.append(block(self.in_planes, planes, stride))  # Ìí¼ÓResNetBottleneck²ãµ½layersÁĞ±í
+            self.in_planes = planes * block.expansion  # ¸üĞÂÊäÈëÍ¨µÀÊı£¬³ËÒÔResNetBottleneckµÄÀ©Õ¹Òò×Ó
+        # *layers ½« layers ÁĞ±íÖĞµÄ¶à¸öÔªËØÕ¹¿ª£¬²¢×÷Îª²ÎÊı´«µİ¸ø nn.Sequential() º¯ÊıµÄ¹¹Ôìº¯Êı
+        return nn.Sequential(*layers)  # ·µ»Ø°üº¬ËùÓĞResNetBottleneck²ãµÄSequential²ã
 
     def forward(self, x):
-        out = self.layer(x)  # å‰å‘ä¼ æ’­ï¼Œå°†è¾“å…¥xä¼ é€’ç»™ResNetBottleneckå±‚
-        return out  # è¿”å›è¾“å‡º
+        out = self.layer(x)  # Ç°Ïò´«²¥£¬½«ÊäÈëx´«µİ¸øResNetBottleneck²ã
+        return out  # ·µ»ØÊä³ö
 
 class DenseNetBottleneck(nn.Module):
     def __init__(self, nChannels, growthRate):
-        # nChannels       nChannels æ˜¯ DenseNetBottleneck æ¨¡å—ä¸­è¾“å…¥ç‰¹å¾çš„é€šé“æ•°ã€‚åœ¨è¯¥æ¨¡å—ä¸­ï¼ŒnChannels æ˜¯è¾“å…¥ç‰¹å¾ x çš„é€šé“æ•°ï¼Œ
-        # å³ x çš„ shape[1]ï¼Œè¡¨ç¤ºè¾“å…¥ç‰¹å¾å›¾çš„é€šé“æ•°ã€‚åœ¨æ¨¡å—å†…éƒ¨ï¼ŒnChannels ç»è¿‡å·ç§¯æ“ä½œåä¼šå‘ç”Ÿå˜åŒ–ï¼Œè¢«ç¼©å°åˆ° interChannelsï¼Œ
-        # ç„¶ååˆé€šè¿‡ç¬¬äºŒä¸ªå·ç§¯å±‚æ‰©å±•å› growthRateã€‚
-        # growthRate      è¾“å‡ºç‰¹å¾å›¾é€šé“æ•°çš„å¢åŠ é‡ï¼Œé€šå¸¸è®¾ç½®ä¸ºä¸€ä¸ªè¾ƒå°çš„å€¼ï¼Œå¦‚ 12 æˆ– 24ï¼Œç”¨äºæ§åˆ¶ç½‘ç»œçš„æ¨¡å‹å¤§å°å’Œè®¡ç®—å¤æ‚åº¦ã€‚
+        # nChannels       nChannels ÊÇ DenseNetBottleneck Ä£¿éÖĞÊäÈëÌØÕ÷µÄÍ¨µÀÊı¡£ÔÚ¸ÃÄ£¿éÖĞ£¬nChannels ÊÇÊäÈëÌØÕ÷ x µÄÍ¨µÀÊı£¬
+        # ¼´ x µÄ shape[1]£¬±íÊ¾ÊäÈëÌØÕ÷Í¼µÄÍ¨µÀÊı¡£ÔÚÄ£¿éÄÚ²¿£¬nChannels ¾­¹ı¾í»ı²Ù×÷ºó»á·¢Éú±ä»¯£¬±»ËõĞ¡µ½ interChannels£¬
+        # È»ºóÓÖÍ¨¹ıµÚ¶ş¸ö¾í»ı²ãÀ©Õ¹»Ø growthRate¡£
+        # growthRate      Êä³öÌØÕ÷Í¼Í¨µÀÊıµÄÔö¼ÓÁ¿£¬Í¨³£ÉèÖÃÎªÒ»¸ö½ÏĞ¡µÄÖµ£¬Èç 12 »ò 24£¬ÓÃÓÚ¿ØÖÆÍøÂçµÄÄ£ĞÍ´óĞ¡ºÍ¼ÆËã¸´ÔÓ¶È¡£
         super(DenseNetBottleneck, self).__init__()
         interChannels = 4*growthRate
         self.bn1 = nn.BatchNorm2d(nChannels)
@@ -103,9 +103,9 @@ class DenseNetBottleneck(nn.Module):
 
 class DenseNetUnit(nn.Module):
     def __init__(self, k, amount, in_channel, out_channel, max_input_channel):
-        #     max_input_channel max_input_channel æ˜¯æŒ‡åœ¨ DenseNetUnit ä¸­ï¼Œè¾“å…¥é€šé“æ•°çš„æœ€å¤§é™åˆ¶ã€‚å¦‚æœè¾“å…¥é€šé“æ•° in_channel å¤§äº
-        # max_input_channelï¼Œåˆ™ä¼šå¯¹è¾“å…¥è¿›è¡Œ 1x1 å·ç§¯æ“ä½œï¼Œå°†è¾“å…¥é€šé“æ•°å‡å°‘åˆ° max_input_channelã€‚è¿™æ ·å¯ä»¥é™åˆ¶è¾“å…¥é€šé“æ•°çš„æœ€å¤§å€¼ï¼Œ
-        # ä»è€Œæ§åˆ¶æ¨¡å‹çš„å¤æ‚åº¦å’Œè®¡ç®—èµ„æºçš„æ¶ˆè€—ã€‚åœ¨ä»£ç ä¸­ï¼Œmax_input_channel ç”¨äºåˆ¤æ–­æ˜¯å¦éœ€è¦è¿›è¡Œ 1x1 å·ç§¯çš„æ¡ä»¶åˆ¤æ–­ã€‚
+        #     max_input_channel max_input_channel ÊÇÖ¸ÔÚ DenseNetUnit ÖĞ£¬ÊäÈëÍ¨µÀÊıµÄ×î´óÏŞÖÆ¡£Èç¹ûÊäÈëÍ¨µÀÊı in_channel ´óÓÚ
+        # max_input_channel£¬Ôò»á¶ÔÊäÈë½øĞĞ 1x1 ¾í»ı²Ù×÷£¬½«ÊäÈëÍ¨µÀÊı¼õÉÙµ½ max_input_channel¡£ÕâÑù¿ÉÒÔÏŞÖÆÊäÈëÍ¨µÀÊıµÄ×î´óÖµ£¬
+        # ´Ó¶ø¿ØÖÆÄ£ĞÍµÄ¸´ÔÓ¶ÈºÍ¼ÆËã×ÊÔ´µÄÏûºÄ¡£ÔÚ´úÂëÖĞ£¬max_input_channel ÓÃÓÚÅĞ¶ÏÊÇ·ñĞèÒª½øĞĞ 1x1 ¾í»ıµÄÌõ¼şÅĞ¶Ï¡£
 
         super(DenseNetUnit, self).__init__()
         self.out_channel = out_channel
@@ -121,16 +121,16 @@ class DenseNetUnit(nn.Module):
         #
         # Parameters
         # ----------
-        # nChannels       nChannels è¡¨ç¤ºè¾“å…¥ç‰¹å¾å›¾çš„é€šé“æ•°
-        #                 åœ¨æ¯ä¸ªç¨ å¯†å—ä¸­ï¼ŒnChannels çš„å€¼ä¼šéšç€æ¯ä¸ªå±‚ä¸­çš„ç‰¹å¾å›¾é€šé“æ•°çš„å¢åŠ è€Œç´¯ç§¯ï¼Œä»è€Œå¾—åˆ°æœ€ç»ˆçš„è¾“å‡ºé€šé“æ•°ã€‚
-        #                 è¿™ç§ç´¯ç§¯çš„æ–¹å¼ä½¿å¾— DenseNet ä¸­çš„æ¯ä¸ªå±‚éƒ½å¯ä»¥ç›´æ¥è®¿é—®ä¹‹å‰å±‚çš„ç‰¹å¾
-        # growthRate      growthRate è¡¨ç¤ºæ¯ä¸ªç¨ å¯†å—ï¼ˆDense Blockï¼‰ä¸­çš„è¾“å‡ºé€šé“æ•°ï¼ˆå³æ¯ä¸ªç¨ å¯†è¿æ¥çš„é€šé“æ•°ï¼‰ã€‚
-        #                 æ¯ä¸ªç¨ å¯†å—ä¸­çš„æ¯ä¸ªå±‚éƒ½å°†äº§ç”Ÿ growthRate ä¸ªç‰¹å¾å›¾ä½œä¸ºè¾“å‡ºï¼Œå¹¶ä½œä¸ºä¸‹ä¸€å±‚çš„è¾“å…¥ã€‚
-        #                 è¿™ç§è®¾è®¡å¯ä»¥å¸®åŠ©ç½‘ç»œæ›´åŠ å……åˆ†åœ°åˆ©ç”¨ä¹‹å‰å±‚çš„ç‰¹å¾ï¼Œä»è€Œå¢å¼ºç‰¹å¾ä¼ é€’å’Œæ¢¯åº¦æµåŠ¨ï¼Œæé«˜ç½‘ç»œæ€§èƒ½ã€‚
-        #                 growthRate æ˜¯ DenseNet ä¸­çš„ä¸€ä¸ªè¶…å‚æ•°ï¼Œå¯ä»¥æ ¹æ®å…·ä½“ä»»åŠ¡å’Œéœ€æ±‚è¿›è¡Œè°ƒæ•´ã€‚
-        # nDenseBlocks    æ¯ä¸ª DenseNet å•å…ƒï¼ˆDenseNet Unitï¼‰ä¸­åŒ…å«çš„ç¨ å¯†å—ï¼ˆDense Blockï¼‰çš„æ•°é‡ã€‚
-        #                 è¶…å‚æ•°ï¼Œæ§åˆ¶äº†ç½‘ç»œçš„æ·±åº¦å’Œå¤æ‚åº¦ã€‚è¾ƒå¤§çš„ nDenseBlocks å€¼å¯ä»¥å¢åŠ ç½‘ç»œçš„æ·±åº¦ï¼Œä»è€Œæä¾›æ›´å¼ºå¤§çš„ç‰¹å¾æå–èƒ½åŠ›ï¼Œ
-        #                 ä½†ä¹Ÿä¼šå¢åŠ ç½‘ç»œçš„è®¡ç®—å¤æ‚åº¦å’Œå‚æ•°é‡ã€‚
+        # nChannels       nChannels ±íÊ¾ÊäÈëÌØÕ÷Í¼µÄÍ¨µÀÊı
+        #                 ÔÚÃ¿¸ö³íÃÜ¿éÖĞ£¬nChannels µÄÖµ»áËæ×ÅÃ¿¸ö²ãÖĞµÄÌØÕ÷Í¼Í¨µÀÊıµÄÔö¼Ó¶øÀÛ»ı£¬´Ó¶øµÃµ½×îÖÕµÄÊä³öÍ¨µÀÊı¡£
+        #                 ÕâÖÖÀÛ»ıµÄ·½Ê½Ê¹µÃ DenseNet ÖĞµÄÃ¿¸ö²ã¶¼¿ÉÒÔÖ±½Ó·ÃÎÊÖ®Ç°²ãµÄÌØÕ÷
+        # growthRate      growthRate ±íÊ¾Ã¿¸ö³íÃÜ¿é£¨Dense Block£©ÖĞµÄÊä³öÍ¨µÀÊı£¨¼´Ã¿¸ö³íÃÜÁ¬½ÓµÄÍ¨µÀÊı£©¡£
+        #                 Ã¿¸ö³íÃÜ¿éÖĞµÄÃ¿¸ö²ã¶¼½«²úÉú growthRate ¸öÌØÕ÷Í¼×÷ÎªÊä³ö£¬²¢×÷ÎªÏÂÒ»²ãµÄÊäÈë¡£
+        #                 ÕâÖÖÉè¼Æ¿ÉÒÔ°ïÖúÍøÂç¸ü¼Ó³ä·ÖµØÀûÓÃÖ®Ç°²ãµÄÌØÕ÷£¬´Ó¶øÔöÇ¿ÌØÕ÷´«µİºÍÌİ¶ÈÁ÷¶¯£¬Ìá¸ßÍøÂçĞÔÄÜ¡£
+        #                 growthRate ÊÇ DenseNet ÖĞµÄÒ»¸ö³¬²ÎÊı£¬¿ÉÒÔ¸ù¾İ¾ßÌåÈÎÎñºÍĞèÇó½øĞĞµ÷Õû¡£
+        # nDenseBlocks    Ã¿¸ö DenseNet µ¥Ôª£¨DenseNet Unit£©ÖĞ°üº¬µÄ³íÃÜ¿é£¨Dense Block£©µÄÊıÁ¿¡£
+        #                 ³¬²ÎÊı£¬¿ØÖÆÁËÍøÂçµÄÉî¶ÈºÍ¸´ÔÓ¶È¡£½Ï´óµÄ nDenseBlocks Öµ¿ÉÒÔÔö¼ÓÍøÂçµÄÉî¶È£¬´Ó¶øÌá¹©¸üÇ¿´óµÄÌØÕ÷ÌáÈ¡ÄÜÁ¦£¬
+        #                 µ«Ò²»áÔö¼ÓÍøÂçµÄ¼ÆËã¸´ÔÓ¶ÈºÍ²ÎÊıÁ¿¡£
         # -------
         #
         layers = []
@@ -141,8 +141,8 @@ class DenseNetUnit(nn.Module):
 
     def forward(self, x):
         out = x
-        # å¦‚æœéœ€è¦è¿›è¡Œ1x1å·ç§¯ï¼Œåˆ™å…ˆåº”ç”¨BNå’ŒReLUï¼Œå†è¿›è¡Œå·ç§¯
-        if hasattr(self, 'need_conv'):      # åˆ¤æ–­å¯¹è±¡ self æ˜¯å¦å…·æœ‰åä¸º 'need_conv' çš„å±æ€§
+        # Èç¹ûĞèÒª½øĞĞ1x1¾í»ı£¬ÔòÏÈÓ¦ÓÃBNºÍReLU£¬ÔÙ½øĞĞ¾í»ı
+        if hasattr(self, 'need_conv'):      # ÅĞ¶Ï¶ÔÏó self ÊÇ·ñ¾ßÓĞÃûÎª 'need_conv' µÄÊôĞÔ
             out = self.conv(F.relu(self.bn(out)))
         out = self.layer(out)
         assert(out.size()[1] == self.out_channel)
@@ -165,10 +165,10 @@ class EvoCNNModel(nn.Module):
 
 class TrainModel(object):
     def __init__(self):
-        # ç”¨äºè®­ç»ƒå…¶ä»–æ•°æ®é›†
+        # ÓÃÓÚÑµÁ·ÆäËûÊı¾İ¼¯
         #trainloader, validate_loader = data_loader.get_train_valid_loader('./data', batch_size=128, augment=True, valid_size=0.1, shuffle=False, random_seed=2312390, show_sample=False, num_workers=4, pin_memory=True)
         #testloader = data_loader.get_test_loader('/home/yanan/train_data', batch_size=128, shuffle=False, num_workers=1, pin_memory=True)
-        # ä»globel.iniè·å–å‚æ•°
+        # ´Óglobel.ini»ñÈ¡²ÎÊı
         input_size = StatusUpdateTool.get_input_size()
         num_class = StatusUpdateTool.get_num_class()
         input_channel = StatusUpdateTool.get_input_channel()
