@@ -20,6 +20,7 @@ class EvolveCNN(object):
 
     def fitness_evaluate(self):
         fitness = FitnessEvaluate(self.pops.individuals, Log)
+        # 生成自带的个体python文件
         fitness.generate_to_python_file()
         # 训练并评估已有模型
         fitness.evaluate()
@@ -81,6 +82,7 @@ class EvolveCNN(object):
         print("Using existing mid data?", StatusUpdateTool.is_evolution_running())
         if StatusUpdateTool.is_evolution_running():
             Log.info('Initialize from existing population data')
+            # 从population文件夹下获取已有训练结果
             gen_no = Utils.get_newest_file_based_on_prefix('begin')
             if gen_no is not None:
                 Log.info('Initialize from %d-th generation'%(gen_no))
@@ -88,7 +90,7 @@ class EvolveCNN(object):
                 self.pops = pops
             else:
                 raise ValueError('The running flag is set to be running, but there is no generated population stored')
-        else:       #第一步先走else
+        else:       # 第一次先走else
             gen_no = 0
             Log.info('Initialize population...')
             self.initialize_population()     #初始化种群
