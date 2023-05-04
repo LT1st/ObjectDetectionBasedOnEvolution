@@ -222,16 +222,8 @@ if __name__ == '__main__':
     # neuclsDataset = NEUDataset(train_dir, transform)
 
     # print(neuclsDataset.labels)
-
-
-
-
     # 调用
     # from torchvision import transforms
-
-
-
-
     # 使用 DataLoader 进行批量读取数据
     # from torch.utils.data import DataLoader
 
