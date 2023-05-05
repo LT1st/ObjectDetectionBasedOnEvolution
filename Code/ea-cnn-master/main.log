@@ -1,0 +1,859 @@
+2023-05-03 17:35:07,117 INFO    : *************************
+2023-05-03 17:35:07,118 INFO    : Initialize population...
+2023-05-03 17:35:07,124 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-05-03 17:35:07,124 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-03 17:35:07,196 INFO    : Finish the generation of python files
+2023-05-03 17:35:07,441 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-03 17:35:07,443 INFO    : Total hit 0 individuals for fitness
+2023-05-03 17:35:17,575 INFO    : Begin to train indi0000
+2023-05-03 17:35:30,337 INFO    : Begin to train indi0001
+2023-05-03 17:37:38,056 INFO    : Begin to train indi0002
+2023-05-03 18:07:27,807 INFO    : Begin to train indi0003
+2023-05-03 18:18:01,619 INFO    : Begin to train indi0004
+2023-05-03 18:24:45,518 INFO    : Begin to train indi0005
+2023-05-03 18:26:58,420 INFO    : Begin to train indi0006
+2023-05-03 18:28:45,676 INFO    : Begin to train indi0007
+2023-05-03 18:34:43,452 INFO    : Begin to train indi0008
+2023-05-03 18:36:40,933 INFO    : Begin to train indi0009
+2023-05-03 18:36:51,071 INFO    : Begin to train indi0010
+2023-05-03 18:53:33,205 INFO    : Begin to train indi0011
+2023-05-03 18:53:43,354 INFO    : Begin to train indi0012
+2023-05-03 18:55:20,400 INFO    : Begin to train indi0013
+2023-05-03 18:57:07,630 INFO    : Begin to train indi0014
+2023-05-03 18:59:46,008 INFO    : Begin to train indi0015
+2023-05-03 19:13:08,669 INFO    : Begin to train indi0016
+2023-05-03 19:22:10,621 INFO    : Begin to train indi0017
+2023-05-03 19:48:56,260 INFO    : Begin to train indi0018
+2023-05-03 19:50:18,024 INFO    : Begin to train indi0019
+2023-05-03 20:02:49,426 INFO    : Begin to train indi0020
+2023-05-03 20:25:39,901 INFO    : Begin to train indi0021
+2023-05-03 20:41:20,939 INFO    : Begin to train indi0022
+2023-05-03 20:48:14,924 INFO    : Begin to train indi0023
+2023-05-03 20:56:15,487 INFO    : Begin to train indi0024
+2023-05-03 21:18:35,229 INFO    : Begin to train indi0025
+2023-05-03 21:34:36,486 INFO    : Begin to train indi0026
+2023-05-03 21:57:41,908 INFO    : Begin to train indi0027
+2023-05-03 22:00:35,661 INFO    : Begin to train indi0028
+2023-05-03 22:22:19,096 INFO    : Begin to train indi0029
+2023-05-03 22:34:19,946 INFO    : Begin to train indi0030
+2023-05-03 22:58:26,721 INFO    : Begin to train indi0031
+2023-05-03 22:59:07,535 INFO    : Begin to train indi0032
+2023-05-03 23:09:56,733 INFO    : Begin to train indi0033
+2023-05-03 23:18:07,469 INFO    : Begin to train indi0034
+2023-05-03 23:50:15,250 INFO    : Begin to train indi0035
+2023-05-03 23:51:21,551 INFO    : Begin to train indi0036
+2023-05-04 00:01:04,116 INFO    : Begin to train indi0037
+2023-05-04 00:03:57,928 INFO    : Begin to train indi0038
+2023-05-04 00:04:18,244 INFO    : Begin to train indi0039
+2023-05-04 00:22:52,565 INFO    : Add record into cache, id:fb6c010591b9b8a7b9c9d92722b2359ea3c512a4127dc30e3d002b14, acc:0.92115
+2023-05-04 00:22:52,565 INFO    : Add record into cache, id:3069d5f2c3410b6f4fe8ffc798549a90be0b295c0ae1262b380dffa9, acc:0.00000
+2023-05-04 00:22:52,570 INFO    : Add record into cache, id:9c8a792a834c749483f8d8e5664fb6ed3c8673ec348934d46e275832, acc:0.98077
+2023-05-04 00:22:52,574 INFO    : Add record into cache, id:3617a2e3773e43992ebcb517506fc67bcea03e375415e2ba88622cba, acc:0.92308
+2023-05-04 00:22:52,578 INFO    : Add record into cache, id:64895598b40b615ec0e598416887d088390ae131d928653edbfa085e, acc:0.92308
+2023-05-04 00:22:52,582 INFO    : Add record into cache, id:acb3e69e50f73c89fc5eabf495478b7c8bbefdc42a90a44d016d8289, acc:0.00000
+2023-05-04 00:22:52,587 INFO    : Add record into cache, id:630909f5d8361e52208811112ba6f828eacccff44fb71c5df3184e1a, acc:0.00000
+2023-05-04 00:22:52,591 INFO    : Add record into cache, id:891946d43db29290814b5e727f57204cf80b05f540b3e48305182a14, acc:0.92692
+2023-05-04 00:22:52,595 INFO    : Add record into cache, id:2d8ad1f5e87d7815e31e147547d3f1b48643a6fa51056eb9f06129f6, acc:0.00000
+2023-05-04 00:22:52,599 INFO    : Add record into cache, id:5537bd60cbdf615d30bcb5b870a1ccb0e987d9baa72ecd552405a042, acc:0.00000
+2023-05-04 00:22:52,603 INFO    : Add record into cache, id:6c450d4b80bd7ac0e7bf5adba7a207d5e97d96cc8f15bfbd0862fff4, acc:0.95192
+2023-05-04 00:22:52,607 INFO    : Add record into cache, id:60a6cc2cfc930ec0760c6407dc07b8eb84edd464f5a07ebf12a0c5a0, acc:0.00000
+2023-05-04 00:22:52,611 INFO    : Add record into cache, id:cfd174f1f563195e11f797d798b9fe3597cd9e655ef78da43f780124, acc:0.00000
+2023-05-04 00:22:52,615 INFO    : Add record into cache, id:6caa6053790269682eb0830d1dc5c4e70dc7c9a134624d3305aa6a8c, acc:0.92692
+2023-05-04 00:22:52,618 INFO    : Add record into cache, id:5325576a73c32583289ab134ee21bd26eae70a462b9f396ecb7b0f27, acc:0.00000
+2023-05-04 00:22:52,623 INFO    : Add record into cache, id:0094e1d7af678f7ade4709d9a527019cd8c75ae952f865d50678a031, acc:0.87885
+2023-05-04 00:22:52,627 INFO    : Add record into cache, id:1891e89f46d59e7d7b677fc4fe7cfabc69299db3ae3e441abe2cacd2, acc:0.92885
+2023-05-04 00:22:52,631 INFO    : Add record into cache, id:e58ead9fbe921633bc9d85b7ac710c9f77d7ff350261eeb42bca32cb, acc:0.85385
+2023-05-04 00:22:52,635 INFO    : Add record into cache, id:1d73c396e00a0a1dbf92a6b2c766117531ec807457bd6846817d99cd, acc:0.92500
+2023-05-04 00:22:52,639 INFO    : Add record into cache, id:ea3b3d60bdb4dffa5b6345cdae769f97ee7abc1bc01b22a6ca10e50c, acc:0.92115
+2023-05-04 00:22:52,644 INFO    : Add record into cache, id:aa433fa2f9ab5cf18fd4ee2213bd7576747ad3c79b81c6b3097e2832, acc:0.94615
+2023-05-04 00:22:52,648 INFO    : Add record into cache, id:7008c244113697223df19e5b0aaaaccb304bc3f0a2b891d43ae5ab8d, acc:0.92885
+2023-05-04 00:22:52,652 INFO    : Add record into cache, id:95faf5a0fd26d00f3cc162372e6a9ef6e6d28df3d10c679c327b2909, acc:0.95577
+2023-05-04 00:22:52,656 INFO    : Add record into cache, id:51e37ad98e6374eb78249aa0e3db23c8a29ce59201fbf8a53b43898e, acc:0.96731
+2023-05-04 00:22:52,661 INFO    : Add record into cache, id:52f927a9acc140e080d21372b851bf16b746d104050feb60b5ccfb59, acc:0.91923
+2023-05-04 00:22:52,665 INFO    : Add record into cache, id:f0af08eb6024b15c7945a2519c948b9c45caedc11285a0d5522fb9eb, acc:0.90000
+2023-05-04 00:22:52,669 INFO    : Add record into cache, id:4521bf689cbed11b4757bd1b4531e93be0677252d0971c07f20f700a, acc:0.88846
+2023-05-04 00:22:52,673 INFO    : Add record into cache, id:0212f3990376b2cf84ab3cf9ed528b87d3229696f185d291f3c6a75e, acc:0.95962
+2023-05-04 00:22:52,677 INFO    : Add record into cache, id:0100f02a79591a228c6b9388849b70be57ab8beaf92761346fb39771, acc:0.92885
+2023-05-04 00:22:52,681 INFO    : Add record into cache, id:e8226195b4d94c79571dacddf21e5ed2b0453d94a7250c8e1d3d8288, acc:0.89231
+2023-05-04 00:22:52,685 INFO    : Add record into cache, id:4a7de52e6f538ca32e8fc3ee04dc5ebdae7fb11eb1c779e11f618d9b, acc:0.90000
+2023-05-04 00:22:52,689 INFO    : Add record into cache, id:6236fcfe5699f9a89a7fc0fd8db433616512bf73a3b6d583e79a1a09, acc:0.92308
+2023-05-04 00:22:52,693 INFO    : Add record into cache, id:82d3bbac1f9199d71a28ca118b3c317dbb012267c4da4bef666e9e35, acc:0.91923
+2023-05-04 00:22:52,697 INFO    : Add record into cache, id:070b3a664652a5f891dcc7a9fca711f6682b4d99e9ff01c85240995a, acc:0.96731
+2023-05-04 00:22:52,701 INFO    : Add record into cache, id:c1cc99a6421e665212b80de0798ab0f399edaa5fa0ba8857bf8ae5c9, acc:0.90769
+2023-05-04 00:22:52,705 INFO    : Add record into cache, id:ccc7eb94d88614e14906d3c4c5ff623499b3ae8c4ad11a0e7e8f6171, acc:0.89231
+2023-05-04 00:22:52,709 INFO    : Add record into cache, id:e30ffc025a12d3bab6e216ba9530ce535cafb1e8ce6f769074460953, acc:0.89231
+2023-05-04 00:22:52,713 INFO    : Add record into cache, id:519ac45ccaa7273bbc7288418d14eec90ce9779546df4d55da1690d4, acc:0.00000
+2023-05-04 00:22:52,717 INFO    : Add record into cache, id:dbe8589ae8bd6f7dd404564998b0cde6fe40e8c7592b42b9db2ea1b3, acc:0.00000
+2023-05-04 00:22:52,722 INFO    : Add record into cache, id:f980bab51f3ff1f2c35c90163e142dbc030a9da54877714a29df9584, acc:0.91731
+2023-05-04 00:22:52,726 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2023-05-04 00:22:52,726 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2023-05-04 00:22:52,727 INFO    : Position 1 for indi0038, positions 1 for indi0023
+2023-05-04 00:22:52,728 INFO    : Change the input channel of unit at 2 to 64 that is the output channel of unit at 0 in indi0038
+2023-05-04 00:22:52,728 INFO    : Change the input channel of unit at 1 to 256 that is the output channel of unit at 0 in indi0023
+2023-05-04 00:22:52,728 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,728 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,728 INFO    : Position 2 for indi0034, positions 2 for indi0028
+2023-05-04 00:22:52,728 INFO    : Change the input channel of unit at 2 to 256 that is the output channel of unit at 0 in indi0034
+2023-05-04 00:22:52,729 INFO    : Change the input channel of unit at 3 to 64 that is the output channel of unit at 0 in indi0028
+2023-05-04 00:22:52,729 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,729 INFO    : Position 1 for indi0020, positions 5 for indi0011
+2023-05-04 00:22:52,729 INFO    : Change the input channel of unit at 1 to 256 that is the output channel of unit at 0 in indi0020
+2023-05-04 00:22:52,729 INFO    : Change the input channel of unit at 5 to 256 that is the output channel of unit at 4 in indi0011
+2023-05-04 00:22:52,730 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,730 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,730 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,730 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,730 INFO    : Position 3 for indi0031, positions 0 for indi0020
+2023-05-04 00:22:52,730 WARNING : Crossovered individual#2 starts with a pooling layer, redo...
+2023-05-04 00:22:52,730 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,731 INFO    : Position 1 for indi0031, positions 2 for indi0020
+2023-05-04 00:22:52,731 INFO    : Change the input channel of unit at 2 to 204 that is the output channel of unit at 1 in indi0020
+2023-05-04 00:22:52,731 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,731 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,731 INFO    : Position 5 for indi0036, positions 10 for indi0026
+2023-05-04 00:22:52,731 INFO    : Change the input channel of unit at 5 to 264 that is the output channel of unit at 2 in indi0036
+2023-05-04 00:22:52,732 INFO    : Position 1 for indi0035, positions 1 for indi0036
+2023-05-04 00:22:52,732 INFO    : Change the input channel of unit at 2 to 103 that is the output channel of unit at 0 in indi0035
+2023-05-04 00:22:52,732 INFO    : Change the input channel of unit at 3 to 64 that is the output channel of unit at 0 in indi0036
+2023-05-04 00:22:52,732 INFO    : Due to the above change, unit at 3 changes its output channel from 144 to 144
+2023-05-04 00:22:52,732 INFO    : Change the input channel of unit at 4 to 144 that is the output channel of unit at 0 in indi0036
+2023-05-04 00:22:52,732 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,733 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,733 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,733 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,733 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 00:22:52,733 WARNING : The 7-th try to find the position for do crossover
+2023-05-04 00:22:52,733 INFO    : Position 7 for indi0013, positions 6 for indi0010
+2023-05-04 00:22:52,733 INFO    : Change the input channel of unit at 8 to 192 that is the output channel of unit at 5 in indi0013
+2023-05-04 00:22:52,733 INFO    : Change the input channel of unit at 6 to 64 that is the output channel of unit at 5 in indi0010
+2023-05-04 00:22:52,733 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,734 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,734 INFO    : Position 3 for indi0002, positions 3 for indi0004
+2023-05-04 00:22:52,734 INFO    : Change the input channel of unit at 4 to 176 that is the output channel of unit at 1 in indi0002
+2023-05-04 00:22:52,734 INFO    : Change the input channel of unit at 4 to 128 that is the output channel of unit at 2 in indi0004
+2023-05-04 00:22:52,734 INFO    : Due to the above change, unit at 4 changes its output channel from 164 to 164
+2023-05-04 00:22:52,734 INFO    : Change the input channel of unit at 7 to 164 that is the output channel of unit at 2 in indi0004
+2023-05-04 00:22:52,734 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,734 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,735 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,735 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,735 INFO    : Position 0 for indi0025, positions 1 for indi0018
+2023-05-04 00:22:52,735 WARNING : Crossovered individual#1 starts with a pooling layer, redo...
+2023-05-04 00:22:52,735 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,735 INFO    : Position 3 for indi0025, positions 6 for indi0018
+2023-05-04 00:22:52,735 INFO    : Change the input channel of unit at 3 to 128 that is the output channel of unit at 1 in indi0025
+2023-05-04 00:22:52,735 INFO    : Due to the above change, unit at 3 changes its output channel from 236 to 236
+2023-05-04 00:22:52,735 INFO    : Change the input channel of unit at 4 to 236 that is the output channel of unit at 1 in indi0025
+2023-05-04 00:22:52,735 INFO    : Change the input channel of unit at 7 to 128 that is the output channel of unit at 5 in indi0018
+2023-05-04 00:22:52,736 INFO    : Position 2 for indi0009, positions 0 for indi0030
+2023-05-04 00:22:52,736 INFO    : Change the input channel of unit at 2 to 128 that is the output channel of unit at 1 in indi0009
+2023-05-04 00:22:52,736 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0030
+2023-05-04 00:22:52,736 INFO    : Position 7 for indi0006, positions 8 for indi0032
+2023-05-04 00:22:52,737 INFO    : Change the input channel of unit at 8 to 256 that is the output channel of unit at 5 in indi0006
+2023-05-04 00:22:52,737 INFO    : Change the input channel of unit at 9 to 232 that is the output channel of unit at 7 in indi0032
+2023-05-04 00:22:52,737 INFO    : Position 8 for indi0007, positions 5 for indi0021
+2023-05-04 00:22:52,737 INFO    : Change the input channel of unit at 6 to 204 that is the output channel of unit at 2 in indi0021
+2023-05-04 00:22:52,737 INFO    : Position 8 for indi0004, positions 11 for indi0017
+2023-05-04 00:22:52,738 INFO    : Change the input channel of unit at 8 to 64 that is the output channel of unit at 5 in indi0004
+2023-05-04 00:22:52,738 INFO    : Change the input channel of unit at 11 to 164 that is the output channel of unit at 10 in indi0017
+2023-05-04 00:22:52,738 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,738 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,738 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,738 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,738 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 00:22:52,738 WARNING : The 7-th try to find the position for do crossover
+2023-05-04 00:22:52,738 INFO    : Position 1 for indi0020, positions 0 for indi0008
+2023-05-04 00:22:52,739 INFO    : Change the input channel of unit at 1 to 256 that is the output channel of unit at 0 in indi0020
+2023-05-04 00:22:52,739 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0008
+2023-05-04 00:22:52,739 INFO    : Due to the above change, unit at 0 changes its output channel from 204 to 143
+2023-05-04 00:22:52,740 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,740 INFO    : Position 0 for indi0020, positions 6 for indi0011
+2023-05-04 00:22:52,740 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0020
+2023-05-04 00:22:52,740 INFO    : Due to the above change, unit at 0 changes its output channel from 152 to 123
+2023-05-04 00:22:52,740 INFO    : Change the input channel of unit at 1 to 123 that is the output channel of unit at -1 in indi0020
+2023-05-04 00:22:52,740 INFO    : Change the input channel of unit at 6 to 256 that is the output channel of unit at 5 in indi0011
+2023-05-04 00:22:52,741 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,741 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,741 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,741 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,741 INFO    : Position 3 for indi0009, positions 1 for indi0030
+2023-05-04 00:22:52,741 INFO    : Change the input channel of unit at 3 to 256 that is the output channel of unit at 2 in indi0009
+2023-05-04 00:22:52,741 INFO    : Change the input channel of unit at 1 to 143 that is the output channel of unit at 0 in indi0030
+2023-05-04 00:22:52,742 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,742 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,742 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,742 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,742 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 00:22:52,742 INFO    : Position 9 for indi0023, positions 8 for indi0000
+2023-05-04 00:22:52,742 INFO    : Change the input channel of unit at 9 to 144 that is the output channel of unit at 8 in indi0023
+2023-05-04 00:22:52,742 INFO    : Change the input channel of unit at 8 to 64 that is the output channel of unit at 6 in indi0000
+2023-05-04 00:22:52,742 INFO    : Due to the above change, unit at 8 changes its output channel from 176 to 112
+2023-05-04 00:22:52,742 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,743 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,743 INFO    : Position 12 for indi0026, positions 4 for indi0022
+2023-05-04 00:22:52,743 INFO    : Change the input channel of unit at 12 to 128 that is the output channel of unit at 11 in indi0026
+2023-05-04 00:22:52,743 INFO    : Change the input channel of unit at 5 to 64 that is the output channel of unit at 0 in indi0022
+2023-05-04 00:22:52,743 INFO    : Due to the above change, unit at 5 changes its output channel from 244 to 244
+2023-05-04 00:22:52,743 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,743 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,743 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,744 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,744 INFO    : Position 0 for indi0029, positions 1 for indi0031
+2023-05-04 00:22:52,744 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0029
+2023-05-04 00:22:52,744 INFO    : Due to the above change, unit at 0 changes its output channel from 183 to 63
+2023-05-04 00:22:52,744 INFO    : Change the input channel of unit at 1 to 63 that is the output channel of unit at -1 in indi0029
+2023-05-04 00:22:52,744 INFO    : Change the input channel of unit at 1 to 123 that is the output channel of unit at 0 in indi0031
+2023-05-04 00:22:52,745 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 00:22:52,745 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 00:22:52,745 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 00:22:52,745 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 00:22:52,745 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 00:22:52,745 INFO    : Position 2 for indi0027, positions 2 for indi0008
+2023-05-04 00:22:52,745 INFO    : Change the input channel of unit at 2 to 256 that is the output channel of unit at 0 in indi0027
+2023-05-04 00:22:52,745 INFO    : Change the input channel of unit at 2 to 256 that is the output channel of unit at 0 in indi0008
+2023-05-04 00:22:52,745 INFO    : CROSSOVER-40 offspring are generated, new:40, others:0
+2023-05-04 00:22:52,747 INFO    : Do the REMOVE mutation for indi:indi0028
+2023-05-04 00:22:52,747 INFO    : Mutation position occurs at 4
+2023-05-04 00:22:52,747 INFO    : Due to the above mutation, unit at 5 changes its input channel from 64 to 256
+2023-05-04 00:22:52,747 INFO    : Do the REMOVE mutation for indi:indi0031
+2023-05-04 00:22:52,747 INFO    : Mutation position occurs at 3
+2023-05-04 00:22:52,747 INFO    : A POOLING at 3 is removed
+2023-05-04 00:22:52,747 INFO    : Do the REMOVE mutation for indi:indi0020
+2023-05-04 00:22:52,748 INFO    : Mutation position occurs at 6
+2023-05-04 00:22:52,748 INFO    : Due to the above mutation, unit at 10 changes its input channel from 164 to 232
+2023-05-04 00:22:52,748 INFO    : Do the ALTER mutation for indi:indi0032
+2023-05-04 00:22:52,748 INFO    : Do the POOLING mutation for indi:indi0032 at position 6
+2023-05-04 00:22:52,748 INFO    : Pool type from avg_pool (>0.5) to max_pool (<0.5)
+2023-05-04 00:22:52,748 INFO    : Do the ADD mutation for indi:indi0004
+2023-05-04 00:22:52,748 INFO    : Mutation position occurs at 7
+2023-05-04 00:22:52,748 INFO    : A RESNET unit would be added due to the probability of 0.23
+2023-05-04 00:22:52,748 INFO    : Due to the above mutation, unit at 8 changes its input channel from 64 to 256
+2023-05-04 00:22:52,748 INFO    : Do the REMOVE mutation for indi:indi0017
+2023-05-04 00:22:52,748 INFO    : Mutation position occurs at 1
+2023-05-04 00:22:52,748 INFO    : A POOLING at 1 is removed
+2023-05-04 00:22:52,748 INFO    : Do the REMOVE mutation for indi:indi0022
+2023-05-04 00:22:52,749 INFO    : Mutation position occurs at 3
+2023-05-04 00:22:52,749 INFO    : A POOLING at 3 is removed
+2023-05-04 00:22:52,749 INFO    : Do the ADD mutation for indi:indi0031
+2023-05-04 00:22:52,749 INFO    : Mutation position occurs at 10
+2023-05-04 00:22:52,749 INFO    : A POOLING unit would be added due to the probability of 0.38
+2023-05-04 00:22:52,750 INFO    : The added unit is changed to DENSENET because the existing number of POOLING exceeds 4, limit size:4
+2023-05-04 00:22:52,750 INFO    : Due to the above mutation, unit at 11 changes its input channel from 204 to 212
+2023-05-04 00:22:52,750 INFO    : MUTATION-mutated individuals:8[ADD: 2,REMOVE: 5,ALTER: 1,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 1, no_changes:32
+2023-05-04 00:22:52,763 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2023-05-04 00:22:52,763 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2023-05-04 00:22:52,763 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-04 00:22:52,814 INFO    : Finish the generation of python files
+2023-05-04 00:22:53,051 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-04 00:22:53,059 INFO    : Total hit 0 individuals for fitness
+2023-05-04 00:23:03,178 INFO    : Begin to train indi0000
+2023-05-04 00:23:03,178 INFO    : Module:Scripts.indi0000 has been loaded, delete it
+2023-05-04 00:23:13,315 INFO    : Begin to train indi0001
+2023-05-04 00:23:13,315 INFO    : Module:Scripts.indi0001 has been loaded, delete it
+2023-05-04 00:23:23,440 INFO    : Begin to train indi0002
+2023-05-04 00:23:23,440 INFO    : Module:Scripts.indi0002 has been loaded, delete it
+2023-05-04 00:38:48,974 INFO    : Begin to train indi0003
+2023-05-04 00:38:48,974 INFO    : Module:Scripts.indi0003 has been loaded, delete it
+2023-05-04 00:38:59,102 INFO    : Begin to train indi0004
+2023-05-04 00:38:59,102 INFO    : Module:Scripts.indi0004 has been loaded, delete it
+2023-05-04 00:41:37,566 INFO    : Begin to train indi0005
+2023-05-04 00:41:37,566 INFO    : Module:Scripts.indi0005 has been loaded, delete it
+2023-05-04 00:41:47,682 INFO    : Begin to train indi0006
+2023-05-04 00:41:47,682 INFO    : Module:Scripts.indi0006 has been loaded, delete it
+2023-05-04 00:48:41,797 INFO    : Begin to train indi0007
+2023-05-04 00:48:41,797 INFO    : Module:Scripts.indi0007 has been loaded, delete it
+2023-05-04 00:48:51,913 INFO    : Begin to train indi0008
+2023-05-04 00:48:51,913 INFO    : Module:Scripts.indi0008 has been loaded, delete it
+2023-05-04 01:00:47,755 INFO    : Begin to train indi0009
+2023-05-04 01:00:47,755 INFO    : Module:Scripts.indi0009 has been loaded, delete it
+2023-05-04 01:03:41,511 INFO    : Begin to train indi0010
+2023-05-04 01:03:41,511 INFO    : Module:Scripts.indi0010 has been loaded, delete it
+2023-05-04 01:12:49,597 INFO    : Begin to train indi0011
+2023-05-04 01:12:49,597 INFO    : Module:Scripts.indi0011 has been loaded, delete it
+2023-05-04 01:22:42,601 INFO    : Begin to train indi0012
+2023-05-04 01:22:42,601 INFO    : Module:Scripts.indi0012 has been loaded, delete it
+2023-05-04 01:22:52,725 INFO    : Begin to train indi0013
+2023-05-04 01:22:52,725 INFO    : Module:Scripts.indi0013 has been loaded, delete it
+2023-05-04 01:27:33,928 INFO    : Begin to train indi0014
+2023-05-04 01:27:33,928 INFO    : Module:Scripts.indi0014 has been loaded, delete it
+2023-05-04 01:40:10,842 INFO    : Begin to train indi0015
+2023-05-04 01:40:10,842 INFO    : Module:Scripts.indi0015 has been loaded, delete it
+2023-05-04 01:55:15,828 INFO    : Begin to train indi0016
+2023-05-04 01:55:15,828 INFO    : Module:Scripts.indi0016 has been loaded, delete it
+2023-05-04 01:56:58,041 INFO    : Begin to train indi0017
+2023-05-04 01:56:58,041 INFO    : Module:Scripts.indi0017 has been loaded, delete it
+2023-05-04 02:15:48,294 INFO    : Begin to train indi0018
+2023-05-04 02:15:48,295 INFO    : Module:Scripts.indi0018 has been loaded, delete it
+2023-05-04 02:15:58,401 INFO    : Begin to train indi0019
+2023-05-04 02:15:58,401 INFO    : Module:Scripts.indi0019 has been loaded, delete it
+2023-05-04 02:16:08,548 INFO    : Begin to train indi0020
+2023-05-04 02:16:08,548 INFO    : Module:Scripts.indi0020 has been loaded, delete it
+2023-05-04 02:17:55,882 INFO    : Begin to train indi0021
+2023-05-04 02:17:55,882 INFO    : Module:Scripts.indi0021 has been loaded, delete it
+2023-05-04 02:22:52,192 INFO    : Begin to train indi0022
+2023-05-04 02:22:52,193 INFO    : Module:Scripts.indi0022 has been loaded, delete it
+2023-05-04 02:31:33,820 INFO    : Begin to train indi0023
+2023-05-04 02:31:33,820 INFO    : Module:Scripts.indi0023 has been loaded, delete it
+2023-05-04 02:47:55,696 INFO    : Begin to train indi0024
+2023-05-04 02:47:55,697 INFO    : Module:Scripts.indi0024 has been loaded, delete it
+2023-05-04 03:02:14,683 INFO    : Begin to train indi0025
+2023-05-04 03:02:14,683 INFO    : Module:Scripts.indi0025 has been loaded, delete it
+2023-05-04 03:02:24,804 INFO    : Begin to train indi0026
+2023-05-04 03:02:24,805 INFO    : Module:Scripts.indi0026 has been loaded, delete it
+2023-05-04 03:05:28,763 INFO    : Begin to train indi0027
+2023-05-04 03:05:28,763 INFO    : Module:Scripts.indi0027 has been loaded, delete it
+2023-05-04 03:05:38,894 INFO    : Begin to train indi0028
+2023-05-04 03:05:38,894 INFO    : Module:Scripts.indi0028 has been loaded, delete it
+2023-05-04 03:13:24,095 INFO    : Begin to train indi0029
+2023-05-04 03:13:24,095 INFO    : Module:Scripts.indi0029 has been loaded, delete it
+2023-05-04 03:13:34,230 INFO    : Begin to train indi0030
+2023-05-04 03:13:34,230 INFO    : Module:Scripts.indi0030 has been loaded, delete it
+2023-05-04 03:13:44,367 INFO    : Begin to train indi0031
+2023-05-04 03:13:44,367 INFO    : Module:Scripts.indi0031 has been loaded, delete it
+2023-05-04 03:15:36,743 INFO    : Begin to train indi0032
+2023-05-04 03:15:36,743 INFO    : Module:Scripts.indi0032 has been loaded, delete it
+2023-05-04 03:42:47,616 INFO    : Begin to train indi0033
+2023-05-04 03:42:47,616 INFO    : Module:Scripts.indi0033 has been loaded, delete it
+2023-05-04 04:07:14,791 INFO    : Begin to train indi0034
+2023-05-04 04:07:14,791 INFO    : Module:Scripts.indi0034 has been loaded, delete it
+2023-05-04 04:12:57,326 INFO    : Begin to train indi0035
+2023-05-04 04:12:57,326 INFO    : Module:Scripts.indi0035 has been loaded, delete it
+2023-05-04 04:19:25,819 INFO    : Begin to train indi0036
+2023-05-04 04:19:25,819 INFO    : Module:Scripts.indi0036 has been loaded, delete it
+2023-05-04 04:31:42,126 INFO    : Begin to train indi0037
+2023-05-04 04:31:42,127 INFO    : Module:Scripts.indi0037 has been loaded, delete it
+2023-05-04 04:31:52,248 INFO    : Begin to train indi0038
+2023-05-04 04:31:52,249 INFO    : Module:Scripts.indi0038 has been loaded, delete it
+2023-05-04 04:32:02,394 INFO    : Begin to train indi0039
+2023-05-04 04:32:02,394 INFO    : Module:Scripts.indi0039 has been loaded, delete it
+2023-05-04 05:14:42,613 INFO    : Add record into cache, id:1583545bdff963b6319ab9931490109532ad15cec5bb1433fb957dfa, acc:0.97115
+2023-05-04 05:14:42,613 INFO    : Add record into cache, id:1f39965082d1c8eeaf3e10cd61c3c51004e571cdd7deb94f491dda44, acc:0.00000
+2023-05-04 05:14:42,618 INFO    : Add record into cache, id:89d73f6e16a9b4388451eb7dd82523c232305c861a6f7797da6f0366, acc:0.93462
+2023-05-04 05:14:42,623 INFO    : Add record into cache, id:f156ac3a6b1647f2f920895af3c520e6ca5cef8361a26b40980d8a41, acc:0.00000
+2023-05-04 05:14:42,627 INFO    : Add record into cache, id:b22c0c9501f5dc17aa89e5f338d25e72e8c344b8248819143d1a1252, acc:0.00000
+2023-05-04 05:14:42,631 INFO    : Add record into cache, id:152ff9ee77b758b87a64b609b9e707cca524c404af340078e97fc0a6, acc:0.00000
+2023-05-04 05:14:42,636 INFO    : Add record into cache, id:e0cbd388949b983766b562aab54ca3b4913bd9b105a7cd3d00a3d1ce, acc:0.89808
+2023-05-04 05:14:42,640 INFO    : Add record into cache, id:9671bb714c733c6307c3b697b53f1e8151e9b78d14e99162bb45b3b0, acc:0.00000
+2023-05-04 05:14:42,645 INFO    : Add record into cache, id:78488d1f48609a3f28f577b19011dd8b58f20a21de2c160bbc7c20b6, acc:0.94038
+2023-05-04 05:14:42,649 INFO    : Add record into cache, id:4264982e67d7eeb378c8e1e6c08d05ab6a00d08d4fdaf4c94fe17234, acc:0.89231
+2023-05-04 05:14:42,654 INFO    : Add record into cache, id:2ea91aa0906cefcb90c9b3c3f94547d4ee303bb713498d4deac7f21e, acc:0.92692
+2023-05-04 05:14:42,659 INFO    : Add record into cache, id:d811e7d19e459f5ccfc22e7bad73d11dc4b16ab74d929627d16b4aad, acc:0.92500
+2023-05-04 05:14:42,663 INFO    : Add record into cache, id:70692521a8e0d275c33d9bffdeeabaefe99dd3e4e7c5e3d58c0efc05, acc:0.00000
+2023-05-04 05:14:42,667 INFO    : Add record into cache, id:f203a88501c74928e0a0073e7a86023f903fe9c1651959ea19e43978, acc:0.93846
+2023-05-04 05:14:42,672 INFO    : Add record into cache, id:fd95ffec402f1180fa711c8d17d05ff00b1d1e9b52fb056300f66cff, acc:0.94231
+2023-05-04 05:14:42,676 INFO    : Add record into cache, id:3007f6dc9d76b2973e8a76ea994babcf1dc1045974579f58726e8297, acc:0.95385
+2023-05-04 05:14:42,680 INFO    : Add record into cache, id:3d27b35401ca6df4af0db9bc90baea1f712672537c086cc7f23e2ab9, acc:0.00000
+2023-05-04 05:14:42,684 INFO    : Add record into cache, id:224205e35852ec280e79ad28f8f06ac12889dfdbe1811da35a8472bf, acc:0.90769
+2023-05-04 05:14:42,688 INFO    : Add record into cache, id:0cc212ff3b4dcf0a36bb32cad7a6bdf09955dde140b9f66293d9ea6f, acc:0.00000
+2023-05-04 05:14:42,692 INFO    : Add record into cache, id:9dee1d81decd99a7d6352d92a9bbf146ad08fc687ce0a2ab487768da, acc:0.00000
+2023-05-04 05:14:42,696 INFO    : Add record into cache, id:32f091c8ded9c8e569a7edcfc79cf1297551d470d72f63fd1115caba, acc:0.00000
+2023-05-04 05:14:42,701 INFO    : Add record into cache, id:e190815f8e516e2271e79c90bc2451f1072f36b78d8553e77e674e00, acc:0.88654
+2023-05-04 05:14:42,705 INFO    : Add record into cache, id:c6b443113a0130fe2562a3f9ab735c28d2dc86c20fa0d9b66739546c, acc:0.93462
+2023-05-04 05:14:42,708 INFO    : Add record into cache, id:2c9a4187bfce1db3b92e6c9114b81017132b1e1107c6a46065b4a456, acc:0.94808
+2023-05-04 05:14:42,713 INFO    : Add record into cache, id:b9268831ed417344070fe112ffc6c398fba002c5a68aee2593151213, acc:0.87885
+2023-05-04 05:14:42,717 INFO    : Add record into cache, id:1c463feb4fe80c955c98bf7c86e5a4280817b6e3b60001c31d253c6d, acc:0.00000
+2023-05-04 05:14:42,720 INFO    : Add record into cache, id:12b943c20b0d41768c458970a463dcc7c6d0d35758d2b552c4053316, acc:0.00000
+2023-05-04 05:14:42,724 INFO    : Add record into cache, id:6c89ade22043ae833092d722a828ef7ae12b086879ba2fd4a478700e, acc:0.93846
+2023-05-04 05:14:42,728 INFO    : Add record into cache, id:4ffea4cdb6068b15beb831e05786c21390182d4bcc64b2f2d326aacd, acc:0.93077
+2023-05-04 05:14:42,733 INFO    : Add record into cache, id:273bf9a5ac0064fa368482d7bebebb0d10d2f1c6c4b2e7d49b3fbe4f, acc:0.00000
+2023-05-04 05:14:42,737 INFO    : Add record into cache, id:d296f69d88ed84fd6defbd2e7cc8f6a12ae0479eb7faabb080442ba0, acc:0.00000
+2023-05-04 05:14:42,741 INFO    : Add record into cache, id:019892376ce5b307222eb057f36e8959d7fc7bb9eae82cf361b07937, acc:0.00000
+2023-05-04 05:14:42,745 INFO    : Add record into cache, id:fc4d6cda34c4024b89545b6de663aebe8e2d2e979b3d2b0cf76fe0be, acc:0.94038
+2023-05-04 05:14:42,749 INFO    : Add record into cache, id:8805b6ab41cfadcd2934ea29e7314cbb30d0b828c95a59e0e8dc290c, acc:0.94808
+2023-05-04 05:14:42,752 INFO    : Add record into cache, id:9e1930d86220d4ffbbfe2c37ed76365fa9de1061e95543a7d3cec0c0, acc:0.84231
+2023-05-04 05:14:42,757 INFO    : Add record into cache, id:b1aed339ab5c32b2bac044cefe831272fa8322bb0910888c92f95fd7, acc:0.93654
+2023-05-04 05:14:42,761 INFO    : Add record into cache, id:776f9af5fd0b60def6bde50ce43e77b39165fb73bc1ce58da4644afa, acc:0.92115
+2023-05-04 05:14:42,765 INFO    : Add record into cache, id:7cca20ed36a793adf0a79cd65495321f5c23dafb640e7253cfdc4144, acc:0.00000
+2023-05-04 05:14:42,769 INFO    : Add record into cache, id:b3d295e8d39b1e2200f703295b9290226373be1cfea79ee75aa2593b, acc:0.00000
+2023-05-04 05:14:42,773 INFO    : Add record into cache, id:058eccb0ec74f4dde2486d9162e2beba9f6a30fe62bb0bbe67c4b660, acc:0.93462
+2023-05-04 05:14:42,777 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2023-05-04 05:14:42,789 INFO    : EVOLVE[1-gen]-Finish the environment selection
+2023-05-04 05:14:42,789 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2023-05-04 05:14:42,790 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,790 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,790 INFO    : Position 3 for indi0118, positions 1 for indi0111
+2023-05-04 05:14:42,790 INFO    : Change the input channel of unit at 5 to 264 that is the output channel of unit at 2 in indi0118
+2023-05-04 05:14:42,790 INFO    : Change the input channel of unit at 2 to 128 that is the output channel of unit at 0 in indi0111
+2023-05-04 05:14:42,790 INFO    : Due to the above change, unit at 2 changes its output channel from 248 to 248
+2023-05-04 05:14:42,790 INFO    : Change the input channel of unit at 5 to 248 that is the output channel of unit at 0 in indi0111
+2023-05-04 05:14:42,791 INFO    : Position 0 for indi0130, positions 0 for indi0124
+2023-05-04 05:14:42,791 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0130
+2023-05-04 05:14:42,791 INFO    : Due to the above change, unit at 0 changes its output channel from 163 to 163
+2023-05-04 05:14:42,791 INFO    : Change the input channel of unit at 1 to 163 that is the output channel of unit at -1 in indi0130
+2023-05-04 05:14:42,792 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0124
+2023-05-04 05:14:42,792 INFO    : Position 2 for indi0125, positions 2 for indi0139
+2023-05-04 05:14:42,792 INFO    : Change the input channel of unit at 2 to 123 that is the output channel of unit at 0 in indi0125
+2023-05-04 05:14:42,793 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,793 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,793 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 05:14:42,793 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 05:14:42,793 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 05:14:42,793 WARNING : The 7-th try to find the position for do crossover
+2023-05-04 05:14:42,793 WARNING : The 8-th try to find the position for do crossover
+2023-05-04 05:14:42,793 INFO    : Position 6 for indi0110, positions 6 for indi0103
+2023-05-04 05:14:42,793 INFO    : Change the input channel of unit at 8 to 256 that is the output channel of unit at 5 in indi0110
+2023-05-04 05:14:42,793 INFO    : Change the input channel of unit at 6 to 64 that is the output channel of unit at 5 in indi0103
+2023-05-04 05:14:42,794 INFO    : Position 0 for indi0109, positions 1 for indi0130
+2023-05-04 05:14:42,794 WARNING : Crossovered individual#1 starts with a pooling layer, redo...
+2023-05-04 05:14:42,794 INFO    : Position 0 for indi0109, positions 0 for indi0130
+2023-05-04 05:14:42,794 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0109
+2023-05-04 05:14:42,795 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0130
+2023-05-04 05:14:42,795 INFO    : Position 6 for indi0128, positions 5 for indi0103
+2023-05-04 05:14:42,795 INFO    : Change the input channel of unit at 6 to 188 that is the output channel of unit at 5 in indi0128
+2023-05-04 05:14:42,795 INFO    : Change the input channel of unit at 6 to 256 that is the output channel of unit at 4 in indi0103
+2023-05-04 05:14:42,796 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,796 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,796 INFO    : Position 4 for indi0117, positions 7 for indi0124
+2023-05-04 05:14:42,796 INFO    : Change the input channel of unit at 7 to 128 that is the output channel of unit at 6 in indi0124
+2023-05-04 05:14:42,796 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,796 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,796 INFO    : Position 4 for indi0106, positions 2 for indi0125
+2023-05-04 05:14:42,797 INFO    : Change the input channel of unit at 5 to 123 that is the output channel of unit at 0 in indi0125
+2023-05-04 05:14:42,797 INFO    : Position 0 for indi0136, positions 0 for indi0102
+2023-05-04 05:14:42,798 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0136
+2023-05-04 05:14:42,798 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0102
+2023-05-04 05:14:42,798 INFO    : Due to the above change, unit at 0 changes its output channel from 83 to 83
+2023-05-04 05:14:42,798 INFO    : Change the input channel of unit at 1 to 83 that is the output channel of unit at -1 in indi0102
+2023-05-04 05:14:42,799 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,799 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,799 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 05:14:42,799 INFO    : Position 6 for indi0127, positions 8 for indi0112
+2023-05-04 05:14:42,799 INFO    : Change the input channel of unit at 7 to 152 that is the output channel of unit at 2 in indi0127
+2023-05-04 05:14:42,799 INFO    : Change the input channel of unit at 8 to 232 that is the output channel of unit at 7 in indi0112
+2023-05-04 05:14:42,799 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 7-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 8-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 9-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 10-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 11-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 12-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 13-th try to find the position for do crossover
+2023-05-04 05:14:42,800 WARNING : The 14-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 15-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 16-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 17-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 18-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 19-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 20-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 21-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 22-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 23-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 24-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 25-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 26-th try to find the position for do crossover
+2023-05-04 05:14:42,801 WARNING : The 27-th try to find the position for do crossover
+2023-05-04 05:14:42,802 WARNING : The 28-th try to find the position for do crossover
+2023-05-04 05:14:42,802 INFO    : Position 3 for indi0132, positions 4 for indi0107
+2023-05-04 05:14:42,802 INFO    : Change the input channel of unit at 3 to 256 that is the output channel of unit at 2 in indi0132
+2023-05-04 05:14:42,802 INFO    : Change the input channel of unit at 5 to 128 that is the output channel of unit at 2 in indi0107
+2023-05-04 05:14:42,802 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,802 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,802 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 05:14:42,802 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 05:14:42,802 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 05:14:42,803 INFO    : Position 0 for indi0137, positions 1 for indi0130
+2023-05-04 05:14:42,803 WARNING : Crossovered individual#1 starts with a pooling layer, redo...
+2023-05-04 05:14:42,803 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 4-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 5-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 6-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 7-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 8-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 9-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 10-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 11-th try to find the position for do crossover
+2023-05-04 05:14:42,803 WARNING : The 12-th try to find the position for do crossover
+2023-05-04 05:14:42,803 INFO    : Position 4 for indi0137, positions 6 for indi0130
+2023-05-04 05:14:42,804 INFO    : Change the input channel of unit at 5 to 64 that is the output channel of unit at 3 in indi0137
+2023-05-04 05:14:42,804 INFO    : Change the input channel of unit at 9 to 192 that is the output channel of unit at 5 in indi0130
+2023-05-04 05:14:42,804 INFO    : Position 1 for indi0135, positions 1 for indi0124
+2023-05-04 05:14:42,804 INFO    : Change the input channel of unit at 1 to 64 that is the output channel of unit at 0 in indi0135
+2023-05-04 05:14:42,804 INFO    : Change the input channel of unit at 2 to 163 that is the output channel of unit at 0 in indi0124
+2023-05-04 05:14:42,805 INFO    : Position 10 for indi0114, positions 10 for indi0103
+2023-05-04 05:14:42,805 INFO    : Change the input channel of unit at 10 to 192 that is the output channel of unit at 9 in indi0114
+2023-05-04 05:14:42,805 INFO    : Change the input channel of unit at 10 to 256 that is the output channel of unit at 9 in indi0103
+2023-05-04 05:14:42,805 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,805 INFO    : Position 9 for indi0121, positions 8 for indi0132
+2023-05-04 05:14:42,805 INFO    : Change the input channel of unit at 9 to 232 that is the output channel of unit at 7 in indi0121
+2023-05-04 05:14:42,805 INFO    : Change the input channel of unit at 8 to 64 that is the output channel of unit at 6 in indi0132
+2023-05-04 05:14:42,806 INFO    : Position 9 for indi0129, positions 8 for indi0116
+2023-05-04 05:14:42,806 INFO    : Change the input channel of unit at 9 to 184 that is the output channel of unit at 7 in indi0129
+2023-05-04 05:14:42,806 INFO    : Change the input channel of unit at 8 to 152 that is the output channel of unit at 7 in indi0116
+2023-05-04 05:14:42,806 WARNING : The 2-th try to find the position for do crossover
+2023-05-04 05:14:42,806 WARNING : The 3-th try to find the position for do crossover
+2023-05-04 05:14:42,806 INFO    : Position 8 for indi0115, positions 6 for indi0139
+2023-05-04 05:14:42,807 INFO    : Change the input channel of unit at 8 to 164 that is the output channel of unit at 5 in indi0115
+2023-05-04 05:14:42,807 INFO    : Change the input channel of unit at 7 to 256 that is the output channel of unit at 5 in indi0139
+2023-05-04 05:14:42,807 INFO    : Position 8 for indi0116, positions 10 for indi0102
+2023-05-04 05:14:42,807 INFO    : Change the input channel of unit at 8 to 152 that is the output channel of unit at 7 in indi0116
+2023-05-04 05:14:42,807 INFO    : Change the input channel of unit at 10 to 256 that is the output channel of unit at 9 in indi0102
+2023-05-04 05:14:42,807 INFO    : CROSSOVER-40 offspring are generated, new:36, others:4
+2023-05-04 05:14:42,809 INFO    : Do the REMOVE mutation for indi:indi0139
+2023-05-04 05:14:42,809 INFO    : Mutation position occurs at 3
+2023-05-04 05:14:42,809 INFO    : A POOLING at 3 is removed
+2023-05-04 05:14:42,809 INFO    : Do the ALTER mutation for indi:indi0110
+2023-05-04 05:14:42,809 INFO    : Do the RESNET mutation for indi:indi0110 at position 8
+2023-05-04 05:14:42,810 INFO    : Do the REMOVE mutation for indi:indi0128
+2023-05-04 05:14:42,810 INFO    : Mutation position occurs at 3
+2023-05-04 05:14:42,810 INFO    : A POOLING at 3 is removed
+2023-05-04 05:14:42,810 INFO    : Do the ALTER mutation for indi:indi0121
+2023-05-04 05:14:42,810 INFO    : Do the POOLING mutation for indi:indi0121 at position 1
+2023-05-04 05:14:42,810 INFO    : Pool type from avg_pool (>0.5) to max_pool (<0.5)
+2023-05-04 05:14:42,810 INFO    : Do the REMOVE mutation for indi:indi0132
+2023-05-04 05:14:42,810 INFO    : Mutation position occurs at 6
+2023-05-04 05:14:42,810 INFO    : Due to the above mutation, unit at 9 changes its input channel from 204 to 64
+2023-05-04 05:14:42,810 INFO    : Do the ADD mutation for indi:indi0124
+2023-05-04 05:14:42,811 INFO    : Mutation position occurs at 4
+2023-05-04 05:14:42,811 INFO    : A DENSENET unit would be added due to the probability of 0.91
+2023-05-04 05:14:42,811 INFO    : Do the ADD mutation for indi:indi0129
+2023-05-04 05:14:42,811 INFO    : Mutation position occurs at 0
+2023-05-04 05:14:42,811 INFO    : A DENSENET unit would be added due to the probability of 0.76
+2023-05-04 05:14:42,811 INFO    : Due to the above mutation, unit at 1 changes its input channel from 83 to 144
+2023-05-04 05:14:42,811 INFO    : Do the ALTER mutation for indi:indi0116
+2023-05-04 05:14:42,811 INFO    : Do the RESNET mutation for indi:indi0116 at position 9
+2023-05-04 05:14:42,812 INFO    : Unit at 9 changes its output channel from 256 to 64
+2023-05-04 05:14:42,812 INFO    : Due to above, the unit at 10 should change its input channel from 256 to 64
+2023-05-04 05:14:42,812 INFO    : Due to the above mutation, unit at 10 changes its output channel from 224 to 224
+2023-05-04 05:14:42,812 INFO    : Do the REMOVE mutation for indi:indi0102
+2023-05-04 05:14:42,812 INFO    : Mutation position occurs at 11
+2023-05-04 05:14:42,812 INFO    : MUTATION-mutated individuals:8[ADD: 2,REMOVE: 4,ALTER: 2,RESNET_OUT_CHANNEL: 1, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 1, no_changes:32
+2023-05-04 05:14:42,825 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2023-05-04 05:14:42,825 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2023-05-04 05:14:42,825 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-04 05:14:42,879 INFO    : Finish the generation of python files
+2023-05-04 05:14:43,119 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-04 05:14:43,126 INFO    : Hit the cache for indi0102, key:f203a88501c74928e0a0073e7a86023f903fe9c1651959ea19e43978, acc:0.93846, assigned_acc:-1.00000
+2023-05-04 05:14:43,127 INFO    : Hit the cache for indi0103, key:6caa6053790269682eb0830d1dc5c4e70dc7c9a134624d3305aa6a8c, acc:0.92692, assigned_acc:-1.00000
+2023-05-04 05:14:43,127 INFO    : Hit the cache for indi0104, key:3617a2e3773e43992ebcb517506fc67bcea03e375415e2ba88622cba, acc:0.92308, assigned_acc:-1.00000
+2023-05-04 05:14:43,127 INFO    : Hit the cache for indi0108, key:6caa6053790269682eb0830d1dc5c4e70dc7c9a134624d3305aa6a8c, acc:0.92692, assigned_acc:-1.00000
+2023-05-04 05:14:43,127 INFO    : Hit the cache for indi0109, key:8805b6ab41cfadcd2934ea29e7314cbb30d0b828c95a59e0e8dc290c, acc:0.94808, assigned_acc:-1.00000
+2023-05-04 05:14:43,127 INFO    : Hit the cache for indi0117, key:6236fcfe5699f9a89a7fc0fd8db433616512bf73a3b6d583e79a1a09, acc:0.92308, assigned_acc:0.92308
+2023-05-04 05:14:43,127 INFO    : Hit the cache for indi0118, key:e58ead9fbe921633bc9d85b7ac710c9f77d7ff350261eeb42bca32cb, acc:0.85385, assigned_acc:-1.00000
+2023-05-04 05:14:43,128 INFO    : Hit the cache for indi0119, key:c6b443113a0130fe2562a3f9ab735c28d2dc86c20fa0d9b66739546c, acc:0.93462, assigned_acc:-1.00000
+2023-05-04 05:14:43,128 INFO    : Hit the cache for indi0126, key:c6b443113a0130fe2562a3f9ab735c28d2dc86c20fa0d9b66739546c, acc:0.93462, assigned_acc:0.93462
+2023-05-04 05:14:43,128 INFO    : Hit the cache for indi0127, key:0094e1d7af678f7ade4709d9a527019cd8c75ae952f865d50678a031, acc:0.87885, assigned_acc:0.87885
+2023-05-04 05:14:43,128 INFO    : Total hit 10 individuals for fitness
+2023-05-04 05:14:53,265 INFO    : Begin to train indi0100
+2023-05-04 05:15:03,412 INFO    : Begin to train indi0101
+2023-05-04 05:15:03,427 INFO    : indi0102 has inherited the fitness as 0.93846, no need to evaluate
+2023-05-04 05:15:03,427 INFO    : indi0103 has inherited the fitness as 0.92692, no need to evaluate
+2023-05-04 05:15:03,432 INFO    : indi0104 has inherited the fitness as 0.92308, no need to evaluate
+2023-05-04 05:32:57,109 INFO    : Begin to train indi0105
+2023-05-04 05:39:56,276 INFO    : Begin to train indi0106
+2023-05-04 05:44:32,211 INFO    : Begin to train indi0107
+2023-05-04 05:44:32,225 INFO    : indi0108 has inherited the fitness as 0.92692, no need to evaluate
+2023-05-04 05:44:32,232 INFO    : indi0109 has inherited the fitness as 0.94808, no need to evaluate
+2023-05-04 05:54:50,882 INFO    : Begin to train indi0110
+2023-05-04 06:02:46,087 INFO    : Begin to train indi0111
+2023-05-04 06:12:03,340 INFO    : Begin to train indi0112
+2023-05-04 06:20:03,905 INFO    : Begin to train indi0113
+2023-05-04 06:27:23,331 INFO    : Begin to train indi0114
+2023-05-04 06:39:44,744 INFO    : Begin to train indi0115
+2023-05-04 06:48:46,562 INFO    : Begin to train indi0116
+2023-05-04 06:48:46,575 INFO    : indi0117 has inherited the fitness as 0.92308, no need to evaluate
+2023-05-04 06:48:46,581 INFO    : indi0118 has inherited the fitness as 0.85385, no need to evaluate
+2023-05-04 06:48:46,587 INFO    : indi0119 has inherited the fitness as 0.93462, no need to evaluate
+2023-05-04 06:59:30,761 INFO    : Begin to train indi0120
+2023-05-04 07:13:54,594 INFO    : Begin to train indi0121
+2023-05-04 07:19:37,116 INFO    : Begin to train indi0122
+2023-05-04 07:27:17,215 INFO    : Begin to train indi0123
+2023-05-04 07:54:13,172 INFO    : Begin to train indi0124
+2023-05-04 07:59:35,222 INFO    : Begin to train indi0125
+2023-05-04 07:59:35,237 INFO    : indi0126 has inherited the fitness as 0.93462, no need to evaluate
+2023-05-04 07:59:35,244 INFO    : indi0127 has inherited the fitness as 0.87885, no need to evaluate
+2023-05-04 08:18:40,368 INFO    : Begin to train indi0128
+2023-05-04 08:34:56,790 INFO    : Begin to train indi0129
+2023-05-04 08:36:49,240 INFO    : Begin to train indi0130
+2023-05-04 08:46:36,920 INFO    : Begin to train indi0131
+2023-05-04 09:04:45,861 INFO    : Begin to train indi0132
+2023-05-04 09:13:32,127 INFO    : Begin to train indi0133
+2023-05-04 09:16:15,659 INFO    : Begin to train indi0134
+2023-05-04 09:17:37,322 INFO    : Begin to train indi0135
+2023-05-04 09:44:12,471 INFO    : Begin to train indi0136
+2023-05-05 06:41:45,540 INFO    : *************************
+2023-05-05 06:41:45,541 INFO    : Initialize from existing population data
+2023-05-05 06:41:45,542 INFO    : Initialize from 1-th generation
+2023-05-05 06:41:45,596 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2023-05-05 06:41:45,596 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-05 06:41:45,644 INFO    : Finish the generation of python files
+2023-05-05 06:41:45,892 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-05 06:41:45,893 INFO    : Hit the cache for indi0100, key:e190815f8e516e2271e79c90bc2451f1072f36b78d8553e77e674e00, acc:0.88654, assigned_acc:0.88654
+2023-05-05 06:41:45,893 INFO    : Hit the cache for indi0101, key:0100f02a79591a228c6b9388849b70be57ab8beaf92761346fb39771, acc:0.92885, assigned_acc:0.92885
+2023-05-05 06:41:45,893 INFO    : Hit the cache for indi0102, key:e58ead9fbe921633bc9d85b7ac710c9f77d7ff350261eeb42bca32cb, acc:0.85385, assigned_acc:0.85385
+2023-05-05 06:41:45,893 INFO    : Hit the cache for indi0103, key:b9268831ed417344070fe112ffc6c398fba002c5a68aee2593151213, acc:0.87885, assigned_acc:0.87885
+2023-05-05 06:41:45,893 INFO    : Hit the cache for indi0104, key:e8226195b4d94c79571dacddf21e5ed2b0453d94a7250c8e1d3d8288, acc:0.89231, assigned_acc:0.89231
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0106, key:058eccb0ec74f4dde2486d9162e2beba9f6a30fe62bb0bbe67c4b660, acc:0.93462, assigned_acc:0.93462
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0107, key:e8226195b4d94c79571dacddf21e5ed2b0453d94a7250c8e1d3d8288, acc:0.89231, assigned_acc:0.89231
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0108, key:b1aed339ab5c32b2bac044cefe831272fa8322bb0910888c92f95fd7, acc:0.93654, assigned_acc:0.93654
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0109, key:8805b6ab41cfadcd2934ea29e7314cbb30d0b828c95a59e0e8dc290c, acc:0.94808, assigned_acc:0.94808
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0110, key:d811e7d19e459f5ccfc22e7bad73d11dc4b16ab74d929627d16b4aad, acc:0.92500, assigned_acc:0.92500
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0111, key:0094e1d7af678f7ade4709d9a527019cd8c75ae952f865d50678a031, acc:0.87885, assigned_acc:0.87885
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0112, key:82d3bbac1f9199d71a28ca118b3c317dbb012267c4da4bef666e9e35, acc:0.91923, assigned_acc:0.91923
+2023-05-05 06:41:45,894 INFO    : Hit the cache for indi0113, key:64895598b40b615ec0e598416887d088390ae131d928653edbfa085e, acc:0.92308, assigned_acc:0.92308
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0114, key:0212f3990376b2cf84ab3cf9ed528b87d3229696f185d291f3c6a75e, acc:0.95962, assigned_acc:0.95962
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0117, key:6c450d4b80bd7ac0e7bf5adba7a207d5e97d96cc8f15bfbd0862fff4, acc:0.95192, assigned_acc:0.95192
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0119, key:e30ffc025a12d3bab6e216ba9530ce535cafb1e8ce6f769074460953, acc:0.89231, assigned_acc:0.89231
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0121, key:82d3bbac1f9199d71a28ca118b3c317dbb012267c4da4bef666e9e35, acc:0.91923, assigned_acc:0.91923
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0122, key:82d3bbac1f9199d71a28ca118b3c317dbb012267c4da4bef666e9e35, acc:0.91923, assigned_acc:0.91923
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0123, key:89d73f6e16a9b4388451eb7dd82523c232305c861a6f7797da6f0366, acc:0.93462, assigned_acc:0.93462
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0125, key:e0cbd388949b983766b562aab54ca3b4913bd9b105a7cd3d00a3d1ce, acc:0.89808, assigned_acc:0.89808
+2023-05-05 06:41:45,895 INFO    : Hit the cache for indi0126, key:e0cbd388949b983766b562aab54ca3b4913bd9b105a7cd3d00a3d1ce, acc:0.89808, assigned_acc:0.89808
+2023-05-05 06:41:45,896 INFO    : Hit the cache for indi0127, key:4264982e67d7eeb378c8e1e6c08d05ab6a00d08d4fdaf4c94fe17234, acc:0.89231, assigned_acc:0.89231
+2023-05-05 06:41:45,896 INFO    : Hit the cache for indi0128, key:e190815f8e516e2271e79c90bc2451f1072f36b78d8553e77e674e00, acc:0.88654, assigned_acc:0.88654
+2023-05-05 06:41:45,896 INFO    : Hit the cache for indi0132, key:fb6c010591b9b8a7b9c9d92722b2359ea3c512a4127dc30e3d002b14, acc:0.92115, assigned_acc:0.92115
+2023-05-05 06:41:45,896 INFO    : Hit the cache for indi0133, key:82d3bbac1f9199d71a28ca118b3c317dbb012267c4da4bef666e9e35, acc:0.91923, assigned_acc:0.91923
+2023-05-05 06:41:45,896 INFO    : Hit the cache for indi0135, key:e30ffc025a12d3bab6e216ba9530ce535cafb1e8ce6f769074460953, acc:0.89231, assigned_acc:0.89231
+2023-05-05 06:41:45,898 INFO    : Hit the cache for indi0137, key:058eccb0ec74f4dde2486d9162e2beba9f6a30fe62bb0bbe67c4b660, acc:0.93462, assigned_acc:0.93462
+2023-05-05 06:41:45,898 INFO    : Hit the cache for indi0138, key:0212f3990376b2cf84ab3cf9ed528b87d3229696f185d291f3c6a75e, acc:0.95962, assigned_acc:0.95962
+2023-05-05 06:41:45,898 INFO    : Total hit 28 individuals for fitness
+2023-05-05 06:41:45,898 INFO    : indi0100 has inherited the fitness as 0.88654, no need to evaluate
+2023-05-05 06:41:45,899 INFO    : indi0101 has inherited the fitness as 0.92885, no need to evaluate
+2023-05-05 06:41:45,906 INFO    : indi0102 has inherited the fitness as 0.85385, no need to evaluate
+2023-05-05 06:41:45,913 INFO    : indi0103 has inherited the fitness as 0.87885, no need to evaluate
+2023-05-05 06:41:45,919 INFO    : indi0104 has inherited the fitness as 0.89231, no need to evaluate
+2023-05-05 06:41:45,924 INFO    : indi0105 has inherited the fitness as 0.93846, no need to evaluate
+2023-05-05 06:41:45,931 INFO    : indi0106 has inherited the fitness as 0.93462, no need to evaluate
+2023-05-05 06:41:45,936 INFO    : indi0107 has inherited the fitness as 0.89231, no need to evaluate
+2023-05-05 06:41:45,942 INFO    : indi0108 has inherited the fitness as 0.93654, no need to evaluate
+2023-05-05 06:41:45,947 INFO    : indi0109 has inherited the fitness as 0.94808, no need to evaluate
+2023-05-05 06:41:45,953 INFO    : indi0110 has inherited the fitness as 0.92500, no need to evaluate
+2023-05-05 06:41:45,959 INFO    : indi0111 has inherited the fitness as 0.87885, no need to evaluate
+2023-05-05 06:41:45,965 INFO    : indi0112 has inherited the fitness as 0.91923, no need to evaluate
+2023-05-05 06:41:45,971 INFO    : indi0113 has inherited the fitness as 0.92308, no need to evaluate
+2023-05-05 06:41:45,976 INFO    : indi0114 has inherited the fitness as 0.95962, no need to evaluate
+2023-05-05 06:41:45,983 INFO    : indi0115 has inherited the fitness as 0.92308, no need to evaluate
+2023-05-05 06:41:45,989 INFO    : indi0116 has inherited the fitness as 0.98077, no need to evaluate
+2023-05-05 06:41:45,994 INFO    : indi0117 has inherited the fitness as 0.95192, no need to evaluate
+2023-05-05 06:41:46,000 INFO    : indi0118 has inherited the fitness as 0.92692, no need to evaluate
+2023-05-05 06:41:46,005 INFO    : indi0119 has inherited the fitness as 0.89231, no need to evaluate
+2023-05-05 06:41:46,011 INFO    : indi0120 has inherited the fitness as 0.90769, no need to evaluate
+2023-05-05 06:41:46,016 INFO    : indi0121 has inherited the fitness as 0.91923, no need to evaluate
+2023-05-05 06:41:46,022 INFO    : indi0122 has inherited the fitness as 0.91923, no need to evaluate
+2023-05-05 06:41:46,027 INFO    : indi0123 has inherited the fitness as 0.93462, no need to evaluate
+2023-05-05 06:41:46,033 INFO    : indi0124 has inherited the fitness as 0.93846, no need to evaluate
+2023-05-05 06:41:46,039 INFO    : indi0125 has inherited the fitness as 0.89808, no need to evaluate
+2023-05-05 06:41:46,045 INFO    : indi0126 has inherited the fitness as 0.89808, no need to evaluate
+2023-05-05 06:41:46,051 INFO    : indi0127 has inherited the fitness as 0.89231, no need to evaluate
+2023-05-05 06:41:46,057 INFO    : indi0128 has inherited the fitness as 0.88654, no need to evaluate
+2023-05-05 06:41:46,062 INFO    : indi0129 has inherited the fitness as 0.92692, no need to evaluate
+2023-05-05 06:41:46,068 INFO    : indi0130 has inherited the fitness as 0.92692, no need to evaluate
+2023-05-05 06:41:46,074 INFO    : indi0131 has inherited the fitness as 0.90000, no need to evaluate
+2023-05-05 06:41:46,080 INFO    : indi0132 has inherited the fitness as 0.92115, no need to evaluate
+2023-05-05 06:41:46,085 INFO    : indi0133 has inherited the fitness as 0.91923, no need to evaluate
+2023-05-05 06:41:46,090 INFO    : indi0134 has inherited the fitness as 0.90000, no need to evaluate
+2023-05-05 06:41:46,097 INFO    : indi0135 has inherited the fitness as 0.89231, no need to evaluate
+2023-05-05 06:41:46,103 INFO    : indi0136 has inherited the fitness as 0.93462, no need to evaluate
+2023-05-05 06:41:46,109 INFO    : indi0137 has inherited the fitness as 0.93462, no need to evaluate
+2023-05-05 06:41:46,115 INFO    : indi0138 has inherited the fitness as 0.95962, no need to evaluate
+2023-05-05 06:41:46,121 INFO    : indi0139 has inherited the fitness as 0.92308, no need to evaluate
+2023-05-05 06:41:46,127 INFO    : None offspring has been evaluated
+2023-05-05 06:41:46,128 INFO    : Add record into cache, id:010625e6d251c790b7d82f666f35b73a83ba16aab4e401eecb5f8a70, acc:0.93846
+2023-05-05 06:41:46,129 INFO    : Add record into cache, id:47dfe2d5e711843d7a064d9fc03b9ea6ac60f62193b4dc6abb6f683d, acc:0.92308
+2023-05-05 06:41:46,133 INFO    : Add record into cache, id:ad86f0c3ec37e5b63230250308f8be863a675b84bfea783436fa77f0, acc:0.98077
+2023-05-05 06:41:46,138 INFO    : Add record into cache, id:2ab050a1f2cbab5e12ad233e15cfcc3f600fbd8694241f1494660a7d, acc:0.92692
+2023-05-05 06:41:46,142 INFO    : Add record into cache, id:35f0415503ea35f11d0d19b2e61c0722793d3cba748036dd2ee87492, acc:0.90769
+2023-05-05 06:41:46,147 INFO    : Add record into cache, id:93a9c921c312167182763b7bcbd9a8b79454172dd477fadf5534aa7d, acc:0.92692
+2023-05-05 06:41:46,152 INFO    : Add record into cache, id:57868b57692c4f38a908a4a3041d2bc6073700233251a586670d7c32, acc:0.90000
+2023-05-05 06:41:46,156 INFO    : Add record into cache, id:fe2428d90d90a070fc334c26eac743857a20cb05e36dc035117430be, acc:0.93462
+2023-05-05 06:41:46,160 INFO    : Add record into cache, id:bae9aa305f08cef1a6006fc88ac7431262725e7db514350b159a2d2d, acc:0.92308
+2023-05-05 06:41:46,164 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2023-05-05 06:41:46,164 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2023-05-05 06:41:46,166 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,166 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,166 INFO    : Position 9 for indi0118, positions 9 for indi0100
+2023-05-05 06:41:46,166 INFO    : Change the input channel of unit at 9 to 184 that is the output channel of unit at 7 in indi0118
+2023-05-05 06:41:46,166 INFO    : Change the input channel of unit at 9 to 232 that is the output channel of unit at 7 in indi0100
+2023-05-05 06:41:46,166 INFO    : Position 6 for indi0118, positions 3 for indi0111
+2023-05-05 06:41:46,166 INFO    : Change the input channel of unit at 6 to 248 that is the output channel of unit at 4 in indi0118
+2023-05-05 06:41:46,167 INFO    : Change the input channel of unit at 4 to 128 that is the output channel of unit at 0 in indi0111
+2023-05-05 06:41:46,167 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,167 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,167 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,167 INFO    : Position 0 for indi0139, positions 1 for indi0108
+2023-05-05 06:41:46,167 WARNING : Crossovered individual#1 starts with a pooling layer, redo...
+2023-05-05 06:41:46,167 INFO    : Position 4 for indi0139, positions 2 for indi0108
+2023-05-05 06:41:46,167 INFO    : Change the input channel of unit at 6 to 64 that is the output channel of unit at 2 in indi0139
+2023-05-05 06:41:46,167 INFO    : Due to the above change, unit at 6 changes its output channel from 244 to 244
+2023-05-05 06:41:46,167 INFO    : Change the input channel of unit at 3 to 64 that is the output channel of unit at 0 in indi0108
+2023-05-05 06:41:46,168 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,168 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,168 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,168 INFO    : Position 9 for indi0133, positions 9 for indi0103
+2023-05-05 06:41:46,168 INFO    : Change the input channel of unit at 9 to 232 that is the output channel of unit at 7 in indi0133
+2023-05-05 06:41:46,168 INFO    : Change the input channel of unit at 9 to 256 that is the output channel of unit at 8 in indi0103
+2023-05-05 06:41:46,169 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,169 INFO    : Position 4 for indi0101, positions 3 for indi0114
+2023-05-05 06:41:46,169 INFO    : Change the input channel of unit at 4 to 112 that is the output channel of unit at 3 in indi0101
+2023-05-05 06:41:46,169 INFO    : Change the input channel of unit at 3 to 64 that is the output channel of unit at 2 in indi0114
+2023-05-05 06:41:46,169 INFO    : Due to the above change, unit at 3 changes its output channel from 148 to 100
+2023-05-05 06:41:46,169 INFO    : Change the input channel of unit at 4 to 100 that is the output channel of unit at 2 in indi0114
+2023-05-05 06:41:46,169 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 6-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 7-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 8-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 9-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 10-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 11-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 12-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 13-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 14-th try to find the position for do crossover
+2023-05-05 06:41:46,170 WARNING : The 15-th try to find the position for do crossover
+2023-05-05 06:41:46,170 INFO    : Position 8 for indi0105, positions 7 for indi0127
+2023-05-05 06:41:46,171 INFO    : Change the input channel of unit at 8 to 128 that is the output channel of unit at 6 in indi0105
+2023-05-05 06:41:46,171 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,171 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,171 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,171 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,171 INFO    : Position 0 for indi0101, positions 0 for indi0105
+2023-05-05 06:41:46,172 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0101
+2023-05-05 06:41:46,172 INFO    : Due to the above change, unit at 0 changes its output channel from 163 to 163
+2023-05-05 06:41:46,172 INFO    : Change the input channel of unit at 1 to 163 that is the output channel of unit at -1 in indi0101
+2023-05-05 06:41:46,172 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0105
+2023-05-05 06:41:46,173 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,173 INFO    : Position 3 for indi0125, positions 4 for indi0132
+2023-05-05 06:41:46,173 INFO    : Change the input channel of unit at 3 to 123 that is the output channel of unit at 0 in indi0125
+2023-05-05 06:41:46,173 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,173 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,173 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,173 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,174 WARNING : The 6-th try to find the position for do crossover
+2023-05-05 06:41:46,174 WARNING : The 7-th try to find the position for do crossover
+2023-05-05 06:41:46,174 WARNING : The 8-th try to find the position for do crossover
+2023-05-05 06:41:46,174 WARNING : The 9-th try to find the position for do crossover
+2023-05-05 06:41:46,174 WARNING : The 10-th try to find the position for do crossover
+2023-05-05 06:41:46,174 WARNING : The 11-th try to find the position for do crossover
+2023-05-05 06:41:46,174 INFO    : Position 9 for indi0123, positions 9 for indi0101
+2023-05-05 06:41:46,174 INFO    : Change the input channel of unit at 10 to 236 that is the output channel of unit at 7 in indi0123
+2023-05-05 06:41:46,174 INFO    : Change the input channel of unit at 10 to 236 that is the output channel of unit at 7 in indi0101
+2023-05-05 06:41:46,174 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,175 INFO    : Position 1 for indi0138, positions 1 for indi0139
+2023-05-05 06:41:46,175 INFO    : Change the input channel of unit at 2 to 256 that is the output channel of unit at 0 in indi0138
+2023-05-05 06:41:46,175 INFO    : Change the input channel of unit at 2 to 123 that is the output channel of unit at 0 in indi0139
+2023-05-05 06:41:46,175 INFO    : Position 8 for indi0124, positions 8 for indi0127
+2023-05-05 06:41:46,175 INFO    : Change the input channel of unit at 8 to 128 that is the output channel of unit at 6 in indi0124
+2023-05-05 06:41:46,176 INFO    : Position 0 for indi0129, positions 0 for indi0120
+2023-05-05 06:41:46,176 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0129
+2023-05-05 06:41:46,176 INFO    : Due to the above change, unit at 0 changes its output channel from 143 to 143
+2023-05-05 06:41:46,176 INFO    : Change the input channel of unit at 2 to 143 that is the output channel of unit at -1 in indi0129
+2023-05-05 06:41:46,177 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0120
+2023-05-05 06:41:46,177 INFO    : Due to the above change, unit at 0 changes its output channel from 83 to 83
+2023-05-05 06:41:46,177 INFO    : Change the input channel of unit at 1 to 83 that is the output channel of unit at -1 in indi0120
+2023-05-05 06:41:46,177 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,177 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,177 INFO    : Position 3 for indi0130, positions 4 for indi0136
+2023-05-05 06:41:46,177 INFO    : Change the input channel of unit at 3 to 136 that is the output channel of unit at 2 in indi0130
+2023-05-05 06:41:46,177 INFO    : Change the input channel of unit at 4 to 264 that is the output channel of unit at 2 in indi0136
+2023-05-05 06:41:46,178 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,178 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,178 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,178 INFO    : Position 2 for indi0104, positions 1 for indi0112
+2023-05-05 06:41:46,178 INFO    : Change the input channel of unit at 3 to 64 that is the output channel of unit at 1 in indi0104
+2023-05-05 06:41:46,178 INFO    : Due to the above change, unit at 3 changes its output channel from 124 to 124
+2023-05-05 06:41:46,178 INFO    : Change the input channel of unit at 5 to 124 that is the output channel of unit at 1 in indi0104
+2023-05-05 06:41:46,178 INFO    : Change the input channel of unit at 1 to 143 that is the output channel of unit at 0 in indi0112
+2023-05-05 06:41:46,179 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,179 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,179 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,179 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,179 WARNING : The 6-th try to find the position for do crossover
+2023-05-05 06:41:46,179 INFO    : Position 10 for indi0123, positions 8 for indi0116
+2023-05-05 06:41:46,179 INFO    : Change the input channel of unit at 10 to 236 that is the output channel of unit at 7 in indi0123
+2023-05-05 06:41:46,179 INFO    : Change the input channel of unit at 8 to 152 that is the output channel of unit at 7 in indi0116
+2023-05-05 06:41:46,180 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,180 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,180 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,180 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,180 WARNING : The 6-th try to find the position for do crossover
+2023-05-05 06:41:46,180 INFO    : Position 5 for indi0130, positions 2 for indi0102
+2023-05-05 06:41:46,180 INFO    : Change the input channel of unit at 5 to 184 that is the output channel of unit at 4 in indi0130
+2023-05-05 06:41:46,180 INFO    : Change the input channel of unit at 2 to 256 that is the output channel of unit at 0 in indi0102
+2023-05-05 06:41:46,180 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,181 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,181 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,181 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,181 WARNING : The 6-th try to find the position for do crossover
+2023-05-05 06:41:46,181 INFO    : Position 2 for indi0118, positions 1 for indi0137
+2023-05-05 06:41:46,181 INFO    : Change the input channel of unit at 3 to 204 that is the output channel of unit at 1 in indi0118
+2023-05-05 06:41:46,181 INFO    : Change the input channel of unit at 1 to 256 that is the output channel of unit at 0 in indi0137
+2023-05-05 06:41:46,181 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,182 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,182 INFO    : Position 4 for indi0138, positions 5 for indi0101
+2023-05-05 06:41:46,182 INFO    : Change the input channel of unit at 4 to 64 that is the output channel of unit at 3 in indi0138
+2023-05-05 06:41:46,182 INFO    : Change the input channel of unit at 8 to 148 that is the output channel of unit at 4 in indi0101
+2023-05-05 06:41:46,182 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,182 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,182 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,182 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,182 WARNING : The 6-th try to find the position for do crossover
+2023-05-05 06:41:46,182 WARNING : The 7-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 8-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 9-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 10-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 11-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 12-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 13-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 14-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 15-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 16-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 17-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 18-th try to find the position for do crossover
+2023-05-05 06:41:46,183 WARNING : The 19-th try to find the position for do crossover
+2023-05-05 06:41:46,184 WARNING : The 20-th try to find the position for do crossover
+2023-05-05 06:41:46,184 WARNING : The 21-th try to find the position for do crossover
+2023-05-05 06:41:46,184 WARNING : The 22-th try to find the position for do crossover
+2023-05-05 06:41:46,184 WARNING : The 23-th try to find the position for do crossover
+2023-05-05 06:41:46,184 INFO    : Position 8 for indi0105, positions 6 for indi0114
+2023-05-05 06:41:46,184 INFO    : Change the input channel of unit at 9 to 128 that is the output channel of unit at 6 in indi0105
+2023-05-05 06:41:46,184 WARNING : The 2-th try to find the position for do crossover
+2023-05-05 06:41:46,184 WARNING : The 3-th try to find the position for do crossover
+2023-05-05 06:41:46,185 WARNING : The 4-th try to find the position for do crossover
+2023-05-05 06:41:46,185 WARNING : The 5-th try to find the position for do crossover
+2023-05-05 06:41:46,185 WARNING : The 6-th try to find the position for do crossover
+2023-05-05 06:41:46,185 INFO    : Position 4 for indi0133, positions 4 for indi0111
+2023-05-05 06:41:46,185 INFO    : Change the input channel of unit at 4 to 124 that is the output channel of unit at 2 in indi0133
+2023-05-05 06:41:46,185 INFO    : Change the input channel of unit at 4 to 124 that is the output channel of unit at 3 in indi0111
+2023-05-05 06:41:46,185 INFO    : CROSSOVER-40 offspring are generated, new:40, others:0
+2023-05-05 06:41:46,187 INFO    : Do the ADD mutation for indi:indi0118
+2023-05-05 06:41:46,187 INFO    : Mutation position occurs at 7
+2023-05-05 06:41:46,187 INFO    : A RESNET unit would be added due to the probability of 0.29
+2023-05-05 06:41:46,187 INFO    : Due to the above mutation, unit at 8 changes its input channel from 128 to 256
+2023-05-05 06:41:46,187 INFO    : Do the REMOVE mutation for indi:indi0103
+2023-05-05 06:41:46,187 INFO    : Mutation position occurs at 3
+2023-05-05 06:41:46,187 INFO    : A POOLING at 3 is removed
+2023-05-05 06:41:46,187 INFO    : Do the REMOVE mutation for indi:indi0123
+2023-05-05 06:41:46,187 INFO    : Mutation position occurs at 8
+2023-05-05 06:41:46,187 INFO    : A POOLING at 8 is removed
+2023-05-05 06:41:46,187 INFO    : Do the ADD mutation for indi:indi0116
+2023-05-05 06:41:46,187 INFO    : Mutation position occurs at 0
+2023-05-05 06:41:46,188 INFO    : A DENSENET unit would be added due to the probability of 0.76
+2023-05-05 06:41:46,188 INFO    : Due to the above mutation, unit at 1 changes its input channel from 256 to 232
+2023-05-05 06:41:46,188 INFO    : Do the ADD mutation for indi:indi0102
+2023-05-05 06:41:46,188 INFO    : Mutation position occurs at 6
+2023-05-05 06:41:46,188 INFO    : A POOLING unit would be added due to the probability of 0.39
+2023-05-05 06:41:46,189 INFO    : The added unit is changed to RESNET because the existing number of POOLING exceeds 4, limit size:4
+2023-05-05 06:41:46,189 INFO    : Do the REMOVE mutation for indi:indi0114
+2023-05-05 06:41:46,189 INFO    : Mutation position occurs at 6
+2023-05-05 06:41:46,189 INFO    : A POOLING at 6 is removed
+2023-05-05 06:41:46,189 INFO    : MUTATION-mutated individuals:6[ADD: 3,REMOVE: 3,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:34
+2023-05-05 06:41:46,202 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2023-05-05 06:41:46,202 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2023-05-05 06:41:46,202 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-05 06:41:46,251 INFO    : Finish the generation of python files
+2023-05-05 06:41:46,501 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-05 06:41:46,508 INFO    : Hit the cache for indi0112, key:010625e6d251c790b7d82f666f35b73a83ba16aab4e401eecb5f8a70, acc:0.93846, assigned_acc:-1.00000
+2023-05-05 06:41:46,508 INFO    : Hit the cache for indi0113, key:0100f02a79591a228c6b9388849b70be57ab8beaf92761346fb39771, acc:0.92885, assigned_acc:-1.00000
+2023-05-05 06:41:46,508 INFO    : Hit the cache for indi0116, key:89d73f6e16a9b4388451eb7dd82523c232305c861a6f7797da6f0366, acc:0.93462, assigned_acc:-1.00000
+2023-05-05 06:41:46,508 INFO    : Hit the cache for indi0117, key:0100f02a79591a228c6b9388849b70be57ab8beaf92761346fb39771, acc:0.92885, assigned_acc:-1.00000
+2023-05-05 06:41:46,508 INFO    : Hit the cache for indi0122, key:35f0415503ea35f11d0d19b2e61c0722793d3cba748036dd2ee87492, acc:0.90769, assigned_acc:-1.00000
+2023-05-05 06:41:46,508 INFO    : Hit the cache for indi0123, key:2ab050a1f2cbab5e12ad233e15cfcc3f600fbd8694241f1494660a7d, acc:0.92692, assigned_acc:-1.00000
+2023-05-05 06:41:46,509 INFO    : Total hit 6 individuals for fitness
+2023-05-05 06:41:56,655 INFO    : Begin to train indi0100
+2023-05-05 06:42:09,201 INFO    : Begin to train indi0101

@@ -1,0 +1,1 @@
+[2023-05-05 06:42:01.204553]-Used GPU#0, worker name:Process-1[7496]
