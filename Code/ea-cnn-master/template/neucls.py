@@ -183,7 +183,10 @@ class TrainModel(object):
         net = EvoCNNModel(in_size=input_size, num_class=num_class, input_channel=input_channel)
         cudnn.benchmark = True
         net = net.cuda()
-        criterion = nn.CrossEntropyLoss()
+        loss=[1.0, 1.2, 1.4, 1.5, 1.0, 1.0]
+        class_weights = torch.tensor(loss, device='cuda')  # 示例权重，根据实际情况调整
+        criterion = nn.CrossEntropyLoss(weight=class_weights)
+        # criterion = nn.CrossEntropyLoss()
         best_acc = 0.0
         self.net = net
         self.criterion = criterion
@@ -261,11 +264,12 @@ class TrainModel(object):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             if mini_batch_cnt==2 and ifPrintMemory:
-                print("validate total:{}".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
+                print("validate total:{}MB".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
             correct += (predicted == labels.data).sum()
         if correct/total > self.best_acc:
             self.best_acc = correct/total
             print('*'*100, self.best_acc)
+        torch.cuda.empty_cache()
         self.log_record('Validate-Loss:%.3f, Acc:%.3f'%(test_loss/total, correct/total))
 
 
