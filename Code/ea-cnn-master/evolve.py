@@ -24,7 +24,7 @@ class EvolveCNN(object):
         fitness.generate_to_python_file()
         # 训练并评估已有模型
         fitness.evaluate()
-
+        # 检查一下然后再评估一次
 
     def crossover_and_mutation(self):
         cm = CrossoverAndMutation(self.params['genetic_prob'][0], self.params['genetic_prob'][1], Log, self.pops.individuals, _params={'gen_no': self.pops.gen_no})
@@ -51,7 +51,7 @@ class EvolveCNN(object):
             _str.append(_t_str)
 
 
-        #add log
+        # add log
         # find the largest one's index
         max_index = np.argmax(v_list)
         selection = Selection()
@@ -63,7 +63,8 @@ class EvolveCNN(object):
 
         next_individuals = [indi_list[i] for i in selected_index_list]
 
-        """Here, the population information should be updated, such as the gene no and then to the individual id"""
+        """Here, the population information should be updated, 
+        such as the gene no and then to the individual id"""
         next_gen_pops = Population(self.pops.params, self.pops.gen_no+1)
         next_gen_pops.create_from_offspring(next_individuals)
         self.pops = next_gen_pops
@@ -109,7 +110,10 @@ class EvolveCNN(object):
             Log.info('EVOLVE[%d-gen]-Begin to evaluate the fitness'%(curr_gen))
             self.fitness_evaluate()
             Log.info('EVOLVE[%d-gen]-Finish the evaluation'%(curr_gen))
+            # todo 增加评价指标，针对 after_%s.txt curr_gen 变成0x格式 来重新分配指标
+            # loss 时间
 
+            # acc填充
             self.environment_selection()
             Log.info('EVOLVE[%d-gen]-Finish the environment selection'%(curr_gen))
 

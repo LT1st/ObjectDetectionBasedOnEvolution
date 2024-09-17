@@ -53,7 +53,6 @@ class CrossoverAndMutation(object):
         return '\n'.join(_str)
 
 
-
 class Crossover(object):
     def __init__(self, individuals, prob_, _log):
         self.individuals = individuals
@@ -280,8 +279,6 @@ class Mutation(object):
         self.log.info('MUTATION-mutated individuals:%d[ADD:%2d,REMOVE:%2d,ALTER:%2d,RESNET_OUT_CHANNEL:%2d, RESNET_AMOUNT:%2d, DENSENET_AMOUNT:%2d, POOLING_TYPE:%2d, no_changes:%d'%(_stat_param['offspring_new'], \
                       _stat_param['ADD'], _stat_param['REMOVE'], _stat_param['ALTER'], _stat_param['RESNET_OUT_CHANNEL'], _stat_param['RESNET_AMOUNT'], _stat_param['DENSENET_AMOUNT'], _stat_param['POOLING_TYPE'],  _stat_param['offspring_from_parent']))
 
-
-
     def do_add_unit_mutation(self, indi):
         self.log.info('Do the ADD mutation for indi:%s'%(indi.id))
         """
@@ -340,7 +337,6 @@ class Mutation(object):
                             self.log.info('Due to the above mutation, unit at %d changes its output channel from %d to %d'%(i, indi.units[i].out_channel, estimated_out_channel))
                             indi.units[i].out_channel = estimated_out_channel
                             keep_out_channel = estimated_out_channel
-
 
         new_unit_list = []
         # add to the new list and update the number

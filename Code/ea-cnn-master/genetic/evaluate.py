@@ -6,6 +6,100 @@ from asyncio.tasks import sleep
 
 ifDebug = True
 
+import re
+import numpy as np
+from scipy.special import expit
+import os
+
+
+def fill_zero_values_with_average(data_dict):
+    non_zero_values = [value for value in data_dict.values() if value != 0]  # 获取非零值
+    average = sum(non_zero_values) / len(non_zero_values)  # 计算非零值的平均值
+
+    filled_dict = {key: value if value != 0 else average for key, value in data_dict.items()}  # 填充零值为平均值
+
+    return filled_dict
+
+
+def get_loss_acc_from_file(path_2_file):
+    # 读取 log_xx.txt 文件
+    with open(path_2_file, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+
+    train_process_2 = []  # 用于保存提取的 Train-Epoch、Loss、Acc 数组
+
+    # 遍历每一行
+    for line in lines:
+        # 使用正则表达式匹配 Train-Epoch、Loss、Acc 数字
+        match = re.search(r'Train-Epoch:\s*(\d+).*Loss:\s*([\d.]+).*Acc:\s*([\d.]+)', line)
+        if match:
+            # 提取 Train-Epoch、Loss、Acc 数字并转换为 float 类型
+            train_epoch = int(match.group(1))
+            # 将 "NaN" 转换为 -1
+            loss = float(match.group(2)) if match.group(2) != "NaN" else -1
+            acc = float(match.group(3)) if match.group(3) != "NaN" else -1
+            # 将 Train-Epoch、Loss、Acc 数字放入 tmp 数组中
+            tmp = [train_epoch, loss, acc]
+            # 将 tmp 数组放入 train_process 数组中
+            train_process_2.append(tmp)
+
+    return train_process_2
+
+
+def sigmoid_normalize_column(arr):
+    column = np.array(arr)[:, 1]  # Extract the second column data
+    normalized_column = expit(column)  # Use expit function for sigmoid normalization
+    arr = np.array(arr)  # 将输入的列表转换为NumPy数组
+    arr[:, 1] = normalized_column  # Replace the original array's second column with the normalized values
+    return arr.tolist()
+
+
+def custom_normalize_column(arr, threshold=1):
+    column = np.array(arr)[:, 1]  # 提取第二列数据
+    column[column > threshold] = 1  # 大于阈值的值设为1
+    # column = (column - np.min(column)) / (np.max(column) - np.min(column))  # 线性归一化计算
+    arr = np.array(arr)  # 将输入的列表转换为NumPy数组
+    arr[:, 1] = column  # 将归一化后的值替换原数组的第二列
+    return arr.tolist()
+
+# array = np.array([[1, 0.842, 0.452], [2, 0.939, 0.636]])
+# normalized_array = custom_normalize_column(array)
+# print(normalized_array)
+
+
+def pred_acc_(all_acc):
+    # 使用模型预测acc
+    return 0.1
+
+
+def read_finished_acc_values(data_dict):
+    log_folder = "./log"
+    query_dict = {}
+
+    for key, _ in data_dict.items():
+        filename = os.path.join(log_folder, key + ".txt")
+        print(filename)
+        if os.path.isfile(filename):
+            try:
+                this_acc = get_loss_acc_from_file(filename)
+                this_acc= sigmoid_normalize_column(this_acc)
+                # print(this_acc)
+                pred_acc = pred_acc_(this_acc)
+
+                all_acc = this_acc[-1][2]*0.9 + this_acc[-1][1]*0.1 + pred_acc
+                print(all_acc)
+                query_dict[key] = all_acc
+            except:
+                query_dict[key] = 0
+                # pass
+
+        else:
+            query_dict[key] = 0
+            # pass
+
+    return query_dict
+
+
 class FitnessEvaluate(object):
 
     def __init__(self, individuals, log):
@@ -117,7 +211,7 @@ class FitnessEvaluate(object):
                     if gpu_id is not None:
                         print("is using gpu id",gpu_id)
                         file_name = indi.id
-                        self.log.info('Begin to train %s'%(file_name))
+                        self.log.info('Begin to train %s in GPU '%(file_name))
                         module_name = 'Scripts.%s'%(file_name)
                         # 从文件加载模型
                         """
@@ -182,12 +276,22 @@ class FitnessEvaluate(object):
                     fitness_map[line[0]] = float(line[1])
             f.close()
 
+            # todo 这里操作适应度
+            # 填充缺失值0
+
+            # 从log中加载更多数据
+            # 计算新的acc 存入 chache.txt文件
+            fitness_map = read_finished_acc_values(fitness_map)
+
+            # 填充缺失值0
+            fitness_map = fill_zero_values_with_average(fitness_map)
+
             for indi in self.individuals:
                 if indi.acc == -1:
                     # 如果是 -1 说明出问题了
                     if indi.id not in fitness_map:
                         self.log.warn('The individuals have been evaluated, but the records are not correct, the fitness of %s does not exist in %s, wait 120 seconds'%(indi.id, file_name))
-                        sleep(120) #
+                        sleep(12) #
                     indi.acc = fitness_map[indi.id]
         else:
             self.log.info('None offspring has been evaluated')

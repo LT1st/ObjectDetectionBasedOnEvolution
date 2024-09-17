@@ -1,5 +1,5 @@
 """
-2023-04-25  10:03:01
+2023-05-07  19:52:58
 """
 from __future__ import print_function
 import torch
@@ -156,24 +156,28 @@ class EvoCNNModel(nn.Module):
         super(EvoCNNModel, self).__init__()
 
         #resnet and densenet unit
-        self.op0 = DenseNetUnit(k=12, amount=8, in_channel=3, out_channel=99, max_input_channel=128)
-        self.op2 = DenseNetUnit(k=20, amount=6, in_channel=99, out_channel=184, max_input_channel=64)
-        self.op4 = ResNetUnit(amount=4, in_channel=184, out_channel=64)
-        self.op7 = ResNetUnit(amount=6, in_channel=64, out_channel=128)
+        self.op0 = DenseNetUnit(k=20, amount=6, in_channel=3, out_channel=123, max_input_channel=64)
+        self.op1 = DenseNetUnit(k=12, amount=7, in_channel=123, out_channel=207, max_input_channel=128)
+        self.op4 = DenseNetUnit(k=20, amount=8, in_channel=207, out_channel=224, max_input_channel=64)
+        self.op6 = DenseNetUnit(k=20, amount=7, in_channel=224, out_channel=204, max_input_channel=64)
+        self.op7 = ResNetUnit(amount=6, in_channel=204, out_channel=64)
+        self.op8 = DenseNetUnit(k=20, amount=9, in_channel=64, out_channel=244, max_input_channel=64)
 
         #linear unit
-        self.linear = nn.Linear(18432, 6)
+        self.linear = nn.Linear(35136, 6)
 
 
     def forward(self, x):
         out= self.op0(x)
+        out= self.op1(out)
         out = F.avg_pool2d(out, 2)
-        out= self.op2(out)
+        out= F.max_pool2d(out, 2)
+        out= self.op4(out)
         out = F.avg_pool2d(out, 2)
-        out = self.op4(out)
-        out= F.max_pool2d(out, 2)
-        out= F.max_pool2d(out, 2)
+        out= self.op6(out)
         out = self.op7(out)
+        out= self.op8(out)
+        out = F.avg_pool2d(out, 2)
 
         out = out.view(out.size(0), -1)
         out = self.linear(out)
@@ -200,7 +204,10 @@ class TrainModel(object):
         net = EvoCNNModel(in_size=input_size, num_class=num_class, input_channel=input_channel)
         cudnn.benchmark = True
         net = net.cuda()
-        criterion = nn.CrossEntropyLoss()
+        loss=[1.0, 1.2, 1.4, 1.5, 1.0, 1.0]
+        class_weights = torch.tensor(loss, device='cuda')  # 示例权重，根据实际情况调整
+        criterion = nn.CrossEntropyLoss(weight=class_weights)
+        # criterion = nn.CrossEntropyLoss()
         best_acc = 0.0
         self.net = net
         self.criterion = criterion
@@ -278,11 +285,12 @@ class TrainModel(object):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             if mini_batch_cnt==2 and ifPrintMemory:
-                print("validate total:{}".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
+                print("validate total:{}MB".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
             correct += (predicted == labels.data).sum()
         if correct/total > self.best_acc:
             self.best_acc = correct/total
             print('*'*100, self.best_acc)
+        torch.cuda.empty_cache()
         self.log_record('Validate-Loss:%.3f, Acc:%.3f'%(test_loss/total, correct/total))
 
 

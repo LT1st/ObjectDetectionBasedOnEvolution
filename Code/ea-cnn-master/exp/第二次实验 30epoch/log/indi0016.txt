@@ -1,0 +1,4 @@
+[2023-04-26 17:54:07.290267]-Used GPU#0, worker name:Process-37[20064]
+[2023-04-26 17:55:39.846940]-Train-Epoch:  1,  Loss: 1.906, Acc:0.396
+[2023-04-26 17:55:43.751452]-Exception occur:CUDA out of memory. Tried to allocate 392.00 MiB (GPU 0; 24.00 GiB total capacity; 22.87 GiB already allocated; 0 bytes free; 23.00 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+[2023-04-26 17:55:43.757444]-Finished-Acc:0.000

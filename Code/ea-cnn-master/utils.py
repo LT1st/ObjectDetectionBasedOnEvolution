@@ -696,6 +696,7 @@ class Utils(object):
         file_name = './populations/begin_%02d.txt'%(gen_no)
         with open(file_name, 'w') as f:
             f.write(_str)
+
     @classmethod
     def save_population_after_crossover(cls, _str, gen_no):
         file_name = './populations/crossover_%02d.txt'%(gen_no)

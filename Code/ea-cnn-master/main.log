@@ -1,0 +1,9 @@
+2023-05-07 19:52:58,591 INFO    : *************************
+2023-05-07 19:52:58,592 INFO    : Initialize population...
+2023-05-07 19:52:58,596 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-05-07 19:52:58,596 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 19:52:58,626 INFO    : Finish the generation of python files
+2023-05-07 19:52:58,874 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 19:52:58,875 INFO    : Total hit 0 individuals for fitness
+2023-05-07 19:53:09,020 INFO    : Begin to train indi0000 in GPU 
+2023-05-07 19:53:20,595 INFO    : Begin to train indi0001 in GPU 

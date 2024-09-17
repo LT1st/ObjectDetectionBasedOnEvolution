@@ -1,0 +1,466 @@
+2023-05-07 14:10:42,373 INFO    : *************************
+2023-05-07 14:10:42,374 INFO    : Initialize population...
+2023-05-07 14:10:42,375 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-05-07 14:10:42,375 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:10:42,385 INFO    : Finish the generation of python files
+2023-05-07 14:10:42,633 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:10:42,634 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:10:52,758 INFO    : Begin to train indi0000
+2023-05-07 14:11:04,327 INFO    : Begin to train indi0001
+2023-05-07 14:13:35,766 INFO    : *************************
+2023-05-07 14:13:35,767 INFO    : Initialize population...
+2023-05-07 14:13:35,768 INFO    : EVOLVE[0-gen]-Begin to evaluate the fitness
+2023-05-07 14:13:35,768 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:13:35,776 INFO    : Finish the generation of python files
+2023-05-07 14:13:36,037 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:13:36,037 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:13:46,187 INFO    : Begin to train indi0000
+2023-05-07 14:13:57,747 INFO    : Begin to train indi0001
+2023-05-07 14:15:24,599 INFO    : Begin to train indi0002
+2023-05-07 14:16:54,962 INFO    : Add record into cache, id:207cea7756907164db71c8c0d0667948a9a7215030bf9f7f94ce188e, acc:0.47692
+2023-05-07 14:16:54,962 INFO    : Add record into cache, id:2bf6d1d6d8fb7a5d6a93b27c4949dfd3fa87ce228aaab9e3b010563c, acc:0.75769
+2023-05-07 14:16:54,966 INFO    : Add record into cache, id:4d473d61dec7072fe431da368373adabc6ccb6c0cd8c8b9d5214a7f8, acc:0.66923
+2023-05-07 14:16:54,971 INFO    : EVOLVE[0-gen]-Finish the evaluation
+2023-05-07 14:16:54,971 INFO    : EVOLVE[1-gen]-Begin to crossover and mutation
+2023-05-07 14:16:54,973 INFO    : Position 1 for indi0002, positions 1 for indi0001
+2023-05-07 14:16:54,973 INFO    : Change the input channel of unit at 2 to 103 that is the output channel of unit at 0 in indi0002
+2023-05-07 14:16:54,973 INFO    : Change the input channel of unit at 1 to 256 that is the output channel of unit at 0 in indi0001
+2023-05-07 14:16:54,973 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:16:54,974 INFO    : Do the ADD mutation for indi:indi0002
+2023-05-07 14:16:54,974 INFO    : Mutation position occurs at 6
+2023-05-07 14:16:54,974 INFO    : A RESNET unit would be added due to the probability of 0.28
+2023-05-07 14:16:54,974 INFO    : MUTATION-mutated individuals:1[ADD: 1,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:1
+2023-05-07 14:16:54,976 INFO    : EVOLVE[1-gen]-Finish crossover and mutation
+2023-05-07 14:16:54,976 INFO    : EVOLVE[1-gen]-Begin to evaluate the fitness
+2023-05-07 14:16:54,976 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:16:54,979 INFO    : Finish the generation of python files
+2023-05-07 14:16:55,233 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:16:55,239 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:17:05,373 INFO    : Begin to train indi0000
+2023-05-07 14:17:05,373 INFO    : Module:Scripts.indi0000 has been loaded, delete it
+2023-05-07 14:17:15,500 INFO    : Begin to train indi0001
+2023-05-07 14:17:15,500 INFO    : Module:Scripts.indi0001 has been loaded, delete it
+2023-05-07 14:20:16,308 INFO    : Add record into cache, id:b867256be3d229585d13492fbc2b66182c8d7832f70960b6d5afbc80, acc:0.58654
+2023-05-07 14:20:16,308 INFO    : Add record into cache, id:5a9a50bf1498344ccbb8d72d0b3d21fb85ec564ca413f4bc9272627a, acc:0.75385
+2023-05-07 14:20:16,312 INFO    : EVOLVE[1-gen]-Finish the evaluation
+2023-05-07 14:20:16,314 INFO    : EVOLVE[1-gen]-Finish the environment selection
+2023-05-07 14:20:16,314 INFO    : EVOLVE[2-gen]-Begin to crossover and mutation
+2023-05-07 14:20:16,315 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:20:16,315 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:20:16,315 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:20:16,315 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:20:16,316 WARNING : The 6-th try to find the position for do crossover
+2023-05-07 14:20:16,316 WARNING : The 7-th try to find the position for do crossover
+2023-05-07 14:20:16,316 WARNING : The 8-th try to find the position for do crossover
+2023-05-07 14:20:16,316 WARNING : The 9-th try to find the position for do crossover
+2023-05-07 14:20:16,316 INFO    : Position 2 for indi0101, positions 0 for indi0100
+2023-05-07 14:20:16,316 WARNING : Crossovered individual#2 starts with a pooling layer, redo...
+2023-05-07 14:20:16,316 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:20:16,316 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:20:16,316 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:20:16,316 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 6-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 7-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 8-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 9-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 10-th try to find the position for do crossover
+2023-05-07 14:20:16,317 INFO    : Position 0 for indi0101, positions 1 for indi0100
+2023-05-07 14:20:16,317 WARNING : Crossovered individual#1 starts with a pooling layer, redo...
+2023-05-07 14:20:16,317 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:20:16,317 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:20:16,318 WARNING : The 6-th try to find the position for do crossover
+2023-05-07 14:20:16,318 WARNING : The 7-th try to find the position for do crossover
+2023-05-07 14:20:16,318 WARNING : The 8-th try to find the position for do crossover
+2023-05-07 14:20:16,318 WARNING : The 9-th try to find the position for do crossover
+2023-05-07 14:20:16,318 INFO    : Position 6 for indi0101, positions 5 for indi0100
+2023-05-07 14:20:16,318 INFO    : Change the input channel of unit at 6 to 124 that is the output channel of unit at 4 in indi0101
+2023-05-07 14:20:16,318 INFO    : Change the input channel of unit at 5 to 232 that is the output channel of unit at 2 in indi0100
+2023-05-07 14:20:16,318 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:20:16,319 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:20:16,321 INFO    : EVOLVE[2-gen]-Finish crossover and mutation
+2023-05-07 14:20:16,321 INFO    : EVOLVE[2-gen]-Begin to evaluate the fitness
+2023-05-07 14:20:16,322 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:20:16,324 INFO    : Finish the generation of python files
+2023-05-07 14:20:16,564 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:20:16,570 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:20:26,712 INFO    : Begin to train indi0100
+2023-05-07 14:20:36,853 INFO    : Begin to train indi0101
+2023-05-07 14:23:07,430 INFO    : Add record into cache, id:72898818febbf818e4ca4ea054487b89ae603777b380554146de780b, acc:0.72692
+2023-05-07 14:23:07,431 INFO    : Add record into cache, id:87e652ff0f44ce02e827d1ce46c91710711573e155a3eae3574d155b, acc:0.51346
+2023-05-07 14:23:07,436 INFO    : EVOLVE[2-gen]-Finish the evaluation
+2023-05-07 14:23:07,437 INFO    : EVOLVE[2-gen]-Finish the environment selection
+2023-05-07 14:23:07,438 INFO    : EVOLVE[3-gen]-Begin to crossover and mutation
+2023-05-07 14:23:07,439 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:23:07,439 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:23:07,439 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:23:07,439 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:23:07,439 WARNING : The 6-th try to find the position for do crossover
+2023-05-07 14:23:07,439 WARNING : The 7-th try to find the position for do crossover
+2023-05-07 14:23:07,440 WARNING : The 8-th try to find the position for do crossover
+2023-05-07 14:23:07,440 WARNING : The 9-th try to find the position for do crossover
+2023-05-07 14:23:07,440 INFO    : Position 0 for indi0202, positions 0 for indi0200
+2023-05-07 14:23:07,440 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0202
+2023-05-07 14:23:07,441 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0200
+2023-05-07 14:23:07,441 INFO    : Due to the above change, unit at 0 changes its output channel from 203 to 203
+2023-05-07 14:23:07,441 INFO    : Change the input channel of unit at 1 to 203 that is the output channel of unit at -1 in indi0200
+2023-05-07 14:23:07,441 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:23:07,442 INFO    : Do the ALTER mutation for indi:indi0200
+2023-05-07 14:23:07,442 INFO    : Do the POOLING mutation for indi:indi0200 at position 2
+2023-05-07 14:23:07,442 INFO    : Pool type from max_pool (<0.5) to avg_pool (>0.5)
+2023-05-07 14:23:07,442 INFO    : MUTATION-mutated individuals:1[ADD: 0,REMOVE: 0,ALTER: 1,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 1, no_changes:1
+2023-05-07 14:23:07,444 INFO    : EVOLVE[3-gen]-Finish crossover and mutation
+2023-05-07 14:23:07,444 INFO    : EVOLVE[3-gen]-Begin to evaluate the fitness
+2023-05-07 14:23:07,444 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:23:07,447 INFO    : Finish the generation of python files
+2023-05-07 14:23:07,700 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:23:07,705 INFO    : Hit the cache for indi0200, key:87e652ff0f44ce02e827d1ce46c91710711573e155a3eae3574d155b, acc:0.51346, assigned_acc:-1.00000
+2023-05-07 14:23:07,705 INFO    : Total hit 1 individuals for fitness
+2023-05-07 14:23:07,705 INFO    : indi0200 has inherited the fitness as 0.51346, no need to evaluate
+2023-05-07 14:23:17,842 INFO    : Begin to train indi0201
+2023-05-07 14:25:18,384 INFO    : Add record into cache, id:dced4fc44b5b8003d5a88ce54c09eced9d9caae10137fc45b1b655b6, acc:0.65577
+2023-05-07 14:25:18,385 INFO    : EVOLVE[3-gen]-Finish the evaluation
+2023-05-07 14:25:18,387 INFO    : EVOLVE[3-gen]-Finish the environment selection
+2023-05-07 14:25:18,387 INFO    : EVOLVE[4-gen]-Begin to crossover and mutation
+2023-05-07 14:25:18,388 INFO    : Position 6 for indi0302, positions 5 for indi0301
+2023-05-07 14:25:18,388 INFO    : Change the input channel of unit at 6 to 124 that is the output channel of unit at 4 in indi0302
+2023-05-07 14:25:18,388 INFO    : Change the input channel of unit at 5 to 232 that is the output channel of unit at 2 in indi0301
+2023-05-07 14:25:18,388 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:25:18,389 INFO    : Do the ADD mutation for indi:indi0301
+2023-05-07 14:25:18,389 INFO    : Mutation position occurs at 6
+2023-05-07 14:25:18,389 INFO    : A RESNET unit would be added due to the probability of 0.20
+2023-05-07 14:25:18,389 INFO    : MUTATION-mutated individuals:1[ADD: 1,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:1
+2023-05-07 14:25:18,390 INFO    : EVOLVE[4-gen]-Finish crossover and mutation
+2023-05-07 14:25:18,390 INFO    : EVOLVE[4-gen]-Begin to evaluate the fitness
+2023-05-07 14:25:18,390 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:25:18,393 INFO    : Finish the generation of python files
+2023-05-07 14:25:18,642 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:25:18,648 INFO    : Hit the cache for indi0300, key:72898818febbf818e4ca4ea054487b89ae603777b380554146de780b, acc:0.72692, assigned_acc:-1.00000
+2023-05-07 14:25:18,648 INFO    : Total hit 1 individuals for fitness
+2023-05-07 14:25:18,648 INFO    : indi0300 has inherited the fitness as 0.72692, no need to evaluate
+2023-05-07 14:25:28,782 INFO    : Begin to train indi0301
+2023-05-07 14:28:29,498 INFO    : Add record into cache, id:5e66f405354b25fd054603025ccdfe7cd7ff1f84788c59aefe281e37, acc:0.49615
+2023-05-07 14:28:29,499 INFO    : EVOLVE[4-gen]-Finish the evaluation
+2023-05-07 14:28:29,500 INFO    : EVOLVE[4-gen]-Finish the environment selection
+2023-05-07 14:28:29,501 INFO    : EVOLVE[5-gen]-Begin to crossover and mutation
+2023-05-07 14:28:29,502 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:28:29,502 INFO    : Position 1 for indi0401, positions 0 for indi0400
+2023-05-07 14:28:29,502 INFO    : Change the input channel of unit at 1 to 203 that is the output channel of unit at 0 in indi0401
+2023-05-07 14:28:29,502 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi0400
+2023-05-07 14:28:29,503 INFO    : Due to the above change, unit at 0 changes its output channel from 232 to 203
+2023-05-07 14:28:29,503 INFO    : Change the input channel of unit at 3 to 203 that is the output channel of unit at -1 in indi0400
+2023-05-07 14:28:29,503 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:28:29,504 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:28:29,505 INFO    : EVOLVE[5-gen]-Finish crossover and mutation
+2023-05-07 14:28:29,505 INFO    : EVOLVE[5-gen]-Begin to evaluate the fitness
+2023-05-07 14:28:29,505 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:28:29,508 INFO    : Finish the generation of python files
+2023-05-07 14:28:29,741 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:28:29,747 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:28:39,889 INFO    : Begin to train indi0400
+2023-05-07 14:28:50,017 INFO    : Begin to train indi0401
+2023-05-07 14:32:20,853 INFO    : Add record into cache, id:27ad2f928e1f224176d09c46e0e9e9fdd1ddb1e5418bb66c039f5f19, acc:0.50769
+2023-05-07 14:32:20,854 INFO    : Add record into cache, id:aca020e54fb56961510737aaee872d86ac3d6caea201d736a67841bf, acc:0.66154
+2023-05-07 14:32:20,858 INFO    : EVOLVE[5-gen]-Finish the evaluation
+2023-05-07 14:32:20,860 INFO    : EVOLVE[5-gen]-Finish the environment selection
+2023-05-07 14:32:20,860 INFO    : EVOLVE[6-gen]-Begin to crossover and mutation
+2023-05-07 14:32:20,861 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:32:20,861 INFO    : Position 2 for indi0502, positions 0 for indi0500
+2023-05-07 14:32:20,861 WARNING : Crossovered individual#2 starts with a pooling layer, redo...
+2023-05-07 14:32:20,861 INFO    : Position 4 for indi0502, positions 4 for indi0500
+2023-05-07 14:32:20,861 INFO    : Change the input channel of unit at 4 to 232 that is the output channel of unit at 1 in indi0502
+2023-05-07 14:32:20,861 INFO    : Change the input channel of unit at 4 to 232 that is the output channel of unit at 1 in indi0500
+2023-05-07 14:32:20,862 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:32:20,863 INFO    : Do the ADD mutation for indi:indi0500
+2023-05-07 14:32:20,863 INFO    : Mutation position occurs at 2
+2023-05-07 14:32:20,863 INFO    : A DENSENET unit would be added due to the probability of 0.81
+2023-05-07 14:32:20,863 INFO    : Due to the above mutation, unit at 4 changes its input channel from 232 to 164
+2023-05-07 14:32:20,863 INFO    : MUTATION-mutated individuals:1[ADD: 1,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:1
+2023-05-07 14:32:20,864 INFO    : EVOLVE[6-gen]-Finish crossover and mutation
+2023-05-07 14:32:20,864 INFO    : EVOLVE[6-gen]-Begin to evaluate the fitness
+2023-05-07 14:32:20,864 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:32:20,868 INFO    : Finish the generation of python files
+2023-05-07 14:32:21,110 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:32:21,116 INFO    : Hit the cache for indi0500, key:72898818febbf818e4ca4ea054487b89ae603777b380554146de780b, acc:0.72692, assigned_acc:-1.00000
+2023-05-07 14:32:21,116 INFO    : Total hit 1 individuals for fitness
+2023-05-07 14:32:21,116 INFO    : indi0500 has inherited the fitness as 0.72692, no need to evaluate
+2023-05-07 14:32:31,248 INFO    : Begin to train indi0501
+2023-05-07 14:34:31,755 INFO    : Add record into cache, id:de63ff8f4ea388129654ea2414af3079768500ced873376c66f328fa, acc:0.65385
+2023-05-07 14:34:31,756 INFO    : EVOLVE[6-gen]-Finish the evaluation
+2023-05-07 14:34:31,757 INFO    : EVOLVE[6-gen]-Finish the environment selection
+2023-05-07 14:34:31,758 INFO    : EVOLVE[7-gen]-Begin to crossover and mutation
+2023-05-07 14:34:31,759 INFO    : Position 5 for indi0600, positions 4 for indi0601
+2023-05-07 14:34:31,759 INFO    : Change the input channel of unit at 6 to 124 that is the output channel of unit at 4 in indi0600
+2023-05-07 14:34:31,759 INFO    : Change the input channel of unit at 5 to 232 that is the output channel of unit at 2 in indi0601
+2023-05-07 14:34:31,759 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:34:31,760 INFO    : Do the ALTER mutation for indi:indi0601
+2023-05-07 14:34:31,760 INFO    : Do the RESNET mutation for indi:indi0601 at position 0
+2023-05-07 14:34:31,761 INFO    : Unit at 0 changes its amount from 5 to 3
+2023-05-07 14:34:31,761 INFO    : MUTATION-mutated individuals:1[ADD: 0,REMOVE: 0,ALTER: 1,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 1, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:1
+2023-05-07 14:34:31,762 INFO    : EVOLVE[7-gen]-Finish crossover and mutation
+2023-05-07 14:34:31,762 INFO    : EVOLVE[7-gen]-Begin to evaluate the fitness
+2023-05-07 14:34:31,762 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:34:31,765 INFO    : Finish the generation of python files
+2023-05-07 14:34:32,026 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:34:32,032 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:34:42,161 INFO    : Begin to train indi0600
+2023-05-07 14:34:52,281 INFO    : Begin to train indi0601
+2023-05-07 14:36:52,776 INFO    : Add record into cache, id:a8777508d59cb3334fb933fbe1eb43921c4b860391a05b59dc3c546d, acc:0.71923
+2023-05-07 14:36:52,777 INFO    : Add record into cache, id:70362561742e1df333e9ec13690d1cac4b5202719a9458e23cfcdc07, acc:0.76538
+2023-05-07 14:36:52,781 INFO    : EVOLVE[7-gen]-Finish the evaluation
+2023-05-07 14:36:52,782 INFO    : EVOLVE[7-gen]-Finish the environment selection
+2023-05-07 14:36:52,783 INFO    : EVOLVE[8-gen]-Begin to crossover and mutation
+2023-05-07 14:36:52,784 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:36:52,784 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:36:52,784 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:36:52,784 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:36:52,784 WARNING : The 6-th try to find the position for do crossover
+2023-05-07 14:36:52,784 WARNING : The 7-th try to find the position for do crossover
+2023-05-07 14:36:52,784 INFO    : Position 1 for indi0700, positions 1 for indi0702
+2023-05-07 14:36:52,784 INFO    : Change the input channel of unit at 1 to 256 that is the output channel of unit at 0 in indi0700
+2023-05-07 14:36:52,785 INFO    : Change the input channel of unit at 2 to 203 that is the output channel of unit at 0 in indi0702
+2023-05-07 14:36:52,785 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:36:52,785 INFO    : Do the REMOVE mutation for indi:indi0700
+2023-05-07 14:36:52,786 INFO    : Mutation position occurs at 4
+2023-05-07 14:36:52,786 INFO    : Due to the above mutation, unit at 6 changes its input channel from 124 to 232
+2023-05-07 14:36:52,786 INFO    : Do the ADD mutation for indi:indi0702
+2023-05-07 14:36:52,786 INFO    : Mutation position occurs at 6
+2023-05-07 14:36:52,786 INFO    : A DENSENET unit would be added due to the probability of 0.85
+2023-05-07 14:36:52,786 INFO    : MUTATION-mutated individuals:2[ADD: 1,REMOVE: 1,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:0
+2023-05-07 14:36:52,787 INFO    : EVOLVE[8-gen]-Finish crossover and mutation
+2023-05-07 14:36:52,787 INFO    : EVOLVE[8-gen]-Begin to evaluate the fitness
+2023-05-07 14:36:52,787 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:36:52,790 INFO    : Finish the generation of python files
+2023-05-07 14:36:53,030 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:36:53,036 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:37:03,168 INFO    : Begin to train indi0700
+2023-05-07 14:37:13,283 INFO    : Begin to train indi0701
+2023-05-07 14:39:43,904 INFO    : Add record into cache, id:390d73f0ccec9b4875c74d03d647afebebd53f5d7d802243325d7372, acc:0.77308
+2023-05-07 14:39:43,904 INFO    : Add record into cache, id:03c5fb5ad18cee31e8e56bf4de10e2980d2f559f59d5e02e23b00ae8, acc:0.65192
+2023-05-07 14:39:43,908 INFO    : EVOLVE[8-gen]-Finish the evaluation
+2023-05-07 14:39:43,910 INFO    : EVOLVE[8-gen]-Finish the environment selection
+2023-05-07 14:39:43,910 INFO    : EVOLVE[9-gen]-Begin to crossover and mutation
+2023-05-07 14:39:43,911 INFO    : Position 6 for indi0802, positions 6 for indi0801
+2023-05-07 14:39:43,911 INFO    : Change the input channel of unit at 7 to 184 that is the output channel of unit at 5 in indi0802
+2023-05-07 14:39:43,911 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:39:43,912 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:39:43,913 INFO    : EVOLVE[9-gen]-Finish crossover and mutation
+2023-05-07 14:39:43,913 INFO    : EVOLVE[9-gen]-Begin to evaluate the fitness
+2023-05-07 14:39:43,913 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:39:43,917 INFO    : Finish the generation of python files
+2023-05-07 14:39:44,143 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:39:44,148 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:39:54,273 INFO    : Begin to train indi0800
+2023-05-07 14:40:04,402 INFO    : Begin to train indi0801
+2023-05-07 14:42:35,069 INFO    : Add record into cache, id:6b7d9d0fe8dce5a6764be4b0e0f901bf0215d0daf6865344312b9e66, acc:0.78269
+2023-05-07 14:42:35,070 INFO    : Add record into cache, id:8ade95e233d6c6fa4733a315fa33d57edbbec3bd9f1cb1aa3733a273, acc:0.65962
+2023-05-07 14:42:35,074 INFO    : EVOLVE[9-gen]-Finish the evaluation
+2023-05-07 14:42:35,076 INFO    : EVOLVE[9-gen]-Finish the environment selection
+2023-05-07 14:42:35,076 INFO    : EVOLVE[10-gen]-Begin to crossover and mutation
+2023-05-07 14:42:35,077 INFO    : Position 2 for indi0902, positions 3 for indi0900
+2023-05-07 14:42:35,077 INFO    : Change the input channel of unit at 4 to 203 that is the output channel of unit at 0 in indi0902
+2023-05-07 14:42:35,077 INFO    : Change the input channel of unit at 3 to 232 that is the output channel of unit at 1 in indi0900
+2023-05-07 14:42:35,077 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:42:35,078 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:42:35,080 INFO    : EVOLVE[10-gen]-Finish crossover and mutation
+2023-05-07 14:42:35,080 INFO    : EVOLVE[10-gen]-Begin to evaluate the fitness
+2023-05-07 14:42:35,080 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:42:35,083 INFO    : Finish the generation of python files
+2023-05-07 14:42:35,311 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:42:35,318 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:42:45,446 INFO    : Begin to train indi0900
+2023-05-07 14:42:55,589 INFO    : Begin to train indi0901
+2023-05-07 14:45:26,260 INFO    : Add record into cache, id:df80df87d329ebd1f70df78c5f7097edd9e0cdcd9873f0439371ac94, acc:0.69231
+2023-05-07 14:45:26,260 INFO    : Add record into cache, id:1193a80c66beb2e1eac518a4e470cc04407c1f643fef1adbe0f5c7f5, acc:0.76731
+2023-05-07 14:45:26,266 INFO    : EVOLVE[10-gen]-Finish the evaluation
+2023-05-07 14:45:26,267 INFO    : EVOLVE[10-gen]-Finish the environment selection
+2023-05-07 14:45:26,268 INFO    : EVOLVE[11-gen]-Begin to crossover and mutation
+2023-05-07 14:45:26,269 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:45:26,269 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:45:26,269 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:45:26,269 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:45:26,269 INFO    : Position 3 for indi1001, positions 2 for indi1000
+2023-05-07 14:45:26,269 INFO    : Change the input channel of unit at 5 to 232 that is the output channel of unit at 2 in indi1001
+2023-05-07 14:45:26,269 INFO    : Change the input channel of unit at 4 to 203 that is the output channel of unit at 0 in indi1000
+2023-05-07 14:45:26,269 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:45:26,270 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:45:26,271 INFO    : EVOLVE[11-gen]-Finish crossover and mutation
+2023-05-07 14:45:26,271 INFO    : EVOLVE[11-gen]-Begin to evaluate the fitness
+2023-05-07 14:45:26,271 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:45:26,279 INFO    : Finish the generation of python files
+2023-05-07 14:45:26,514 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:45:26,520 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:45:36,665 INFO    : Begin to train indi1000
+2023-05-07 14:45:46,808 INFO    : Begin to train indi1001
+2023-05-07 14:46:47,086 INFO    : Add record into cache, id:d58a673e3761c0e3a537516934c8591962762851c1f45b07d8bd4ac5, acc:0.68654
+2023-05-07 14:46:47,087 INFO    : Add record into cache, id:4afc75db75b4f319f6ca0441917335bfa6fb67af0c6de1f121508201, acc:0.60962
+2023-05-07 14:46:47,092 INFO    : EVOLVE[11-gen]-Finish the evaluation
+2023-05-07 14:46:47,094 INFO    : EVOLVE[11-gen]-Finish the environment selection
+2023-05-07 14:46:47,094 INFO    : EVOLVE[12-gen]-Begin to crossover and mutation
+2023-05-07 14:46:47,095 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:46:47,095 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:46:47,095 INFO    : Position 6 for indi1101, positions 5 for indi1102
+2023-05-07 14:46:47,095 INFO    : Change the input channel of unit at 6 to 184 that is the output channel of unit at 5 in indi1101
+2023-05-07 14:46:47,095 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:46:47,096 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:46:47,097 INFO    : EVOLVE[12-gen]-Finish crossover and mutation
+2023-05-07 14:46:47,097 INFO    : EVOLVE[12-gen]-Begin to evaluate the fitness
+2023-05-07 14:46:47,097 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:46:47,100 INFO    : Finish the generation of python files
+2023-05-07 14:46:47,324 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:46:47,331 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:46:57,459 INFO    : Begin to train indi1100
+2023-05-07 14:47:07,578 INFO    : Begin to train indi1101
+2023-05-07 14:49:38,351 INFO    : Add record into cache, id:0228e382ccd413603db4c8f38e549d3733e6f4ec328dccf85e909f50, acc:0.58269
+2023-05-07 14:49:38,351 INFO    : Add record into cache, id:4038ca9e1984b8d99e812022590f054349f60022c025d72bad655038, acc:0.80192
+2023-05-07 14:49:38,356 INFO    : EVOLVE[12-gen]-Finish the evaluation
+2023-05-07 14:49:38,358 INFO    : EVOLVE[12-gen]-Finish the environment selection
+2023-05-07 14:49:38,358 INFO    : EVOLVE[13-gen]-Begin to crossover and mutation
+2023-05-07 14:49:38,359 INFO    : Position 2 for indi1202, positions 3 for indi1201
+2023-05-07 14:49:38,359 INFO    : Change the input channel of unit at 4 to 203 that is the output channel of unit at 0 in indi1202
+2023-05-07 14:49:38,359 INFO    : Change the input channel of unit at 3 to 232 that is the output channel of unit at 1 in indi1201
+2023-05-07 14:49:38,359 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:49:38,360 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:49:38,361 INFO    : EVOLVE[13-gen]-Finish crossover and mutation
+2023-05-07 14:49:38,361 INFO    : EVOLVE[13-gen]-Begin to evaluate the fitness
+2023-05-07 14:49:38,361 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:49:38,364 INFO    : Finish the generation of python files
+2023-05-07 14:49:38,603 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:49:38,610 INFO    : Hit the cache for indi1200, key:df80df87d329ebd1f70df78c5f7097edd9e0cdcd9873f0439371ac94, acc:0.69231, assigned_acc:-1.00000
+2023-05-07 14:49:38,610 INFO    : Hit the cache for indi1201, key:1193a80c66beb2e1eac518a4e470cc04407c1f643fef1adbe0f5c7f5, acc:0.76731, assigned_acc:-1.00000
+2023-05-07 14:49:38,610 INFO    : Total hit 2 individuals for fitness
+2023-05-07 14:49:38,610 INFO    : indi1200 has inherited the fitness as 0.69231, no need to evaluate
+2023-05-07 14:49:38,611 INFO    : indi1201 has inherited the fitness as 0.76731, no need to evaluate
+2023-05-07 14:49:38,615 INFO    : None offspring has been evaluated
+2023-05-07 14:49:38,615 INFO    : EVOLVE[13-gen]-Finish the evaluation
+2023-05-07 14:49:38,617 INFO    : EVOLVE[13-gen]-Finish the environment selection
+2023-05-07 14:49:38,617 INFO    : EVOLVE[14-gen]-Begin to crossover and mutation
+2023-05-07 14:49:38,618 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:49:38,618 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:49:38,618 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:49:38,618 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:49:38,619 WARNING : The 6-th try to find the position for do crossover
+2023-05-07 14:49:38,619 INFO    : Position 0 for indi1302, positions 0 for indi1300
+2023-05-07 14:49:38,619 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi1302
+2023-05-07 14:49:38,619 INFO    : Due to the above change, unit at 0 changes its output channel from 203 to 203
+2023-05-07 14:49:38,620 INFO    : Change the input channel of unit at 2 to 203 that is the output channel of unit at -1 in indi1302
+2023-05-07 14:49:38,620 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi1300
+2023-05-07 14:49:38,620 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:49:38,621 INFO    : Do the ALTER mutation for indi:indi1300
+2023-05-07 14:49:38,621 INFO    : Do the DENSENET mutation for indi:indi1300 at position 1
+2023-05-07 14:49:38,622 INFO    : Unit at 1 changes its amount from 5 to 4
+2023-05-07 14:49:38,622 INFO    : Due to the above mutation, unit at 1 changes its output channel from 232 to 192
+2023-05-07 14:49:38,622 INFO    : MUTATION-mutated individuals:1[ADD: 0,REMOVE: 0,ALTER: 1,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 1, POOLING_TYPE: 0, no_changes:1
+2023-05-07 14:49:38,623 INFO    : EVOLVE[14-gen]-Finish crossover and mutation
+2023-05-07 14:49:38,623 INFO    : EVOLVE[14-gen]-Begin to evaluate the fitness
+2023-05-07 14:49:38,623 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:49:38,626 INFO    : Finish the generation of python files
+2023-05-07 14:49:38,853 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:49:38,853 INFO    : Hit the cache for indi1300, key:8ade95e233d6c6fa4733a315fa33d57edbbec3bd9f1cb1aa3733a273, acc:0.65962, assigned_acc:-1.00000
+2023-05-07 14:49:38,853 INFO    : Total hit 1 individuals for fitness
+2023-05-07 14:49:38,853 INFO    : indi1300 has inherited the fitness as 0.65962, no need to evaluate
+2023-05-07 14:49:48,987 INFO    : Begin to train indi1301
+2023-05-07 14:52:19,589 INFO    : Add record into cache, id:68c593e42f5252ae946d6636adbea905b3ca1b65149fa7cd29600088, acc:0.78846
+2023-05-07 14:52:19,589 INFO    : EVOLVE[14-gen]-Finish the evaluation
+2023-05-07 14:52:19,591 INFO    : EVOLVE[14-gen]-Finish the environment selection
+2023-05-07 14:52:19,591 INFO    : EVOLVE[15-gen]-Begin to crossover and mutation
+2023-05-07 14:52:19,592 INFO    : Position 2 for indi1400, positions 0 for indi1402
+2023-05-07 14:52:19,592 WARNING : Crossovered individual#2 starts with a pooling layer, redo...
+2023-05-07 14:52:19,593 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:52:19,593 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:52:19,593 INFO    : Position 0 for indi1400, positions 0 for indi1402
+2023-05-07 14:52:19,593 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi1400
+2023-05-07 14:52:19,594 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi1402
+2023-05-07 14:52:19,594 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:52:19,595 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:52:19,596 INFO    : EVOLVE[15-gen]-Finish crossover and mutation
+2023-05-07 14:52:19,596 INFO    : EVOLVE[15-gen]-Begin to evaluate the fitness
+2023-05-07 14:52:19,596 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:52:19,599 INFO    : Finish the generation of python files
+2023-05-07 14:52:19,863 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:52:19,870 INFO    : Hit the cache for indi1400, key:68c593e42f5252ae946d6636adbea905b3ca1b65149fa7cd29600088, acc:0.78846, assigned_acc:-1.00000
+2023-05-07 14:52:19,870 INFO    : Hit the cache for indi1401, key:4038ca9e1984b8d99e812022590f054349f60022c025d72bad655038, acc:0.80192, assigned_acc:-1.00000
+2023-05-07 14:52:19,870 INFO    : Total hit 2 individuals for fitness
+2023-05-07 14:52:19,870 INFO    : indi1400 has inherited the fitness as 0.78846, no need to evaluate
+2023-05-07 14:52:19,871 INFO    : indi1401 has inherited the fitness as 0.80192, no need to evaluate
+2023-05-07 14:52:19,875 INFO    : None offspring has been evaluated
+2023-05-07 14:52:19,876 INFO    : EVOLVE[15-gen]-Finish the evaluation
+2023-05-07 14:52:19,877 INFO    : EVOLVE[15-gen]-Finish the environment selection
+2023-05-07 14:52:19,877 INFO    : EVOLVE[16-gen]-Begin to crossover and mutation
+2023-05-07 14:52:19,878 INFO    : Position 1 for indi1501, positions 2 for indi1502
+2023-05-07 14:52:19,879 INFO    : Change the input channel of unit at 2 to 192 that is the output channel of unit at 1 in indi1502
+2023-05-07 14:52:19,879 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:52:19,879 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:52:19,880 INFO    : EVOLVE[16-gen]-Finish crossover and mutation
+2023-05-07 14:52:19,881 INFO    : EVOLVE[16-gen]-Begin to evaluate the fitness
+2023-05-07 14:52:19,881 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:52:19,884 INFO    : Finish the generation of python files
+2023-05-07 14:52:20,147 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:52:20,147 INFO    : Total hit 0 individuals for fitness
+2023-05-07 14:52:30,294 INFO    : Begin to train indi1500
+2023-05-07 14:52:40,436 INFO    : Begin to train indi1501
+2023-05-07 14:55:11,099 INFO    : Add record into cache, id:37528226edcbc4070cbbd64843a5cce80f7f25a98f9bea810c085c7c, acc:0.47308
+2023-05-07 14:55:11,099 INFO    : Add record into cache, id:94fa293f2b42ac1bd2d10116e3e26410e7ea5619de1807c0ab672c94, acc:0.83269
+2023-05-07 14:55:11,104 INFO    : EVOLVE[16-gen]-Finish the evaluation
+2023-05-07 14:55:11,105 INFO    : EVOLVE[16-gen]-Finish the environment selection
+2023-05-07 14:55:11,105 INFO    : EVOLVE[17-gen]-Begin to crossover and mutation
+2023-05-07 14:55:11,106 INFO    : CROSSOVER-2 offspring are generated, new:0, others:2
+2023-05-07 14:55:11,107 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:55:11,108 INFO    : EVOLVE[17-gen]-Finish crossover and mutation
+2023-05-07 14:55:11,108 INFO    : EVOLVE[17-gen]-Begin to evaluate the fitness
+2023-05-07 14:55:11,108 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:55:11,111 INFO    : Finish the generation of python files
+2023-05-07 14:55:11,351 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:55:11,357 INFO    : Hit the cache for indi1600, key:94fa293f2b42ac1bd2d10116e3e26410e7ea5619de1807c0ab672c94, acc:0.83269, assigned_acc:0.83269
+2023-05-07 14:55:11,357 INFO    : Hit the cache for indi1601, key:37528226edcbc4070cbbd64843a5cce80f7f25a98f9bea810c085c7c, acc:0.47308, assigned_acc:0.47308
+2023-05-07 14:55:11,357 INFO    : Total hit 2 individuals for fitness
+2023-05-07 14:55:11,357 INFO    : indi1600 has inherited the fitness as 0.83269, no need to evaluate
+2023-05-07 14:55:11,358 INFO    : indi1601 has inherited the fitness as 0.47308, no need to evaluate
+2023-05-07 14:55:11,362 INFO    : None offspring has been evaluated
+2023-05-07 14:55:11,363 INFO    : EVOLVE[17-gen]-Finish the evaluation
+2023-05-07 14:55:11,364 INFO    : EVOLVE[17-gen]-Finish the environment selection
+2023-05-07 14:55:11,364 INFO    : EVOLVE[18-gen]-Begin to crossover and mutation
+2023-05-07 14:55:11,365 INFO    : Position 0 for indi1700, positions 0 for indi1702
+2023-05-07 14:55:11,366 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi1700
+2023-05-07 14:55:11,366 INFO    : Change the input channel of unit at 0 to 3 that is the output channel of unit at -1 in indi1702
+2023-05-07 14:55:11,366 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:55:11,367 INFO    : Do the ADD mutation for indi:indi1702
+2023-05-07 14:55:11,367 INFO    : Mutation position occurs at 0
+2023-05-07 14:55:11,367 INFO    : A POOLING unit would be added due to the probability of 0.38
+2023-05-07 14:55:11,368 INFO    : The added unit is changed to DENSENET because the existing number of POOLING exceeds 4, limit size:4
+2023-05-07 14:55:11,368 INFO    : MUTATION-mutated individuals:1[ADD: 1,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:1
+2023-05-07 14:55:11,369 INFO    : EVOLVE[18-gen]-Finish crossover and mutation
+2023-05-07 14:55:11,370 INFO    : EVOLVE[18-gen]-Begin to evaluate the fitness
+2023-05-07 14:55:11,370 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:55:11,373 INFO    : Finish the generation of python files
+2023-05-07 14:55:11,613 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:55:11,614 INFO    : Hit the cache for indi1700, key:94fa293f2b42ac1bd2d10116e3e26410e7ea5619de1807c0ab672c94, acc:0.83269, assigned_acc:-1.00000
+2023-05-07 14:55:11,614 INFO    : Total hit 1 individuals for fitness
+2023-05-07 14:55:11,614 INFO    : indi1700 has inherited the fitness as 0.83269, no need to evaluate
+2023-05-07 14:55:21,743 INFO    : Begin to train indi1701
+2023-05-07 14:57:52,384 INFO    : Add record into cache, id:e28118f14b42aa8933ed6f5db0f75694ea729061217f427f628701c4, acc:0.74615
+2023-05-07 14:57:52,385 INFO    : EVOLVE[18-gen]-Finish the evaluation
+2023-05-07 14:57:52,386 INFO    : EVOLVE[18-gen]-Finish the environment selection
+2023-05-07 14:57:52,386 INFO    : EVOLVE[19-gen]-Begin to crossover and mutation
+2023-05-07 14:57:52,388 WARNING : The 2-th try to find the position for do crossover
+2023-05-07 14:57:52,388 WARNING : The 3-th try to find the position for do crossover
+2023-05-07 14:57:52,388 WARNING : The 4-th try to find the position for do crossover
+2023-05-07 14:57:52,388 WARNING : The 5-th try to find the position for do crossover
+2023-05-07 14:57:52,388 WARNING : The 6-th try to find the position for do crossover
+2023-05-07 14:57:52,388 INFO    : Position 2 for indi1800, positions 3 for indi1802
+2023-05-07 14:57:52,388 INFO    : CROSSOVER-2 offspring are generated, new:2, others:0
+2023-05-07 14:57:52,389 INFO    : MUTATION-mutated individuals:0[ADD: 0,REMOVE: 0,ALTER: 0,RESNET_OUT_CHANNEL: 0, RESNET_AMOUNT: 0, DENSENET_AMOUNT: 0, POOLING_TYPE: 0, no_changes:2
+2023-05-07 14:57:52,390 INFO    : EVOLVE[19-gen]-Finish crossover and mutation
+2023-05-07 14:57:52,391 INFO    : EVOLVE[19-gen]-Begin to evaluate the fitness
+2023-05-07 14:57:52,391 INFO    : Begin to generate python files in evaluate.py line:16
+2023-05-07 14:57:52,395 INFO    : Finish the generation of python files
+2023-05-07 14:57:52,627 INFO    : Try to query fitness from cache from ./populations/cache.txt
+2023-05-07 14:57:52,634 INFO    : Hit the cache for indi1800, key:e28118f14b42aa8933ed6f5db0f75694ea729061217f427f628701c4, acc:0.74615, assigned_acc:-1.00000
+2023-05-07 14:57:52,634 INFO    : Hit the cache for indi1801, key:94fa293f2b42ac1bd2d10116e3e26410e7ea5619de1807c0ab672c94, acc:0.83269, assigned_acc:-1.00000
+2023-05-07 14:57:52,634 INFO    : Total hit 2 individuals for fitness
+2023-05-07 14:57:52,634 INFO    : indi1800 has inherited the fitness as 0.74615, no need to evaluate
+2023-05-07 14:57:52,634 INFO    : indi1801 has inherited the fitness as 0.83269, no need to evaluate
+2023-05-07 14:57:52,640 INFO    : None offspring has been evaluated
+2023-05-07 14:57:52,640 INFO    : EVOLVE[19-gen]-Finish the evaluation
+2023-05-07 14:57:52,642 INFO    : EVOLVE[19-gen]-Finish the environment selection

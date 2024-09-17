@@ -4,34 +4,66 @@
 # Usage 
 维护一系列.py文件
 
-## utils.py
+
+- utils.py
 _get_available_gpu_plain_info()
 [x] 修改默认python的运行pid
 writeList 中['/usr/lib/Xorg'] 修改GPU白名单
 
-## evaluate.py
+- evaluate.py
 releaseGPUTime 调整等待时间
 rGPUTime
 
-## spliteRawNEUCLS.py
+- spliteRawNEUCLS.py
 分割数据集
 
-### indi0000.py
+- .//indi0000.py
 用于测试单次代码运行
+
+- /exp 用于算法实验
+
+- Global.ini 
+参数设置文件夹
+```
+is_running = 1 表示断点续训练 从零开始需要设置为0
+```
+
 
 # todo
 ## 修改到可以使用
 - [x] 数据加载器
 - [x] 训练文件neucls.py
 - [x] 有错误from NEU_CLS import get_neucls_dataloader
+
+
+## 增加创新点
 - [ ] 推理时候把最后的置信度向量保存下来，用于t-sne降维
-- [ ] 利用降维提供一个指标，衡量区分度，多加几个指标
+- [ ] 利用降维提供一个指标，衡量区分度，多加几个指标 改哪个？是算法acc还是新建？
+- [ ] psutil 和 time修饰器构造一个函数记录运行时间 用pid
+```
+>>> import os, psutil, datetime
+>>> p = psutil.Process(os.getpid())
+>>> p.create_time
+1307289803.47
+>>> datetime.datetime.fromtimestamp(p.create_time).strftime("%Y-%m-%d %H:%M")
+'2011-03-05 18:03'
+```
+或者直接用info的时间来算
+
+- [ ] 给定如下格式的网络结构，输出其评价分数
+- [ ] 适应度函数更新
+通过调整 after_%s.txt
+evolve.py:109
+- [ ] 防止batch size太大
+
 
 # 可视化
 ## visdom
 ```
 python3 -m visdom.server
 ```
+
+
 
 # 内容解读
 ## Completely Automated CNN Architecture Design Based on Block

@@ -1,5 +1,5 @@
 """
-2023-04-23  11:53:35
+2023-05-07  19:52:58
 """
 from __future__ import print_function
 import torch
@@ -16,9 +16,9 @@ from datetime import datetime
 import multiprocessing
 from utils import StatusUpdateTool
 
-ifDebug = True
-ifLog = True
-ifPrintMemory = True
+ifDebug = True          # 是否打印debug信息
+ifLog = True            # 是否把信息记录到log文件中  当单次运行或debug时需要注意
+ifPrintMemory = True    #
 
 class ResNetBottleneck(nn.Module):
     # expansion 是一个用于扩展通道数的参数，用于控制每个 ResNet 模块中的卷积层输出通道数相对于输入通道数的倍数。
@@ -156,26 +156,24 @@ class EvoCNNModel(nn.Module):
         super(EvoCNNModel, self).__init__()
 
         #resnet and densenet unit
-        self.op0 = ResNetUnit(amount=10, in_channel=3, out_channel=128)
-        self.op1 = ResNetUnit(amount=3, in_channel=128, out_channel=64)
-        self.op3 = ResNetUnit(amount=3, in_channel=64, out_channel=64)
-        self.op7 = DenseNetUnit(k=40, amount=5, in_channel=64, out_channel=232, max_input_channel=32)
-        self.op8 = DenseNetUnit(k=12, amount=7, in_channel=232, out_channel=212, max_input_channel=128)
+        self.op0 = ResNetUnit(amount=5, in_channel=3, out_channel=64)
+        self.op4 = DenseNetUnit(k=20, amount=9, in_channel=64, out_channel=244, max_input_channel=64)
+        self.op6 = ResNetUnit(amount=5, in_channel=244, out_channel=64)
+        self.op7 = ResNetUnit(amount=7, in_channel=64, out_channel=64)
 
         #linear unit
-        self.linear = nn.Linear(30528, 6)
+        self.linear = nn.Linear(9216, 6)
 
 
     def forward(self, x):
         out = self.op0(x)
-        out = self.op1(out)
-        out= F.max_pool2d(out, 2)
-        out = self.op3(out)
         out= F.max_pool2d(out, 2)
         out= F.max_pool2d(out, 2)
         out= F.max_pool2d(out, 2)
-        out= self.op7(out)
-        out= self.op8(out)
+        out= self.op4(out)
+        out= F.max_pool2d(out, 2)
+        out = self.op6(out)
+        out = self.op7(out)
 
         out = out.view(out.size(0), -1)
         out = self.linear(out)
@@ -202,7 +200,10 @@ class TrainModel(object):
         net = EvoCNNModel(in_size=input_size, num_class=num_class, input_channel=input_channel)
         cudnn.benchmark = True
         net = net.cuda()
-        criterion = nn.CrossEntropyLoss()
+        loss=[1.0, 1.2, 1.4, 1.5, 1.0, 1.0]
+        class_weights = torch.tensor(loss, device='cuda')  # 示例权重，根据实际情况调整
+        criterion = nn.CrossEntropyLoss(weight=class_weights)
+        # criterion = nn.CrossEntropyLoss()
         best_acc = 0.0
         self.net = net
         self.criterion = criterion
@@ -280,11 +281,12 @@ class TrainModel(object):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             if mini_batch_cnt==2 and ifPrintMemory:
-                print("validate total:{}".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
+                print("validate total:{}MB".format(torch.cuda.memory_allocated(0)/1024/1024), mini_batch_cnt)
             correct += (predicted == labels.data).sum()
         if correct/total > self.best_acc:
             self.best_acc = correct/total
             print('*'*100, self.best_acc)
+        torch.cuda.empty_cache()
         self.log_record('Validate-Loss:%.3f, Acc:%.3f'%(test_loss/total, correct/total))
 
 
